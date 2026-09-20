@@ -1,0 +1,41 @@
+{
+  "spec_version": "0.1.0",
+  "system_instructions": "You are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.",
+  "state_delimiter": "\n---\n\n",
+  "answer_instruction": "\n\nAnswer with one label.",
+  "option_line": "{label}) {description}",
+  "labels": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+  "max_options_single_pass": 52,
+  "max_options_plain_alphabet": 26,
+  "n_probs_ladder": [
+    64,
+    4096,
+    300000
+  ],
+  "option_mass_floor_request": 0.5,
+  "option_mass_floor_formatter": 0.9,
+  "boolean_default_criteria": {
+    "true": "Yes.",
+    "false": "No."
+  },
+  "block_json": {
+    "sort_keys": true,
+    "indent": 2,
+    "ensure_ascii": true,
+    "item_separator": ",",
+    "key_separator": ": "
+  },
+  "inline_json": {
+    "sort_keys": true,
+    "indent": null,
+    "ensure_ascii": true,
+    "item_separator": ", ",
+    "key_separator": ": "
+  },
+  "numeric_tolerance": {
+    "probability_abs": 0.05,
+    "stable_choice_margin": 0.1,
+    "observed_max_drift": 0.032,
+    "source": "llama.cpp server batch composition; see spec/SPEC.md section 9"
+  }
+}

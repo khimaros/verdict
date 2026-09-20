@@ -1,0 +1,286 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "blocked",
+      "steps": 3,
+      "plans": 0,
+      "decision_ms": [
+        1360,
+        1361,
+        1352,
+        1359
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Internet, T-Mobile, 3G",
+          "screen": [
+            "8:14",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, T-Mobile, 3G",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "T-Mobile / Connected / 3G",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 3,
+      "decisions": 4,
+      "wall_s": 22.7
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "blocked",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        1334,
+        1330,
+        1370,
+        1373,
+        1364
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "T-Mobile / Connected / 3G",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "T-Mobile / Connected / 3G",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "8:15",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, T-Mobile, 3G",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Internet, T-Mobile, 3G",
+          "screen": [
+            "8:15",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, T-Mobile, 3G",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 24.8
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "blocked",
+      "steps": 2,
+      "plans": 0,
+      "decision_ms": [
+        1305,
+        1312,
+        1352
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "T-Mobile / Connected / 3G",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 20.2
+    }
+  ]
+}

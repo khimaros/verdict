@@ -1,0 +1,304 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        11655,
+        14017,
+        20842,
+        11789,
+        14144,
+        21363,
+        12399,
+        14296,
+        21658,
+        12243,
+        14088,
+        4941,
+        3683,
+        3301
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t139 points by RohanAdwankar 2 hours ago | hide | 68\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 188.9
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        11688,
+        13752,
+        21476,
+        11959,
+        14137,
+        21359,
+        12213,
+        14360,
+        23003,
+        12046,
+        14069,
+        4972,
+        3611,
+        3314
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t142 points by RohanAdwankar 2 hours ago | hide | 69\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 190.5
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        11705,
+        14122,
+        20910,
+        11934,
+        15278,
+        21012,
+        11985,
+        14046,
+        21377,
+        12445,
+        14227,
+        4944,
+        3593,
+        3314
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t143 points by RohanAdwankar 2 hours ago | hide | 70\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 189.4
+    }
+  ]
+}

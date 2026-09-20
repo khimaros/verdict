@@ -1,0 +1,23 @@
+# build and tool caches. `make clean` removes the first two.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# python environments, if anyone makes one here rather than with uv
+.venv/
+*.egg-info/
+
+# NOT IGNORED, DELIBERATELY:
+#
+#   eval/results/   NFR3 requires raw evaluation output to be committed
+#                   alongside summaries. a table without the runs behind it
+#                   cannot be rechecked, and several tables in docs/EVALS.md
+#                   were corrected by going back to the raw outcomes -- one
+#                   sweep was rescored entirely from the urls it had saved,
+#                   without re-running anything.
+#
+#   spec/formatters/  golden regression fixtures, per SPEC 4.4. derivation
+#                     happens at runtime; these exist so that a change in the
+#                     engine, the derivation, or a model's own template shows
+#                     up as a diff rather than as a silent change in behaviour.

@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        12874,
+        21973
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "77 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t133 points by RohanAdwankar 2 hours ago | hide | 65\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "suzzer99 3 minutes ago | next [\u2013] I had a post about Amazon Kindle Direct Publishing that I was hoping would go viral because that's the only way I ever saw Amazon ever fix anyone's KDP issues. I posted, then went to bed. When I woke up, it had 250+ points, but was on page 5 with a bunch of posts that were much older and/or had single-digit points.",
+          "kens 2 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 1 hour ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "0xbadcafebee 11 minutes ago | root | parent | next [\u2013] The mods are much more sensitive now to anything they consider flame-bait, flame-baiting, or controversial. Much quicker to intimidate/threaten, de-emphasize posts, flag-kill, etc. I presume because HN may be influencing/affecting some billion dollar bottom lines now and they can't afford a bad look",
+          "tclancy 2 hours ago | parent | prev | next [\u2013] Just so they could penalize it, obviously."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 35.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        4056,
+        5219
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "77 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t133 points by RohanAdwankar 2 hours ago | hide | 65\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "suzzer99 3 minutes ago | next [\u2013] I had a post about Amazon Kindle Direct Publishing that I was hoping would go viral because that's the only way I ever saw Amazon ever fix anyone's KDP issues. I posted, then went to bed. When I woke up, it had 250+ points, but was on page 5 with a bunch of posts that were much older and/or had single-digit points.",
+          "kens 2 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 1 hour ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "0xbadcafebee 11 minutes ago | root | parent | next [\u2013] The mods are much more sensitive now to anything they consider flame-bait, flame-baiting, or controversial. Much quicker to intimidate/threaten, de-emphasize posts, flag-kill, etc. I presume because HN may be influencing/affecting some billion dollar bottom lines now and they can't afford a bad look",
+          "tclancy 2 hours ago | parent | prev | next [\u2013] Just so they could penalize it, obviously."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 10.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        4256,
+        5373
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "77 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t133 points by RohanAdwankar 2 hours ago | hide | 65\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "suzzer99 3 minutes ago | next [\u2013] I had a post about Amazon Kindle Direct Publishing that I was hoping would go viral because that's the only way I ever saw Amazon ever fix anyone's KDP issues. I posted, then went to bed. When I woke up, it had 250+ points, but was on page 5 with a bunch of posts that were much older and/or had single-digit points.",
+          "kens 2 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 1 hour ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "0xbadcafebee 11 minutes ago | root | parent | next [\u2013] The mods are much more sensitive now to anything they consider flame-bait, flame-baiting, or controversial. Much quicker to intimidate/threaten, de-emphasize posts, flag-kill, etc. I presume because HN may be influencing/affecting some billion dollar bottom lines now and they can't afford a bad look",
+          "tclancy 2 hours ago | parent | prev | next [\u2013] Just so they could penalize it, obviously."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 10.5
+    }
+  ]
+}

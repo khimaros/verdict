@@ -1,0 +1,146 @@
+{
+  "summary": {
+    "runs": 5,
+    "complete": 0,
+    "reached_one": 5,
+    "mean_stories": 1,
+    "statuses": {
+      "done": 2,
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "status": "done",
+      "actions": 12,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/item?id=49765348",
+      "error": null,
+      "elapsed_ms": 98237,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 13,
+      "gated": 0,
+      "decision_ms": [
+        8818,
+        8132,
+        5812,
+        8244,
+        6082,
+        9276,
+        6148,
+        8318,
+        6092,
+        8193,
+        6137,
+        8461,
+        7400
+      ],
+      "wall_s": 98.5
+    },
+    {
+      "status": "done",
+      "actions": 12,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/item?id=49765348",
+      "error": null,
+      "elapsed_ms": 107882,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 13,
+      "gated": 0,
+      "decision_ms": [
+        6711,
+        11589,
+        8921,
+        8352,
+        6008,
+        9666,
+        5955,
+        8368,
+        8975,
+        8731,
+        6398,
+        8541,
+        8557
+      ],
+      "wall_s": 108.4
+    },
+    {
+      "status": "blocked",
+      "actions": 4,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/item?id=49765348",
+      "error": null,
+      "elapsed_ms": 51451,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 6,
+      "gated": 0,
+      "decision_ms": [
+        8856,
+        11038,
+        7838,
+        8212,
+        6667,
+        8150
+      ],
+      "wall_s": 51.8
+    },
+    {
+      "status": "blocked",
+      "actions": 4,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/item?id=49765348",
+      "error": null,
+      "elapsed_ms": 58952,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 7,
+      "gated": 0,
+      "decision_ms": [
+        8821,
+        10572,
+        7803,
+        7915,
+        9252,
+        5686,
+        8327
+      ],
+      "wall_s": 59.6
+    },
+    {
+      "status": "blocked",
+      "actions": 6,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/item?id=49765348",
+      "error": null,
+      "elapsed_ms": 58958,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 8,
+      "gated": 0,
+      "decision_ms": [
+        5971,
+        10480,
+        6164,
+        8252,
+        7868,
+        5919,
+        5565,
+        8009
+      ],
+      "wall_s": 59.2
+    }
+  ]
+}

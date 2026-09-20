@@ -1,0 +1,34 @@
+{
+  "id": "description-array",
+  "description": "an array description also renders on one line",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Page: flight search.",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which applies?",
+      "criteria": {
+        "a": [
+          "first",
+          "second"
+        ],
+        "b": "plain"
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nPage: flight search.\n---\n\n",
+    "questions": {
+      "pick": {
+        "kind": "choice",
+        "suffix": "Which applies?\nA) [\"first\", \"second\"]\nB) plain\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "a": "A",
+          "b": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

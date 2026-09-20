@@ -1,0 +1,225 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1.6666666666666667,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 4,
+      "decision_ms": [
+        27643,
+        41040,
+        24702,
+        41189,
+        24508
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "230 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "696 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t32 points by azhenley 1 hour ago | hide | 4\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 3 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 1 hour ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 2 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 1 hour ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 10 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 6 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 5 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 1 hour ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 161.5
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        24251,
+        13691,
+        24502
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "5 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t34 points by azhenley 1 hour ago | hide | 5\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "abraxas 0 minutes ago | next [\u2013] What gets me as a non-native speaker far more than a vs an is a vs the. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "dataflow 10 minutes ago | prev | next [\u2013] Any verdict for \"historic\"?",
+          "echelon 0 minutes ago | parent | next [\u2013] Oh God. As a native speaker I can't even think of how this works. I just know it sounds correct in all sorts of different cases.",
+          "beaned 2 minutes ago | parent | prev | next [\u2013] It depends on if you're speaking British or American English.",
+          "kichimi 10 minutes ago | prev | next [\u2013] I've spent some time thinking about this before, and it provides a clue about the writers accent. For example:"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 63.1
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 12,
+      "decision_ms": [
+        24303,
+        14374,
+        25708,
+        41087,
+        24880,
+        24560,
+        24343,
+        42654,
+        25032,
+        24409,
+        24545,
+        41597,
+        25108
+      ],
+      "gated": 5,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "8 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "231 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "698 comments"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "699 comments"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "699 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "BACK",
+          "target": "231 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t38 points by azhenley 1 hour ago | hide | 8\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "abraxas 0 minutes ago | next [\u2013] What gets me as a non-native speaker far more than a vs an is a vs the. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "dataflow 10 minutes ago | prev | next [\u2013] Any verdict for \"historic\"?",
+          "echelon 0 minutes ago | parent | next [\u2013] Oh God. As a native speaker I can't even think of how this works. I just know it sounds correct in all sorts of different cases.",
+          "beaned 2 minutes ago | parent | prev | next [\u2013] It depends on if you're speaking British or American English.",
+          "kichimi 10 minutes ago | prev | next [\u2013] I've spent some time thinking about this before, and it provides a clue about the writers accent. For example:"
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 3 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 1 hour ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 2 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 1 hour ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 12,
+      "decisions": 13,
+      "wall_s": 379.7
+    }
+  ]
+}

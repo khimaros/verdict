@@ -1,0 +1,27 @@
+{
+  "id": "boundary-state-ends-punctuation",
+  "description": "a state ending in punctuation against the delimiter",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Ticket ends with punctuation!",
+  "questions": {
+    "q": {
+      "type": "boolean",
+      "instructions": "Is this urgent?"
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nTicket ends with punctuation!\n---\n\n",
+    "questions": {
+      "q": {
+        "kind": "boolean",
+        "suffix": "Is this urgent?\nA) Yes.\nB) No.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

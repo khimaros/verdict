@@ -1,0 +1,40 @@
+{
+  "id": "state-array",
+  "description": "an array state",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": [
+    {
+      "role": "user",
+      "text": "Where is my refund?"
+    },
+    {
+      "role": "agent",
+      "text": "Let me check."
+    },
+    {
+      "role": "user",
+      "text": "It has been two weeks."
+    }
+  ],
+  "questions": {
+    "resolved": {
+      "type": "boolean",
+      "instructions": "Was the issue resolved?"
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\n[\n  {\n    \"role\": \"user\",\n    \"text\": \"Where is my refund?\"\n  },\n  {\n    \"role\": \"agent\",\n    \"text\": \"Let me check.\"\n  },\n  {\n    \"role\": \"user\",\n    \"text\": \"It has been two weeks.\"\n  }\n]\n---\n\n",
+    "questions": {
+      "resolved": {
+        "kind": "boolean",
+        "suffix": "Was the issue resolved?\nA) Yes.\nB) No.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

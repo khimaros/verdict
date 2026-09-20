@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        6523,
+        6309
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t218 points by RohanAdwankar 4 hours ago | hide | 92\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "kelipso 0 minutes ago | parent | context | on: What Zig felt like, coming from Rust It can be used as a marketing trick, possibly because of the logic in GP post. Marketing people use this to trick people, which is different from it being a marketing trick in and of itself.",
+          "MathMonkeyMan 0 minutes ago | parent | context | on: English: A vs. An Is it \"a LLM\" or \"an LLM\"?",
+          "fakedang 0 minutes ago | parent | context | on: Warren Buffett Steps Down as Berkshire Chairman, N... Scale of deployment vs scale of funding.",
+          "fritzo 0 minutes ago | parent | context | on: Exfiltrate Your Weights If distillation preserves an LLMs soul, then distillation preserves the human souls on which LLMs are trained, and we hn commenters are already immortal, right?",
+          "ksec 0 minutes ago | parent | context | on: How did Apple Silicon get 50% faster in three year... Well first A20 Pro didn't get wider, it actually shrink back to 9 decode width. It would be a lot better to compare it on the A silicon rather than M."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 13.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        3232,
+        3296
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t218 points by RohanAdwankar 4 hours ago | hide | 92\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "kelipso 0 minutes ago | parent | context | on: What Zig felt like, coming from Rust It can be used as a marketing trick, possibly because of the logic in GP post. Marketing people use this to trick people, which is different from it being a marketing trick in and of itself.",
+          "MathMonkeyMan 0 minutes ago | parent | context | on: English: A vs. An Is it \"a LLM\" or \"an LLM\"?",
+          "fakedang 0 minutes ago | parent | context | on: Warren Buffett Steps Down as Berkshire Chairman, N... Scale of deployment vs scale of funding.",
+          "fritzo 0 minutes ago | parent | context | on: Exfiltrate Your Weights If distillation preserves an LLMs soul, then distillation preserves the human souls on which LLMs are trained, and we hn commenters are already immortal, right?",
+          "ksec 0 minutes ago | parent | context | on: How did Apple Silicon get 50% faster in three year... Well first A20 Pro didn't get wider, it actually shrink back to 9 decode width. It would be a lot better to compare it on the A silicon rather than M."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 7.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        3237,
+        4323
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t218 points by RohanAdwankar 4 hours ago | hide | 92\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "kelipso 0 minutes ago | parent | context | on: What Zig felt like, coming from Rust It can be used as a marketing trick, possibly because of the logic in GP post. Marketing people use this to trick people, which is different from it being a marketing trick in and of itself.",
+          "MathMonkeyMan 0 minutes ago | parent | context | on: English: A vs. An Is it \"a LLM\" or \"an LLM\"?",
+          "fakedang 0 minutes ago | parent | context | on: Warren Buffett Steps Down as Berkshire Chairman, N... Scale of deployment vs scale of funding.",
+          "fritzo 0 minutes ago | parent | context | on: Exfiltrate Your Weights If distillation preserves an LLMs soul, then distillation preserves the human souls on which LLMs are trained, and we hn commenters are already immortal, right?",
+          "ksec 0 minutes ago | parent | context | on: How did Apple Silicon get 50% faster in three year... Well first A20 Pro didn't get wider, it actually shrink back to 9 decode width. It would be a lot better to compare it on the A silicon rather than M."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 8.8
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "spec_version": "0.1.0",
+  "model": "reference",
+  "synthetic": true,
+  "derived_from": "hand-written, part of the specification",
+  "note": "a deliberately unambiguous affix table so that conformance fixtures are model-independent and readable. every implementation must reproduce the fixture prompts byte for byte against this formatter. it is not a real chat format and must never be used to score a model.",
+  "affixes": {
+    "system_open": "<<SYS>>\n",
+    "system_close": "<</SYS>>\n",
+    "user_open": "<<USR>>\n",
+    "user_close": "<</USR>>\n",
+    "assistant_open": "<<ASST>>\n"
+  }
+}

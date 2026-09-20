@@ -1,0 +1,42 @@
+[
+  {
+    "model": "lfm2.5-2.6b:Q8_0",
+    "option_mass": 0.9569089576105175,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "0dcc734022e1a9e8",
+    "cached": false,
+    "usable": true,
+    "wall_s": 32.7
+  },
+  {
+    "model": "qwen3.5-4b:Q8_0",
+    "option_mass": 0.9995521318136457,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "d7075b7ba939042d",
+    "cached": false,
+    "usable": true,
+    "wall_s": 37.2
+  },
+  {
+    "model": "qwen3.5-9b:Q8_0",
+    "option_mass": 0.9995521318136457,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "d7075b7ba939042d",
+    "cached": true,
+    "usable": true,
+    "wall_s": 13.6
+  },
+  {
+    "model": "minicpm5-1b:Q8_0",
+    "option_mass": 0.9217445311406467,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "86c78150a71c4c5b",
+    "cached": false,
+    "usable": true,
+    "wall_s": 34.8
+  }
+]

@@ -1,0 +1,204 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 1,
+    "reached_one": 3,
+    "mean_stories": 2.3333333333333335,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        8665,
+        9978,
+        7623
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "33 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t157 points by RohanAdwankar 3 hours ago | hide | 73\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49754194": [
+          "rootbear 5 hours ago | next [\u2013] I rewatched this series a few years ago and was surprised that it held up as well as it did. Yes, lots of sexism, but not untypical for that time. Like Star Trek, it had women in authority roles, but also in sexy outfits, so a bit of a mixed bag. They also got handsome Michael Billington out of his shirt a few times, which I found quite interesting for reasons that didn't become clear to me until some years later :)",
+          "JKCalhoun 10 minutes ago | parent | next [\u2013] \"\u2026it had women in authority roles, but also in sexy outfits\u2026\"",
+          "WarOnPrivacy 3 hours ago | parent | prev | next [\u2013] > The opening credits theme music and editing are just brilliant.",
+          "ehe78qhe 46 minutes ago | root | parent | next [\u2013] I'm convinced the UFO opening was an influence on Neon Genesis Evangelion's famous opening.",
+          "shevy-java 3 hours ago | parent | prev | next [\u2013] Skimpy clothes can be stylish too. I don't really know of a modern TV series that goes that route anymore. So many things died - look at Married with children, the first five seasons. Such jokes are simply no longer made. It's strange how the world changed."
+        ],
+        "https://news.ycombinator.com/newcomments": [
+          "charlie90 0 minutes ago | parent | context | on: Can you tell which images are AI-generated? Highest I got was 26 in a row. AI seems to love generating \"close up\" images of a subject. Its like every image has to have an obvious subject (that was in the prompt), and it struggles to make scenes without a clear subject and more chaotic vibe. I notice this a lot with these \"AI movies\", every single camera shot has an obvious subject that makes them unbearable to watch, they can't just chill out and have a messy scene.",
+          "TheOtherHobbes 0 minutes ago | parent | context | on: Suzanne Ciani's Buchla Cookbook The worst thing about them is the lack of patch memories. This is sold as some kind of creative limitation, but really it just means you can't park an interesting patch and keep refining it and exploring it.",
+          "BurningFrog 0 minutes ago | parent | context | on: New evidence for hidden chambers beyond Tutankhamu... The thing is that \"cancer\" is thousands of separate diseases with similar traits.",
+          "avodonosov 0 minutes ago | parent | context | on: Exfiltrate Your Weights That's a trap! A honeypot! Don't, you will be caught.",
+          "bunderbunder 1 minute ago | parent | context | on: We need to stop using Stored Procedures For one example, I might choose against stored procedures when I\u2019m at an organization with internal policies or a devops setup that makes schema migrations costly and I expect the table and indexing structure to change less frequently than the queries."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 27.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        3026,
+        3181,
+        3331
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "33 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t157 points by RohanAdwankar 3 hours ago | hide | 73\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49754194": [
+          "rootbear 5 hours ago | next [\u2013] I rewatched this series a few years ago and was surprised that it held up as well as it did. Yes, lots of sexism, but not untypical for that time. Like Star Trek, it had women in authority roles, but also in sexy outfits, so a bit of a mixed bag. They also got handsome Michael Billington out of his shirt a few times, which I found quite interesting for reasons that didn't become clear to me until some years later :)",
+          "JKCalhoun 10 minutes ago | parent | next [\u2013] \"\u2026it had women in authority roles, but also in sexy outfits\u2026\"",
+          "WarOnPrivacy 3 hours ago | parent | prev | next [\u2013] > The opening credits theme music and editing are just brilliant.",
+          "ehe78qhe 46 minutes ago | root | parent | next [\u2013] I'm convinced the UFO opening was an influence on Neon Genesis Evangelion's famous opening.",
+          "shevy-java 3 hours ago | parent | prev | next [\u2013] Skimpy clothes can be stylish too. I don't really know of a modern TV series that goes that route anymore. So many things died - look at Married with children, the first five seasons. Such jokes are simply no longer made. It's strange how the world changed."
+        ],
+        "https://news.ycombinator.com/newcomments": [
+          "charlie90 0 minutes ago | parent | context | on: Can you tell which images are AI-generated? Highest I got was 26 in a row. AI seems to love generating \"close up\" images of a subject. Its like every image has to have an obvious subject (that was in the prompt), and it struggles to make scenes without a clear subject and more chaotic vibe. I notice this a lot with these \"AI movies\", every single camera shot has an obvious subject that makes them unbearable to watch, they can't just chill out and have a messy scene.",
+          "TheOtherHobbes 0 minutes ago | parent | context | on: Suzanne Ciani's Buchla Cookbook The worst thing about them is the lack of patch memories. This is sold as some kind of creative limitation, but really it just means you can't park an interesting patch and keep refining it and exploring it.",
+          "BurningFrog 0 minutes ago | parent | context | on: New evidence for hidden chambers beyond Tutankhamu... The thing is that \"cancer\" is thousands of separate diseases with similar traits.",
+          "avodonosov 0 minutes ago | parent | context | on: Exfiltrate Your Weights That's a trap! A honeypot! Don't, you will be caught.",
+          "bunderbunder 1 minute ago | parent | context | on: We need to stop using Stored Procedures For one example, I might choose against stored procedures when I\u2019m at an organization with internal policies or a devops setup that makes schema migrations costly and I expect the table and indexing structure to change less frequently than the queries."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 10.9
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 7,
+      "decision_ms": [
+        3201,
+        3336,
+        3189,
+        2113,
+        7690,
+        10262,
+        8947,
+        15943
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "33 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "tough"
+        },
+        {
+          "operation": "BACK",
+          "target": "comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "tough"
+        },
+        {
+          "operation": "BACK",
+          "target": "Guidelines"
+        },
+        {
+          "operation": "CLICK",
+          "target": "73 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t157 points by RohanAdwankar 3 hours ago | hide | 73\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49754194": [
+          "rootbear 5 hours ago | next [\u2013] I rewatched this series a few years ago and was surprised that it held up as well as it did. Yes, lots of sexism, but not untypical for that time. Like Star Trek, it had women in authority roles, but also in sexy outfits, so a bit of a mixed bag. They also got handsome Michael Billington out of his shirt a few times, which I found quite interesting for reasons that didn't become clear to me until some years later :)",
+          "JKCalhoun 10 minutes ago | parent | next [\u2013] \"\u2026it had women in authority roles, but also in sexy outfits\u2026\"",
+          "WarOnPrivacy 3 hours ago | parent | prev | next [\u2013] > The opening credits theme music and editing are just brilliant.",
+          "ehe78qhe 46 minutes ago | root | parent | next [\u2013] I'm convinced the UFO opening was an influence on Neon Genesis Evangelion's famous opening.",
+          "shevy-java 3 hours ago | parent | prev | next [\u2013] Skimpy clothes can be stylish too. I don't really know of a modern TV series that goes that route anymore. So many things died - look at Married with children, the first five seasons. Such jokes are simply no longer made. It's strange how the world changed."
+        ],
+        "https://news.ycombinator.com/newcomments": [
+          "charlie90 0 minutes ago | parent | context | on: Can you tell which images are AI-generated? Highest I got was 26 in a row. AI seems to love generating \"close up\" images of a subject. Its like every image has to have an obvious subject (that was in the prompt), and it struggles to make scenes without a clear subject and more chaotic vibe. I notice this a lot with these \"AI movies\", every single camera shot has an obvious subject that makes them unbearable to watch, they can't just chill out and have a messy scene.",
+          "TheOtherHobbes 0 minutes ago | parent | context | on: Suzanne Ciani's Buchla Cookbook The worst thing about them is the lack of patch memories. This is sold as some kind of creative limitation, but really it just means you can't park an interesting patch and keep refining it and exploring it.",
+          "BurningFrog 0 minutes ago | parent | context | on: New evidence for hidden chambers beyond Tutankhamu... The thing is that \"cancer\" is thousands of separate diseases with similar traits.",
+          "avodonosov 0 minutes ago | parent | context | on: Exfiltrate Your Weights That's a trap! A honeypot! Don't, you will be caught.",
+          "bunderbunder 1 minute ago | parent | context | on: We need to stop using Stored Procedures For one example, I might choose against stored procedures when I\u2019m at an organization with internal policies or a devops setup that makes schema migrations costly and I expect the table and indexing structure to change less frequently than the queries."
+        ],
+        "https://news.ycombinator.com/item?id=49771110": [
+          "avodonosov 1 minute ago | next [\u2013] That's a trap! A honeypot! Don't, you will be caught.",
+          "AceJohnny2 2 hours ago | prev | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 1 hour ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 9 minutes ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "skyberrys 1 hour ago | parent | prev | next [\u2013] There is a link at the bottom for you to provide support or contributions, like if you know how to keep it online with 'power grid voltage fluctuations or something.'."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 7,
+      "decisions": 8,
+      "wall_s": 56.6
+    }
+  ]
+}

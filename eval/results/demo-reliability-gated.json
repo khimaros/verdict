@@ -1,0 +1,122 @@
+{
+  "summary": {
+    "runs": 5,
+    "complete": 0,
+    "reached_one": 5,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 5
+    }
+  },
+  "runs": [
+    {
+      "status": "blocked",
+      "actions": 3,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/user?id=prometheus1992",
+      "error": null,
+      "elapsed_ms": 41416,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 5,
+      "gated": 1,
+      "decision_ms": [
+        8602,
+        10804,
+        7830,
+        8008,
+        5740
+      ],
+      "wall_s": 41.8
+    },
+    {
+      "status": "blocked",
+      "actions": 3,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/user?id=prometheus1992",
+      "error": null,
+      "elapsed_ms": 25114,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 4,
+      "gated": 1,
+      "decision_ms": [
+        5951,
+        7889,
+        5834,
+        5051
+      ],
+      "wall_s": 25.4
+    },
+    {
+      "status": "blocked",
+      "actions": 3,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/user?id=prometheus1992",
+      "error": null,
+      "elapsed_ms": 34109,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 5,
+      "gated": 1,
+      "decision_ms": [
+        6122,
+        9005,
+        7578,
+        5772,
+        5276
+      ],
+      "wall_s": 34.7
+    },
+    {
+      "status": "blocked",
+      "actions": 3,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/user?id=prometheus1992",
+      "error": null,
+      "elapsed_ms": 33122,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 4,
+      "gated": 1,
+      "decision_ms": [
+        8576,
+        10364,
+        8094,
+        5224
+      ],
+      "wall_s": 33.4
+    },
+    {
+      "status": "blocked",
+      "actions": 3,
+      "stories_visited": 1,
+      "stories_required": 3,
+      "final_url": "https://news.ycombinator.com/user?id=prometheus1992",
+      "error": null,
+      "elapsed_ms": 42506,
+      "stories": [
+        "I built non-autoregressive decision models with RL a year ago"
+      ],
+      "decisions": 6,
+      "gated": 1,
+      "decision_ms": [
+        6012,
+        8186,
+        8070,
+        7900,
+        6722,
+        5154
+      ],
+      "wall_s": 42.8
+    }
+  ]
+}

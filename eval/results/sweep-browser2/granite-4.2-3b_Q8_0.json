@@ -1,0 +1,304 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        9001,
+        9449,
+        9440,
+        5528,
+        5612,
+        5839,
+        5584,
+        5777,
+        6573,
+        6704,
+        6545,
+        5630,
+        5736,
+        5775
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t159 points by RohanAdwankar 3 hours ago | hide | 74\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 103.8
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        5602,
+        5573,
+        5466,
+        5571,
+        5712,
+        5547,
+        9532,
+        5438,
+        5578,
+        5769,
+        5575,
+        5987,
+        5648,
+        5772
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t159 points by RohanAdwankar 3 hours ago | hide | 74\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 93.6
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        8690,
+        5588,
+        5446,
+        5551,
+        5636,
+        5539,
+        5641,
+        5561,
+        5648,
+        5665,
+        9675,
+        5647,
+        5656,
+        5753
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        },
+        {
+          "operation": "CLICK",
+          "target": "new"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t159 points by RohanAdwankar 3 hours ago | hide | 75\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 96.2
+    }
+  ]
+}

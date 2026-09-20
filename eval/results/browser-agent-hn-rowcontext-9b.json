@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        23032,
+        16214,
+        22057
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "16 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t45 points by theanonymousone 1 hour ago | hide | 16\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "Liftyee 13 minutes ago | next [\u2013] The penalties are interesting. It shows that the design goal is not to maximise interactions otherwise \"controversial\" posts should stay up. Still though, I wonder what's the point of deranking said posts. Minimise the potential for a flame war to hit critical mass? Stop people from perceiving HN as an argument-filled forum?",
+          "firesteelrain 12 minutes ago | parent | next [\u2013] Controlled narratives",
+          "compiler-guy 7 minutes ago | prev | next [\u2013] Not sure when it started, but the second chance pool has moderators putting stories that didn\u2019t get much attention when they were submitted on the front page.",
+          "tptacek 26 minutes ago | prev | next [\u2013] Presumably this has gotten way, way more complicated in the last 13 years.",
+          "onesandofgrain 7 minutes ago | parent | next [\u2013] + if (this.moneyPaid > 10000USD) = instaPostToFrontPage."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 62.1
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        22173,
+        6598,
+        22359
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "16 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t46 points by theanonymousone 1 hour ago | hide | 16\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "Liftyee 13 minutes ago | next [\u2013] The penalties are interesting. It shows that the design goal is not to maximise interactions otherwise \"controversial\" posts should stay up. Still though, I wonder what's the point of deranking said posts. Minimise the potential for a flame war to hit critical mass? Stop people from perceiving HN as an argument-filled forum?",
+          "firesteelrain 12 minutes ago | parent | next [\u2013] Controlled narratives",
+          "compiler-guy 7 minutes ago | prev | next [\u2013] Not sure when it started, but the second chance pool has moderators putting stories that didn\u2019t get much attention when they were submitted on the front page.",
+          "tptacek 26 minutes ago | prev | next [\u2013] Presumably this has gotten way, way more complicated in the last 13 years.",
+          "onesandofgrain 7 minutes ago | parent | next [\u2013] + if (this.moneyPaid > 10000USD) = instaPostToFrontPage."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 51.9
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        6903,
+        16827,
+        6738
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "16 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t46 points by theanonymousone 1 hour ago | hide | 16\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "Liftyee 15 minutes ago | next [\u2013] The penalties are interesting. It shows that the design goal is not to maximise interactions otherwise \"controversial\" posts should stay up. Still though, I wonder what's the point of deranking said posts. Minimise the potential for a flame war to hit critical mass? Stop people from perceiving HN as an argument-filled forum?",
+          "firesteelrain 14 minutes ago | parent | next [\u2013] Controlled narratives",
+          "compiler-guy 9 minutes ago | prev | next [\u2013] Not sure when it started, but the second chance pool has moderators putting stories that didn\u2019t get much attention when they were submitted directly on the front page.",
+          "tptacek 29 minutes ago | prev | next [\u2013] Presumably this has gotten way, way more complicated in the last 13 years.",
+          "onesandofgrain 9 minutes ago | parent | next [\u2013] + if (this.moneyPaid > 10000USD) = instaPostToFrontPage."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 31.3
+    }
+  ]
+}

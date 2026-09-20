@@ -1,0 +1,31 @@
+{
+  "id": "choice-empty-description",
+  "description": "an empty description behaves as null",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "billing": "",
+        "technical": "Bugs and outages."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nMy invoice charged me twice for the same month and I want a refund.\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Which queue should handle this?\nA) billing\nB) Bugs and outages.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "billing": "A",
+          "technical": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

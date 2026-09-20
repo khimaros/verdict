@@ -1,0 +1,33 @@
+{
+  "model": "qwen3.5-9b:Q8_0",
+  "single_char_letters_in_readout": 7721,
+  "groups": [
+    {
+      "group": "ascii",
+      "labels": 52,
+      "absent_from_readout": 0,
+      "median": 3.436292964131729e-05,
+      "min": 1.4635052107503154e-06,
+      "max": 0.013805935513486436,
+      "geometric_mean": 4.209393393689947e-05
+    },
+    {
+      "group": "wide",
+      "labels": 52,
+      "absent_from_readout": 0,
+      "median": 1.0086762528757443e-07,
+      "min": 4.83709416613567e-09,
+      "max": 4.376158574050761e-06,
+      "geometric_mean": 1.397825374364064e-07
+    },
+    {
+      "group": "distinct",
+      "labels": 52,
+      "absent_from_readout": 0,
+      "median": 2.8258304032515895e-07,
+      "min": 2.188853381131671e-09,
+      "max": 4.223894457110297e-06,
+      "geometric_mean": 3.2303047374047834e-07
+    }
+  ]
+}

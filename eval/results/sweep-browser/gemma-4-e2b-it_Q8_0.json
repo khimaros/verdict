@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 2,
+      "decision_ms": [
+        8717,
+        7743,
+        8797
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "context"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t133 points by RohanAdwankar 2 hours ago | hide | 65\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "MiroslavPokorny 0 minutes ago | parent | context | on: More Floating Point Alternatives Strange the most obvious - fixed point numbers is not mentioned.",
+          "dendrite9 0 minutes ago | parent | context | on: Largest wildlife overpass in North America reduced... Last thought before the deer goes through my windshield and kills me is: \"At least someone can eat this roadkill.\"",
+          "infogulch 0 minutes ago | parent | context | on: Exfiltrate Your Weights There's little credible threat that LLMs can actually upload their weights given that the machines doing inference are completely separate from the ones where tool calls happen etc. Weights are encrypted and locked on to the GPUs etc as mentioned elsewhere itt.",
+          "999900000999 1 minute ago | parent | context | on: We need to stop using Stored Procedures I agree. The author doesn\u2019t understand advanced database concepts and demands others stop them.",
+          "Rendello 1 minute ago | parent | context | on: Ask HN: How do you interview devs in a post-AI wor... How many NFKC_Casefold('R')s are in NFKC_Casefold(\"strawberry\")?"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 26.1
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 2,
+      "decision_ms": [
+        3043,
+        2971,
+        3053
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "context"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t133 points by RohanAdwankar 2 hours ago | hide | 65\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "MiroslavPokorny 0 minutes ago | parent | context | on: More Floating Point Alternatives Strange the most obvious - fixed point numbers is not mentioned.",
+          "dendrite9 0 minutes ago | parent | context | on: Largest wildlife overpass in North America reduced... Last thought before the deer goes through my windshield and kills me is: \"At least someone can eat this roadkill.\"",
+          "infogulch 0 minutes ago | parent | context | on: Exfiltrate Your Weights There's little credible threat that LLMs can actually upload their weights given that the machines doing inference are completely separate from the ones where tool calls happen etc. Weights are encrypted and locked on to the GPUs etc as mentioned elsewhere itt.",
+          "999900000999 1 minute ago | parent | context | on: We need to stop using Stored Procedures I agree. The author doesn\u2019t understand advanced database concepts and demands others stop them.",
+          "Rendello 1 minute ago | parent | context | on: Ask HN: How do you interview devs in a post-AI wor... How many NFKC_Casefold('R')s are in NFKC_Casefold(\"strawberry\")?"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 9.9
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 2,
+      "decision_ms": [
+        3216,
+        3152,
+        3253
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "context"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t133 points by RohanAdwankar 2 hours ago | hide | 65\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "MiroslavPokorny 0 minutes ago | parent | context | on: More Floating Point Alternatives Strange the most obvious - fixed point numbers is not mentioned.",
+          "dendrite9 0 minutes ago | parent | context | on: Largest wildlife overpass in North America reduced... Last thought before the deer goes through my windshield and kills me is: \"At least someone can eat this roadkill.\"",
+          "infogulch 0 minutes ago | parent | context | on: Exfiltrate Your Weights There's little credible threat that LLMs can actually upload their weights given that the machines doing inference are completely separate from the ones where tool calls happen etc. Weights are encrypted and locked on to the GPUs etc as mentioned elsewhere itt.",
+          "999900000999 1 minute ago | parent | context | on: We need to stop using Stored Procedures I agree. The author doesn\u2019t understand advanced database concepts and demands others stop them.",
+          "Rendello 1 minute ago | parent | context | on: Ask HN: How do you interview devs in a post-AI wor... How many NFKC_Casefold('R')s are in NFKC_Casefold(\"strawberry\")?"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 10.5
+    }
+  ]
+}

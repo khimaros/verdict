@@ -1,0 +1,242 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "action-failed": 2,
+      "blocked": 1
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 8,
+      "decision_ms": [
+        21613,
+        39516,
+        22001,
+        21917,
+        21945,
+        21791,
+        22030,
+        22219,
+        22266
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "75 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "comments"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t125 points by RohanAdwankar 2 hours ago | hide | 62\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "at1as 12 minutes ago | next [\u2013] I'd assume the algorithm has changed over the last 13 years. And they're probably better off not sharing exactly how ranking (and penalties) work.",
+          "kens 2 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 50 minutes ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "tclancy 2 hours ago | parent | prev | next [\u2013] Just so they could penalize it, obviously.",
+          "Barbing 2 hours ago | parent | prev | next [\u2013] Still relevant! Very interesting topic."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 216.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 7,
+      "decision_ms": [
+        22114,
+        38604,
+        22268,
+        21756,
+        21853,
+        21894,
+        21968,
+        22048
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "75 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t129 points by RohanAdwankar 2 hours ago | hide | 63\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "kens 2 hours ago | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 54 minutes ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "tclancy 2 hours ago | parent | prev | next [\u2013] Just so they could penalize it, obviously.",
+          "Barbing 2 hours ago | parent | prev | next [\u2013] Still relevant! Very interesting topic.",
+          "caaqil 1 hour ago | parent | prev | next [\u2013] > I don't know why this popped up 13 years later"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 7,
+      "decisions": 8,
+      "wall_s": 193.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 9,
+      "decision_ms": [
+        21850,
+        38612,
+        22084,
+        21885,
+        21922,
+        22054,
+        22105,
+        22155,
+        22136,
+        22182
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "75 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t130 points by RohanAdwankar 2 hours ago | hide | 64\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "kens 2 hours ago | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 58 minutes ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "tclancy 2 hours ago | parent | prev | next [\u2013] Just so they could penalize it, obviously.",
+          "Barbing 2 hours ago | parent | prev | next [\u2013] Still relevant! Very interesting topic.",
+          "caaqil 1 hour ago | parent | prev | next [\u2013] > I don't know why this popped up 13 years later"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 9,
+      "decisions": 10,
+      "wall_s": 238.2
+    }
+  ]
+}

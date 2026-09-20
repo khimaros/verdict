@@ -1,0 +1,238 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 3,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        24157,
+        16674,
+        25303,
+        41304,
+        24494,
+        40942
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "14 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "231 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "702 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t46 points by azhenley 1 hour ago | hide | 14\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "abraxas 6 minutes ago | next [\u2013] What gets me as a non-native speaker far more than \"a vs an\" is the \"a vs the\" conundrum. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "jampekka 1 minute ago | parent | next [\u2013] I struggle with it too, but my rule of thumb is that \"the\" signals the reader they should know what specific instance is referred to, whereas \"a\" introduces a new instance.",
+          "devindotcom 1 minute ago | parent | prev | next [\u2013] don't worry too much. english is such a muddled tongue to begin with that there are many ways of saying something \"correctly\" and few if any of us know them all. anyone who quibbles over some fine verbal point is probably not someone whose opinion you should value!",
+          "CoastalCoder 3 minutes ago | parent | prev | next [\u2013] Just curious, what is your native tongue?",
+          "throwawayk7h 3 minutes ago | prev | next [\u2013] I'm always curious why sometimes I pronounce the as /\u00f0\u0259/ (\"thuh\") and sometimes as /\u00f0i/ (\"thee\"). I don't really know what governs this but I expect it's the presence of a vowel at the start of the following word. However, only some vowels. Does anyone have an answer?"
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 3 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 2 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 1 hour ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 10 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 6 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 5 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 1 hour ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 175.3
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        24486,
+        23260,
+        24182,
+        41087,
+        24243,
+        40987
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "18 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "231 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "703 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t52 points by azhenley 1 hour ago | hide | 18\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "zem 0 minutes ago | next [\u2013] \"if words starts with hones\" fails for \"hones\" itself; I suspect that should have been \"honest\" in the code.",
+          "mauvehaus 2 minutes ago | prev | next [\u2013] Fun fact an adder (snake) was once a nadder, and an apron was on a napron. This fun fact brought to you by The History of English Podcast.",
+          "abraxas 10 minutes ago | prev | next [\u2013] What gets me as a non-native speaker far more than \"a vs an\" is the \"a vs the\" conundrum. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "AndrewDucker 1 minute ago | parent | next [\u2013] If there's more than one, and you don't care which one, then it's \"a\". If you care which one then it's \"the\".",
+          "arcbyte 3 minutes ago | parent | prev | next [\u2013] Just remmeber that \"a\" is short for \"any\". So do want a specific thing, or will any thing work?"
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 3 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 2 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 1 hour ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 5 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 1 hour ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 180.6
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        24300,
+        24543,
+        24430,
+        41279,
+        24300,
+        40967
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "27 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "231 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "703 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t57 points by azhenley 1 hour ago | hide | 27\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "mauvehaus 4 minutes ago | next [\u2013] Fun fact an adder (snake) was once a nadder, and an apron was on a napron. This fun fact brought to you by The History of English Podcast.",
+          "abraxas 12 minutes ago | prev | next [\u2013] What gets me as a non-native speaker far more than \"a vs an\" is the \"a vs the\" conundrum. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "lwansbrough 0 minutes ago | parent | next [\u2013] I was going to start by stating the difference is \u201ca\u201d is unspecific, \u201cthe\u201d implies the subject is already known.",
+          "AndrewDucker 3 minutes ago | parent | prev | next [\u2013] If there's more than one, and you don't care which one, then it's \"a\". If you care which one then it's \"the\".",
+          "jampekka 7 minutes ago | parent | prev | next [\u2013] I struggle with it too, but my rule of thumb is that \"the\" signals the reader they should know what specific instance is referred to, whereas \"a\" introduces a new instance."
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 3 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 2 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 1 hour ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 5 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 1 hour ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 182.2
+    }
+  ]
+}

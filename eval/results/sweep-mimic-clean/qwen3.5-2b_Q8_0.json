@@ -1,0 +1,1120 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "plans": 0,
+      "decision_ms": [
+        2467,
+        2627,
+        2672,
+        2794,
+        2763,
+        2779,
+        3195,
+        3194,
+        3099,
+        3711,
+        3719,
+        3585,
+        3552,
+        3531
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6717,
+          "target_confidence": 0.8982,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5389,
+          "target_confidence": 0.977,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4877,
+          "target_confidence": 0.9879,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5625,
+          "target_confidence": 0.5812,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.45,
+          "target_confidence": 0.7088,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5317,
+          "target_confidence": 0.7677,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5775,
+          "target_confidence": 0.781,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.4664,
+          "target_confidence": 0.7412,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4939,
+          "target_confidence": 0.751,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.4449,
+          "target_confidence": 1.0,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4607,
+          "target_confidence": 0.7417,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5636,
+          "target_confidence": 0.8481,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.4554,
+          "target_confidence": 0.9812,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.378,
+          "target_confidence": 0.584,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 65.4
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "plans": 0,
+      "decision_ms": [
+        2461,
+        2613,
+        2708,
+        2705,
+        2667,
+        2643,
+        3133,
+        3160,
+        3208,
+        3602,
+        3543,
+        3484,
+        3491,
+        3534
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.7008,
+          "target_confidence": 0.896,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5323,
+          "target_confidence": 0.9738,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4599,
+          "target_confidence": 0.9874,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5524,
+          "target_confidence": 0.558,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.4463,
+          "target_confidence": 0.9775,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5065,
+          "target_confidence": 0.728,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.499,
+          "target_confidence": 0.629,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5227,
+          "target_confidence": 0.8104,
+          "landed": [
+            "More options",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4867,
+          "target_confidence": 0.669,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5329,
+          "target_confidence": 0.7504,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.581,
+          "target_confidence": 0.6441,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.4345,
+          "target_confidence": 0.6583,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4844,
+          "target_confidence": 0.6659,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5195,
+          "target_confidence": 0.7744,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 67.1
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "plans": 0,
+      "decision_ms": [
+        2456,
+        2597,
+        2652,
+        2806,
+        2531,
+        2500,
+        2578,
+        3104,
+        3183,
+        3542,
+        3587,
+        3371,
+        3472,
+        3645
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.697,
+          "target_confidence": 0.896,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5064,
+          "target_confidence": 0.9787,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5781,
+          "target_confidence": 0.5318,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.505,
+          "target_confidence": 1.0,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5564,
+          "target_confidence": 0.842,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5053,
+          "target_confidence": 0.6806,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5215,
+          "target_confidence": 0.855,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5142,
+          "target_confidence": 0.6838,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.4903,
+          "target_confidence": 0.8677,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.5683,
+          "target_confidence": 0.6463,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.5738,
+          "target_confidence": 0.983,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.4142,
+          "target_confidence": 0.5033,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.388,
+          "target_confidence": 0.9812,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4409,
+          "target_confidence": 0.6733,
+          "landed": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 65.1
+    }
+  ]
+}

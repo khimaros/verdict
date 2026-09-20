@@ -1,0 +1,11 @@
+{
+  "minicpm5-2b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "done": 3
+    }
+  }
+}

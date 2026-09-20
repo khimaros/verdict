@@ -1,0 +1,168 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1.3333333333333333,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 4,
+      "decision_ms": [
+        4864,
+        4858,
+        5051,
+        8272,
+        8764
+      ],
+      "gated": 2,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "709 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "12 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t38 points by theanonymousone 1 hour ago | hide | 12\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 6 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 2 hours ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ],
+        "https://news.ycombinator.com/item?id=49770293": [
+          "Liftyee 4 minutes ago | next [\u2013] The penalties are interesting. It shows that the design goal is not to maximise interactions otherwise \"controversial\" posts should stay up. Still though, I wonder what's the point of deranking said posts. Minimise the potential for a flame war to hit critical mass? Stop people from perceiving HN as an argument-filled forum?",
+          "firesteelrain 3 minutes ago | parent | next [\u2013] Controlled narratives",
+          "tptacek 18 minutes ago | prev | next [\u2013] Presumably this has gotten way, way more complicated in the last 13 years.",
+          "anon_cow1111 3 minutes ago | prev | next [\u2013] Personally the first HN algorithm anecdote I really noticed was when the \"stop destroying videogames' petition hit the front page a couple years ago. In the first hour it got a modest ~100 votes and comments with some organic discussion, so pretty typical for a good HN post. In the next hour it was dead and buried several hundred posts down.",
+          "VCFundedGenYer 43 minutes ago | prev [\u2013] This falls apart completely if you\u2019re like me and only see the list presented on brutalist.report which is strictly chronological and with zero algorithms."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 33.1
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        8119,
+        6018,
+        8487
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "709 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t40 points by theanonymousone 1 hour ago | hide | 14\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 6 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 2 hours ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 23.8
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        4922,
+        4875,
+        4733
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "709 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t40 points by theanonymousone 1 hour ago | hide | 14\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 6 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 2 hours ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 15.7
+    }
+  ]
+}

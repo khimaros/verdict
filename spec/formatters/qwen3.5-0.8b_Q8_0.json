@@ -1,0 +1,23 @@
+{
+  "spec_version": "0.1.0",
+  "model": "qwen3.5-0.8b:Q8_0",
+  "model_alias": "unsloth/Qwen3.5-0.8B-MTP-GGUF:Q8_0",
+  "template_sha256": "f569b9d7ce7f56dcc626a742564a16317aeb80effef1816bb03d02e598bd9588",
+  "derived_from": "llama-server /props chat_template",
+  "affixes": {
+    "system_open": "<|im_start|>system\n",
+    "system_close": "<|im_end|>\n",
+    "user_open": "<|im_start|>user\n",
+    "user_close": "<|im_end|>\n",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  "verification": {
+    "cases": 10,
+    "mean_option_mass": 0.9979126266176201,
+    "min_option_mass": 0.9947855062651995,
+    "smoke_correct": "7/10",
+    "split_clean": true,
+    "build_info": "b11056-e613ef2c8",
+    "labels_single_token": true
+  }
+}

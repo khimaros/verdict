@@ -1,0 +1,74 @@
+{
+  "goal": "Open the Settings app and navigate to the screen showing the Android version",
+  "status": "out-of-steps",
+  "steps": 14,
+  "plans": 0,
+  "history": [
+    {
+      "operation": "LAUNCH",
+      "target": "Settings"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Search settings"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Search settings"
+    },
+    {
+      "operation": "TAP",
+      "target": "About emulated device / Android SDK built for x86_64"
+    },
+    {
+      "operation": "TAP",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "BACK",
+      "target": "Navigate up"
+    },
+    {
+      "operation": "TAP",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "BACK",
+      "target": "Navigate up"
+    },
+    {
+      "operation": "TAP",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "BACK",
+      "target": "Navigate up"
+    },
+    {
+      "operation": "TAP",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "LAUNCH",
+      "target": "Settings"
+    },
+    {
+      "operation": "BACK",
+      "target": "Navigate up"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Device name / Android SDK built for x86_64"
+    }
+  ],
+  "witness": {
+    "required": 1,
+    "witnessed": 0,
+    "complete": false,
+    "answers": {},
+    "at_step": {},
+    "missing": [
+      "Android version"
+    ]
+  }
+}

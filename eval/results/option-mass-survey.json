@@ -1,0 +1,68 @@
+[
+  {
+    "model": "qwen3.8-27b:Q8_0",
+    "option_mass": 0.9962701150236112,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "12827f24b742ea4e",
+    "cached": false,
+    "usable": true,
+    "wall_s": 59.1
+  },
+  {
+    "model": "qwen3.6-27b:Q8_0",
+    "option_mass": 0.999788181875597,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "55d4931433fe502b",
+    "cached": false,
+    "usable": true,
+    "wall_s": 157.3
+  },
+  {
+    "model": "gemma-4-26b-a4b-it:Q8_0",
+    "option_mass": 0.999999670031035,
+    "correct": "1/1",
+    "assistant_open": "<|turn>model\n<|channel>thought\n<channel|>",
+    "template_sha256": "aa3185dfc6505104",
+    "cached": false,
+    "usable": true,
+    "wall_s": 69.9
+  },
+  {
+    "model": "gpt-oss-20b:Q8_0",
+    "usable": false,
+    "error": "ValueError: gpt-oss-20b:Q8_0: label 'a' is not a single token at the assistant position, so it cannot be scored by id",
+    "wall_s": 89.2
+  },
+  {
+    "model": "gemma-4-12b-it:Q8_0",
+    "option_mass": 0.999999670031035,
+    "correct": "1/1",
+    "assistant_open": "<|turn>model\n<|channel>thought\n<channel|>",
+    "template_sha256": "aa3185dfc6505104",
+    "cached": true,
+    "usable": true,
+    "wall_s": 6.8
+  },
+  {
+    "model": "qwen3.6-35b-a3b:Q8_0",
+    "option_mass": 0.999788181875597,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "55d4931433fe502b",
+    "cached": true,
+    "usable": true,
+    "wall_s": 120.9
+  },
+  {
+    "model": "qwen3-coder-30b-a3b-instruct:Q8_0",
+    "option_mass": 1.0000000000006677,
+    "correct": "1/1",
+    "assistant_open": "<|im_start|>assistant\n",
+    "template_sha256": "87710339d25b4e78",
+    "cached": false,
+    "usable": true,
+    "wall_s": 143.4
+  }
+]

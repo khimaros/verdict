@@ -1,0 +1,102 @@
+{
+  "qwen3.5-9b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "action-failed": 2,
+      "blocked": 1
+    }
+  },
+  "qwen3.5-4b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "gemma-4-e4b-it:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "gemma-4-e2b-it:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "granite-4.2-3b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "minicpm5-2b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "g9v3-3b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "lfm2.5-2.6b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "minicpm5-1b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "qwen3.5-0.8b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "gpt-oss-20b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  }
+}

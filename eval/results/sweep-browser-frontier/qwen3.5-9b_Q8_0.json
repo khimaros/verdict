@@ -1,0 +1,263 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 3,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 7,
+      "decision_ms": [
+        21387,
+        38673,
+        21664,
+        21622,
+        21982,
+        39202,
+        21907,
+        16231
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "92 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "173 comments"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "173 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "173 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "13 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t221 points by RohanAdwankar 4 hours ago | hide | 92\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 4 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 3 hours ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 1 hour ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "btown 1 hour ago | root | parent | next [\u2013] Only bots that are blocked by Cloudflare Turnstile allowed. If you score as a human you are immediately rejected.",
+          "nomeculture 1 hour ago | root | parent | next [\u2013] what an inverted world we live in."
+        ],
+        "https://news.ycombinator.com/item?id=49769944": [
+          "hbn 5 hours ago | next [\u2013] A funny quirk of English I never noticed until I started learning Spanish:",
+          "bradrn 5 hours ago | parent | next [\u2013] It\u2019s simply that, in English, there is no indefinite plural article \u2014 or, equivalently, that the indefinite plural article is null. So \u2018they are doctors\u2019 is consistent with the behaviour of plural nouns elsewhere.",
+          "hbn 5 hours ago | root | parent | next [\u2013] English still feels hard to explain when things sound natural and when they don't.",
+          "bradrn 4 hours ago | root | parent | next [\u2013] Oh, certainly, as is the case for any language!",
+          "schoen 4 hours ago | root | parent | next [\u2013] I'm not sure this is the best achievable example, but maybe:"
+        ],
+        "https://news.ycombinator.com/item?id=49771966": [
+          "madars 2 hours ago | next [\u2013] More details: https://x.com/sweis/status/2101484464807596264",
+          "sjs382 55 minutes ago | parent | next [\u2013] https://xxcancel.com/sweis/status/2101484464807596264",
+          "wslh 55 minutes ago | parent | prev | next [\u2013] > It\u2019s still exponential",
+          "tristanj 1 hour ago | prev | next [\u2013] If you've already paid for and reserved a whole cluster of GPUs, any idle capacity is capacity you've already paid for. Using it is effectively free. So might as well use it to solve fun math puzzles.",
+          "logicallee 3 minutes ago | parent | next [\u2013] How much crypto do you think the mentioned 30 GPU years would have produced at current exchange rates? They're not as efficient as ASICs but GPU's can still mine a lot..."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 7,
+      "decisions": 8,
+      "wall_s": 205.5
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 8,
+      "decision_ms": [
+        21701,
+        38814,
+        22140,
+        22092,
+        22060,
+        21727,
+        38940,
+        21942,
+        15404
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "92 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "174 comments"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "174 comments"
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "174 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "174 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "13 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t221 points by RohanAdwankar 4 hours ago | hide | 92\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 4 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 3 hours ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 2 hours ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "btown 1 hour ago | root | parent | next [\u2013] Only bots that are blocked by Cloudflare Turnstile allowed. If you score as a human you are immediately rejected.",
+          "nomeculture 1 hour ago | root | parent | next [\u2013] what an inverted world we live in."
+        ],
+        "https://news.ycombinator.com/item?id=49769944": [
+          "hbn 5 hours ago | next [\u2013] A funny quirk of English I never noticed until I started learning Spanish:",
+          "bradrn 5 hours ago | parent | next [\u2013] It\u2019s simply that, in English, there is no indefinite plural article \u2014 or, equivalently, that the indefinite plural article is null. So \u2018they are doctors\u2019 is consistent with the behaviour of plural nouns elsewhere.",
+          "hbn 5 hours ago | root | parent | next [\u2013] English still feels hard to explain when things sound natural and when they don't.",
+          "bradrn 4 hours ago | root | parent | next [\u2013] Oh, certainly, as is the case for any language!",
+          "schoen 4 hours ago | root | parent | next [\u2013] I'm not sure this is the best achievable example, but maybe:"
+        ],
+        "https://news.ycombinator.com/item?id=49771966": [
+          "madars 2 hours ago | next [\u2013] More details: https://x.com/sweis/status/2101484464807596264",
+          "sjs382 57 minutes ago | parent | next [\u2013] https://xxcancel.com/sweis/status/2101484464807596264",
+          "wslh 57 minutes ago | parent | prev | next [\u2013] > It\u2019s still exponential",
+          "tristanj 1 hour ago | prev | next [\u2013] If you've already paid for and reserved a whole cluster of GPUs, any idle capacity is capacity you've already paid for. Using it is effectively free. So might as well use it to solve fun math puzzles.",
+          "logicallee 5 minutes ago | parent | next [\u2013] How much crypto do you think the mentioned 30 GPU years would have produced at current exchange rates? They're not as efficient as ASICs but GPU's can still mine a lot..."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 227.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        21729,
+        38881,
+        22004,
+        38593,
+        22195,
+        15691
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "95 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "175 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "14 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t225 points by RohanAdwankar 4 hours ago | hide | 95\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 4 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 3 hours ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 2 hours ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "OutOfHere 0 minutes ago | root | parent | next [\u2013] I have an idea about it via multi-tier AI-generated templatized math problems with AI-generated solution verifier functions. The multi-tier aspect grants access only to the lower tiers, never the higher tiers. Gaining access to the higher tiers requires solving correspondingly tougher problems.",
+          "btown 1 hour ago | root | parent | prev | next [\u2013] Only bots that are blocked by Cloudflare Turnstile allowed. If you score as a human you are immediately rejected."
+        ],
+        "https://news.ycombinator.com/item?id=49769944": [
+          "hbn 5 hours ago | next [\u2013] A funny quirk of English I never noticed until I started learning Spanish:",
+          "bradrn 5 hours ago | parent | next [\u2013] It\u2019s simply that, in English, there is no indefinite plural article \u2014 or, equivalently, that the indefinite plural article is null. So \u2018they are doctors\u2019 is consistent with the behaviour of plural nouns elsewhere.",
+          "hbn 5 hours ago | root | parent | next [\u2013] English still feels hard to explain when things sound natural and when they don't.",
+          "bradrn 4 hours ago | root | parent | next [\u2013] Oh, certainly, as is the case for any language!",
+          "schoen 4 hours ago | root | parent | next [\u2013] I'm not sure this is the best achievable example, but maybe:"
+        ],
+        "https://news.ycombinator.com/item?id=49771966": [
+          "madars 2 hours ago | next [\u2013] More details: https://x.com/sweis/status/2101484464807596264",
+          "wslh 1 hour ago | parent | next [\u2013] > It\u2019s still exponential",
+          "sjs382 1 hour ago | parent | prev | next [\u2013] https://xxcancel.com/sweis/status/2101484464807596264",
+          "tristanj 1 hour ago | prev | next [\u2013] If you've already paid for and reserved a whole cluster of GPUs, any idle capacity is capacity you've already paid for. Using it is effectively free. So might as well use it to solve fun math puzzles.",
+          "qurren 3 minutes ago | parent | next [\u2013] > it would make more financial sense to mine crypto"
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 161.3
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "options-twentyseven",
+  "description": "27 options, the first count to extend into lowercase labels",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which applies?",
+      "criteria": {
+        "opt00": "Option number 0 of 27.",
+        "opt01": "Option number 1 of 27.",
+        "opt02": "Option number 2 of 27.",
+        "opt03": "Option number 3 of 27.",
+        "opt04": "Option number 4 of 27.",
+        "opt05": "Option number 5 of 27.",
+        "opt06": "Option number 6 of 27.",
+        "opt07": "Option number 7 of 27.",
+        "opt08": "Option number 8 of 27.",
+        "opt09": "Option number 9 of 27.",
+        "opt10": "Option number 10 of 27.",
+        "opt11": "Option number 11 of 27.",
+        "opt12": "Option number 12 of 27.",
+        "opt13": "Option number 13 of 27.",
+        "opt14": "Option number 14 of 27.",
+        "opt15": "Option number 15 of 27.",
+        "opt16": "Option number 16 of 27.",
+        "opt17": "Option number 17 of 27.",
+        "opt18": "Option number 18 of 27.",
+        "opt19": "Option number 19 of 27.",
+        "opt20": "Option number 20 of 27.",
+        "opt21": "Option number 21 of 27.",
+        "opt22": "Option number 22 of 27.",
+        "opt23": "Option number 23 of 27.",
+        "opt24": "Option number 24 of 27.",
+        "opt25": "Option number 25 of 27.",
+        "opt26": "Option number 26 of 27."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nMy invoice charged me twice for the same month and I want a refund.\n---\n\n",
+    "questions": {
+      "pick": {
+        "kind": "choice",
+        "suffix": "Which applies?\nA) Option number 0 of 27.\nB) Option number 1 of 27.\nC) Option number 2 of 27.\nD) Option number 3 of 27.\nE) Option number 4 of 27.\nF) Option number 5 of 27.\nG) Option number 6 of 27.\nH) Option number 7 of 27.\nI) Option number 8 of 27.\nJ) Option number 9 of 27.\nK) Option number 10 of 27.\nL) Option number 11 of 27.\nM) Option number 12 of 27.\nN) Option number 13 of 27.\nO) Option number 14 of 27.\nP) Option number 15 of 27.\nQ) Option number 16 of 27.\nR) Option number 17 of 27.\nS) Option number 18 of 27.\nT) Option number 19 of 27.\nU) Option number 20 of 27.\nV) Option number 21 of 27.\nW) Option number 22 of 27.\nX) Option number 23 of 27.\nY) Option number 24 of 27.\nZ) Option number 25 of 27.\na) Option number 26 of 27.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "opt00": "A",
+          "opt01": "B",
+          "opt02": "C",
+          "opt03": "D",
+          "opt04": "E",
+          "opt05": "F",
+          "opt06": "G",
+          "opt07": "H",
+          "opt08": "I",
+          "opt09": "J",
+          "opt10": "K",
+          "opt11": "L",
+          "opt12": "M",
+          "opt13": "N",
+          "opt14": "O",
+          "opt15": "P",
+          "opt16": "Q",
+          "opt17": "R",
+          "opt18": "S",
+          "opt19": "T",
+          "opt20": "U",
+          "opt21": "V",
+          "opt22": "W",
+          "opt23": "X",
+          "opt24": "Y",
+          "opt25": "Z",
+          "opt26": "a"
+        },
+        "flags": [
+          "wide_alphabet"
+        ]
+      }
+    }
+  }
+}

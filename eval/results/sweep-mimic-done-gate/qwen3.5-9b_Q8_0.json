@@ -1,0 +1,1192 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "done": 2,
+      "out-of-steps": 1
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        5312,
+        5963,
+        6178,
+        6382,
+        6526
+      ],
+      "gated": 0,
+      "final_confidence": 0.9836,
+      "final_probabilities": {
+        "TAP": 0.0126,
+        "LAUNCH": 0.0009,
+        "SCROLL_DOWN": 0.001,
+        "SCROLL_UP": 0.0005,
+        "BACK": 0.0003,
+        "HOME": 0.0002,
+        "DONE": 0.9836,
+        "BLOCKED": 0.0009
+      },
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.9822,
+          "target_confidence": 0.9946,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.8398,
+          "target_confidence": 0.837,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6159,
+          "target_confidence": 0.3449,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.998,
+          "target_confidence": 0.9982,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "Android version": "Android version / 15"
+        },
+        "at_step": {
+          "Android version": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 32.8
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        5390,
+        5709,
+        6060,
+        6240,
+        6524
+      ],
+      "gated": 0,
+      "final_confidence": 0.8615,
+      "final_probabilities": {
+        "TAP": 0.132,
+        "LAUNCH": 0.0021,
+        "SCROLL_DOWN": 0.0016,
+        "SCROLL_UP": 0.0011,
+        "BACK": 0.0004,
+        "HOME": 0.0002,
+        "DONE": 0.8615,
+        "BLOCKED": 0.0011
+      },
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.9819,
+          "target_confidence": 0.9946,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.7865,
+          "target_confidence": 0.752,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6392,
+          "target_confidence": 0.4385,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9983,
+          "target_confidence": 0.9978,
+          "landed": [
+            "Android version / 15",
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "Android version": "Android version / 15"
+        },
+        "at_step": {
+          "Android version": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 32.7
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 40,
+      "plans": 0,
+      "decision_ms": [
+        5199,
+        5898,
+        6273,
+        6297,
+        6335,
+        5526,
+        6079,
+        6075,
+        6421,
+        8963,
+        7862,
+        7858,
+        7747,
+        8403,
+        7811,
+        6909,
+        7024,
+        6807,
+        7140,
+        7067,
+        6882,
+        6651,
+        6615,
+        6722,
+        6642,
+        6738,
+        6775,
+        6949,
+        6741,
+        6924,
+        7077,
+        6665,
+        6805,
+        6687,
+        6774,
+        7055,
+        6977,
+        8653,
+        6787,
+        8471
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.9821,
+          "target_confidence": 0.9946,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.8004,
+          "target_confidence": 0.7142,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6085,
+          "target_confidence": 0.3369,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9982,
+          "target_confidence": 0.9983,
+          "landed": [
+            "Android version / 15",
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Device name / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.1831,
+          "target_confidence": 0.4857,
+          "landed": [
+            "Device name",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "OK",
+          "screen": [
+            "Android SDK built for x86_64",
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.9211,
+          "target_confidence": 0.8884,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.8077,
+          "target_confidence": 0.9978,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9938,
+          "target_confidence": 0.9997,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Android version / 15",
+          "screen": [
+            "Android version / 15",
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.7955,
+          "target_confidence": 0.9989,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6178,
+          "target_confidence": 0.9937,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.5118,
+          "target_confidence": 0.9938,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9833,
+          "target_confidence": 0.9999,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Device name / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.3822,
+          "target_confidence": 0.8334,
+          "landed": [
+            "Android SDK built for x86_64",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Android SDK built for x86_64",
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.4139,
+          "target_confidence": 0.9872,
+          "landed": [
+            "Android SDK built for x86_64",
+            "CANCEL",
+            "OK"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "OK",
+          "screen": [
+            "Android SDK built for x86_64",
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.8098,
+          "target_confidence": 0.573,
+          "landed": [
+            "CANCEL",
+            "OK"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "OK",
+          "screen": [
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.7329,
+          "target_confidence": 0.9979,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Device name / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.749,
+          "target_confidence": 0.819,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Android SDK built for x86_64",
+          "screen": [
+            "Android SDK built for x86_64",
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.8984,
+          "target_confidence": 0.8147,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.7473,
+          "target_confidence": 0.7986,
+          "landed": [
+            "Legal information",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.8526,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.5571,
+          "target_confidence": 0.9691,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.8997,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.5562,
+          "target_confidence": 0.9956,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.6349,
+          "target_confidence": 0.7281,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.5291,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.487,
+          "target_confidence": 0.621,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9861,
+          "target_confidence": 0.9995,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.7534,
+          "target_confidence": 0.7052,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "OK",
+          "screen": [
+            "OK"
+          ],
+          "confidence": 0.3462,
+          "target_confidence": 1.0,
+          "landed": [
+            "OK"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "OK",
+          "screen": [
+            "OK"
+          ],
+          "confidence": 0.8654,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.9463,
+          "target_confidence": 0.9404,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.7611,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.9811,
+          "target_confidence": 0.9929,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.7638,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.7813,
+          "target_confidence": 0.5653,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.985,
+          "target_confidence": 1.0,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Model / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.7968,
+          "target_confidence": 0.6741,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "OK",
+          "screen": [
+            "OK"
+          ],
+          "confidence": 0.7471,
+          "target_confidence": 1.0,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.746,
+          "target_confidence": 0.4876,
+          "landed": [
+            "Device name",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9912,
+          "target_confidence": 0.9997,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "Android version": "Android version / 15"
+        },
+        "at_step": {
+          "Android version": 9
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 40,
+      "decisions": 40,
+      "wall_s": 299.7
+    }
+  ]
+}

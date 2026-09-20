@@ -1,0 +1,157 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 1,
+    "reached_one": 1,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 8,
+      "decision_ms": [
+        20885,
+        25961,
+        22223,
+        15162,
+        21000,
+        37504,
+        21155,
+        37434,
+        20997
+      ],
+      "gated": 3,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "14 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "238 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "712 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t40 points by theanonymousone 1 hour ago | hide | 14\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "compiler-guy 3 minutes ago | next [\u2013] Not sure when it started, but the second chance pool has moderators putting stories that didn\u2019t get much attention when they were submitted on the front page.",
+          "Liftyee 8 minutes ago | prev | next [\u2013] The penalties are interesting. It shows that the design goal is not to maximise interactions otherwise \"controversial\" posts should stay up. Still though, I wonder what's the point of deranking said posts. Minimise the potential for a flame war to hit critical mass? Stop people from perceiving HN as an argument-filled forum?",
+          "firesteelrain 7 minutes ago | parent | next [\u2013] Controlled narratives",
+          "tptacek 22 minutes ago | prev | next [\u2013] Presumably this has gotten way, way more complicated in the last 13 years.",
+          "onesandofgrain 3 minutes ago | parent | next [\u2013] + if (this.moneyPaid > 10000USD) = instaPostToFrontPage."
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 4 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 3 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 2 hours ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 6 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 2 hours ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 226.0
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 0,
+      "decision_ms": [
+        20797
+      ],
+      "gated": 1,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t44 points by theanonymousone 1 hour ago | hide | 16\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 21.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 0,
+      "decision_ms": [
+        5423
+      ],
+      "gated": 1,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t44 points by theanonymousone 1 hour ago | hide | 16\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 5.9
+    }
+  ]
+}

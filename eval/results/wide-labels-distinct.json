@@ -1,0 +1,634 @@
+[
+  {
+    "model": "qwen3.5-9b:Q8_0",
+    "wide_labels_available": 600,
+    "non_ascii_available": 548,
+    "distinct_available": 348,
+    "first_non_ascii": "é",
+    "first_distinct": "ا",
+    "by_alphabet": {
+      "ascii": {
+        "correct": "16/16",
+        "accuracy": 1.0,
+        "min_option_mass": 0.999629532371998,
+        "max_n_probs": 4096,
+        "median_ms": 1033
+      },
+      "wide": {
+        "correct": "16/16",
+        "accuracy": 1.0,
+        "min_option_mass": 0.7780312484343961,
+        "max_n_probs": 4096,
+        "median_ms": 2596
+      },
+      "distinct": {
+        "correct": "11/16",
+        "accuracy": 0.6875,
+        "min_option_mass": 0.3145886935576793,
+        "max_n_probs": 300000,
+        "median_ms": 2869
+      }
+    },
+    "by_alphabet_count": {
+      "ascii": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "4/4"
+      },
+      "wide": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "4/4"
+      },
+      "distinct": {
+        "8": "3/4",
+        "16": "3/4",
+        "26": "3/4",
+        "52": "2/4"
+      }
+    },
+    "long_list": {
+      "correct": "4/4",
+      "accuracy": 1.0,
+      "min_option_mass": 0.9643626598123858,
+      "max_n_probs": 300000,
+      "median_ms": 5112,
+      "n": 104
+    },
+    "wall_s": 152.0,
+    "rows": [
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999501141120277,
+        "correct_prob": 0.9999423562302194,
+        "label": "A",
+        "n_probs_used": 64,
+        "ms": 781
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999746819889449,
+        "correct_prob": 0.9999305448692218,
+        "label": "C",
+        "n_probs_used": 64,
+        "ms": 1020
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999366318724763,
+        "correct_prob": 0.9945812452894713,
+        "label": "E",
+        "n_probs_used": 64,
+        "ms": 815
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999199274767229,
+        "correct_prob": 0.9994866075804978,
+        "label": "H",
+        "n_probs_used": 64,
+        "ms": 782
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999166937722517,
+        "correct_prob": 0.9980853778981716,
+        "label": "A",
+        "n_probs_used": 64,
+        "ms": 1033
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999230012570425,
+        "correct_prob": 0.9871719624281556,
+        "label": "E",
+        "n_probs_used": 64,
+        "ms": 1025
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9998156938355485,
+        "correct_prob": 0.9742973243261918,
+        "label": "I",
+        "n_probs_used": 64,
+        "ms": 1026
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9998221081190182,
+        "correct_prob": 0.9958040719074599,
+        "label": "P",
+        "n_probs_used": 64,
+        "ms": 870
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.999786377672055,
+        "correct_prob": 0.9983678542401235,
+        "label": "A",
+        "n_probs_used": 64,
+        "ms": 1197
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999419815726861,
+        "correct_prob": 0.981978407113507,
+        "label": "G",
+        "n_probs_used": 64,
+        "ms": 1199
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9998174838128001,
+        "correct_prob": 0.9964719599831631,
+        "label": "N",
+        "n_probs_used": 64,
+        "ms": 1194
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9998823942027849,
+        "correct_prob": 0.9900527879550648,
+        "label": "Z",
+        "n_probs_used": 64,
+        "ms": 960
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9997853047915263,
+        "correct_prob": 0.9856640899276282,
+        "label": "A",
+        "n_probs_used": 4096,
+        "ms": 2954
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9998186036094896,
+        "correct_prob": 0.996915277272331,
+        "label": "N",
+        "n_probs_used": 4096,
+        "ms": 2905
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.999629532371998,
+        "correct_prob": 0.9745061367461036,
+        "label": "a",
+        "n_probs_used": 4096,
+        "ms": 2861
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9997482074746408,
+        "correct_prob": 0.9828073229340174,
+        "label": "z",
+        "n_probs_used": 4096,
+        "ms": 4301
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9088962117550934,
+        "correct_prob": 0.9397253469958545,
+        "label": "é",
+        "n_probs_used": 64,
+        "ms": 1243
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9428590977618717,
+        "correct_prob": 0.9939791744278467,
+        "label": "а",
+        "n_probs_used": 64,
+        "ms": 1170
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9571420156489895,
+        "correct_prob": 0.9897756580483317,
+        "label": "т",
+        "n_probs_used": 64,
+        "ms": 930
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9812720817376679,
+        "correct_prob": 0.5604488516394741,
+        "label": "á",
+        "n_probs_used": 64,
+        "ms": 972
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.8767483439056093,
+        "correct_prob": 0.9052569287298916,
+        "label": "é",
+        "n_probs_used": 64,
+        "ms": 1265
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9665012618826706,
+        "correct_prob": 0.9689386841613814,
+        "label": "т",
+        "n_probs_used": 4096,
+        "ms": 2589
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9521684642413678,
+        "correct_prob": 0.980932389678253,
+        "label": "н",
+        "n_probs_used": 4096,
+        "ms": 2596
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9942383849486955,
+        "correct_prob": 0.9977445510111314,
+        "label": "л",
+        "n_probs_used": 4096,
+        "ms": 2347
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.8912219846190286,
+        "correct_prob": 0.934301701868315,
+        "label": "é",
+        "n_probs_used": 4096,
+        "ms": 2814
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9935532978742235,
+        "correct_prob": 0.9948149862873542,
+        "label": "и",
+        "n_probs_used": 4096,
+        "ms": 2838
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.926416244270331,
+        "correct_prob": 0.8133234186563476,
+        "label": "í",
+        "n_probs_used": 4096,
+        "ms": 2798
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9787447407431217,
+        "correct_prob": 0.982224541896957,
+        "label": "к",
+        "n_probs_used": 4096,
+        "ms": 2517
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9030232209916615,
+        "correct_prob": 0.8269983302131824,
+        "label": "é",
+        "n_probs_used": 4096,
+        "ms": 2863
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9126805759727192,
+        "correct_prob": 0.8560290774039031,
+        "label": "í",
+        "n_probs_used": 4096,
+        "ms": 2859
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.7780312484343961,
+        "correct_prob": 0.3891913194755866,
+        "label": "ь",
+        "n_probs_used": 4096,
+        "ms": 2877
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9807409383783771,
+        "correct_prob": 0.9608060922583415,
+        "label": "б",
+        "n_probs_used": 4096,
+        "ms": 2620
+      },
+      {
+        "alphabet": "distinct",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9327033323209761,
+        "correct_prob": 0.9972443855165052,
+        "label": "ا",
+        "n_probs_used": 4096,
+        "ms": 2578
+      },
+      {
+        "alphabet": "distinct",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9920538797219501,
+        "correct_prob": 0.9985643256860647,
+        "label": "م",
+        "n_probs_used": 4096,
+        "ms": 2601
+      },
+      {
+        "alphabet": "distinct",
+        "n": 8,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.3145886935576793,
+        "correct_prob": 0.33198030464357287,
+        "label": "ー",
+        "n_probs_used": 4096,
+        "ms": 3177
+      },
+      {
+        "alphabet": "distinct",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.703127983661684,
+        "correct_prob": 0.8056478252439289,
+        "label": "이",
+        "n_probs_used": 4096,
+        "ms": 2409
+      },
+      {
+        "alphabet": "distinct",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.8764230921068602,
+        "correct_prob": 0.8257021156134134,
+        "label": "ا",
+        "n_probs_used": 4096,
+        "ms": 2801
+      },
+      {
+        "alphabet": "distinct",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.4893280017652927,
+        "correct_prob": 0.357132021971614,
+        "label": "ー",
+        "n_probs_used": 4096,
+        "ms": 2703
+      },
+      {
+        "alphabet": "distinct",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.7625479359247687,
+        "correct_prob": 0.6143657764027689,
+        "label": "다",
+        "n_probs_used": 300000,
+        "ms": 6922
+      },
+      {
+        "alphabet": "distinct",
+        "n": 16,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.9802835682700993,
+        "correct_prob": 0.005278772181768825,
+        "label": "ン",
+        "n_probs_used": 4096,
+        "ms": 2390
+      },
+      {
+        "alphabet": "distinct",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.8870361699448498,
+        "correct_prob": 0.801553486518471,
+        "label": "ا",
+        "n_probs_used": 4096,
+        "ms": 3261
+      },
+      {
+        "alphabet": "distinct",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.989973468383914,
+        "correct_prob": 0.9957997040315353,
+        "label": "و",
+        "n_probs_used": 4096,
+        "ms": 2869
+      },
+      {
+        "alphabet": "distinct",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.6474781521084948,
+        "correct_prob": 0.96750882724067,
+        "label": "し",
+        "n_probs_used": 4096,
+        "ms": 2853
+      },
+      {
+        "alphabet": "distinct",
+        "n": 26,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.8728962131925267,
+        "correct_prob": 0.279497529628382,
+        "label": "을",
+        "n_probs_used": 4096,
+        "ms": 2672
+      },
+      {
+        "alphabet": "distinct",
+        "n": 52,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.566424499247506,
+        "correct_prob": 0.06322148225458572,
+        "label": "ا",
+        "n_probs_used": 4096,
+        "ms": 2970
+      },
+      {
+        "alphabet": "distinct",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.7112832327853004,
+        "correct_prob": 0.8918998286207532,
+        "label": "し",
+        "n_probs_used": 4096,
+        "ms": 3001
+      },
+      {
+        "alphabet": "distinct",
+        "n": 52,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.7838703990777222,
+        "correct_prob": 0.07689562594485723,
+        "label": "를",
+        "n_probs_used": 4096,
+        "ms": 3004
+      },
+      {
+        "alphabet": "distinct",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.7504583458429147,
+        "correct_prob": 0.9784894521392061,
+        "label": "ッ",
+        "n_probs_used": 300000,
+        "ms": 8199
+      }
+    ],
+    "long_rows": [
+      {
+        "n": 104,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9998668322878704,
+        "correct_prob": 0.9676957130327436,
+        "label": "A",
+        "n_probs_used": 300000,
+        "ms": 20891
+      },
+      {
+        "n": 104,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.997024163737805,
+        "correct_prob": 0.8615137378440667,
+        "label": "a",
+        "n_probs_used": 4096,
+        "ms": 3371
+      },
+      {
+        "n": 104,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9704364700990381,
+        "correct_prob": 0.8901810148034845,
+        "label": "é",
+        "n_probs_used": 4096,
+        "ms": 5112
+      },
+      {
+        "n": 104,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9643626598123858,
+        "correct_prob": 0.6579006134321064,
+        "label": "б",
+        "n_probs_used": 4096,
+        "ms": 3386
+      }
+    ]
+  }
+]

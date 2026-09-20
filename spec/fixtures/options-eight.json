@@ -1,0 +1,43 @@
+{
+  "id": "options-eight",
+  "description": "eight options, the old label ceiling",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which applies?",
+      "criteria": {
+        "opt00": "Option number 0 of 8.",
+        "opt01": "Option number 1 of 8.",
+        "opt02": "Option number 2 of 8.",
+        "opt03": "Option number 3 of 8.",
+        "opt04": "Option number 4 of 8.",
+        "opt05": "Option number 5 of 8.",
+        "opt06": "Option number 6 of 8.",
+        "opt07": "Option number 7 of 8."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nMy invoice charged me twice for the same month and I want a refund.\n---\n\n",
+    "questions": {
+      "pick": {
+        "kind": "choice",
+        "suffix": "Which applies?\nA) Option number 0 of 8.\nB) Option number 1 of 8.\nC) Option number 2 of 8.\nD) Option number 3 of 8.\nE) Option number 4 of 8.\nF) Option number 5 of 8.\nG) Option number 6 of 8.\nH) Option number 7 of 8.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "opt00": "A",
+          "opt01": "B",
+          "opt02": "C",
+          "opt03": "D",
+          "opt04": "E",
+          "opt05": "F",
+          "opt06": "G",
+          "opt07": "H"
+        },
+        "flags": []
+      }
+    }
+  }
+}

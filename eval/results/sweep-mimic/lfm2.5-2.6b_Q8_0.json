@@ -1,0 +1,431 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 1,
+      "blocked": 2
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "plans": 0,
+      "decision_ms": [
+        4118,
+        2908,
+        4214,
+        4232,
+        4649,
+        3280,
+        4130,
+        3756,
+        3764,
+        4058,
+        4091,
+        4156,
+        4117,
+        3997
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "landed": [
+            "Display options",
+            "Navigate up",
+            "Sounds and vibration"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Favorites",
+          "screen": [
+            "ADD A FAVORITE",
+            "Contacts",
+            "Favorites",
+            "More options",
+            "No one is on your speed dial yet",
+            "Recents",
+            "Search contacts",
+            "Start voice search",
+            "key pad"
+          ],
+          "landed": [
+            "ADD A FAVORITE",
+            "Contacts",
+            "Favorites",
+            "More options",
+            "No one is on your speed dial yet",
+            "Recents",
+            "Search contacts",
+            "Start voice search",
+            "key pad"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Favorites",
+          "screen": [
+            "ADD A FAVORITE",
+            "Contacts",
+            "Favorites",
+            "More options",
+            "No one is on your speed dial yet",
+            "Recents",
+            "Search contacts",
+            "Start voice search",
+            "key pad"
+          ],
+          "landed": [
+            "ADD A FAVORITE",
+            "Contacts",
+            "Favorites",
+            "More options",
+            "No one is on your speed dial yet",
+            "Recents",
+            "Search contacts",
+            "Start voice search",
+            "key pad"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "HOME",
+          "target": "Favorites",
+          "screen": [
+            "ADD A FAVORITE",
+            "Contacts",
+            "Favorites",
+            "More options",
+            "No one is on your speed dial yet",
+            "Recents",
+            "Search contacts",
+            "Start voice search",
+            "key pad"
+          ],
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "landed": [
+            "Bluetooth, On",
+            "Do Not Disturb, Off",
+            "Flashlight, Off",
+            "Internet, AndroidWifi"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "landed": [
+            "8:13",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Internet, AndroidWifi",
+          "screen": [
+            "8:13",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "landed": [
+            "8:13",
+            "Airplane mode, Off",
+            "Alarm, No alarm set",
+            "Bluetooth, On",
+            "Collapse",
+            "Expand",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Internet, AndroidWifi",
+          "screen": [
+            "8:13",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "landed": [
+            "8:13",
+            "Airplane mode, Off",
+            "Alarm, No alarm set",
+            "Bluetooth, On",
+            "Collapse",
+            "Expand",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Internet, AndroidWifi",
+          "screen": [
+            "8:13",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "landed": [
+            "8:13",
+            "Airplane mode, Off",
+            "Alarm, No alarm set",
+            "Bluetooth, On",
+            "Collapse",
+            "Expand",
+            "Internet, AndroidWifi",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Internet, AndroidWifi",
+          "screen": [
+            "8:13",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "landed": [
+            "Bluetooth, On",
+            "Do Not Disturb, Off",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "T-Mobile / 3G",
+          "screen": [
+            "AndroidWifi / Connected",
+            "DONE",
+            "Mobile data",
+            "SHARE WI\u2011FI",
+            "T-Mobile / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "T-Mobile / Connected / 3G",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "T-Mobile / Connected / 3G",
+          "screen": [
+            "AndroidWifi / Saved",
+            "DONE",
+            "Mobile data",
+            "T-Mobile / Connected / 3G",
+            "Wi\u2011Fi"
+          ],
+          "landed": [
+            "8:14",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, T-Mobile, 3G",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 72.8
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "blocked",
+      "steps": 0,
+      "plans": 0,
+      "decision_ms": [
+        4139
+      ],
+      "gated": 1,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 4.2
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "blocked",
+      "steps": 0,
+      "plans": 0,
+      "decision_ms": [
+        4024
+      ],
+      "gated": 1,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 4.1
+    }
+  ]
+}

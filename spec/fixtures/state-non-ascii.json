@@ -1,0 +1,36 @@
+{
+  "id": "state-non-ascii",
+  "description": "non-ascii in an object state is escaped, so the prompt stays byte-stable",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": {
+    "name": "Jos\u00e9",
+    "note": "caf\u00e9 charge disputed"
+  },
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\n{\n  \"name\": \"Jos\\u00e9\",\n  \"note\": \"caf\\u00e9 charge disputed\"\n}\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Which queue should handle this?\nA) Account access: logins, passwords, permissions.\nB) Billing: invoices, payments, refunds.\nC) Technical: bugs, outages, integrations.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      }
+    }
+  }
+}

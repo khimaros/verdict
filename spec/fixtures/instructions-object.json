@@ -1,0 +1,37 @@
+{
+  "id": "instructions-object",
+  "description": "instructions as an object, the shape browser-use's jev agent sends",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Page: flight search.",
+  "questions": {
+    "operation": {
+      "type": "choice",
+      "instructions": {
+        "goal": "Find a flight to Reykjavik",
+        "rules": [
+          "Fill required fields before submitting.",
+          "Prefer visible controls over waiting."
+        ]
+      },
+      "criteria": {
+        "CLICK": "Click an element.",
+        "DONE": "Everything is satisfied."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nPage: flight search.\n---\n\n",
+    "questions": {
+      "operation": {
+        "kind": "choice",
+        "suffix": "{\n  \"goal\": \"Find a flight to Reykjavik\",\n  \"rules\": [\n    \"Fill required fields before submitting.\",\n    \"Prefer visible controls over waiting.\"\n  ]\n}\nA) Click an element.\nB) Everything is satisfied.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "CLICK": "A",
+          "DONE": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

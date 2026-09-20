@@ -1,0 +1,100 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 0,
+      "decision_ms": [
+        5920
+      ],
+      "gated": 0,
+      "error": "RuntimeError: Runtime.evaluate: {'code': -32000, 'message': 'Inspected target navigated or closed'}",
+      "failed_operation": "BACK",
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t160 points by RohanAdwankar 3 hours ago | hide | 75\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 6.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 0,
+      "decision_ms": [
+        3011
+      ],
+      "gated": 0,
+      "error": "RuntimeError: Runtime.evaluate: {'code': -32000, 'message': 'Inspected target navigated or closed'}",
+      "failed_operation": "BACK",
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t160 points by RohanAdwankar 3 hours ago | hide | 75\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 3.5
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 0,
+      "decision_ms": [
+        2987
+      ],
+      "gated": 0,
+      "error": "RuntimeError: Runtime.evaluate: {'code': -32000, 'message': 'Inspected target navigated or closed'}",
+      "failed_operation": "BACK",
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t160 points by RohanAdwankar 3 hours ago | hide | 75\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 3.4
+    }
+  ]
+}

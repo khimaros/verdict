@@ -1,0 +1,34 @@
+{
+  "goal": "Open the Settings app and navigate to the screen showing the Android version",
+  "status": "done",
+  "steps": 4,
+  "plans": 2,
+  "history": [
+    {
+      "operation": "LAUNCH",
+      "target": "Settings"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Display / Dark theme, font size, brightness"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Security & privacy / App security, device lock, permissions"
+    },
+    {
+      "operation": "TAP",
+      "target": "About emulated device / Android SDK built for x86_64"
+    }
+  ],
+  "witness": {
+    "required": 1,
+    "witnessed": 0,
+    "complete": false,
+    "answers": {},
+    "at_step": {},
+    "missing": [
+      "Android version"
+    ]
+  }
+}

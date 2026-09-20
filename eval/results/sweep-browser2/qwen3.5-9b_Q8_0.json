@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        21995,
+        38812,
+        21978
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "82 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 71\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "culi 12 minutes ago | next [\u2013] Related: https://github.com/minimaxir/hacker-news-undocumented",
+          "kens 3 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 1 hour ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "0xbadcafebee 42 minutes ago | root | parent | next [\u2013] The mods are much more sensitive now to anything they consider flame-bait, flame-baiting, or controversial. Much quicker to intimidate/threaten, de-emphasize posts, flag-kill, etc. I presume because HN may be influencing/affecting some billion dollar bottom lines now and they can't afford a bad look",
+          "Barbing 10 minutes ago | root | parent | next [\u2013] > intimidate/threaten"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 83.8
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        22325,
+        8118,
+        22230
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "82 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 71\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "culi 12 minutes ago | next [\u2013] Related: https://github.com/minimaxir/hacker-news-undocumented",
+          "kens 3 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 1 hour ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "0xbadcafebee 42 minutes ago | root | parent | next [\u2013] The mods are much more sensitive now to anything they consider flame-bait, flame-baiting, or controversial. Much quicker to intimidate/threaten, de-emphasize posts, flag-kill, etc. I presume because HN may be influencing/affecting some billion dollar bottom lines now and they can't afford a bad look",
+          "Barbing 10 minutes ago | root | parent | next [\u2013] > intimidate/threaten"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 54.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 2,
+      "decision_ms": [
+        21885,
+        38924,
+        22262
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "82 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49770293": [
+          "culi 14 minutes ago | next [\u2013] Related: https://github.com/minimaxir/hacker-news-undocumented",
+          "kens 3 hours ago | prev | next [\u2013] Author here. I don't know why this popped up 13 years later, but hi :-)",
+          "doginasuit 1 hour ago | parent | next [\u2013] Would you say it is still roughly the same?",
+          "0xbadcafebee 44 minutes ago | root | parent | next [\u2013] The mods are much more sensitive now to anything they consider flame-bait, flame-baiting, or controversial. Much quicker to intimidate/threaten, de-emphasize posts, flag-kill, etc. I presume because HN may be influencing/affecting some billion dollar bottom lines now and they can't afford a bad look",
+          "Barbing 12 minutes ago | root | parent | next [\u2013] > intimidate/threaten"
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 84.3
+    }
+  ]
+}

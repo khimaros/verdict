@@ -1,0 +1,41 @@
+{
+  "id": "score-four-levels",
+  "description": "a longer rubric",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "The export button throws a 500 on every browser we tried.",
+  "questions": {
+    "severity": {
+      "type": "score",
+      "instructions": "How severe is this?",
+      "criteria": [
+        "Cosmetic or informational.",
+        "Degraded, but a workaround exists.",
+        "Blocking with no workaround.",
+        "Blocking and causing data loss."
+      ]
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nThe export button throws a 500 on every browser we tried.\n---\n\n",
+    "questions": {
+      "severity": {
+        "kind": "score",
+        "suffix": "How severe is this?\nA) Cosmetic or informational.\nB) Degraded, but a workaround exists.\nC) Blocking with no workaround.\nD) Blocking and causing data loss.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "0": "A",
+          "1": "B",
+          "2": "C",
+          "3": "D"
+        },
+        "flags": [],
+        "legend": {
+          "0": "Cosmetic or informational.",
+          "1": "Degraded, but a workaround exists.",
+          "2": "Blocking with no workaround.",
+          "3": "Blocking and causing data loss."
+        }
+      }
+    }
+  }
+}

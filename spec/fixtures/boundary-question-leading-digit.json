@@ -1,0 +1,31 @@
+{
+  "id": "boundary-question-leading-digit",
+  "description": "a suffix opening on a digit, where naive joint tokenisation can merge",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Ticket ends with a digit 42",
+  "questions": {
+    "q": {
+      "type": "choice",
+      "instructions": "42 is the answer, but what is the question?",
+      "criteria": {
+        "yes": "It is.",
+        "no": "It is not."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nTicket ends with a digit 42\n---\n\n",
+    "questions": {
+      "q": {
+        "kind": "choice",
+        "suffix": "42 is the answer, but what is the question?\nA) It is.\nB) It is not.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "yes": "A",
+          "no": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

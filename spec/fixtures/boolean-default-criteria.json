@@ -1,0 +1,27 @@
+{
+  "id": "boolean-default-criteria",
+  "description": "boolean with no criteria uses the spec defaults",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?"
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nIf this is not fixed today I am cancelling our subscription.\n---\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "Does the sender threaten to cancel?\nA) Yes.\nB) No.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

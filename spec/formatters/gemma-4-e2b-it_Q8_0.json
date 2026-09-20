@@ -1,0 +1,23 @@
+{
+  "spec_version": "0.1.0",
+  "model": "gemma-4-e2b-it:Q8_0",
+  "model_alias": "unsloth/gemma-4-E2B-it-GGUF:Q8_0",
+  "template_sha256": "74a88f94c57c14e22dcdbe08e94127f42b87c6f584cb73838e73e32126f3f6b3",
+  "derived_from": "llama-server /props chat_template",
+  "affixes": {
+    "system_open": "<bos><|turn>system\n",
+    "system_close": "<turn|>\n",
+    "user_open": "<|turn>user\n",
+    "user_close": "<turn|>\n",
+    "assistant_open": "<|turn>model\n"
+  },
+  "verification": {
+    "cases": 10,
+    "mean_option_mass": 1.0000000021035,
+    "min_option_mass": 0.9999999807665163,
+    "smoke_correct": "9/10",
+    "split_clean": true,
+    "build_info": "b11056-e613ef2c8",
+    "labels_single_token": true
+  }
+}

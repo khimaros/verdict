@@ -1,0 +1,32 @@
+[project]
+name = "llama-verdict"
+version = "0.1.0"
+description = "typed answers read out of a gguf model, with no text generated"
+readme = "../README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+# only the formatter derivation needs a jinja engine, and only in this
+# implementation: the rust core uses the one llama.cpp already carries.
+derive = ["jinja2>=3.1"]
+dev = ["pytest>=8", "ruff>=0.6", "jinja2>=3.1"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["llama_verdict*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]

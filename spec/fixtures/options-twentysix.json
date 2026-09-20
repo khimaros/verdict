@@ -1,0 +1,79 @@
+{
+  "id": "options-twentysix",
+  "description": "26 options, the last count using uppercase labels only",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which applies?",
+      "criteria": {
+        "opt00": "Option number 0 of 26.",
+        "opt01": "Option number 1 of 26.",
+        "opt02": "Option number 2 of 26.",
+        "opt03": "Option number 3 of 26.",
+        "opt04": "Option number 4 of 26.",
+        "opt05": "Option number 5 of 26.",
+        "opt06": "Option number 6 of 26.",
+        "opt07": "Option number 7 of 26.",
+        "opt08": "Option number 8 of 26.",
+        "opt09": "Option number 9 of 26.",
+        "opt10": "Option number 10 of 26.",
+        "opt11": "Option number 11 of 26.",
+        "opt12": "Option number 12 of 26.",
+        "opt13": "Option number 13 of 26.",
+        "opt14": "Option number 14 of 26.",
+        "opt15": "Option number 15 of 26.",
+        "opt16": "Option number 16 of 26.",
+        "opt17": "Option number 17 of 26.",
+        "opt18": "Option number 18 of 26.",
+        "opt19": "Option number 19 of 26.",
+        "opt20": "Option number 20 of 26.",
+        "opt21": "Option number 21 of 26.",
+        "opt22": "Option number 22 of 26.",
+        "opt23": "Option number 23 of 26.",
+        "opt24": "Option number 24 of 26.",
+        "opt25": "Option number 25 of 26."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nMy invoice charged me twice for the same month and I want a refund.\n---\n\n",
+    "questions": {
+      "pick": {
+        "kind": "choice",
+        "suffix": "Which applies?\nA) Option number 0 of 26.\nB) Option number 1 of 26.\nC) Option number 2 of 26.\nD) Option number 3 of 26.\nE) Option number 4 of 26.\nF) Option number 5 of 26.\nG) Option number 6 of 26.\nH) Option number 7 of 26.\nI) Option number 8 of 26.\nJ) Option number 9 of 26.\nK) Option number 10 of 26.\nL) Option number 11 of 26.\nM) Option number 12 of 26.\nN) Option number 13 of 26.\nO) Option number 14 of 26.\nP) Option number 15 of 26.\nQ) Option number 16 of 26.\nR) Option number 17 of 26.\nS) Option number 18 of 26.\nT) Option number 19 of 26.\nU) Option number 20 of 26.\nV) Option number 21 of 26.\nW) Option number 22 of 26.\nX) Option number 23 of 26.\nY) Option number 24 of 26.\nZ) Option number 25 of 26.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "opt00": "A",
+          "opt01": "B",
+          "opt02": "C",
+          "opt03": "D",
+          "opt04": "E",
+          "opt05": "F",
+          "opt06": "G",
+          "opt07": "H",
+          "opt08": "I",
+          "opt09": "J",
+          "opt10": "K",
+          "opt11": "L",
+          "opt12": "M",
+          "opt13": "N",
+          "opt14": "O",
+          "opt15": "P",
+          "opt16": "Q",
+          "opt17": "R",
+          "opt18": "S",
+          "opt19": "T",
+          "opt20": "U",
+          "opt21": "V",
+          "opt22": "W",
+          "opt23": "X",
+          "opt24": "Y",
+          "opt25": "Z"
+        },
+        "flags": []
+      }
+    }
+  }
+}

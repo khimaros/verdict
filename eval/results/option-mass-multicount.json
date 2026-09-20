@@ -1,0 +1,42 @@
+[
+  {
+    "model": "minicpm5-2b:Q8_0",
+    "option_mass": 0.9999886150486507,
+    "correct": "3/3",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "6e54652d84d698eb",
+    "cached": false,
+    "usable": true,
+    "wall_s": 43.8
+  },
+  {
+    "model": "qwen3.5-9b:Q8_0",
+    "option_mass": 0.9997457025251393,
+    "correct": "3/3",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "d7075b7ba939042d",
+    "cached": false,
+    "usable": true,
+    "wall_s": 44.7
+  },
+  {
+    "model": "granite-4.2-3b:Q8_0",
+    "option_mass": 0.9999598471493268,
+    "correct": "3/3",
+    "assistant_open": "<|im_start|>assistant\n<think></think>",
+    "template_sha256": "9d573773df6d9435",
+    "cached": false,
+    "usable": true,
+    "wall_s": 47.1
+  },
+  {
+    "model": "qwen3.5-2b:Q8_0",
+    "option_mass": 0.9967659858902839,
+    "correct": "3/3",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "f569b9d7ce7f56dc",
+    "cached": false,
+    "usable": true,
+    "wall_s": 40.2
+  }
+]

@@ -1,0 +1,14 @@
+# one config for the whole repo, so that linting from the root and from
+# python/ selects the same rules. ruff resolves the nearest config to each
+# file, and a per-package pyproject would silently disagree with this.
+
+line-length = 100
+target-version = "py310"
+
+[lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF", "EXE"]
+
+[lint.per-file-ignores]
+# the probe and build scripts add the package to sys.path before importing it,
+# which is the import that E402 exists to catch and is deliberate here
+"scripts/*" = ["E402"]

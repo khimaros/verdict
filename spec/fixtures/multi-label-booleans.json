@@ -1,0 +1,53 @@
+{
+  "id": "multi-label-booleans",
+  "description": "multi-label is several booleans, not a type of its own",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "refund": {
+      "type": "boolean",
+      "instructions": "Do they want money back?"
+    },
+    "angry": {
+      "type": "boolean",
+      "instructions": "Are they angry?"
+    },
+    "repeat": {
+      "type": "boolean",
+      "instructions": "Is this a repeat contact?"
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nMy invoice charged me twice for the same month and I want a refund.\n---\n\n",
+    "questions": {
+      "refund": {
+        "kind": "boolean",
+        "suffix": "Do they want money back?\nA) Yes.\nB) No.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      },
+      "angry": {
+        "kind": "boolean",
+        "suffix": "Are they angry?\nA) Yes.\nB) No.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      },
+      "repeat": {
+        "kind": "boolean",
+        "suffix": "Is this a repeat contact?\nA) Yes.\nB) No.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

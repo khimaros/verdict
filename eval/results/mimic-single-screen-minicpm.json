@@ -1,0 +1,448 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open Settings and find how much storage space is free.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        1628,
+        1600,
+        1577,
+        2810,
+        1749
+      ],
+      "gated": 0,
+      "final_confidence": 0.9387,
+      "final_probabilities": {
+        "TAP": 0.0591,
+        "LAUNCH": 0.0,
+        "SCROLL_DOWN": 0.0,
+        "SCROLL_UP": 0.0003,
+        "BACK": 0.0,
+        "HOME": 0.0,
+        "DONE": 0.9387,
+        "BLOCKED": 0.0019
+      },
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.9985,
+          "target_confidence": 0.9156,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.4395,
+          "target_confidence": 0.9739,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "HOME",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.4818,
+          "target_confidence": 0.9543,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.8605,
+          "target_confidence": 0.9845,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "GB free": "Storage / 38% used - 9.96 GB free"
+        },
+        "at_step": {
+          "GB free": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 19.2
+    },
+    {
+      "goal": "Open Settings and find how much storage space is free.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        1444,
+        1559,
+        3036,
+        1591,
+        1629
+      ],
+      "gated": 0,
+      "final_confidence": 0.9543,
+      "final_probabilities": {
+        "TAP": 0.0435,
+        "LAUNCH": 0.0,
+        "SCROLL_DOWN": 0.0,
+        "SCROLL_UP": 0.0004,
+        "BACK": 0.0,
+        "HOME": 0.0,
+        "DONE": 0.9543,
+        "BLOCKED": 0.0018
+      },
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.9982,
+          "target_confidence": 0.8976,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.4051,
+          "target_confidence": 0.9713,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "HOME",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.504,
+          "target_confidence": 0.9513,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.8771,
+          "target_confidence": 0.9844,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "GB free": "Storage / 38% used - 9.96 GB free"
+        },
+        "at_step": {
+          "GB free": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 19.1
+    },
+    {
+      "goal": "Open Settings and find how much storage space is free.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        1477,
+        1522,
+        1587,
+        1576,
+        1668
+      ],
+      "gated": 0,
+      "final_confidence": 0.8993,
+      "final_probabilities": {
+        "TAP": 0.097,
+        "LAUNCH": 0.0,
+        "SCROLL_DOWN": 0.0001,
+        "SCROLL_UP": 0.0004,
+        "BACK": 0.0001,
+        "HOME": 0.0,
+        "DONE": 0.8993,
+        "BLOCKED": 0.0031
+      },
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.9982,
+          "target_confidence": 0.8976,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.399,
+          "target_confidence": 0.9743,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "HOME",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.5606,
+          "target_confidence": 0.9584,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.8249,
+          "target_confidence": 0.9768,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "GB free": "Storage / 38% used - 9.96 GB free"
+        },
+        "at_step": {
+          "GB free": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 17.8
+    }
+  ]
+}

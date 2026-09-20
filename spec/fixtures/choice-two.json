@@ -1,0 +1,31 @@
+{
+  "id": "choice-two",
+  "description": "the smallest choice question",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Customer cannot access an account after a password reset.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access support.",
+        "billing": "Billing support."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nCustomer cannot access an account after a password reset.\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Which queue should handle this?\nA) Account access support.\nB) Billing support.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "access": "A",
+          "billing": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

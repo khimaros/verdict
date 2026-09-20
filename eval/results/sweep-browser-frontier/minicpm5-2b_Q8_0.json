@@ -1,0 +1,349 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 2,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        5073,
+        1351,
+        4873,
+        7670,
+        5521,
+        4351,
+        1212,
+        4051,
+        1391,
+        2753,
+        3729,
+        2768,
+        1217,
+        4626
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "RohanAdwankar"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "4 hours ago"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "HOME",
+          "target": "hide"
+        },
+        {
+          "operation": "CLICK",
+          "target": "hide"
+        },
+        {
+          "operation": "BACK",
+          "target": "Forgot your password?"
+        },
+        {
+          "operation": "CLICK",
+          "target": "madars"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "2 hours ago"
+        },
+        {
+          "operation": "BACK",
+          "target": "RSA-896"
+        },
+        {
+          "operation": "CLICK",
+          "target": "hide"
+        },
+        {
+          "operation": "BACK",
+          "target": "Forgot your password?"
+        },
+        {
+          "operation": "CLICK",
+          "target": "azhenley"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t217 points by RohanAdwankar 4 hours ago | hide | 90\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 4 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 3 hours ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 1 hour ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "btown 1 hour ago | root | parent | next [\u2013] Only bots that are blocked by Cloudflare Turnstile allowed. If you score as a human you are immediately rejected.",
+          "nomeculture 1 hour ago | root | parent | next [\u2013] what an inverted world we live in."
+        ],
+        "https://news.ycombinator.com/item?id=49771966": [
+          "madars 2 hours ago | next [\u2013] More details: https://x.com/sweis/status/2101484464807596264",
+          "sjs382 43 minutes ago | parent | next [\u2013] https://xxcancel.com/sweis/status/2101484464807596264",
+          "wslh 43 minutes ago | parent | prev | next [\u2013] > It\u2019s still exponential",
+          "inopinatus 40 minutes ago | parent | prev | next [\u2013] Ah yes, the farcaster network.",
+          "tristanj 1 hour ago | prev | next [\u2013] If you've already paid for and reserved a whole cluster of GPUs, any idle capacity is capacity you've already paid for. Using it is effectively free. So might as well use it to solve fun math puzzles."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 53.3
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        6007,
+        1288,
+        5078,
+        4166,
+        6701,
+        1220,
+        7657,
+        5667,
+        1433,
+        5949,
+        3793,
+        4891,
+        3179,
+        1347
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "RohanAdwankar"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "4 hours ago"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "hide"
+        },
+        {
+          "operation": "BACK",
+          "target": "Forgot your password?"
+        },
+        {
+          "operation": "HOME",
+          "target": "madars"
+        },
+        {
+          "operation": "CLICK",
+          "target": "madars"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "2 hours ago"
+        },
+        {
+          "operation": "BACK",
+          "target": "RSA-896"
+        },
+        {
+          "operation": "HOME",
+          "target": "hide"
+        },
+        {
+          "operation": "CLICK",
+          "target": "hide"
+        },
+        {
+          "operation": "BACK",
+          "target": "Forgot your password?"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t218 points by RohanAdwankar 4 hours ago | hide | 91\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 4 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 3 hours ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 1 hour ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "btown 1 hour ago | root | parent | next [\u2013] Only bots that are blocked by Cloudflare Turnstile allowed. If you score as a human you are immediately rejected.",
+          "nomeculture 1 hour ago | root | parent | next [\u2013] what an inverted world we live in."
+        ],
+        "https://news.ycombinator.com/item?id=49771966": [
+          "madars 2 hours ago | next [\u2013] More details: https://x.com/sweis/status/2101484464807596264",
+          "sjs382 45 minutes ago | parent | next [\u2013] https://xxcancel.com/sweis/status/2101484464807596264",
+          "wslh 45 minutes ago | parent | prev | next [\u2013] > It\u2019s still exponential",
+          "inopinatus 42 minutes ago | parent | prev | next [\u2013] Ah yes, the farcaster network.",
+          "tristanj 1 hour ago | prev | next [\u2013] If you've already paid for and reserved a whole cluster of GPUs, any idle capacity is capacity you've already paid for. Using it is effectively free. So might as well use it to solve fun math puzzles."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 61.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        2838,
+        1312,
+        2849,
+        7728,
+        4198,
+        4415,
+        1208,
+        4629,
+        1345,
+        3206,
+        2977,
+        3232,
+        1218,
+        6100
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "RohanAdwankar"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "4 hours ago"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "HOME",
+          "target": "hide"
+        },
+        {
+          "operation": "CLICK",
+          "target": "hide"
+        },
+        {
+          "operation": "BACK",
+          "target": "Forgot your password?"
+        },
+        {
+          "operation": "CLICK",
+          "target": "madars"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "2 hours ago"
+        },
+        {
+          "operation": "BACK",
+          "target": "RSA-896"
+        },
+        {
+          "operation": "CLICK",
+          "target": "hide"
+        },
+        {
+          "operation": "BACK",
+          "target": "Forgot your password?"
+        },
+        {
+          "operation": "CLICK",
+          "target": "azhenley"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t218 points by RohanAdwankar 4 hours ago | hide | 91\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 4 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 3 hours ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 1 hour ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "btown 1 hour ago | root | parent | next [\u2013] Only bots that are blocked by Cloudflare Turnstile allowed. If you score as a human you are immediately rejected.",
+          "nomeculture 1 hour ago | root | parent | next [\u2013] what an inverted world we live in."
+        ],
+        "https://news.ycombinator.com/item?id=49771966": [
+          "madars 2 hours ago | next [\u2013] More details: https://x.com/sweis/status/2101484464807596264",
+          "sjs382 45 minutes ago | parent | next [\u2013] https://xxcancel.com/sweis/status/2101484464807596264",
+          "wslh 45 minutes ago | parent | prev | next [\u2013] > It\u2019s still exponential",
+          "inopinatus 42 minutes ago | parent | prev | next [\u2013] Ah yes, the farcaster network.",
+          "tristanj 1 hour ago | prev | next [\u2013] If you've already paid for and reserved a whole cluster of GPUs, any idle capacity is capacity you've already paid for. Using it is effectively free. So might as well use it to solve fun math puzzles."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 50.0
+    }
+  ]
+}

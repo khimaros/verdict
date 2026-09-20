@@ -1,0 +1,196 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 3,
+      "plans": 0,
+      "decision_ms": [
+        1538,
+        1651,
+        1582,
+        1637
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Settings",
+          "screen": [
+            "Call history",
+            "Settings"
+          ],
+          "landed": [
+            "About",
+            "Accessibility",
+            "Blocked numbers",
+            "Calls",
+            "Display options",
+            "Navigate up",
+            "Quick responses",
+            "Sounds and vibration",
+            "Voicemail"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About",
+          "screen": [
+            "About",
+            "Accessibility",
+            "Blocked numbers",
+            "Calls",
+            "Display options",
+            "Navigate up",
+            "Quick responses",
+            "Sounds and vibration",
+            "Voicemail"
+          ],
+          "landed": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Build version / 23.0",
+          "screen": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "landed": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 3,
+      "decisions": 4,
+      "wall_s": 10.5
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 1,
+      "plans": 0,
+      "decision_ms": [
+        1545,
+        1615
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Build version / 23.0",
+          "screen": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "landed": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 6.2
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 1,
+      "plans": 0,
+      "decision_ms": [
+        1509,
+        1559
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Build version / 23.0",
+          "screen": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "landed": [
+            "Build version / 23.0",
+            "Navigate up",
+            "Open source licenses / License details for open source software",
+            "Privacy policy",
+            "Terms of service"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 6.1
+    }
+  ]
+}

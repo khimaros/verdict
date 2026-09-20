@@ -1,0 +1,278 @@
+# verdict
+
+**an open source, self-hosted alternative to typesafe's jev and its system one
+api.** verdict serves the same wire protocol on your own hardware, so an
+existing jev client changes its base url and nothing else.
+
+a small python server sits in front of your existing llama-server or llama-swap
+endpoint with any model of your choosing and serves a jev compatible API.
+
+answer typed questions about a piece of text without generating any text.
+
+one forward pass, read the probability the model puts on each declared option
+label, renormalise over them. the answer is a distribution over option ids,
+with the confidence signals needed to decide whether to act on it.
+
+the shape of it, one question from the hacker news demo:
+
+```
+question: which of these links opens the story's comments?
+options:  A "229 comments"  B "Hacker News"  C "hide"  D "past"
+answer:   a distribution over A-D, plus the option mass that landed on A-D
+          at all before renormalising
+```
+
+no tokens are sampled, so nothing here is random: there is no seed to set,
+because the sampler's rng never touches the numbers being read.
+
+that is not the same as bit-identical, and the difference is measured. on a
+quiet server the same prompt returns the same probabilities every time -- eight
+models reproduced their scores exactly across separate runs. on a server under
+load, 5 of 16 prompts came back different, by up to 3.2e-02, because
+llama.cpp packs concurrent work into shared batches and matmul reduction order
+follows batch shape. `spec/SPEC.md` section 12 carries the tolerance that
+implies, and `docs/EVALS.md` carries the noise floor it puts on every number
+measured here.
+
+## why you might want this instead
+
+| | jev (hosted) | verdict |
+|---|---|---|
+| where it runs | typesafe's api | your hardware, including a phone |
+| the model | theirs | any gguf you already have |
+| your data | leaves the machine | does not |
+| cost | per call | electricity |
+| the wire protocol | `POST /v1/systemone` | the same |
+| accuracy | not measured here | measured, `docs/EVALS.md` |
+
+the trade is real and stated plainly: a hosted service is somebody else's
+problem to run and tune, and verdict makes you pick a model and live with what
+`docs/EVALS.md` says about it. a 2.5b model answers in 374 ms, completes a
+single-screen android goal 3/3 with no false completions, and fails a goal
+that needs navigation 3/3.
+
+## why read logits instead of generating
+
+a model asked to "reply with only the letter" still generates, still drifts,
+still needs parsing and retries. reading the logits at one position skips all
+of that. it is one short request instead of a generation, and the result comes
+with a health signal a generated answer does not have.
+
+**option mass** is that signal: the raw probability that landed on the label
+tokens before renormalising. a model can rank options perfectly on an option
+mass of 1.7e-08, because renormalising a rounding error still ranks it.
+accuracy cannot see that; option mass can.
+
+## long option lists
+
+`A`-`Za`-`z` labels 52 options. past that the labels come from the model's own
+vocabulary -- single-character letters it already has tokens for, thousands of
+them -- so a longer list is still read at one position rather than bracketed
+into an approximation. it is opt-in, `--wide-alphabet`.
+
+**it is not free, and what it costs depends on the model.** measured with list
+length held fixed and **every** label unfamiliar, which is the worst case
+rather than the shipped one:
+
+| | ascii labels | all labels unfamiliar |
+|---|---|---|
+| qwen3.5-9b | 16/16, mass 0.9996 | 16/16, mass 0.7780 |
+| minicpm5-2b | 16/16, mass 0.9995 | **9/16**, mass 0.6991 |
+| granite-4.2-3b | 15/16, mass 0.9671 | 12/16, mass **0.3754** |
+| qwen3.5-2b | 14/16, mass 0.9844 | 12/16, mass **0.3577** |
+
+only the 9b model escapes an accuracy cost. in the configuration actually
+shipped the pinned 52 come first, so a 104 option list is half familiar and
+option mass stays at 0.92 to 0.99 on all four.
+
+it also costs latency: an unfamiliar label is not in the top 64 candidates, so
+the readout has to widen to find it, and the median decision goes from 1033 ms
+to 2596 ms.
+
+**a model that cannot use its own alphabet is refused rather than served.** the
+alphabet is verified the way a formatter is -- by scoring an unambiguous
+question labelled entirely from it -- and both the option mass and the answer
+have to hold up. of the four models measured, two are served and two refused,
+and the two served then pick the right element out of 80.
+
+shortlist if you can; `docs/EVALS.md` section 2a has the rest, including three
+cheaper ways to predict this that were measured and all failed.
+
+## layout
+
+| | |
+|---|---|
+| `spec/` | the contract: prompt layout, question types, result object, golden fixtures |
+| `python/llama_verdict/` | reference client and a jev-compatible server |
+| `demos/` | agent loops driven entirely by typed decisions |
+| `scripts/` | probes, formatter derivation, profiling |
+| `docs/` | measured results and the decisions behind them |
+
+`spec/` is the source of truth. the definitive implementation will be rewritten
+in rust, so the part that has to survive that is the spec and its fixtures, not
+this client.
+
+## running it
+
+needs a llama-server or llama-swap with a chat model.
+
+```shell
+make                                  # validate the spec and fixtures
+make test                             # conformance tests, no model needed
+make precommit                        # lint, build, test
+
+export LLAMA_VERDICT_URL=http://10.1.200.250:7860/v1
+export LLAMA_VERDICT_MODEL=qwen3.5-9b:Q8_0
+make test-e2e                         # end to end against the live server
+```
+
+a formatter is the small set of affixes that steer a given model to answer with
+a bare label. it is **derived when a model is first used** -- nothing to fit in
+advance and no per-model artifact to ship. the model's own chat template is
+rendered with sentinel messages and diffed, the result is checked against the
+option mass floor, and it is cached by the template's sha256 so it happens once
+per model rather than once per process.
+
+that matters because a pinned table can only cover models someone thought to
+pin, which fails the case the library exists for: pointing it at an arbitrary
+gguf on a device.
+
+```shell
+# no --formatter: the affixes come from the model's own template
+PYTHONPATH=python python3 -m llama_verdict.server \
+  --base-url "$LLAMA_VERDICT_URL" --model gemma-4-e4b-it:Q8_0 --port 8477
+#   formatter gemma-4-e4b-it:Q8_0 (mean option mass 1.0000, derived ...)
+```
+
+first derivation costs about 30-50 s, nearly all of it resolving the 52 label
+token ids; a cached template is ~300 ms. `jinja2` is imported only on that
+path, so a cached or pinned model stays stdlib-only.
+
+`spec/formatters/` holds four fitted tables and a synthetic `reference.json`.
+those are **golden regression fixtures, not the runtime source**: conformance
+asserts that deriving a pinned model today reproduces its affixes byte for
+byte, so a change in the engine, the derivation or the template shows up as a
+diff. `make formatters` refreshes them. a formatter fitted to one model does
+not transfer to another -- measured, a mismatched opening puts about 1e-7 of
+the mass on the labels.
+
+## the jev server, and what verdict is not
+
+**verdict is an independent project. it is not affiliated with, endorsed by, or
+derived from typesafe, and jev and system one are their names, not ours.**
+
+typesafe's jev is a hosted decision model, called over an http api whose
+decision endpoint is `POST /v1/systemone`. verdict serves that same wire shape,
+so **an existing jev client changes its base url and nothing else** -- no
+client code, no field renaming. see `docs/JEV_API.md`, which records the public
+sources it was written from and the date they were read.
+
+the relationship is one-directional and has three parts, worth separating:
+
+| | |
+|---|---|
+| **the protocol** | a public api surface we implement. `/v1/systemone`, the `choice` / `score` / `noul` question types, and the response fields clients validate |
+| **the mechanism** | ours. read the probability mass on declared option labels at one token position and renormalise. nothing about how jev works internally is known to us or claimed here |
+| **the conformance test** | `browser-use/jev-ultrafast`, an unmodified third-party jev client, pointed at verdict with `TYPESAFE_BASE_URL`. it working is the only real evidence the wire shape is right |
+
+that last one is why the compatibility matters to us at all: a protocol you
+implement from documentation is a guess until somebody else's client drives it
+unchanged.
+
+**compatibility is a surface, not a claim of equivalence.** verdict is a local
+readout over a gguf you already have. it makes no claim to match jev's
+accuracy, calibration, latency or behaviour, and `docs/EVALS.md` measures what
+it actually does rather than comparing against a hosted service we cannot
+inspect.
+
+the server is optional. the python client and the demos talk to it over the
+same protocol because that keeps one wire format in the project rather than
+two, and because the rust core is expected to replace this server rather than
+grow it.
+
+```shell
+PYTHONPATH=python python3 -m llama_verdict.server \
+  --base-url "$LLAMA_VERDICT_URL" --model "$LLAMA_VERDICT_MODEL" --port 8477
+```
+
+the demos below all expect it on `127.0.0.1:8477`. `--formatter` is optional
+and only pins a table instead of deriving one; `--assistant-open` spells out an
+assistant opening for a format whose generation prompt ends before content
+begins, which gpt-oss needs.
+
+## demos
+
+agent loops where every decision is a typed question and nothing is generated.
+
+```shell
+# hacker news, our own cdp driver
+./demos/browser_agent.py \
+  --goal "Read the top 5 comments on each of the top 3 stories on Hacker News." \
+  --require '[0-9]+\s*comments' \
+  --collect '^\s*[a-z0-9_-]{2,15} [0-9]+ (?:minute|hour|day)s? ago \|[^\n]*\n+[^\n]+' \
+  --retire-read
+
+# the same task through an unmodified browser-use/jev-ultrafast client
+./demos/run_hn_demo.py --target-first --shortlist 26
+
+# android, over mimic's accessibility surface
+./demos/mimic_agent.py --goal "Open About phone and find the Android version." \
+  --require "Android version" --launch
+```
+
+`--require` is how a run is SCORED: each pattern must actually appear on a
+screen the agent reached. the agent's own `DONE` is an opinion, and one was
+measured at 0.32 with a third of the goal outstanding.
+
+that opinion does carry signal, though. true completions measure 0.862-0.984
+and false ones 0.522-0.757, so `--done-confidence 0.81` separates them with
+room for the drift in section 12 of the spec. run across the three models that
+produced false completions, it removed **all four** and blocked no true one.
+
+it buys trustworthiness rather than capability: the models that could not do
+the task still cannot, they now run out of steps instead of claiming success.
+it is off by default, and holds a separate threshold from `--min-confidence` on
+purpose -- "is this the right target" and "is the task finished" are different
+questions.
+
+`--collect` is the task's OUTPUT. verdict decides where to look and never
+produces the answer text, so whatever the agent navigated to is read off the
+page rather than generated. `scripts/page_text.py URL` dumps exactly what the
+agent sees, which is how to write one of these patterns.
+
+**`docs/EVALS.md` is the results document** -- every measurement, the
+instrument that produced it, and what it does not show. the cheap instruments
+come first there for a reason: a benchmark ranks a model in a minute with no
+browser and no device, and an agent run against a live site measures the model,
+the harness, the network and a page that moves underneath it.
+
+```shell
+scripts/smoke_models.py --models qwen3.5-4b:Q8_0 minicpm5-2b:Q8_0
+```
+
+`docs/DEMOS.md` carries the agent-loop narrative and the interventions that did
+nothing.
+
+## licence
+
+**GPL-3.0-or-later.** the full text is in `LICENSE`, verbatim from the fsf.
+
+worth knowing before building on it, because it is a strong copyleft and this
+project is heading for a library: `REQUIREMENTS.md` FR7 describes a flutter
+library loading a gguf through llama.cpp via ffi, and the plan's phases 5 and 6
+build a dart core and an ffi plugin. under the GPL an application that links
+that library must itself be GPL-compatible, which apache-2.0 -- the licence the
+plan originally defaulted to -- would not have required. that is a deliberate
+choice by the product owner and not an oversight; flagged here so nobody
+discovers it at integration time.
+
+`THIRD_PARTY.md` and the dependency licence check are not written yet. the
+python client is stdlib only except `jinja2`, which is used on the derivation
+path alone and is BSD-3-Clause.
+
+## what is not claimed
+
+calibrated probabilities, out of the box. gemma-4-e2b was measured reporting
+1.000 confidence on wrong answers. gating on raw confidence is not safe until
+a calibration is fitted on your own data, and the docs say which model sizes
+are fit for which kinds of question rather than implying all of them are.

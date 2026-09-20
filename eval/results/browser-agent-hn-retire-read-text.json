@@ -1,0 +1,237 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 2,
+    "reached_one": 3,
+    "mean_stories": 2.6666666666666665,
+    "statuses": {
+      "done": 2,
+      "blocked": 1
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        20842,
+        34111,
+        20892,
+        37328,
+        20895,
+        37591
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "49 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "233 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "707 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t74 points by azhenley 2 hours ago | hide | 49\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "abraxas 28 minutes ago | next [\u2013] What gets me as a non-native speaker far more than \"a vs an\" is the \"a vs the\" conundrum. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "AndrewDucker 19 minutes ago | parent | next [\u2013] If there's more than one, and you don't care which one, then it's \"a\". If you care which one then it's \"the\".",
+          "lwansbrough 17 minutes ago | parent | prev | next [\u2013] I was going to start by stating the difference is \u201ca\u201d is unspecific, \u201cthe\u201d implies the subject is already known.",
+          "ahartmetz 4 minutes ago | root | parent | next [\u2013] It's because the town has one out of the set of all castles.",
+          "mauvehaus 6 minutes ago | root | parent | prev | next [\u2013] \"Our town has the castle\" would mean that of (all the gin joints in) all the towns in all the world, only yours has a castle. Also not academically qualified, also a native speaker."
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 4 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 3 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 1 hour ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 6 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 1 hour ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 174.3
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        20972,
+        36025,
+        20951,
+        37505,
+        20937,
+        37724
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "52 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "233 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "707 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t77 points by azhenley 2 hours ago | hide | 52\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "hbn 1 minute ago | prev | next [\u2013] A funny quirk of English I never noticed until I started learning Spanish:",
+          "abraxas 30 minutes ago | prev | next [\u2013] What gets me as a non-native speaker far more than \"a vs an\" is the \"a vs the\" conundrum. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "AndrewDucker 21 minutes ago | parent | next [\u2013] If there's more than one, and you don't care which one, then it's \"a\". If you care which one then it's \"the\".",
+          "lwansbrough 19 minutes ago | parent | prev | next [\u2013] I was going to start by stating the difference is \u201ca\u201d is unspecific, \u201cthe\u201d implies the subject is already known.",
+          "ahartmetz 6 minutes ago | root | parent | next [\u2013] It's because the town has one out of the set of all castles."
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 4 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 3 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 2 hours ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ],
+        "https://news.ycombinator.com/item?id=49764791": [
+          "ajjenkins 11 hours ago | next [\u2013] A lot of people in the comments say that the supposedly better examples in the article are still \u201chorrible\u201d because they can tell they\u2019re AI and point to things that the AI did \u201cwrong\u201d and a human artist would do better.",
+          "eloisant 10 hours ago | parent | next [\u2013] The biggest problem that I have with most AI posters is that they are too busy, you have to look for information instead of seeing it popping right away.",
+          "ereiamjh 7 hours ago | root | parent | next [\u2013] This is very true and after rendering 100 prompts twice for https://john.hartnup.uk/poster-prompts/ I realised that the prompts could be improved by asking for much less clutter. The best examples on there pick out one main visual subject, but many of them are too fussy.",
+          "vintagevibe 6 hours ago | root | parent | next [\u2013] Pro designers are generally paid because they\u2019re extremely good editors. And they\u2019re an intermediary between clients and their consumers.",
+          "yellowapple 1 hour ago | root | parent | next [\u2013] Designers having that artistic taste, and clients lacking it, is exactly why I don't think generative AI is going to do much to replace (skilled) designers anytime soon. Likewise for other creative professions, and indeed for knowledge work in general."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 176.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 6,
+      "decision_ms": [
+        20828,
+        37127,
+        21065,
+        37318,
+        21078,
+        26417,
+        21174
+      ],
+      "gated": 2,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "55 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "235 comments"
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t77 points by azhenley 2 hours ago | hide | 55\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49769944": [
+          "hbn 5 minutes ago | next [\u2013] A funny quirk of English I never noticed until I started learning Spanish:",
+          "dearjames 0 minutes ago | prev | next [\u2013] This reminds me of the multiple AI videos out there that I have to involuntarily listen to because people hate using earphones/headphones. They just start off like \"The man/woman blah blah blah\", and my poor brain is always noting that's bad English/grammar or whatever because What man/woman are you talking about? Where did he/she come from in this story that you just started telling?",
+          "mkatx 1 minute ago | prev | next [\u2013] I always wondered if some uses of the word 'and' I notice on occasion might have similar explanations, or if they were the result of misspelling, mistyping, incorrect autocorrect, etc.. anyone know?",
+          "abraxas 34 minutes ago | prev | next [\u2013] What gets me as a non-native speaker far more than \"a vs an\" is the \"a vs the\" conundrum. I still don't quite get when something needs to be \"indefinite\" and I've been speaking English for close to forty years. My native tongue lacks articles altogether and it's soo bloody hard I feel hopeless I'll ever master them fully.",
+          "Tade0 1 minute ago | parent | next [\u2013] It leads to some funny situations."
+        ],
+        "https://news.ycombinator.com/item?id=49765348": [
+          "johnfn 4 hours ago | next [\u2013] It\u2019s a tale as old as time \u2014 people don\u2019t understand that marketing and branding are just as important, if not more so, than the product. Jev is exceptionally-well branded. Anyone can look at the webpage and understand it, and the implications, instantly.",
+          "calebkaiser 2 hours ago | parent | next [\u2013] This is also a really common thing in ML specifically. We joke about getting Schmidthuber'd, which is when Jurgen Schmidthuber (sometimes correctly) announces that he or one of his colleagues actually proposed your thing 37 years ago in a Japanese linguists journal.",
+          "robrenaud 3 hours ago | parent | prev | next [\u2013] > \u201cPredicting sales conversion probability from conversations using pure Reinforcement Learning\u201d. Can you understand what that means?",
+          "verdverm 3 hours ago | root | parent | next [\u2013] The title doesn't reflect the content of the paper or project, which uses things like RAG and an orchestrator, so more than \"pure RL\"",
+          "XTXinverseXTY 2 hours ago | parent | prev | next [\u2013] OP's was leaky slop from day one [0][1], as is his article [2]"
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 6,
+      "decisions": 7,
+      "wall_s": 187.5
+    }
+  ]
+}

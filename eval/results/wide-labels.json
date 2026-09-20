@@ -1,0 +1,1454 @@
+[
+  {
+    "model": "qwen3.5-9b:Q8_0",
+    "wide_labels_available": 160,
+    "non_ascii_available": 108,
+    "first_non_ascii": "é",
+    "by_alphabet": {
+      "ascii": {
+        "correct": "16/16",
+        "accuracy": 1.0,
+        "min_option_mass": 0.999629532371998
+      },
+      "wide": {
+        "correct": "16/16",
+        "accuracy": 1.0,
+        "min_option_mass": 0.7780312484343961
+      }
+    },
+    "by_alphabet_count": {
+      "ascii": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "4/4"
+      },
+      "wide": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "4/4"
+      }
+    },
+    "long_list": {
+      "correct": "4/4",
+      "accuracy": 1.0,
+      "min_option_mass": 0.9643626598123858,
+      "n": 104
+    },
+    "wall_s": 193.8,
+    "rows": [
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999501141120277,
+        "correct_prob": 0.9999423562302194,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999746819889449,
+        "correct_prob": 0.9999305448692218,
+        "label": "C"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999366318724763,
+        "correct_prob": 0.9945812452894713,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999199274767229,
+        "correct_prob": 0.9994866075804978,
+        "label": "H"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999166937722517,
+        "correct_prob": 0.9980853778981716,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999230012570425,
+        "correct_prob": 0.9871719624281556,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9998156938355485,
+        "correct_prob": 0.9742973243261918,
+        "label": "I"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9998221081190182,
+        "correct_prob": 0.9958040719074599,
+        "label": "P"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.999786377672055,
+        "correct_prob": 0.9983678542401235,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999419815726861,
+        "correct_prob": 0.981978407113507,
+        "label": "G"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9998174838128001,
+        "correct_prob": 0.9964719599831631,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9998823942027849,
+        "correct_prob": 0.9900527879550648,
+        "label": "Z"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9997853047915263,
+        "correct_prob": 0.9856640899276282,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9998186036094896,
+        "correct_prob": 0.996915277272331,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.999629532371998,
+        "correct_prob": 0.9745061367461036,
+        "label": "a"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9997482074746408,
+        "correct_prob": 0.9828073229340174,
+        "label": "z"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9088962117550934,
+        "correct_prob": 0.9397253469958545,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9428590977618717,
+        "correct_prob": 0.9939791744278467,
+        "label": "а"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9571420156489895,
+        "correct_prob": 0.9897756580483317,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9812720817376679,
+        "correct_prob": 0.5604488516394741,
+        "label": "á"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.8767483439056093,
+        "correct_prob": 0.9052569287298916,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9665012618826706,
+        "correct_prob": 0.9689386841613814,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9521684642413678,
+        "correct_prob": 0.980932389678253,
+        "label": "н"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9942383849486955,
+        "correct_prob": 0.9977445510111314,
+        "label": "л"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.8912219846190286,
+        "correct_prob": 0.934301701868315,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9935532978742235,
+        "correct_prob": 0.9948149862873542,
+        "label": "и"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.926416244270331,
+        "correct_prob": 0.8133234186563476,
+        "label": "í"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9787447407431217,
+        "correct_prob": 0.982224541896957,
+        "label": "к"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9030232209916615,
+        "correct_prob": 0.8269983302131824,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9126805759727192,
+        "correct_prob": 0.8560290774039031,
+        "label": "í"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.7780312484343961,
+        "correct_prob": 0.3891913194755866,
+        "label": "ь"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9807409383783771,
+        "correct_prob": 0.9608060922583415,
+        "label": "б"
+      }
+    ],
+    "long_rows": [
+      {
+        "n": 104,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9998668322878704,
+        "correct_prob": 0.9676957130327436,
+        "label": "A"
+      },
+      {
+        "n": 104,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.997024163737805,
+        "correct_prob": 0.8615137378440667,
+        "label": "a"
+      },
+      {
+        "n": 104,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9704364700990381,
+        "correct_prob": 0.8901810148034845,
+        "label": "é"
+      },
+      {
+        "n": 104,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9643626598123858,
+        "correct_prob": 0.6579006134321064,
+        "label": "б"
+      }
+    ]
+  },
+  {
+    "model": "minicpm5-2b:Q8_0",
+    "wide_labels_available": 160,
+    "non_ascii_available": 108,
+    "first_non_ascii": "的",
+    "by_alphabet": {
+      "ascii": {
+        "correct": "16/16",
+        "accuracy": 1.0,
+        "min_option_mass": 0.9995145601949537
+      },
+      "wide": {
+        "correct": "9/16",
+        "accuracy": 0.5625,
+        "min_option_mass": 0.6990704031540198
+      }
+    },
+    "by_alphabet_count": {
+      "ascii": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "4/4"
+      },
+      "wide": {
+        "8": "3/4",
+        "16": "3/4",
+        "26": "2/4",
+        "52": "1/4"
+      }
+    },
+    "long_list": {
+      "correct": "2/4",
+      "accuracy": 0.5,
+      "min_option_mass": 0.9261572347962479,
+      "n": 104
+    },
+    "wall_s": 166.3,
+    "rows": [
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999892077445172,
+        "correct_prob": 0.9961651186874979,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999995361305204,
+        "correct_prob": 0.9999911655403705,
+        "label": "C"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999986061977097,
+        "correct_prob": 0.9999382127950953,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999901902340489,
+        "correct_prob": 0.9976347202922806,
+        "label": "H"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999897017058709,
+        "correct_prob": 0.9609933534707338,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999726411433648,
+        "correct_prob": 0.9989214843939159,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999970638092291,
+        "correct_prob": 0.9974389156865385,
+        "label": "I"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999956784907172,
+        "correct_prob": 0.9697707477909787,
+        "label": "P"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.999990009248467,
+        "correct_prob": 0.9720451792432814,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999888914491041,
+        "correct_prob": 0.9922687366839574,
+        "label": "G"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999925043293519,
+        "correct_prob": 0.9484158316068371,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999891799672785,
+        "correct_prob": 0.9746016820546393,
+        "label": "Z"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999574960149359,
+        "correct_prob": 0.7536979683005799,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9998806471512565,
+        "correct_prob": 0.830481110129505,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9995145601949537,
+        "correct_prob": 0.4979758597443586,
+        "label": "a"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9996232353626804,
+        "correct_prob": 0.9665986243121331,
+        "label": "z"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.7525077596133904,
+        "correct_prob": 0.00014619753810989294,
+        "label": "的"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9679421229478583,
+        "correct_prob": 0.6506662093169493,
+        "label": "е"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9273037231382137,
+        "correct_prob": 0.9783262553965041,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.988426245542533,
+        "correct_prob": 0.985409875727003,
+        "label": "是"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.6990704031540198,
+        "correct_prob": 0.007337017532885893,
+        "label": "的"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.8349085488837797,
+        "correct_prob": 0.8552173858264952,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.8963245945913648,
+        "correct_prob": 0.828802953206503,
+        "label": "н"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9964918803870004,
+        "correct_prob": 0.9981756870722696,
+        "label": "有"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.7418091409766967,
+        "correct_prob": 0.0044987131458047004,
+        "label": "的"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9887732676608126,
+        "correct_prob": 0.992193877272259,
+        "label": "一"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.9255884263440258,
+        "correct_prob": 0.06200513607204482,
+        "label": "า"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9786686476630694,
+        "correct_prob": 0.5130660677041121,
+        "label": "中"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.729507340528464,
+        "correct_prob": 0.001325396304722107,
+        "label": "的"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "quarter",
+        "ok": false,
+        "option_mass": 0.9655235172795026,
+        "correct_prob": 0.02392343612650358,
+        "label": "า"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.95750487084777,
+        "correct_prob": 0.6590413776486858,
+        "label": "大"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.8948007532043333,
+        "correct_prob": 0.3158514297052554,
+        "label": "也"
+      }
+    ],
+    "long_rows": [
+      {
+        "n": 104,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9980465401402377,
+        "correct_prob": 0.903455349472263,
+        "label": "A"
+      },
+      {
+        "n": 104,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9886315812183591,
+        "correct_prob": 0.7688376071052803,
+        "label": "a"
+      },
+      {
+        "n": 104,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.9528088900608791,
+        "correct_prob": 0.0012973089628214223,
+        "label": "的"
+      },
+      {
+        "n": 104,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.9261572347962479,
+        "correct_prob": 9.274560858937865e-06,
+        "label": "也"
+      }
+    ]
+  },
+  {
+    "model": "granite-4.2-3b:Q8_0",
+    "wide_labels_available": 160,
+    "non_ascii_available": 108,
+    "first_non_ascii": "é",
+    "by_alphabet": {
+      "ascii": {
+        "correct": "15/16",
+        "accuracy": 0.9375,
+        "min_option_mass": 0.9671285100824409
+      },
+      "wide": {
+        "correct": "12/16",
+        "accuracy": 0.75,
+        "min_option_mass": 0.3754297257092739
+      }
+    },
+    "by_alphabet_count": {
+      "ascii": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "3/4"
+      },
+      "wide": {
+        "8": "4/4",
+        "16": "3/4",
+        "26": "3/4",
+        "52": "2/4"
+      }
+    },
+    "long_list": {
+      "correct": "2/4",
+      "accuracy": 0.5,
+      "min_option_mass": 0.9855674147047538,
+      "n": 104
+    },
+    "wall_s": 187.6,
+    "rows": [
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999615603054948,
+        "correct_prob": 0.9999980276712094,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9998548117039792,
+        "correct_prob": 0.9878800113771952,
+        "label": "C"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999649780031469,
+        "correct_prob": 0.9544450534868728,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.999659494558932,
+        "correct_prob": 0.9895480292442581,
+        "label": "H"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9995038216954182,
+        "correct_prob": 0.9997433635112248,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9998368262460573,
+        "correct_prob": 0.8224634824573405,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9940574508511653,
+        "correct_prob": 0.44136226309972326,
+        "label": "I"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.999999589087349,
+        "correct_prob": 0.9999990996100463,
+        "label": "P"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9999534646305718,
+        "correct_prob": 0.99999432143529,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9671285100824409,
+        "correct_prob": 0.32268063383668605,
+        "label": "G"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999998735346394,
+        "correct_prob": 0.9999966693956064,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999975478485047,
+        "correct_prob": 0.9999808752231434,
+        "label": "Z"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.9955162220112866,
+        "correct_prob": 0.3482990634922104,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999902330560229,
+        "correct_prob": 0.9655391112362189,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999280552574823,
+        "correct_prob": 0.9945636074779917,
+        "label": "a"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999542844401983,
+        "correct_prob": 0.9997114395191213,
+        "label": "z"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9669451190374548,
+        "correct_prob": 0.9213810104510436,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9776763819261712,
+        "correct_prob": 0.9878811442124471,
+        "label": "а"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9992190558044168,
+        "correct_prob": 0.9993107938652386,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.99624656323015,
+        "correct_prob": 0.8106976993164918,
+        "label": "á"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.9672880835426155,
+        "correct_prob": 0.4744845339129414,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9948035511997967,
+        "correct_prob": 0.674453378626467,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9982084082086354,
+        "correct_prob": 0.7113378195280002,
+        "label": "н"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9997246078984392,
+        "correct_prob": 0.9994231252094896,
+        "label": "л"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9311040101958801,
+        "correct_prob": 0.6021054453644786,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "quarter",
+        "ok": false,
+        "option_mass": 0.9115042998314876,
+        "correct_prob": 0.015101218521283735,
+        "label": "и"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9999372300986383,
+        "correct_prob": 0.9998878232227291,
+        "label": "í"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9999935752694161,
+        "correct_prob": 0.9999935500859878,
+        "label": "к"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "first",
+        "ok": false,
+        "option_mass": 0.9649669344167711,
+        "correct_prob": 0.14451267523576078,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9997733529821766,
+        "correct_prob": 0.9999801773120671,
+        "label": "í"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.3754297257092739,
+        "correct_prob": 0.011861248016119251,
+        "label": "ь"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9965145452516112,
+        "correct_prob": 0.9999163948059171,
+        "label": "з"
+      }
+    ],
+    "long_rows": [
+      {
+        "n": 104,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9900005296534362,
+        "correct_prob": 0.5627943561342514,
+        "label": "A"
+      },
+      {
+        "n": 104,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9999188226218033,
+        "correct_prob": 0.9979614707570305,
+        "label": "a"
+      },
+      {
+        "n": 104,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.9917115982021406,
+        "correct_prob": 0.28447971657503335,
+        "label": "é"
+      },
+      {
+        "n": 104,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.9855674147047538,
+        "correct_prob": 0.014564975415965594,
+        "label": "з"
+      }
+    ]
+  },
+  {
+    "model": "qwen3.5-2b:Q8_0",
+    "wide_labels_available": 160,
+    "non_ascii_available": 108,
+    "first_non_ascii": "é",
+    "by_alphabet": {
+      "ascii": {
+        "correct": "14/16",
+        "accuracy": 0.875,
+        "min_option_mass": 0.9843730913905273
+      },
+      "wide": {
+        "correct": "12/16",
+        "accuracy": 0.75,
+        "min_option_mass": 0.3577455428857325
+      }
+    },
+    "by_alphabet_count": {
+      "ascii": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "4/4",
+        "52": "2/4"
+      },
+      "wide": {
+        "8": "4/4",
+        "16": "4/4",
+        "26": "2/4",
+        "52": "2/4"
+      }
+    },
+    "long_list": {
+      "correct": "1/4",
+      "accuracy": 0.25,
+      "min_option_mass": 0.9151446141861246,
+      "n": 104
+    },
+    "wall_s": 174.1,
+    "rows": [
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9976590376166516,
+        "correct_prob": 0.9678845105269944,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9984773899837855,
+        "correct_prob": 0.98676616547784,
+        "label": "C"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9951427368761397,
+        "correct_prob": 0.6907740958736692,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9985723000784503,
+        "correct_prob": 0.9410170911732492,
+        "label": "H"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9966378982479038,
+        "correct_prob": 0.8912812645959161,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9951381071504612,
+        "correct_prob": 0.6249421813315029,
+        "label": "E"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.9950605088297974,
+        "correct_prob": 0.6673562695820113,
+        "label": "I"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9953583504503662,
+        "correct_prob": 0.7550996889934914,
+        "label": "P"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9961158761066887,
+        "correct_prob": 0.7544218849745522,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9961651519875444,
+        "correct_prob": 0.6616153121297007,
+        "label": "G"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.996612105509979,
+        "correct_prob": 0.5721888448853231,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.9951909331355756,
+        "correct_prob": 0.29969619132097797,
+        "label": "Z"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9906908432134646,
+        "correct_prob": 0.5434021712168448,
+        "label": "A"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.9941018457170478,
+        "correct_prob": 0.6412113845877307,
+        "label": "N"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.985582101848759,
+        "correct_prob": 0.03910062180285109,
+        "label": "a"
+      },
+      {
+        "alphabet": "ascii",
+        "n": 52,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.9843730913905273,
+        "correct_prob": 0.022272002668332097,
+        "label": "z"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.5810699111003346,
+        "correct_prob": 0.8460704794868021,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.5678120933956933,
+        "correct_prob": 0.5909219867796915,
+        "label": "а"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.8541541379078652,
+        "correct_prob": 0.9548133572441898,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.516691323359421,
+        "correct_prob": 0.6765803455733511,
+        "label": "á"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.6072142418315066,
+        "correct_prob": 0.8063600093440608,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "option_mass": 0.8420732571924919,
+        "correct_prob": 0.9191527755877834,
+        "label": "т"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "option_mass": 0.7393985463765113,
+        "correct_prob": 0.9560986613491538,
+        "label": "н"
+      },
+      {
+        "alphabet": "wide",
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.5535734248064182,
+        "correct_prob": 0.8990154359444414,
+        "label": "л"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.6534367358111591,
+        "correct_prob": 0.786258275507544,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "quarter",
+        "ok": false,
+        "option_mass": 0.36309529264461,
+        "correct_prob": 0.2310552199294764,
+        "label": "и"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.37630163213930473,
+        "correct_prob": 0.17066900004314303,
+        "label": "í"
+      },
+      {
+        "alphabet": "wide",
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.5729075941802946,
+        "correct_prob": 0.5132594637922717,
+        "label": "к"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.42507296512088316,
+        "correct_prob": 0.5018887044741905,
+        "label": "é"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "quarter",
+        "ok": false,
+        "option_mass": 0.3577455428857325,
+        "correct_prob": 0.18758548737404762,
+        "label": "í"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.6630464929185088,
+        "correct_prob": 0.0001888699477828042,
+        "label": "ь"
+      },
+      {
+        "alphabet": "wide",
+        "n": 52,
+        "position": "last",
+        "ok": true,
+        "option_mass": 0.666872646322268,
+        "correct_prob": 0.4587691518872598,
+        "label": "б"
+      }
+    ],
+    "long_rows": [
+      {
+        "n": 104,
+        "position": "first",
+        "ok": true,
+        "option_mass": 0.9709374766122776,
+        "correct_prob": 0.44928993480442103,
+        "label": "A"
+      },
+      {
+        "n": 104,
+        "position": "quarter",
+        "ok": false,
+        "option_mass": 0.9467681257679353,
+        "correct_prob": 0.02068263812845747,
+        "label": "a"
+      },
+      {
+        "n": 104,
+        "position": "middle",
+        "ok": false,
+        "option_mass": 0.9151446141861246,
+        "correct_prob": 0.0069924157213445805,
+        "label": "é"
+      },
+      {
+        "n": 104,
+        "position": "last",
+        "ok": false,
+        "option_mass": 0.9374981361857487,
+        "correct_prob": 0.0011835654433904627,
+        "label": "б"
+      }
+    ]
+  }
+]

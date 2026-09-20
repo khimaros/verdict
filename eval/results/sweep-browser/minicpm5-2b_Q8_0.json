@@ -1,0 +1,94 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 0,
+      "decision_ms": [
+        6863
+      ],
+      "gated": 0,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t137 points by RohanAdwankar 2 hours ago | hide | 67\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 7.3
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 0,
+      "decision_ms": [
+        4247
+      ],
+      "gated": 0,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t137 points by RohanAdwankar 2 hours ago | hide | 67\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 4.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 0,
+      "decision_ms": [
+        4043
+      ],
+      "gated": 0,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t137 points by RohanAdwankar 2 hours ago | hide | 67\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 1,
+      "wall_s": 4.5
+    }
+  ]
+}

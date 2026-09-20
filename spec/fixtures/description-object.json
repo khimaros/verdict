@@ -1,0 +1,39 @@
+{
+  "id": "description-object",
+  "description": "option descriptions as objects, one line each so the label column survives",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Page: flight search.",
+  "questions": {
+    "click_target": {
+      "type": "choice",
+      "instructions": "Which element should be clicked?",
+      "criteria": {
+        "1": {
+          "element": "[1] Departure date",
+          "current_value": "12 Mar",
+          "role": "textbox"
+        },
+        "2": {
+          "element": "[2] Search",
+          "current_value": "",
+          "role": "button"
+        }
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nPage: flight search.\n---\n\n",
+    "questions": {
+      "click_target": {
+        "kind": "choice",
+        "suffix": "Which element should be clicked?\nA) {\"current_value\": \"12 Mar\", \"element\": \"[1] Departure date\", \"role\": \"textbox\"}\nB) {\"current_value\": \"\", \"element\": \"[2] Search\", \"role\": \"button\"}\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "1": "A",
+          "2": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

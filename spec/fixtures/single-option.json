@@ -1,0 +1,31 @@
+{
+  "id": "single-option",
+  "description": "one option is legal; only option mass carries information",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "Page: flight search.",
+  "questions": {
+    "type_text_target": {
+      "type": "choice",
+      "instructions": "Which field should be filled?",
+      "criteria": {
+        "1": "[1] Departure date"
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nPage: flight search.\n---\n\n",
+    "questions": {
+      "type_text_target": {
+        "kind": "choice",
+        "suffix": "Which field should be filled?\nA) [1] Departure date\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "1": "A"
+        },
+        "flags": [
+          "single_option"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "blocked": 2,
+      "out-of-steps": 1
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 1,
+      "decision_ms": [
+        14044,
+        21935
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "72 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 2 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 1 hour ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 3 minutes ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "skyberrys 1 hour ago | parent | prev | next [\u2013] There is a link at the bottom for you to provide support or contributions, like if you know how to keep it online with 'power grid voltage fluctuations or something.'.",
+          "theParadox42 58 minutes ago | root | parent | next [\u2013] For anyone that missed it, I believe they\u2019re referring to exfiltrating models by encoding the weights as bits as voltage fluctuations from the relevant data centers. I\u2019m sure they\u2019d take your money but I don\u2019t think that\u2019s what it\u2019s referring to."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 1,
+      "decisions": 2,
+      "wall_s": 36.9
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        12702,
+        15009,
+        15788,
+        15207,
+        14348,
+        15270,
+        14255,
+        15430,
+        15910,
+        15286,
+        5324,
+        3945,
+        5732,
+        4245
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {},
+      "stories_visited": 1,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 175.0
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "blocked",
+      "steps": 3,
+      "decision_ms": [
+        12890,
+        15257,
+        14165,
+        21948
+      ],
+      "gated": 1,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "How Hacker News ranking works: scoring, controversy, and penalties (2013)"
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News"
+        },
+        {
+          "operation": "CLICK",
+          "target": "72 comments"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 2 hours ago | prev | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 1 hour ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 7 minutes ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "skyberrys 1 hour ago | parent | prev | next [\u2013] There is a link at the bottom for you to provide support or contributions, like if you know how to keep it online with 'power grid voltage fluctuations or something.'.",
+          "theParadox42 1 hour ago | root | parent | next [\u2013] For anyone that missed it, I believe they\u2019re referring to exfiltrating models by encoding the weights as bits as voltage fluctuations from the relevant data centers. I\u2019m sure they\u2019d take your money but I don\u2019t think that\u2019s what it\u2019s referring to."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 3,
+      "decisions": 4,
+      "wall_s": 66.0
+    }
+  ]
+}

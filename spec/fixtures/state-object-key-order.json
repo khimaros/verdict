@@ -1,0 +1,38 @@
+{
+  "id": "state-object-key-order",
+  "description": "the same object declared in a different key order must serialise identically",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": {
+    "previousTickets": 2,
+    "message": "My Stripe connection has failed for three days.",
+    "plan": "pro",
+    "subject": "Stripe sync broken"
+  },
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\n{\n  \"message\": \"My Stripe connection has failed for three days.\",\n  \"plan\": \"pro\",\n  \"previousTickets\": 2,\n  \"subject\": \"Stripe sync broken\"\n}\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Which queue should handle this?\nA) Account access: logins, passwords, permissions.\nB) Billing: invoices, payments, refunds.\nC) Technical: bugs, outages, integrations.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      }
+    }
+  }
+}

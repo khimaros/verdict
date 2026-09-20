@@ -1,0 +1,216 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 1,
+    "mean_stories": 0.3333333333333333,
+    "statuses": {
+      "done": 1,
+      "no-elements": 2
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        4279,
+        5888,
+        6123,
+        6343,
+        7350
+      ],
+      "gated": 0,
+      "final_confidence": 0.9339,
+      "final_probabilities": {
+        "TAP": 0.0619,
+        "LAUNCH": 0.0014,
+        "SCROLL_DOWN": 0.0011,
+        "SCROLL_UP": 0.0006,
+        "BACK": 0.0002,
+        "HOME": 0.0001,
+        "DONE": 0.9339,
+        "BLOCKED": 0.0008
+      },
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "More options",
+            "Navigate up",
+            "Search\u2026"
+          ],
+          "confidence": 0.9743,
+          "target_confidence": 0.995,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Display / Dark theme, font size, brightness",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.9349,
+          "target_confidence": 0.6332,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6326,
+          "target_confidence": 0.3915,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.9989,
+          "target_confidence": 0.9987,
+          "landed": [
+            "Android version / 15",
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "Android version": "Android version / 15"
+        },
+        "at_step": {
+          "Android version": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 32.7
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "no-elements",
+      "steps": 0,
+      "plans": 0,
+      "decision_ms": [],
+      "gated": 0,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 0,
+      "wall_s": 0.2
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "no-elements",
+      "steps": 0,
+      "plans": 0,
+      "decision_ms": [],
+      "gated": 0,
+      "history": [],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "actions": 0,
+      "decisions": 0,
+      "wall_s": 0.1
+    }
+  ]
+}

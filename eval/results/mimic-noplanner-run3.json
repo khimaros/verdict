@@ -1,0 +1,60 @@
+{
+  "goal": "Open the Settings app and navigate to the screen showing the Android version",
+  "status": "done",
+  "steps": 10,
+  "plans": 0,
+  "history": [
+    {
+      "operation": "LAUNCH",
+      "target": "Settings"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Search settings"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Security & privacy / App security, device lock, permissions"
+    },
+    {
+      "operation": "TAP",
+      "target": "About emulated device / Android SDK built for x86_64"
+    },
+    {
+      "operation": "TAP",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "TAP",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "BACK",
+      "target": "Navigate up"
+    },
+    {
+      "operation": "BACK",
+      "target": "Model / Android SDK built for x86_64"
+    },
+    {
+      "operation": "TAP",
+      "target": "About emulated device / Android SDK built for x86_64"
+    },
+    {
+      "operation": "SCROLL_DOWN",
+      "target": "Legal information"
+    }
+  ],
+  "witness": {
+    "required": 1,
+    "witnessed": 1,
+    "complete": true,
+    "answers": {
+      "Android version": "Android version / 15"
+    },
+    "at_step": {
+      "Android version": 11
+    },
+    "missing": []
+  }
+}

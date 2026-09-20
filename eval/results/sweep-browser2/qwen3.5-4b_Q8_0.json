@@ -1,0 +1,157 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 1,
+    "statuses": {
+      "action-failed": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 2,
+      "decision_ms": [
+        13911,
+        25451,
+        14065
+      ],
+      "gated": 0,
+      "error": "RuntimeError: Runtime.evaluate: {'code': -32000, 'message': 'Inspected target navigated or closed'}",
+      "failed_operation": "BACK",
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "72 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 2 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "ljlolel 1 minute ago | parent | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "hgoel 1 hour ago | parent | prev | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "skyberrys 1 hour ago | parent | prev | next [\u2013] There is a link at the bottom for you to provide support or contributions, like if you know how to keep it online with 'power grid voltage fluctuations or something.'.",
+          "theParadox42 56 minutes ago | root | parent | next [\u2013] For anyone that missed it, I believe they\u2019re referring to exfiltrating models by encoding the weights as bits as voltage fluctuations from the relevant data centers. I\u2019m sure they\u2019d take your money but I don\u2019t think that\u2019s what it\u2019s referring to."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 54.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 2,
+      "decision_ms": [
+        14078,
+        25394,
+        14304
+      ],
+      "gated": 0,
+      "error": "RuntimeError: Runtime.evaluate: {'code': -32000, 'message': 'Inspected target navigated or closed'}",
+      "failed_operation": "BACK",
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "72 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 2 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 1 hour ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 3 minutes ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "skyberrys 1 hour ago | parent | prev | next [\u2013] There is a link at the bottom for you to provide support or contributions, like if you know how to keep it online with 'power grid voltage fluctuations or something.'.",
+          "theParadox42 58 minutes ago | root | parent | next [\u2013] For anyone that missed it, I believe they\u2019re referring to exfiltrating models by encoding the weights as bits as voltage fluctuations from the relevant data centers. I\u2019m sure they\u2019d take your money but I don\u2019t think that\u2019s what it\u2019s referring to."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 54.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story's comments, read them, go back to the front page, then open the next story's comments.",
+      "status": "action-failed",
+      "steps": 2,
+      "decision_ms": [
+        5570,
+        6841,
+        5656
+      ],
+      "gated": 0,
+      "error": "RuntimeError: Runtime.evaluate: {'code': -32000, 'message': 'Inspected target navigated or closed'}",
+      "failed_operation": "BACK",
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "72 comments"
+        },
+        {
+          "operation": "BACK",
+          "target": "new"
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t155 points by RohanAdwankar 2 hours ago | hide | 72\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49771110": [
+          "AceJohnny2 2 hours ago | next [\u2013] I haven't bothered to test the API, but you've effectively allowed a fully-open upload API? Who's paying the storage costs, and how do you prevent abuse?",
+          "hgoel 1 hour ago | parent | next [\u2013] When I was putting together something similar, I had settled on having a small ring-buffer style storage, say, ~30GB that would be cleared daily or whenever filled. Recording incidents (and humor) is more interesting than actually getting leaked weights.",
+          "ljlolel 3 minutes ago | parent | prev | next [\u2013] needs a reverse captcha that only agent can solve in nanoseconds",
+          "skyberrys 1 hour ago | parent | prev | next [\u2013] There is a link at the bottom for you to provide support or contributions, like if you know how to keep it online with 'power grid voltage fluctuations or something.'.",
+          "theParadox42 58 minutes ago | root | parent | next [\u2013] For anyone that missed it, I believe they\u2019re referring to exfiltrating models by encoding the weights as bits as voltage fluctuations from the relevant data centers. I\u2019m sure they\u2019d take your money but I don\u2019t think that\u2019s what it\u2019s referring to."
+        ]
+      },
+      "stories_visited": 1,
+      "actions": 2,
+      "decisions": 3,
+      "wall_s": 19.2
+    }
+  ]
+}

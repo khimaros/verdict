@@ -1,0 +1,31 @@
+{
+  "id": "boolean-custom-criteria",
+  "description": "boolean with caller supplied labels",
+  "spec_version": "0.1.0",
+  "formatter": "reference",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?",
+      "criteria": {
+        "true": "Yes, they threaten to leave.",
+        "false": "No, they do not."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nYou are a precise classifier. Read the material, then answer the question with exactly one option label. Reply with the label only.<</SYS>>\n<<USR>>\nIf this is not fixed today I am cancelling our subscription.\n---\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "Does the sender threaten to cancel?\nA) Yes, they threaten to leave.\nB) No, they do not.\n\nAnswer with one label.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}
