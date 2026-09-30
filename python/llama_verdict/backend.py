@@ -4,15 +4,43 @@ stdlib only. the rust core will replace this for the runtime path; this
 implementation is the reference and the evaluation harness, so it stays thin.
 """
 
+import http.client
+import io
 import json
 import math
+import re
+import threading
 import time
 import urllib.error
-import urllib.request
+import urllib.parse
 
 from . import spec
 
 HTTP_TIMEOUT = 900
+# llama-swap answers 502 and llama-server 503 while a model is still loading.
+# that is a wait rather than a failure, and a jev client that never retries
+# (jevbench) would otherwise lose the first decision against every cold model.
+LOADING_STATUSES = (502, 503)
+LOADING_BACKOFF_S = (0.5, 1, 2, 4, 8)
+# the huggingface cache layout: .../models--<org>--<name>/snapshots/<rev>/<file>
+HUB_CACHE_PATH = re.compile(r"/models--([^/]+?)--([^/]+)/snapshots/([0-9a-f]+)/(.+)$")
+
+
+def weights_from_props(props):
+    """the weights a server loaded, as repo, revision and file.
+
+    the served model name is not a stable key, since a config reload can put
+    another file behind it. the gguf path is, and the hub cache names the repo
+    and revision in it. a path outside the cache is reported as it is.
+    """
+    path = props.get("model_path")
+    if not path:
+        return None
+    m = HUB_CACHE_PATH.search(path)
+    if not m:
+        return {"repo": None, "revision": None, "file": path}
+    org, name, revision, file = m.groups()
+    return {"repo": f"{org}/{name}", "revision": revision, "file": file}
 
 
 class HttpBackend:
@@ -24,6 +52,7 @@ class HttpBackend:
     def __init__(self, base_url, model=None, upstream=None, timeout=HTTP_TIMEOUT,
                  cache_prompt=True):
         base = base_url.rstrip("/").removesuffix("/v1")
+        self.root = base
         # default to llama-swap routing when a model is named, since that is
         # the deployment where the root endpoints 404
         self.upstream = bool(model) if upstream is None else upstream
@@ -35,18 +64,94 @@ class HttpBackend:
         # a partly reused prompt prefills in different batch shapes from a cold
         # one. off is the control, not a supported serving mode.
         self.cache_prompt = cache_prompt
+        url = urllib.parse.urlsplit(base)
+        self._connection_class = (http.client.HTTPSConnection if url.scheme == "https"
+                                  else http.client.HTTPConnection)
+        self._netloc = url.netloc
+        # open connections kept for reuse: a fresh one costs a round trip before
+        # the request is sent. the jev server answers every client connection
+        # on a new thread, so connections are pooled across threads rather than
+        # held per thread, and each carries one exchange at a time.
+        self._idle = []
+        self._idle_lock = threading.Lock()
+
+    def close(self):
+        with self._idle_lock:
+            idle, self._idle = self._idle, []
+        for conn in idle:
+            conn.close()
+
+    def _take(self):
+        with self._idle_lock:
+            if self._idle:
+                return self._idle.pop()
+        return self._connection_class(self._netloc, timeout=self.timeout)
+
+    def _give_back(self, conn):
+        with self._idle_lock:
+            self._idle.append(conn)
+
+    def _exchange(self, method, url, body):
+        """one request on a pooled connection, retried once on a fresh one if
+        the server closed the pooled one while it sat idle."""
+        path = urllib.parse.urlsplit(url)
+        target = path.path + (f"?{path.query}" if path.query else "")
+        headers = {"content-type": "application/json"} if body is not None else {}
+        for attempt in (1, 2):
+            conn = self._take()
+            try:
+                conn.request(method, target, body=body, headers=headers)
+                r = conn.getresponse()
+                data = r.read()
+            except (http.client.RemoteDisconnected, ConnectionError, http.client.CannotSendRequest):
+                conn.close()
+                if attempt == 2:
+                    raise
+                continue
+            except BaseException:
+                conn.close()
+                raise
+            self._give_back(conn)
+            return r, data
+
+    def _open(self, url, body=None):
+        """the parsed reply, waiting out a model that is still loading.
+
+        failures surface as urllib's HTTPError, which is what the retry here and
+        the server's mapping of a refused prompt to 422 are written against.
+        """
+        for delay in (*LOADING_BACKOFF_S, None):
+            r, data = self._exchange("POST" if body is not None else "GET", url, body)
+            if r.status < 400:
+                return json.loads(data)
+            error = urllib.error.HTTPError(url, r.status, r.reason, r.headers, io.BytesIO(data))
+            if r.status not in LOADING_STATUSES or delay is None:
+                raise error
+            time.sleep(delay)
 
     def _post(self, path, payload):
-        req = urllib.request.Request(
-            self.base + path, data=json.dumps(payload).encode(),
-            headers={"content-type": "application/json"})
         t0 = time.monotonic()
-        with urllib.request.urlopen(req, timeout=self.timeout) as r:
-            return json.loads(r.read()), (time.monotonic() - t0) * 1000.0
+        out = self._open(self.base + path, json.dumps(payload).encode())
+        return out, (time.monotonic() - t0) * 1000.0
 
     def props(self):
-        with urllib.request.urlopen(self.base + "/props", timeout=self.timeout) as r:
-            return json.loads(r.read())
+        return self._open(self.base + "/props")
+
+    def readout(self):
+        """how the model registry says this model must be read, or None.
+
+        a llama-swap config generated from the registry advertises it on
+        /v1/models as `meta.llamaswap.readout`. a bare llama-server, or a
+        model the registry says nothing about, answers None.
+        """
+        try:
+            listing = self._open(self.root + "/v1/models")
+        except (OSError, http.client.HTTPException, ValueError):
+            return None
+        for entry in listing.get("data", []):
+            if entry.get("id") == self.model:
+                return ((entry.get("meta") or {}).get("llamaswap") or {}).get("readout")
+        return None
 
     def tokenize(self, text, add_special=False):
         """special tokens must be parsed, or the chat markers become literal text."""

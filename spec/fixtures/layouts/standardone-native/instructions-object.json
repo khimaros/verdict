@@ -1,0 +1,37 @@
+{
+  "id": "instructions-object",
+  "description": "instructions as an object, the shape browser-use's jev agent sends",
+  "spec_version": "0.1.0",
+  "formatter": "layout:standardone-native",
+  "state": "Page: flight search.",
+  "questions": {
+    "operation": {
+      "type": "choice",
+      "instructions": {
+        "goal": "Find a flight to Reykjavik",
+        "rules": [
+          "Fill required fields before submitting.",
+          "Prefer visible controls over waiting."
+        ]
+      },
+      "criteria": {
+        "CLICK": "Click an element.",
+        "DONE": "Everything is satisfied."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<BOS>>\n<<USR>>\nRead the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\nPage: flight search.\n\n",
+    "questions": {
+      "operation": {
+        "kind": "choice",
+        "suffix": "Question:\n{\"goal\": \"Find a flight to Reykjavik\", \"rules\": [\"Fill required fields before submitting.\", \"Prefer visible controls over waiting.\"]}\n\nOptions:\nA. CLICK: Click an element.\nB. DONE: Everything is satisfied.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "CLICK": "A",
+          "DONE": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

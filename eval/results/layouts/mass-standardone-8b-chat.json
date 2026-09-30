@@ -1,0 +1,8 @@
+[
+  {
+    "model": "standardone-8b:Q8_0",
+    "usable": false,
+    "error": "ValueError: template produced an empty assistant opening",
+    "wall_s": 0.6
+  }
+]

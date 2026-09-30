@@ -57,7 +57,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "python"))
 sys.path.insert(0, HERE)
 
 from eval_interventions import POSITIONS, STATE, case
-from llama_verdict import derive, extract, prompt, spec, types
+from llama_verdict import config, derive, extract, prompt, spec, types
 from llama_verdict.backend import HttpBackend
 from smoke_models import OVERRIDES
 
@@ -180,7 +180,7 @@ def probe(base_url, model, counts, long_count):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--base-url", default="http://10.1.200.250:7860")
+    config.backend_url_argument(ap)
     ap.add_argument("--models", nargs="+", required=True)
     ap.add_argument("--counts", type=int, nargs="+", default=COUNTS)
     ap.add_argument("--long", type=int, default=LONG)

@@ -1,0 +1,39 @@
+{
+  "id": "description-object",
+  "description": "option descriptions as objects, one line each so the label column survives",
+  "spec_version": "0.1.0",
+  "formatter": "layout:standardone-native",
+  "state": "Page: flight search.",
+  "questions": {
+    "click_target": {
+      "type": "choice",
+      "instructions": "Which element should be clicked?",
+      "criteria": {
+        "1": {
+          "element": "[1] Departure date",
+          "current_value": "12 Mar",
+          "role": "textbox"
+        },
+        "2": {
+          "element": "[2] Search",
+          "current_value": "",
+          "role": "button"
+        }
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<BOS>>\n<<USR>>\nRead the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\nPage: flight search.\n\n",
+    "questions": {
+      "click_target": {
+        "kind": "choice",
+        "suffix": "Question:\nWhich element should be clicked?\n\nOptions:\nA. 1: {\"element\": \"[1] Departure date\", \"current_value\": \"12 Mar\", \"role\": \"textbox\"}\nB. 2: {\"element\": \"[2] Search\", \"current_value\": \"\", \"role\": \"button\"}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "1": "A",
+          "2": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

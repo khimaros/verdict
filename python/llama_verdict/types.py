@@ -29,14 +29,9 @@ class Question:
     kind: str
     instructions: str
     options: tuple
-
-    @property
-    def legend(self):
-        """score questions echo their rubric so a caller can render an answer
-        without holding on to the request."""
-        if self.kind != SCORE:
-            return None
-        return {o.id: o.description for o in self.options}
+    # score questions echo their rubric so a caller can render an answer
+    # without holding on to the request
+    legend: dict = None
 
 
 @dataclasses.dataclass(frozen=True)
@@ -49,6 +44,10 @@ class Formatter:
     user_open: str
     user_close: str
     assistant_open: str
+    # a user turn with no system turn before it, carrying whatever the template
+    # puts first; only a layout without a system turn needs it
+    bare_user_open: str = ""
+    layout: str = spec.CHAT
     template_sha256: str = ""
     synthetic: bool = False
     # label token ids are a per-model constant. pinning them here removes one
@@ -67,7 +66,8 @@ class Formatter:
     @classmethod
     def from_dict(cls, d):
         a = d["affixes"]
-        return cls(model=d.get("model", ""), template_sha256=d.get("template_sha256", ""),
+        return cls(model=d.get("model", ""), layout=d.get("layout", spec.CHAT),
+                   template_sha256=d.get("template_sha256", ""),
                    synthetic=d.get("synthetic", False),
                    label_ids=d.get("label_ids", {}),
                    wide_label_ids=d.get("wide_label_ids", {}),
@@ -78,6 +78,18 @@ class Formatter:
     def load(cls, path):
         with open(path) as f:
             return cls.from_dict(json.load(f))
+
+    @classmethod
+    def for_layout(cls, name, reference):
+        """a named layout's formatter for conformance fixtures: its declared
+        affixes, or `reference`'s for a layout that keeps the model's chat
+        template, whose affixes are derived per model."""
+        affixes = spec.load_layout(name).get("affixes") or {
+            "system_open": reference.system_open, "system_close": reference.system_close,
+            "user_open": reference.user_open, "user_close": reference.user_close,
+            "assistant_open": reference.assistant_open,
+            "bare_user_open": reference.bare_user_open}
+        return cls(model=name, layout=name, **affixes)
 
     def check_usable(self):
         """a formatter that cannot steer the model is refused, not warned about.
@@ -92,7 +104,7 @@ class Formatter:
                 f"formatter {self.model!r} is synthetic. it exists to make "
                 f"conformance fixtures model-independent and is not a real chat "
                 f"format; scoring a model with it is meaningless.")
-        floor = spec.constants()["option_mass_floor_formatter"]
+        floor = spec.layout(self.layout)["option_mass_floor_formatter"]
         mass = self.verification.get("mean_option_mass")
         if mass is None:
             raise ValueError(f"formatter for {self.model!r} carries no verification")
@@ -103,22 +115,36 @@ class Formatter:
                 f"steer this model to the labels.")
 
 
-def parse_question(name, body):
-    """one entry of the questions map into a Question."""
+def parse_question(name, body, layout=spec.CHAT):
+    """one entry of the questions map into a Question.
+
+    the layout decides what the model reads for each option. the chat layout
+    shows only the description; a layout trained with named options, such as
+    decider's, shows `name: description`, and orders and names the boolean
+    options the way that model was trained.
+    """
+    c = spec.layout(layout)
     kind = WIRE_ALIASES.get(body["type"], body["type"])
     # instructions and descriptions arrive as objects from real clients, not
     # just strings: browser-use's jev agent sends {"goal": ..., "rules": [...]}
-    instructions = spec.serialise(body["instructions"])
+    instructions = spec.render(body["instructions"], "instructions", layout)
     criteria = body.get("criteria")
 
     def describe(value, fallback):
-        """a null or empty description means the option id speaks for itself."""
-        return spec.serialise_inline(value) if value else fallback
+        """a null or empty description means the option name speaks for itself."""
+        if not value:
+            text = fallback
+        else:
+            text = spec.render(value, "description", layout)
+            if kind in c["named_kinds"]:
+                text = f"{fallback}: {text}"
+        return spec.render(text, "option", layout)
 
+    legend = None
     if kind == BOOLEAN:
-        criteria = criteria or spec.constants()["boolean_default_criteria"]
-        options = (Option("true", describe(criteria["true"], "true")),
-                   Option("false", describe(criteria["false"], "false")))
+        criteria = criteria or c["boolean_default_criteria"]
+        options = tuple(Option(oid, describe(criteria.get(oid), c["boolean_names"][oid]))
+                        for oid in c["boolean_order"])
     elif kind == CHOICE:
         if not criteria:
             raise ValueError(f"choice question {name!r} declares no criteria")
@@ -128,6 +154,8 @@ def parse_question(name, body):
             raise ValueError(f"score question {name!r} declares no levels")
         options = tuple(Option(str(i), describe(d, str(i)))
                         for i, d in enumerate(criteria))
+        legend = {str(i): spec.serialise_inline(d) if d else str(i)
+                  for i, d in enumerate(criteria)}
     else:
         raise ValueError(f"question {name!r} has unknown type {body['type']!r}")
 
@@ -136,14 +164,15 @@ def parse_question(name, body):
     # still says whether the model was steered, which is the useful part.
     if not options:
         raise ValueError(f"question {name!r} declares no options")
-    return Question(name=name, kind=kind, instructions=instructions, options=options)
+    return Question(name=name, kind=kind, instructions=instructions, options=options,
+                    legend=legend)
 
 
-def parse_questions(questions):
+def parse_questions(questions, layout=spec.CHAT):
     """option order is declaration order, and it reaches the prompt.
 
     python preserves insertion order for dicts and json.load preserves the
     order of object keys, so the caller's order survives. that order biases the
     answer; see spec section 9.
     """
-    return [parse_question(name, body) for name, body in questions.items()]
+    return [parse_question(name, body, layout) for name, body in questions.items()]

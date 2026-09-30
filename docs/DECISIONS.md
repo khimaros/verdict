@@ -171,7 +171,7 @@ raw report: `/tmp/lv_probe.json` (not committed; regenerate with the script)
 
 | item | value |
 |---|---|
-| endpoint | `http://10.1.200.250:7860` |
+| endpoint | the eval server's llama-swap, on the local network |
 | fronted by | llama-swap (OpenAI surface at `/v1`, native endpoints at `/upstream/<model>/`) |
 | llama.cpp build | `b11028-972d2313b` |
 | model | `unsloth/Qwen3.5-0.8B-MTP-GGUF:Q8_0` (`qwen3.5-0.8b:Q8_0`) |

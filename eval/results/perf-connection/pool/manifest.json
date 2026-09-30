@@ -1,0 +1,21 @@
+{
+  "adapter": "typesafe",
+  "charged_usd": 0.0,
+  "cost_basis": "local_llama_swap_no_tariff",
+  "dataset_hash": "3cbd0e951fa8059741955ef2bd3273b0bb60aecae8f4a68b89872f55f7376b3d",
+  "delay_s": 0.0,
+  "endpoint": "http://127.0.0.1:8495",
+  "finished_utc": "2026-09-30T22:58:17.406661+00:00",
+  "key_env_used": false,
+  "n_attempted": 48,
+  "n_planned": 48,
+  "price_input_per_m": null,
+  "price_output_per_m": null,
+  "request_options": {},
+  "requested_model": "minicpm5-2b:Q8_0",
+  "resolved_models": [
+    "minicpm5-2b:Q8_0"
+  ],
+  "run_label": "minicpm5-2b:Q8_0",
+  "started_utc": "2026-09-30T22:58:08.769402+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "state-object",
+  "description": "an object state, serialised deterministically",
+  "spec_version": "0.1.0",
+  "formatter": "layout:standardone-native",
+  "state": {
+    "subject": "Stripe sync broken",
+    "plan": "pro",
+    "previousTickets": 2,
+    "message": "My Stripe connection has failed for three days."
+  },
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<BOS>>\n<<USR>>\nRead the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\n{\n  \"message\": \"My Stripe connection has failed for three days.\",\n  \"plan\": \"pro\",\n  \"previousTickets\": 2,\n  \"subject\": \"Stripe sync broken\"\n}\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Question:\nWhich queue should handle this?\n\nOptions:\nA. access: Account access: logins, passwords, permissions.\nB. billing: Billing: invoices, payments, refunds.\nC. technical: Technical: bugs, outages, integrations.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      }
+    }
+  }
+}

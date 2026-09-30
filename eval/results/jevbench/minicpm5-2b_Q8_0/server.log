@@ -1,0 +1,7 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     minicpm5-2b:Q8_0
+  formatter minicpm5-2b:Q8_0 (mean option mass 1.0000, cached)
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 12:22:01)
+  point a jev client at this with TYPESAFE_BASE_URL

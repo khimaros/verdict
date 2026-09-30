@@ -123,7 +123,9 @@ answers, which is the hardest kind of performance bug to notice.
 ## 4. formatters
 
 a formatter is a declarative table of affixes. it is **derived, never
-hand-written**, from the model's own chat template.
+hand-written**, from the model's own chat template. the one exception is a
+model trained on a layout its template does not describe, which is read with
+a named layout instead (section 5.3).
 
 ### 4.1 where the template comes from
 
@@ -300,6 +302,89 @@ to `assistant_open`, which is the position being scored. both conditions are
 verified per model at formatter derivation time and recorded in the artifact.
 
 results are always mapped back to option ids. the option text is never scored.
+
+### 5.3 named layouts
+
+some decision models are base models fine-tuned on a text layout of their own
+and read by letter logits. their gguf still carries the base model's chat
+template, which they never saw, so deriving from it builds a prompt the model
+was not trained on. decider-4b reads option mass 0.657 that way and is refused.
+
+other decision models keep their chat template but were trained on wording of
+their own inside it, and are read with a named layout too.
+
+such a model is read with a **named layout**, `spec/layouts/<name>.json`. a
+layout either declares its own affixes, so no template is rendered, or
+declares none and keeps the affixes derived from the model's template. it
+overrides any of these constants, whose top level values in
+`spec/constants.json` are the chat layout:
+
+| constant | chat | effect |
+|---|---|---|
+| `system_instructions`, `state_delimiter`, `answer_instruction` | section 5 | as in section 5 |
+| `system_turn` | `true` | when false the prefix opens with `bare_user_open`, the template's user turn with nothing before it, and has no system turn |
+| `state_open` | `""` | text before the state |
+| `question_open` | `""` | text before the instructions |
+| `options_open` | `"\n"` | text between the instructions and the option lines |
+| `option_line` | `{label}) {description}` | one option |
+| `option_separator` | `"\n"` | between option lines |
+| `assistant_prefill` | `""` | text after the assistant opening, before the label |
+| `named_kinds` | `[]` | question types whose described options read `{name}: {description}`, where the chat layout shows only the description |
+| `boolean_order` | `["true", "false"]` | option order of a boolean |
+| `boolean_names` | `true`, `false` | the name a boolean option falls back to, and shows when named |
+| `boolean_default_criteria` | `Yes.`, `No.` | descriptions of a boolean without criteria |
+| `state_json`, `instructions_json`, `description_json` | `block_json`, `block_json`, `inline_json` | the serialisation profile for each value |
+| `option_json` | `null` | a profile applied to each finished option text |
+| `labels`, `max_options_single_pass`, `max_options_plain_alphabet` | section 5.2 | the letters the layout's model was trained on |
+
+a serialisation profile is section 3's json options plus two: `quote_strings`
+renders a string as a json literal rather than verbatim, and `escape_lt`
+writes `<` as `<`. together they express a model that reads every value
+as json, including a user turn that is one json object: the object is
+assembled from json literals so the state stays in the cached prefix.
+
+the prompt becomes:
+
+```
+prefix = (system_open + system_instructions + system_close + user_open
+          | bare_user_open when system_turn is false)
+       + state_open + <state> + state_delimiter
+
+suffix = question_open + <instructions>
+       + options_open + <option lines joined by option_separator>
+       + answer_instruction
+       + user_close + assistant_open + assistant_prefill
+```
+
+which is section 5 byte for byte under the chat values. the label must stay a
+single token after `assistant_open + assistant_prefill`, or after `user_close`
+where the template opens the answer with nothing.
+
+**which model needs which layout is not recorded here.** it is a fact about
+how the model was trained, and the model registry is the authority on it. a
+llama-swap config generated from the registry advertises it on `/v1/models` as
+`meta.llamaswap.readout`:
+
+| readout | meaning |
+|---|---|
+| absent, `chat` | derive from the chat template, section 4 |
+| `layout:<name>` | render with `spec/layouts/<name>.json` |
+| `head` | the model answers through a head of its own and has no next-token distribution to read. refused: it must be served by its own server |
+
+an explicit layout given by the caller overrides the readout. a layout is still
+verified exactly as a derived formatter is (section 8.1) and the layout name is
+part of the formatter cache key. every layout has conformance fixtures under
+`spec/fixtures/layouts/<name>/`.
+
+each layout is taken byte for byte from its author's source, named in the
+file:
+
+| layout | models | affixes | not reproduced |
+|---|---|---|---|
+| `decider-plain` | decider family | declared | score levels scored as one yes/no row each (`isolated_levels`); compact state json with index annotations on long arrays |
+| `winnow` | Winnow-12B | derived | nothing known |
+| `standardone-native` | StandardOne | derived, no system turn | object instructions and descriptions rendered as json where the adapter uses python `str()` |
+| `semif` | SemIf, JevK5 and its descendants | derived | nothing known; the prefix ends inside the json, so its boundary is not split-clean on every tokenizer and the prompt is sent as one text |
 
 ## 6. probability extraction
 

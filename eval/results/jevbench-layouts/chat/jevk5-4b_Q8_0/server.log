@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     jevk5-4b:Q8_0
+  formatter jevk5-4b:Q8_0 (mean option mass 0.9995, cached)
+  layout    chat
+  weights   {"repo": "alibiserikbay/JevK5-GGUF", "revision": "ec67b0bfce5119a8b11a2cdb430bb43e3fa3e82a", "file": "jevk5-4b-v0.2-Q8_0.gguf"}
+  build     b11309-a4d880fd5
+  debiasing order averaging 1, prior correction off
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 13:26:38)
+  point a jev client at this with TYPESAFE_BASE_URL

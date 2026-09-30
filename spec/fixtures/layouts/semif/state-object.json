@@ -1,0 +1,38 @@
+{
+  "id": "state-object",
+  "description": "an object state, serialised deterministically",
+  "spec_version": "0.1.0",
+  "formatter": "layout:semif",
+  "state": {
+    "subject": "Stripe sync broken",
+    "plan": "pro",
+    "previousTickets": 2,
+    "message": "My Stripe connection has failed for three days."
+  },
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nApply the supplied criterion to the supplied evidence. Choose exactly one listed option. Respond with only its uppercase letter, with no explanation or reasoning.<</SYS>>\n<<USR>>\n{\"evidence\": {\"subject\": \"Stripe sync broken\", \"plan\": \"pro\", \"previousTickets\": 2, \"message\": \"My Stripe connection has failed for three days.\"}",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": ", \"criterion\": \"Which queue should handle this?\", \"options\": [{\"letter\": \"A\", \"description\": \"access: Account access: logins, passwords, permissions.\"}, {\"letter\": \"B\", \"description\": \"billing: Billing: invoices, payments, refunds.\"}, {\"letter\": \"C\", \"description\": \"technical: Technical: bugs, outages, integrations.\"}]}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      }
+    }
+  }
+}

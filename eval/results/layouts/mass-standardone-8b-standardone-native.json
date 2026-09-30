@@ -1,0 +1,12 @@
+[
+  {
+    "model": "standardone-8b:Q8_0",
+    "option_mass": 0.9712328891259612,
+    "correct": "2/2",
+    "assistant_open": "",
+    "template_sha256": "f8b4020c325be89d",
+    "cached": false,
+    "usable": true,
+    "wall_s": 23.8
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "id": "boolean-custom-criteria",
+  "description": "boolean with caller supplied labels",
+  "spec_version": "0.1.0",
+  "formatter": "layout:standardone-native",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?",
+      "criteria": {
+        "true": "Yes, they threaten to leave.",
+        "false": "No, they do not."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<BOS>>\n<<USR>>\nRead the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\nIf this is not fixed today I am cancelling our subscription.\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "Question:\nDoes the sender threaten to cancel?\n\nOptions:\nA. yes: Yes, they threaten to leave.\nB. no: No, they do not.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

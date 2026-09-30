@@ -1,0 +1,38 @@
+{
+  "id": "state-trailing-newline",
+  "description": "a state ending in a newline still meets the delimiter cleanly",
+  "spec_version": "0.1.0",
+  "formatter": "layout:standardone-native",
+  "state": "The report is wrong but we can work around it.\n",
+  "questions": {
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this?",
+      "criteria": [
+        "Not urgent.",
+        "Should be handled soon.",
+        "Blocking, handle now."
+      ]
+    }
+  },
+  "expected": {
+    "prefix": "<<BOS>>\n<<USR>>\nRead the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\nThe report is wrong but we can work around it.\n\n\n",
+    "questions": {
+      "urgency": {
+        "kind": "score",
+        "suffix": "Question:\nHow urgent is this?\n\nOptions:\nA. 0: Not urgent.\nB. 1: Should be handled soon.\nC. 2: Blocking, handle now.<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "0": "A",
+          "1": "B",
+          "2": "C"
+        },
+        "flags": [],
+        "legend": {
+          "0": "Not urgent.",
+          "1": "Should be handled soon.",
+          "2": "Blocking, handle now."
+        }
+      }
+    }
+  }
+}

@@ -69,6 +69,9 @@ class VocabBackend:
         return {"chat_template": TEMPLATE, "bos_token": "", "eos_token": "",
                 "build_info": "fake", "model_alias": "fake"}
 
+    def readout(self):
+        return None
+
     def tokenize(self, text, add_special=False):
         self.tokenize_calls += 1
         if len(text) > 1 and text[-1] in self.merges:

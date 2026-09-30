@@ -24,17 +24,17 @@ import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 "..", "python"))
-from llama_verdict import derive
+from llama_verdict import config, derive
 from llama_verdict.backend import HttpBackend
 
 
-def survey(base_url, models, wide=0):
+def survey(base_url, models, wide=0, layout=None):
     for model in models:
         started = time.monotonic()
         row = {"model": model}
         backend = HttpBackend(base_url, model)
         try:
-            formatter, cached = derive.build(backend, model)
+            formatter, cached = derive.build(backend, model, layout=layout)
             row.update(option_mass=formatter.verification["mean_option_mass"],
                        correct=formatter.verification["smoke_correct"],
                        assistant_open=formatter.assistant_open,
@@ -65,16 +65,19 @@ def survey(base_url, models, wide=0):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--base-url", default="http://10.1.200.250:7860")
+    config.backend_url_argument(ap)
     ap.add_argument("--models", nargs="+", required=True)
     ap.add_argument("--wide", type=int, default=0, metavar="N",
                     help="also resolve N labels from the model's own "
                          "vocabulary and measure option mass on a list "
                          "labelled entirely from them (spec 10.1)")
+    ap.add_argument("--layout", default=None,
+                    help="one of spec/layouts, for every model, instead of "
+                         "the readout the registry advertises")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
-    rows = list(survey(args.base_url, args.models, args.wide))
+    rows = list(survey(args.base_url, args.models, args.wide, args.layout))
     failed = [r for r in rows if not r.get("usable")]
     print(f"\n{len(rows) - len(failed)}/{len(rows)} cleared the floor", flush=True)
     if args.out:

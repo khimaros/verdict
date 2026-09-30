@@ -14,6 +14,9 @@ from llama_verdict import prompt, spec, types
 
 SPEC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "spec")
 FIXTURES = sorted(glob.glob(os.path.join(SPEC, "fixtures", "*.json")))
+# the same cases rendered under each named layout in spec/layouts
+LAYOUT_FIXTURES = sorted(glob.glob(os.path.join(SPEC, "fixtures", "layouts", "*", "*.json")))
+ALL_FIXTURES = FIXTURES + LAYOUT_FIXTURES
 
 
 def load(path):
@@ -26,30 +29,47 @@ def reference():
     return types.Formatter.load(os.path.join(SPEC, "formatters", "reference.json"))
 
 
+def formatter_for(fixture, reference):
+    """the reference formatter, or a named layout's."""
+    name = fixture["formatter"]
+    if name == "reference":
+        return reference
+    return types.Formatter.for_layout(name.removeprefix("layout:"), reference)
+
+
 def ids(paths):
-    return [os.path.basename(p)[: -len(".json")] for p in paths]
+    return [os.path.relpath(p, os.path.join(SPEC, "fixtures"))[: -len(".json")]
+            for p in paths]
 
 
 def test_fixtures_exist():
     assert len(FIXTURES) >= 20, "the spec requires at least 20 conformance fixtures"
 
 
-@pytest.mark.parametrize("path", FIXTURES, ids=ids(FIXTURES))
+def test_every_layout_has_fixtures():
+    for name in os.listdir(os.path.join(SPEC, "layouts")):
+        layout = name.removesuffix(".json")
+        assert any(f"/layouts/{layout}/" in p for p in LAYOUT_FIXTURES), layout
+
+
+@pytest.mark.parametrize("path", ALL_FIXTURES, ids=ids(ALL_FIXTURES))
 def test_prefix_matches(path, reference):
     f = load(path)
-    assert prompt.render_prefix(reference, f["state"]) == f["expected"]["prefix"]
+    formatter = formatter_for(f, reference)
+    assert prompt.render_prefix(formatter, f["state"]) == f["expected"]["prefix"]
 
 
-@pytest.mark.parametrize("path", FIXTURES, ids=ids(FIXTURES))
+@pytest.mark.parametrize("path", ALL_FIXTURES, ids=ids(ALL_FIXTURES))
 def test_suffixes_match(path, reference):
     f = load(path)
-    questions = types.parse_questions(f["questions"])
+    formatter = formatter_for(f, reference)
+    questions = types.parse_questions(f["questions"], formatter.layout)
     assert [q.name for q in questions] == list(f["expected"]["questions"])
     for q in questions:
         want = f["expected"]["questions"][q.name]
         assert q.kind == want["kind"]
-        assert prompt.render_suffix(reference, q) == want["suffix"]
-        assert prompt.label_map(q) == want["labels"]
+        assert prompt.render_suffix(formatter, q) == want["suffix"]
+        assert prompt.label_map(q, layout=formatter.layout) == want["labels"]
         assert prompt.alphabet_flags(q) == want["flags"]
         if "legend" in want:
             assert q.legend == want["legend"]
@@ -160,3 +180,15 @@ def test_a_formatter_below_the_mass_floor_is_refused():
     with pytest.raises(ValueError) as e:
         f.check_usable()
     assert "option mass" in str(e.value)
+
+
+def test_a_layout_sets_its_own_mass_floor():
+    """decider is trained on the letter rows only, so the rest of the
+    vocabulary keeps a thin tail: measured 0.87-0.93 on the listed letters
+    with the answer on top. the same mass from a chat model means the opening
+    is wrong."""
+    affixes = dict(system_open="", system_close="", user_open="", user_close="",
+                   assistant_open="X", verification={"mean_option_mass": 0.87})
+    types.Formatter(model="decider", layout="decider-plain", **affixes).check_usable()
+    with pytest.raises(ValueError):
+        types.Formatter(model="chat", **affixes).check_usable()

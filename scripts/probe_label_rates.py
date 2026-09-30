@@ -42,7 +42,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "python"))
 sys.path.insert(0, HERE)
 
-from llama_verdict import derive, spec
+from llama_verdict import config, derive, spec
 from llama_verdict.backend import HttpBackend
 from probe_wide_labels import confusable
 from smoke_models import OVERRIDES
@@ -84,7 +84,7 @@ def summarise(name, labels, by_text):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--base-url", default="http://10.1.200.250:7860")
+    config.backend_url_argument(ap)
     ap.add_argument("--model", default="qwen3.5-9b:Q8_0")
     ap.add_argument("--out", default="eval/results/label-rates.json")
     args = ap.parse_args()

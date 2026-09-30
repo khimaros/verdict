@@ -1,0 +1,70 @@
+{
+  "id": "multi-question",
+  "description": "several questions over one shared state",
+  "spec_version": "0.1.0",
+  "formatter": "layout:decider-plain",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    },
+    "churn": {
+      "type": "boolean",
+      "instructions": "Do they threaten to cancel?"
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this?",
+      "criteria": [
+        "Not urgent.",
+        "Should be handled soon.",
+        "Blocking, handle now."
+      ]
+    }
+  },
+  "expected": {
+    "prefix": "Context:\nMy invoice charged me twice for the same month and I want a refund.\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Question: Which queue should handle this?\nOptions:\n(A) access: Account access: logins, passwords, permissions.\n(B) billing: Billing: invoices, payments, refunds.\n(C) technical: Technical: bugs, outages, integrations.\nAnswer: (",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      },
+      "churn": {
+        "kind": "boolean",
+        "suffix": "Question: Do they threaten to cancel?\nOptions:\n(A) no\n(B) yes\nAnswer: (",
+        "labels": {
+          "false": "A",
+          "true": "B"
+        },
+        "flags": []
+      },
+      "urgency": {
+        "kind": "score",
+        "suffix": "Question: How urgent is this?\nOptions:\n(A) 0: Not urgent.\n(B) 1: Should be handled soon.\n(C) 2: Blocking, handle now.\nAnswer: (",
+        "labels": {
+          "0": "A",
+          "1": "B",
+          "2": "C"
+        },
+        "flags": [],
+        "legend": {
+          "0": "Not urgent.",
+          "1": "Should be handled soon.",
+          "2": "Blocking, handle now."
+        }
+      }
+    }
+  }
+}

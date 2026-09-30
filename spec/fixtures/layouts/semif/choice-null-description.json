@@ -1,0 +1,31 @@
+{
+  "id": "choice-null-description",
+  "description": "a null description falls back to the option id",
+  "spec_version": "0.1.0",
+  "formatter": "layout:semif",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "billing": null,
+        "technical": "Bugs and outages."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nApply the supplied criterion to the supplied evidence. Choose exactly one listed option. Respond with only its uppercase letter, with no explanation or reasoning.<</SYS>>\n<<USR>>\n{\"evidence\": \"My invoice charged me twice for the same month and I want a refund.\"",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": ", \"criterion\": \"Which queue should handle this?\", \"options\": [{\"letter\": \"A\", \"description\": \"billing\"}, {\"letter\": \"B\", \"description\": \"technical: Bugs and outages.\"}]}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "billing": "A",
+          "technical": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

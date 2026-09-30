@@ -10,6 +10,7 @@ model to the labels is not written out, because a silently wrong opening still
 produces plausible looking answers. see docs/DECISIONS.md.
 
 usage:
+  ./scripts/derive_formatter.py            # backend and model from the .env
   ./scripts/derive_formatter.py --base-url http://host:port \
       --models qwen3.5-0.8b:Q8_0 gemma-4-e2b-it:Q8_0
 """
@@ -23,6 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import probe_prompt_layout as P
+from llama_verdict import config
 from llama_verdict import derive as D
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -94,6 +96,8 @@ def run(base_url, model, floor):
     props = cli.get("/props")
     template = props["chat_template"]
     affixes = derive(template, props.get("bos_token", ""), props.get("eos_token", ""))
+    # pinned formatters are chat layout fixtures, which have a system turn
+    del affixes["bare_user_open"]
 
     ids, bad = label_ids(cli, affixes)
     if not ids:
@@ -121,10 +125,18 @@ def run(base_url, model, floor):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--base-url", required=True)
-    ap.add_argument("--models", nargs="+", required=True)
+    ap.add_argument("--base-url", default=config.get("LLAMA_VERDICT_URL"),
+                    help="[LLAMA_VERDICT_URL]")
+    ap.add_argument("--models", nargs="+",
+                    default=config.get("LLAMA_VERDICT_MODEL") and
+                    [config.get("LLAMA_VERDICT_MODEL")],
+                    help="[LLAMA_VERDICT_MODEL]")
     ap.add_argument("--floor", type=float, default=None)
     args = ap.parse_args()
+    if not args.base_url or not args.models:
+        ap.error("requires a backend and a model: pass --base-url and --models, "
+                 "or set LLAMA_VERDICT_URL and LLAMA_VERDICT_MODEL in the "
+                 "environment or a .env (see .env.example)")
 
     floor = (args.floor if args.floor is not None
              else constants()["option_mass_floor_formatter"])

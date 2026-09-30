@@ -87,6 +87,7 @@ documented, which is why the floor above had to be measured rather than cited.
 | `scripts/smoke_models.py` | decision quality, ground truth | a served model | ~1 min/model |
 | `scripts/probe_wide_labels.py` | is a vocabulary label as usable as `A` | a served model | ~3 min/model |
 | `scripts/eval_interventions.py` | does a debiasing step help | a served model | ~4 min/model |
+| `scripts/sweep_jevbench.sh` | decisions a third party wrote, through the jev endpoint | a served model | ~4-8 min/model |
 | `demos/reliability.py` | does the agent loop complete a task | browser or device | ~3-5 min/run |
 | `scripts/sweep_models.py` | the above, across models | browser or device | hours |
 
@@ -701,10 +702,153 @@ every run, which is the whole reason section 2 exists.
 `qwen3.5-4b`, `minicpm5-2b`, `g9v3-3b` and `minicpm5-1b` have NO valid browser
 data -- all twelve of their runs died on `BACK`.
 
+## 7. jevbench's public items
+
+jevbench's 231 public decisions (easy 48, original 72, hard 111), sent through
+verdict's own `/v1/systemone` by jevbench's unchanged `typesafe` adapter, one
+request at a time, on the eval server over the vpn. it is the one benchmark here that
+verdict did not write: the items, the scoring and the client are a third
+party's. raw per-item results are under `eval/results/jevbench*/`, and every
+run is in `eval/results/export.json` with the weights it was measured on.
+
+**public items only.** the board also scores sealed items verdict never sees,
+and runs on datacenter gpus, so these numbers are not comparable one-to-one
+with board rows. the hard tier is 111 items, so a difference of a few items is
+noise, as section "how much of this is noise" says of every table here.
+
+### each model read the way it was trained
+
+| model | read as | correct | hard | hard ece | p50 |
+|---|---|---|---|---|---|
+| winnow-12b | winnow | 200/231 | 0.739 | 0.102 | 0.69 s |
+| gemma-4-12b-it | chat | 200/231 | 0.757 | 0.199 | 0.74 s |
+| jevk5-4b | semif | 199/231 | 0.739 | 0.096 | 1.01 s |
+| decider-4b (v2.1) | decider-plain | 192/231 | 0.658 | 0.201 | 1.46 s |
+| qwen3.5-4b | chat | 182/231 | 0.622 | 0.176 | 1.01 s |
+| qwen3.5-9b | chat | 182/231 | 0.631 | 0.132 | 1.29 s |
+| gemma-4-e4b-it | chat | 180/231 | 0.586 | 0.354 | 0.58 s |
+| decider-2b (v11) | decider-plain | 176/231 | 0.577 | 0.221 | 0.66 s |
+| standardone-8b | standardone-native | 173/231 | 0.522 | 0.196 | 0.45 s |
+| gpt-oss-20b | chat | 161/231 | 0.513 | 0.320 | 0.68 s |
+| granite-4.2-3b | chat | 157/231 | 0.451 | 0.446 | 0.42 s |
+| gemma-4-e2b-it | chat | 153/231 | 0.396 | 0.548 | 0.48 s |
+| qwen3.5-2b | chat | 149/231 | 0.460 | 0.229 | 0.64 s |
+| minicpm5-2b | chat | 144/231 | 0.504 | 0.336 | 0.37 s |
+| qwen3.5-0.8b | chat | 131/231 | 0.387 | 0.231 | 0.64 s |
+
+**the layouts reproduce their authors.** decider-4b under `decider-plain`
+scores 0.658 on the hard tier; its card reports 0.649 for v2.1 on the same
+items, one item apart. that is the strongest check available that the layout
+sends decider the bytes it was trained on.
+
+**reading a model in its own format pays where it was trained on one.**
+jevk5-4b goes from 190 under chat to 199 under `semif`, winnow-12b from 196
+to 200 under `winnow` with its ece falling from 0.157 to 0.102, and standardone-8b
+cannot be read under chat at all -- its template's generation prompt is empty
+and derivation refuses it. decider-2b reads the same either way, 176 against
+175, so for it the layout is fidelity rather than a gain.
+
+**four general instruct models decide as well as the dedicated ones.**
+gemma-4-12b-it, qwen3.5-4b, qwen3.5-9b and gemma-4-e4b-it clear 0.75 overall
+and 0.55 on the hard tier, the level of the weaker dedicated decision models,
+and the model registry marks them as decision models on this evidence.
+
+**confidence is not calibration.** gemma-4-12b-it ties for the most accurate
+model and reports a mean top probability of 0.95 on the hard tier at 0.757
+accuracy. winnow-12b, a decision fine-tune of the same gemma 4 12b, scores the
+same 200 at ece 0.102, and jevk5-4b, whose author fitted a temperature, 0.096:
+the two models whose confidence tracks their accuracy are the two trained for
+it.
+
+### debiasing, per model
+
+correct items / hard tier, with each option alone:
+
+| model | as served | order averaging 2 | prior correction |
+|---|---|---|---|
+| gemma-4-12b-it | 200 / 0.76 | 200 / 0.75 | 193 / 0.68 |
+| qwen3.5-4b | 182 / 0.62 | 184 / 0.65 | 174 / 0.54 |
+| qwen3.5-9b | 182 / 0.63 | 182 / 0.64 | 179 / 0.59 |
+| gemma-4-e4b-it | 180 / 0.59 | 178 / 0.57 | 168 / 0.50 |
+| gpt-oss-20b | 161 / 0.51 | 161 / 0.50 | 170 / 0.54 |
+| granite-4.2-3b | 157 / 0.45 | 157 / 0.44 | 139 / 0.33 |
+| gemma-4-e2b-it | 153 / 0.40 | 154 / 0.41 | 152 / 0.41 |
+| qwen3.5-2b | 149 / 0.46 | 149 / 0.47 | 145 / 0.41 |
+| minicpm5-2b | 144 / 0.50 | 141 / 0.45 | 148 / 0.41 |
+| qwen3.5-0.8b | 131 / 0.39 | 140 / 0.40 | 132 / 0.39 |
+
+**order averaging leaves accuracy where it was and improves calibration on
+every model**, hard-tier ece down by 0.02 to 0.10, for twice the scoring
+passes. the one accuracy change past the noise floor is qwen3.5-0.8b, +9,
+the model section 2 already found blind in the middle positions. use it where
+confidence is acted on, or on a model with a known position bias.
+
+**prior correction splits the models.** it costs six of the ten, worst on the
+hard tier, where the answer to an empty state is not only prejudice:
+granite-4.2-3b loses 18 items and gemma-4-e4b-it 12. it helps two past the
+noise floor. gpt-oss-20b gains 9, and minicpm5-2b gains 4 by breaking a named
+bias: it answers "other" to all twelve intent items at 0.97-1.00, order
+averaging does not move that, and prior correction takes it from 2/12 to 7/12.
+so it is a per-model setting, measured before it is turned on, and never a
+default.
+
+**tournament and the wide alphabet** cannot engage here: no jevbench item has
+more than six options. both are recorded in the export's variants for when a
+long-list benchmark runs; sections 2 and 2a have the evidence for them.
+
+### what it found about the setup
+
+- the eval server served the decision models at `--ctx-size 4096`, and standardone's
+  native prompt overflowed it on three long-policy items. the run is kept
+  under `eval/results/jevbench-invalid/ctx4096/`; the registry now sizes each
+  model's context from its author, and the rerun at 8192 answers all 231.
+- a verdict server reported a prompt that does not fit as `529 backend
+  unavailable`, which a jev client retries. it now answers 422 with the
+  backend's reason, since sending the same prompt again cannot fit it.
+
+## 8. where a decision's time goes
+
+measured on jevbench's 48 easy items, one request at a time, with
+llama-server's own per-request `timings` to split the wall time. raw runs are
+under `eval/results/perf-connection/`.
+
+| minicpm5-2b | p50 | mean | min |
+|---|---|---|---|
+| a new connection per backend call | 0.346 s | 0.359 s | 0.322 s |
+| a connection per server thread | 0.320 s | 0.358 s | 0.310 s |
+| **a pool shared across threads** | **0.173 s** | **0.179 s** | **0.165 s** |
+
+**a fresh tcp connection per call was half of a small model's decision.** it
+costs a round trip before the request is sent, and the eval server is ~150 ms away. a
+connection per thread did not help, because the jev server answers every
+client connection on a new thread and clients open one per request; only a
+pool shared across threads reuses anything.
+
+| model | wall p50 | llama-server compute p50 | new tokens | prefix reused |
+|---|---|---|---|---|
+| minicpm5-2b | 170 ms | 13 ms | 1 | 114 |
+| gemma-4-12b-it | 397 ms | 222 ms | 119 | 0 |
+| qwen3.5-4b | 753 ms | 336 ms | 116 | 0 |
+
+- **what remains for a small model is the network.** minicpm spends 13 ms
+  computing and ~157 ms travelling. verdict beside its llama-server would
+  answer in tens of milliseconds.
+- **prefix reuse does not happen on qwen3.5 or gemma-4 as the eval server serves them.**
+  both report 0 reused tokens, so the state is prefilled again for every
+  question, which is the cost the prefix and suffix split exists to avoid.
+  qwen3.5's recurrent layers and gemma-4's sliding window both need llama.cpp
+  flags to keep a reusable cache (`--ctx-checkpoints`, `--swa-full`), and the
+  eval server's config sets neither. untested.
+- **qwen3.5-4b carries ~250 ms that neither compute nor the network explains.**
+  its gguf is an MTP build served with a draft setting, and its vocabulary is
+  248k pieces sorted for the top 64. not yet isolated.
+
 ## what none of this measures
 
-- **calibration.** confidence is not calibrated out of the box; gemma-4-e2b
-  was measured reporting 1.000 on wrong answers. phase 7.
+- **calibration, fixed.** confidence is measured now, as hard-tier ece in
+  section 7, and it is not calibrated out of the box: gemma-4-12b-it reports
+  0.95 at 0.757 accuracy, and gemma-4-e2b was measured reporting 1.000 on wrong
+  answers. fitting a calibration is phase 7.
 - **quantisation.** every number here is Q8_0. phase 8 runs a phone at about
   Q3, and no model on the eval server is served at two quants, so whether any
   of this is a model property or a rung property is unknown.

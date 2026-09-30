@@ -138,6 +138,10 @@ it posts to `{base}/v1/systemone` with `authorization: bearer <key>`, where the
 base comes from `TYPESAFE_BASE_URL` or `TYPESAFE_API_URL`, and it sets
 `TYPESAFE_MODEL=jev-latest`. so serving the alias is not cosmetic.
 
+verdict's side of the pairing is `make serve`, which takes the backend, port
+and key from the `.env` at the repo root. the client keeps its own `TYPESAFE_*`
+names and changes only the base url.
+
 what it requires of a response, and will raise `ValueError` without:
 
 - `answers[name].choice`, a string
@@ -148,6 +152,15 @@ what it requires of a response, and will raise `ValueError` without:
 it retries on 429, 529 and 503 with backoff at 0.5s and 1s, three attempts,
 on a 25 second timeout. our error codes must match those or the client will
 fail fast instead of retrying.
+
+not every client retries: jevbench never does. so the backend waits out a
+model that is still loading itself, retrying the 502 from llama-swap and the
+503 from llama-server with backoff for about 15 seconds before surfacing 529.
+
+a 400 from the backend is the opposite case: llama-server refusing the prompt
+as sent, usually a state longer than its context. that surfaces as 422 with
+the backend's reason, because a client that retried would send the same
+prompt into the same refusal.
 
 two structural facts matter for us:
 

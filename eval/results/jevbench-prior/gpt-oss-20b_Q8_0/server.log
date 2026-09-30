@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     gpt-oss-20b:Q8_0
+  formatter gpt-oss-20b:Q8_0 (mean option mass 0.9965, cached, opening overridden)
+  layout    chat
+  weights   {"repo": "unsloth/gpt-oss-20b-GGUF", "revision": "d449b42d93e1c2c7bda5312f5c25c8fb91dfa9b4", "file": "gpt-oss-20b-Q8_0.gguf"}
+  build     b11310-f872b5911
+  debiasing order averaging 1, prior correction on
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 15:18:12)
+  point a jev client at this with TYPESAFE_BASE_URL

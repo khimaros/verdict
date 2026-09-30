@@ -10,18 +10,23 @@ the client is the thing under measurement, and because a proxy records what was
 actually sent rather than what the sender believed it sent.
 
 usage:
-  scripts/count_upstream.py --upstream http://10.1.200.250:7860 --port 8490 \
-      --out /tmp/upstream.jsonl
+  scripts/count_upstream.py --port 8490 --out /tmp/upstream.jsonl
+  (the upstream is LLAMA_VERDICT_URL from the environment or .env, or --upstream)
 """
 
 import argparse
 import hashlib
 import json
+import os
 import sys
 import time
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import ClassVar
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "python"))
+
+from llama_verdict import config
 
 # how much of a prompt to keep for the shared-prefix comparison. the whole
 # thing would make the log larger than the thing it measures.
@@ -103,12 +108,13 @@ class Proxy(BaseHTTPRequestHandler):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--upstream", default="http://10.1.200.250:7860")
+    config.backend_url_argument(ap, "--upstream")
     ap.add_argument("--port", type=int, default=8490)
     ap.add_argument("--out", default="/tmp/upstream.jsonl")
     args = ap.parse_args()
 
-    Proxy.upstream = args.upstream.rstrip("/")
+    # requests arrive with their full path, so the upstream is the server root
+    Proxy.upstream = args.upstream.rstrip("/").removesuffix("/v1")
     print(f"recording {args.upstream} -> {args.out} on port {args.port}",
           file=sys.stderr)
     with open(args.out, "w") as out:

@@ -1,0 +1,8 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     gpt-oss-20b:Q8_0
+  formatter gpt-oss-20b:Q8_0 (mean option mass 0.9965, derived from the model's chat template, opening overridden)
+  layout    chat
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 12:55:06)
+  point a jev client at this with TYPESAFE_BASE_URL

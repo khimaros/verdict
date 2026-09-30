@@ -1,0 +1,3883 @@
+{
+ "hardware": "strix halo igpu, llama.cpp via llama-swap, reached over a ~150 ms vpn",
+ "metrics_units": {
+  "accuracy": "share 0-1",
+  "accuracy_easy": "share 0-1",
+  "accuracy_hard": "share 0-1",
+  "accuracy_original": "share 0-1",
+  "by_position": "count per position of 4",
+  "complete": "count",
+  "correct": "count",
+  "failures": "count",
+  "hard_ece": "share 0-1",
+  "hard_mean_confidence": "share 0-1",
+  "latency_p50_s": "seconds",
+  "latency_p95_s": "seconds",
+  "median_ms": "milliseconds",
+  "min_option_mass": "share 0-1",
+  "n": "count",
+  "option_mass": "share 0-1",
+  "reached_one": "count",
+  "refusal": "text",
+  "runs": "count",
+  "statuses": "count per final status",
+  "usable": "boolean"
+ },
+ "rows": [
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:52:58.029859+00:00",
+   "metrics": {
+    "accuracy": 0.8658,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7568,
+    "accuracy_original": 0.9444,
+    "correct": 200,
+    "failures": 0,
+    "hard_ece": 0.1987,
+    "hard_mean_confidence": 0.9536,
+    "latency_p50_s": 0.737,
+    "latency_p95_s": 3.731,
+    "n": 231
+   },
+   "model": "gemma-4-12b-it:Q8_0",
+   "path": "eval/results/jevbench/gemma-4-12b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-12b-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-12B-it-GGUF",
+    "revision": "fc034cfff751157913579611efad8462ac1be606"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:37:28.327811+00:00",
+   "metrics": {
+    "accuracy": 0.6623,
+    "accuracy_easy": 0.9792,
+    "accuracy_hard": 0.3964,
+    "accuracy_original": 0.8611,
+    "correct": 153,
+    "failures": 0,
+    "hard_ece": 0.548,
+    "hard_mean_confidence": 0.9369,
+    "latency_p50_s": 0.477,
+    "latency_p95_s": 1.754,
+    "n": 231
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/jevbench/gemma-4-e2b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-E2B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E2B-it-GGUF",
+    "revision": "0314792d7f1f7e229411f620751375812bb9faf2"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:34:25.297599+00:00",
+   "metrics": {
+    "accuracy": 0.7792,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5856,
+    "accuracy_original": 0.9306,
+    "correct": 180,
+    "failures": 0,
+    "hard_ece": 0.3542,
+    "hard_mean_confidence": 0.8729,
+    "latency_p50_s": 0.584,
+    "latency_p95_s": 2.288,
+    "n": 231
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/jevbench/gemma-4-e4b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-E4B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E4B-it-GGUF",
+    "revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:59:48.902778+00:00",
+   "metrics": {
+    "accuracy": 0.697,
+    "accuracy_easy": 0.9583,
+    "accuracy_hard": 0.5135,
+    "accuracy_original": 0.8056,
+    "correct": 161,
+    "failures": 0,
+    "hard_ece": 0.3197,
+    "hard_mean_confidence": 0.8195,
+    "latency_p50_s": 0.676,
+    "latency_p95_s": 3.367,
+    "n": 231
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/jevbench/gpt-oss-20b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gpt-oss-20b-Q8_0.gguf",
+    "repo": "unsloth/gpt-oss-20b-GGUF",
+    "revision": "d449b42d93e1c2c7bda5312f5c25c8fb91dfa9b4"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:40:03.635761+00:00",
+   "metrics": {
+    "accuracy": 0.6797,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4505,
+    "accuracy_original": 0.8194,
+    "correct": 157,
+    "failures": 0,
+    "hard_ece": 0.446,
+    "hard_mean_confidence": 0.8846,
+    "latency_p50_s": 0.419,
+    "latency_p95_s": 1.731,
+    "n": 231
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/jevbench/granite-4.2-3b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "granite-4.2-3b-Q8_0.gguf",
+    "repo": "ibm-granite/granite-4.2-3b-GGUF",
+    "revision": "c40945d71cd90f249a56985e8155551a9188dc30"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:24:13.123313+00:00",
+   "metrics": {
+    "accuracy": 0.6234,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5045,
+    "accuracy_original": 0.5556,
+    "correct": 144,
+    "failures": 0,
+    "hard_ece": 0.3357,
+    "hard_mean_confidence": 0.8402,
+    "latency_p50_s": 0.366,
+    "latency_p95_s": 1.307,
+    "n": 231
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/jevbench/minicpm5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "MiniCPM5-2B-Q8_0.gguf",
+    "repo": "openbmb/MiniCPM5-2B-GGUF",
+    "revision": "2079a22f3beaa4e306449978533478fe0522f4b3"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:46:28.900208+00:00",
+   "metrics": {
+    "accuracy": 0.5671,
+    "accuracy_easy": 0.9583,
+    "accuracy_hard": 0.3874,
+    "accuracy_original": 0.5833,
+    "correct": 131,
+    "failures": 0,
+    "hard_ece": 0.2306,
+    "hard_mean_confidence": 0.618,
+    "latency_p50_s": 0.639,
+    "latency_p95_s": 1.415,
+    "n": 231
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/jevbench/qwen3.5-0.8b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-0.8B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-0.8B-MTP-GGUF",
+    "revision": "cf8a611f6ed2c2060046219a19f12cd3d5ecd67c"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:43:21.133098+00:00",
+   "metrics": {
+    "accuracy": 0.645,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4595,
+    "accuracy_original": 0.6944,
+    "correct": 149,
+    "failures": 0,
+    "hard_ece": 0.2289,
+    "hard_mean_confidence": 0.6621,
+    "latency_p50_s": 0.639,
+    "latency_p95_s": 1.568,
+    "n": 231
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/jevbench/qwen3.5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-2B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-2B-MTP-GGUF",
+    "revision": "e05864f8066d874d5f85aaff007ae57a2a7d1efe"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:21:55.990766+00:00",
+   "metrics": {
+    "accuracy": 0.7879,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.6216,
+    "accuracy_original": 0.9028,
+    "correct": 182,
+    "failures": 0,
+    "hard_ece": 0.1756,
+    "hard_mean_confidence": 0.7502,
+    "latency_p50_s": 1.006,
+    "latency_p95_s": 2.587,
+    "n": 231
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/jevbench/qwen3.5-4b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-4B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-4B-MTP-GGUF",
+    "revision": "86835bf9949e4d14d6860f7910b1340ad4f271a9"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T19:30:34.901648+00:00",
+   "metrics": {
+    "accuracy": 0.7879,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.6306,
+    "accuracy_original": 0.8889,
+    "correct": 182,
+    "failures": 0,
+    "hard_ece": 0.1322,
+    "hard_mean_confidence": 0.7629,
+    "latency_p50_s": 1.287,
+    "latency_p95_s": 3.533,
+    "n": 231
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/jevbench/qwen3.5-9b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-9B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-9B-MTP-GGUF",
+    "revision": "9716a636ee4bddc3fed678220b7a33dd2a4160ae"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11309-a4d880fd5",
+   "measured_utc": "2026-09-30T21:10:58.472042+00:00",
+   "metrics": {
+    "accuracy": 0.8658,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7477,
+    "accuracy_original": 0.9583,
+    "correct": 200,
+    "failures": 0,
+    "hard_ece": 0.1811,
+    "hard_mean_confidence": 0.918,
+    "latency_p50_s": 1.629,
+    "latency_p95_s": 4.895,
+    "n": 231
+   },
+   "model": "gemma-4-12b-it:Q8_0",
+   "path": "eval/results/jevbench-oa2/gemma-4-12b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-12b-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-12B-it-GGUF",
+    "revision": "fc034cfff751157913579611efad8462ac1be606"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:20:08.222140+00:00",
+   "metrics": {
+    "accuracy": 0.6667,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4054,
+    "accuracy_original": 0.8472,
+    "correct": 154,
+    "failures": 0,
+    "hard_ece": 0.4461,
+    "hard_mean_confidence": 0.8515,
+    "latency_p50_s": 0.856,
+    "latency_p95_s": 2.846,
+    "n": 231
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/jevbench-oa2/gemma-4-e2b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-E2B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E2B-it-GGUF",
+    "revision": "0314792d7f1f7e229411f620751375812bb9faf2"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11309-a4d880fd5",
+   "measured_utc": "2026-09-30T20:54:30.334344+00:00",
+   "metrics": {
+    "accuracy": 0.7706,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5676,
+    "accuracy_original": 0.9306,
+    "correct": 178,
+    "failures": 0,
+    "hard_ece": 0.2692,
+    "hard_mean_confidence": 0.8325,
+    "latency_p50_s": 1.151,
+    "latency_p95_s": 3.466,
+    "n": 231
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/jevbench-oa2/gemma-4-e4b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-E4B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E4B-it-GGUF",
+    "revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:35:53.766968+00:00",
+   "metrics": {
+    "accuracy": 0.697,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4955,
+    "accuracy_original": 0.8056,
+    "correct": 161,
+    "failures": 0,
+    "hard_ece": 0.3002,
+    "hard_mean_confidence": 0.7813,
+    "latency_p50_s": 0.969,
+    "latency_p95_s": 2.733,
+    "n": 231
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/jevbench-oa2/gpt-oss-20b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gpt-oss-20b-Q8_0.gguf",
+    "repo": "unsloth/gpt-oss-20b-GGUF",
+    "revision": "d449b42d93e1c2c7bda5312f5c25c8fb91dfa9b4"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:15:09.391375+00:00",
+   "metrics": {
+    "accuracy": 0.6797,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4414,
+    "accuracy_original": 0.8333,
+    "correct": 157,
+    "failures": 0,
+    "hard_ece": 0.3626,
+    "hard_mean_confidence": 0.8041,
+    "latency_p50_s": 0.727,
+    "latency_p95_s": 2.441,
+    "n": 231
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/jevbench-oa2/granite-4.2-3b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "granite-4.2-3b-Q8_0.gguf",
+    "repo": "ibm-granite/granite-4.2-3b-GGUF",
+    "revision": "c40945d71cd90f249a56985e8155551a9188dc30"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11309-a4d880fd5",
+   "measured_utc": "2026-09-30T20:39:06.566579+00:00",
+   "metrics": {
+    "accuracy": 0.6104,
+    "accuracy_easy": 0.9792,
+    "accuracy_hard": 0.4505,
+    "accuracy_original": 0.6111,
+    "correct": 141,
+    "failures": 0,
+    "hard_ece": 0.3131,
+    "hard_mean_confidence": 0.7525,
+    "latency_p50_s": 0.731,
+    "latency_p95_s": 2.117,
+    "n": 231
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/jevbench-oa2/minicpm5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "MiniCPM5-2B-Q8_0.gguf",
+    "repo": "openbmb/MiniCPM5-2B-GGUF",
+    "revision": "2079a22f3beaa4e306449978533478fe0522f4b3"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:30:01.851512+00:00",
+   "metrics": {
+    "accuracy": 0.6061,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.3964,
+    "accuracy_original": 0.6667,
+    "correct": 140,
+    "failures": 0,
+    "hard_ece": 0.1873,
+    "hard_mean_confidence": 0.5485,
+    "latency_p50_s": 1.164,
+    "latency_p95_s": 2.14,
+    "n": 231
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/jevbench-oa2/qwen3.5-0.8b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-0.8B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-0.8B-MTP-GGUF",
+    "revision": "cf8a611f6ed2c2060046219a19f12cd3d5ecd67c"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:24:28.066709+00:00",
+   "metrics": {
+    "accuracy": 0.645,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4685,
+    "accuracy_original": 0.6806,
+    "correct": 149,
+    "failures": 0,
+    "hard_ece": 0.1608,
+    "hard_mean_confidence": 0.6293,
+    "latency_p50_s": 0.757,
+    "latency_p95_s": 2.022,
+    "n": 231
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/jevbench-oa2/qwen3.5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-2B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-2B-MTP-GGUF",
+    "revision": "e05864f8066d874d5f85aaff007ae57a2a7d1efe"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11309-a4d880fd5",
+   "measured_utc": "2026-09-30T20:48:15.322054+00:00",
+   "metrics": {
+    "accuracy": 0.7965,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.6486,
+    "accuracy_original": 0.8889,
+    "correct": 184,
+    "failures": 0,
+    "hard_ece": 0.1443,
+    "hard_mean_confidence": 0.6962,
+    "latency_p50_s": 2.013,
+    "latency_p95_s": 3.949,
+    "n": 231
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/jevbench-oa2/qwen3.5-4b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-4B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-4B-MTP-GGUF",
+    "revision": "86835bf9949e4d14d6860f7910b1340ad4f271a9"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11309-a4d880fd5",
+   "measured_utc": "2026-09-30T21:01:49.406402+00:00",
+   "metrics": {
+    "accuracy": 0.7879,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.6396,
+    "accuracy_original": 0.875,
+    "correct": 182,
+    "failures": 0,
+    "hard_ece": 0.1055,
+    "hard_mean_confidence": 0.7312,
+    "latency_p50_s": 1.118,
+    "latency_p95_s": 3.851,
+    "n": 231
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/jevbench-oa2/qwen3.5-9b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "Qwen3.5-9B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-9B-MTP-GGUF",
+    "revision": "9716a636ee4bddc3fed678220b7a33dd2a4160ae"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:03:56.293597+00:00",
+   "metrics": {
+    "accuracy": 0.8355,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.6847,
+    "accuracy_original": 0.9583,
+    "correct": 193,
+    "failures": 0,
+    "hard_ece": 0.2323,
+    "hard_mean_confidence": 0.917,
+    "latency_p50_s": 1.008,
+    "latency_p95_s": 4.347,
+    "n": 231
+   },
+   "model": "gemma-4-12b-it:Q8_0",
+   "path": "eval/results/jevbench-prior/gemma-4-12b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "gemma-4-12b-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-12B-it-GGUF",
+    "revision": "fc034cfff751157913579611efad8462ac1be606"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:10:55.041800+00:00",
+   "metrics": {
+    "accuracy": 0.658,
+    "accuracy_easy": 0.9792,
+    "accuracy_hard": 0.4054,
+    "accuracy_original": 0.8333,
+    "correct": 152,
+    "failures": 0,
+    "hard_ece": 0.5342,
+    "hard_mean_confidence": 0.9396,
+    "latency_p50_s": 0.483,
+    "latency_p95_s": 2.098,
+    "n": 231
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/jevbench-prior/gemma-4-e2b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "gemma-4-E2B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E2B-it-GGUF",
+    "revision": "0314792d7f1f7e229411f620751375812bb9faf2"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:49:37.120899+00:00",
+   "metrics": {
+    "accuracy": 0.7273,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5045,
+    "accuracy_original": 0.8889,
+    "correct": 168,
+    "failures": 0,
+    "hard_ece": 0.3651,
+    "hard_mean_confidence": 0.8587,
+    "latency_p50_s": 0.645,
+    "latency_p95_s": 2.721,
+    "n": 231
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/jevbench-prior/gemma-4-e4b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "gemma-4-E4B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E4B-it-GGUF",
+    "revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:21:52.939540+00:00",
+   "metrics": {
+    "accuracy": 0.7359,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5405,
+    "accuracy_original": 0.8611,
+    "correct": 170,
+    "failures": 0,
+    "hard_ece": 0.2176,
+    "hard_mean_confidence": 0.7582,
+    "latency_p50_s": 0.537,
+    "latency_p95_s": 2.295,
+    "n": 231
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/jevbench-prior/gpt-oss-20b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "gpt-oss-20b-Q8_0.gguf",
+    "repo": "unsloth/gpt-oss-20b-GGUF",
+    "revision": "d449b42d93e1c2c7bda5312f5c25c8fb91dfa9b4"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:07:15.734183+00:00",
+   "metrics": {
+    "accuracy": 0.6017,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.3333,
+    "accuracy_original": 0.75,
+    "correct": 139,
+    "failures": 0,
+    "hard_ece": 0.5649,
+    "hard_mean_confidence": 0.8982,
+    "latency_p50_s": 0.414,
+    "latency_p95_s": 2.318,
+    "n": 231
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/jevbench-prior/granite-4.2-3b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "granite-4.2-3b-Q8_0.gguf",
+    "repo": "ibm-granite/granite-4.2-3b-GGUF",
+    "revision": "c40945d71cd90f249a56985e8155551a9188dc30"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:38:37.473337+00:00",
+   "metrics": {
+    "accuracy": 0.6407,
+    "accuracy_easy": 0.9792,
+    "accuracy_hard": 0.4054,
+    "accuracy_original": 0.7778,
+    "correct": 148,
+    "failures": 0,
+    "hard_ece": 0.477,
+    "hard_mean_confidence": 0.8779,
+    "latency_p50_s": 0.372,
+    "latency_p95_s": 1.645,
+    "n": 231
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/jevbench-prior/minicpm5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "MiniCPM5-2B-Q8_0.gguf",
+    "repo": "openbmb/MiniCPM5-2B-GGUF",
+    "revision": "2079a22f3beaa4e306449978533478fe0522f4b3"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:18:07.249387+00:00",
+   "metrics": {
+    "accuracy": 0.5714,
+    "accuracy_easy": 0.9375,
+    "accuracy_hard": 0.3874,
+    "accuracy_original": 0.6111,
+    "correct": 132,
+    "failures": 0,
+    "hard_ece": 0.2083,
+    "hard_mean_confidence": 0.5957,
+    "latency_p50_s": 0.558,
+    "latency_p95_s": 1.714,
+    "n": 231
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/jevbench-prior/qwen3.5-0.8b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "Qwen3.5-0.8B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-0.8B-MTP-GGUF",
+    "revision": "cf8a611f6ed2c2060046219a19f12cd3d5ecd67c"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:14:39.657389+00:00",
+   "metrics": {
+    "accuracy": 0.6277,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.4054,
+    "accuracy_original": 0.7222,
+    "correct": 145,
+    "failures": 0,
+    "hard_ece": 0.2376,
+    "hard_mean_confidence": 0.643,
+    "latency_p50_s": 0.584,
+    "latency_p95_s": 1.942,
+    "n": 231
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/jevbench-prior/qwen3.5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "Qwen3.5-2B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-2B-MTP-GGUF",
+    "revision": "e05864f8066d874d5f85aaff007ae57a2a7d1efe"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:45:10.147932+00:00",
+   "metrics": {
+    "accuracy": 0.7532,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5405,
+    "accuracy_original": 0.9167,
+    "correct": 174,
+    "failures": 0,
+    "hard_ece": 0.2249,
+    "hard_mean_confidence": 0.7597,
+    "latency_p50_s": 1.007,
+    "latency_p95_s": 3.518,
+    "n": 231
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/jevbench-prior/qwen3.5-4b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "Qwen3.5-4B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-4B-MTP-GGUF",
+    "revision": "86835bf9949e4d14d6860f7910b1340ad4f271a9"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T21:57:10.564727+00:00",
+   "metrics": {
+    "accuracy": 0.7749,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5946,
+    "accuracy_original": 0.9028,
+    "correct": 179,
+    "failures": 0,
+    "hard_ece": 0.1626,
+    "hard_mean_confidence": 0.7412,
+    "latency_p50_s": 1.111,
+    "latency_p95_s": 4.324,
+    "n": 231
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/jevbench-prior/qwen3.5-9b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": {
+    "file": "Qwen3.5-9B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-9B-MTP-GGUF",
+    "revision": "9716a636ee4bddc3fed678220b7a33dd2a4160ae"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:26:02.180484+00:00",
+   "metrics": {
+    "accuracy": 0.7576,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5946,
+    "accuracy_original": 0.8472,
+    "correct": 175,
+    "failures": 0,
+    "hard_ece": 0.2517,
+    "hard_mean_confidence": 0.8463,
+    "latency_p50_s": 0.674,
+    "latency_p95_s": 1.854,
+    "n": 231
+   },
+   "model": "decider-2b:Q8_0",
+   "path": "eval/results/jevbench-layouts/chat/decider-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "decider-2b-v11-Q8_0.gguf",
+    "repo": "Mapika/decider-2b-GGUF",
+    "revision": "ff2e5e687327eda9ac34e9a3ca84d3f400672c87"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11309-a4d880fd5",
+   "measured_utc": "2026-09-30T20:31:45.201605+00:00",
+   "metrics": {
+    "accuracy": 0.8225,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7117,
+    "accuracy_original": 0.875,
+    "correct": 190,
+    "failures": 0,
+    "hard_ece": 0.0983,
+    "hard_mean_confidence": 0.7964,
+    "latency_p50_s": 1.03,
+    "latency_p95_s": 2.696,
+    "n": 231
+   },
+   "model": "jevk5-4b:Q8_0",
+   "path": "eval/results/jevbench-layouts/chat/jevk5-4b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "jevk5-4b-v0.2-Q8_0.gguf",
+    "repo": "alibiserikbay/JevK5-GGUF",
+    "revision": "ec67b0bfce5119a8b11a2cdb430bb43e3fa3e82a"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T22:52:43.034216+00:00",
+   "metrics": {
+    "accuracy": 0.8485,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7207,
+    "accuracy_original": 0.9444,
+    "correct": 196,
+    "failures": 0,
+    "hard_ece": 0.1568,
+    "hard_mean_confidence": 0.8768,
+    "latency_p50_s": 0.646,
+    "latency_p95_s": 3.719,
+    "n": 231
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/jevbench-layouts/chat/winnow-12b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gguf/Winnow-12B-Q8_0.gguf",
+    "repo": "EldanRing/Winnow-12B",
+    "revision": "b6ac22b0d51b69b18200acacb3fbdd98073fffe8"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:26:28.992870+00:00",
+   "metrics": {
+    "accuracy": 0.7619,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5766,
+    "accuracy_original": 0.8889,
+    "correct": 176,
+    "failures": 0,
+    "hard_ece": 0.221,
+    "hard_mean_confidence": 0.7976,
+    "latency_p50_s": 0.656,
+    "latency_p95_s": 1.77,
+    "n": 231
+   },
+   "model": "decider-2b:Q8_0",
+   "path": "eval/results/jevbench-layouts/decider-plain/decider-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "decider-plain",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "decider-2b-v11-Q8_0.gguf",
+    "repo": "Mapika/decider-2b-GGUF",
+    "revision": "ff2e5e687327eda9ac34e9a3ca84d3f400672c87"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:23:04.765186+00:00",
+   "metrics": {
+    "accuracy": 0.8312,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.6577,
+    "accuracy_original": 0.9861,
+    "correct": 192,
+    "failures": 0,
+    "hard_ece": 0.2005,
+    "hard_mean_confidence": 0.8314,
+    "latency_p50_s": 1.458,
+    "latency_p95_s": 3.056,
+    "n": 231
+   },
+   "model": "decider-4b:Q8_0",
+   "path": "eval/results/jevbench-layouts/decider-plain/decider-4b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "decider-plain",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "decider-4b-v2.1-Q8_0.gguf",
+    "repo": "Mapika/decider-4b-GGUF",
+    "revision": "b79f09d9ba7837f1b744295ea267b55d08e958ec"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:31:18.001856+00:00",
+   "metrics": {
+    "accuracy": 0.8615,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7387,
+    "accuracy_original": 0.9583,
+    "correct": 199,
+    "failures": 0,
+    "hard_ece": 0.0958,
+    "hard_mean_confidence": 0.8106,
+    "latency_p50_s": 1.01,
+    "latency_p95_s": 2.609,
+    "n": 231
+   },
+   "model": "jevk5-4b:Q8_0",
+   "path": "eval/results/jevbench-layouts/semif/jevk5-4b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "semif",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "jevk5-4b-v0.2-Q8_0.gguf",
+    "repo": "alibiserikbay/JevK5-GGUF",
+    "revision": "ec67b0bfce5119a8b11a2cdb430bb43e3fa3e82a"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T22:34:58.485497+00:00",
+   "metrics": {
+    "accuracy": 0.7489,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5225,
+    "accuracy_original": 0.9306,
+    "correct": 173,
+    "failures": 0,
+    "hard_ece": 0.1962,
+    "hard_mean_confidence": 0.6979,
+    "latency_p50_s": 0.453,
+    "latency_p95_s": 2.924,
+    "n": 231
+   },
+   "model": "standardone-8b:Q8_0",
+   "path": "eval/results/jevbench-layouts/standardone-native/standardone-8b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "standardone-native",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "StandardOne-8B-Q8_0.gguf",
+    "repo": "StandardThinking/StandardOne-8B-GGUF",
+    "revision": "4eb253d55ad6368c7ac483d8e66158c4aa289407"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T22:47:58.097797+00:00",
+   "metrics": {
+    "accuracy": 0.8658,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7387,
+    "accuracy_original": 0.9722,
+    "correct": 200,
+    "failures": 0,
+    "hard_ece": 0.1017,
+    "hard_mean_confidence": 0.8405,
+    "latency_p50_s": 0.694,
+    "latency_p95_s": 3.584,
+    "n": 231
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/jevbench-layouts/winnow/winnow-12b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "winnow",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gguf/Winnow-12B-Q8_0.gguf",
+    "repo": "EldanRing/Winnow-12B",
+    "revision": "b6ac22b0d51b69b18200acacb3fbdd98073fffe8"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:05:21.107612+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": null,
+    "option_mass": null,
+    "refusal": "ValueError: decider-4b:Q8_0: option mass 0.8651 at [2, 26, 52] options is below the floor of 0.9. the derived assistant opening is '<|im_start|>assistant\\n<think>\\n\\n</think>\\n\\n'; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "usable": false
+   },
+   "model": "decider-4b:Q8_0",
+   "path": "eval/results/layouts/mass-deciders-chat.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": {
+    "file": "decider-4b-v2.1-Q8_0.gguf",
+    "repo": "Mapika/decider-4b-GGUF",
+    "revision": "b79f09d9ba7837f1b744295ea267b55d08e958ec"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:05:21.107612+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9451529976203504,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "decider-2b:Q8_0",
+   "path": "eval/results/layouts/mass-deciders-chat.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": {
+    "file": "decider-2b-v11-Q8_0.gguf",
+    "repo": "Mapika/decider-2b-GGUF",
+    "revision": "ff2e5e687327eda9ac34e9a3ca84d3f400672c87"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:03:05.901275+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": null,
+    "option_mass": null,
+    "refusal": "ValueError: decider-4b:Q8_0: option mass 0.8858 at [2, 26] options is below the floor of 0.9. the derived assistant opening is '\\nAnswer: ('; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "usable": false
+   },
+   "model": "decider-4b:Q8_0",
+   "path": "eval/results/layouts/mass-deciders-meta.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "registry"
+   },
+   "weights": {
+    "file": "decider-4b-v2.1-Q8_0.gguf",
+    "repo": "Mapika/decider-4b-GGUF",
+    "revision": "b79f09d9ba7837f1b744295ea267b55d08e958ec"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:03:05.901275+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": null,
+    "option_mass": null,
+    "refusal": "ValueError: decider-2b:Q8_0: option mass 0.8697 at [2, 26] options is below the floor of 0.9. the derived assistant opening is '\\nAnswer: ('; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "usable": false
+   },
+   "model": "decider-2b:Q8_0",
+   "path": "eval/results/layouts/mass-deciders-meta.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "registry"
+   },
+   "weights": {
+    "file": "decider-2b-v11-Q8_0.gguf",
+    "repo": "Mapika/decider-2b-GGUF",
+    "revision": "ff2e5e687327eda9ac34e9a3ca84d3f400672c87"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:06:30.488091+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9994502282301632,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "jevk5-4b:Q8_0",
+   "path": "eval/results/layouts/mass-jevk5-4b-chat.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": {
+    "file": "jevk5-4b-v0.2-Q8_0.gguf",
+    "repo": "alibiserikbay/JevK5-GGUF",
+    "revision": "ec67b0bfce5119a8b11a2cdb430bb43e3fa3e82a"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:05:51.126389+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 2,
+    "option_mass": 0.9992938832875516,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "jevk5-4b:Q8_0",
+   "path": "eval/results/layouts/mass-jevk5-4b-semif.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "semif"
+   },
+   "weights": {
+    "file": "jevk5-4b-v0.2-Q8_0.gguf",
+    "repo": "alibiserikbay/JevK5-GGUF",
+    "revision": "ec67b0bfce5119a8b11a2cdb430bb43e3fa3e82a"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:06:55.182896+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": null,
+    "option_mass": null,
+    "refusal": "ValueError: template produced an empty assistant opening",
+    "usable": false
+   },
+   "model": "standardone-8b:Q8_0",
+   "path": "eval/results/layouts/mass-standardone-8b-chat.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": {
+    "file": "StandardOne-8B-Q8_0.gguf",
+    "repo": "StandardThinking/StandardOne-8B-GGUF",
+    "revision": "4eb253d55ad6368c7ac483d8e66158c4aa289407"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T20:06:54.485353+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 2,
+    "option_mass": 0.9712328891259612,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "standardone-8b:Q8_0",
+   "path": "eval/results/layouts/mass-standardone-8b-standardone-native.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "standardone-native"
+   },
+   "weights": {
+    "file": "StandardOne-8B-Q8_0.gguf",
+    "repo": "StandardThinking/StandardOne-8B-GGUF",
+    "revision": "4eb253d55ad6368c7ac483d8e66158c4aa289407"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-30T22:43:07.979091+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9999989464039327,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/layouts/mass-winnow-12b-chat.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-30T22:42:29.214973+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 2,
+    "option_mass": 0.9971104291440149,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/layouts/mass-winnow-12b-winnow.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "winnow"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:30:35.635464+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9999886150486507,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/option-mass-multicount.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:30:35.635464+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9997457025251393,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/option-mass-multicount.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:30:35.635464+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9999598471493268,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/option-mass-multicount.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:30:35.635464+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 3,
+    "option_mass": 0.9967659858902839,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/option-mass-multicount.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:52:13.689452+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9569089576105175,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "lfm2.5-2.6b:Q8_0",
+   "path": "eval/results/option-mass-repaired.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:52:13.689452+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9995521318136457,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/option-mass-repaired.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:52:13.689452+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9995521318136457,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/option-mass-repaired.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:52:13.689452+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9217445311406467,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/option-mass-repaired.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:47:30.166244+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9998886859613486,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/option-mass-small.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:47:30.166244+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.999998608061519,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/option-mass-small.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:47:30.166244+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9217445311406467,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/option-mass-small.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:47:30.166244+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": null,
+    "option_mass": null,
+    "refusal": "ValueError: lfm2.5-2.6b:Q8_0: option mass 5.721e-07 is below the floor of 0.9. the derived assistant opening is '<|im_start|>assistant\\n<think>'; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "usable": false
+   },
+   "model": "lfm2.5-2.6b:Q8_0",
+   "path": "eval/results/option-mass-small.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:47:30.166244+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.999998608061519,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "g9v3-3b:Q8_0",
+   "path": "eval/results/option-mass-small.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:47:30.166244+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9999872458389342,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/option-mass-small.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.9962701150236112,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.8-27b:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.999788181875597,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.6-27b:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.999999670031035,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "gemma-4-26b-a4b-it:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": null,
+    "option_mass": null,
+    "refusal": "ValueError: gpt-oss-20b:Q8_0: label 'a' is not a single token at the assistant position, so it cannot be scored by id",
+    "usable": false
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.999999670031035,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "gemma-4-12b-it:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 0.999788181875597,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3.6-35b-a3b:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T00:02:46.752003+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "n": 1,
+    "option_mass": 1.0000000000006677,
+    "refusal": null,
+    "usable": true
+   },
+   "model": "qwen3-coder-30b-a3b-instruct:Q8_0",
+   "path": "eval/results/option-mass-survey.json",
+   "suite": "option-mass",
+   "variant": {
+    "layout": "chat"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.5625,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 0,
+     "quarter": 1
+    },
+    "correct": 9,
+    "median_ms": 1241.253134328872,
+    "min_option_mass": 0.9920245599968865,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.5,
+    "by_position": {
+     "first": 2,
+     "last": 2,
+     "middle": 2,
+     "quarter": 2
+    },
+    "correct": 8,
+    "median_ms": 660.3889882098883,
+    "min_option_mass": 0.6077638140378437,
+    "n": 16
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.875,
+    "by_position": {
+     "first": 3,
+     "last": 4,
+     "middle": 3,
+     "quarter": 4
+    },
+    "correct": 14,
+    "median_ms": 1947.5373709574342,
+    "min_option_mass": 0.9581615576896251,
+    "n": 16
+   },
+   "model": "g9v3-3b:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.875,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 3,
+     "quarter": 3
+    },
+    "correct": 14,
+    "median_ms": 938.7328792363405,
+    "min_option_mass": 0.9999843497041497,
+    "n": 16
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.8125,
+    "by_position": {
+     "first": 3,
+     "last": 3,
+     "middle": 3,
+     "quarter": 4
+    },
+    "correct": 13,
+    "median_ms": 1900.2814223058522,
+    "min_option_mass": 0.989659527147343,
+    "n": 16
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 2229.1114954277873,
+    "min_option_mass": 0.999334288957905,
+    "n": 16
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:32:16.452866+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 749.3748618289828,
+    "min_option_mass": 0.9996966339740145,
+    "n": 16
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/smoke-models-ordered.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:34:19.179271+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.5625,
+    "by_position": {
+     "first": 3,
+     "last": 3,
+     "middle": 2,
+     "quarter": 1
+    },
+    "correct": 9,
+    "median_ms": 2159.839116036892,
+    "min_option_mass": 0.9907874299414957,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/smoke-models-ordered4.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 4,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:34:19.179271+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.5,
+    "by_position": {
+     "first": 2,
+     "last": 1,
+     "middle": 2,
+     "quarter": 3
+    },
+    "correct": 8,
+    "median_ms": 1349.070844706148,
+    "min_option_mass": 0.6065266260526414,
+    "n": 16
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/smoke-models-ordered4.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 4,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 1033.2919659558684,
+    "min_option_mass": 0.999629532371998,
+    "n": 16
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 958.879055455327,
+    "min_option_mass": 0.9980809867854703,
+    "n": 16
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 1175.0473866704851,
+    "min_option_mass": 0.9997589252599494,
+    "n": 16
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.625,
+    "by_position": {
+     "first": 3,
+     "last": 4,
+     "middle": 2,
+     "quarter": 1
+    },
+    "correct": 10,
+    "median_ms": 459.0285187587142,
+    "min_option_mass": 0.9999950187241234,
+    "n": 16
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.875,
+    "by_position": {
+     "first": 3,
+     "last": 4,
+     "middle": 3,
+     "quarter": 4
+    },
+    "correct": 14,
+    "median_ms": 941.1901535931975,
+    "min_option_mass": 0.9793308381437756,
+    "n": 16
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 373.8068277016282,
+    "min_option_mass": 0.9995145601949537,
+    "n": 16
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.625,
+    "by_position": {
+     "first": 0,
+     "last": 4,
+     "middle": 3,
+     "quarter": 3
+    },
+    "correct": 10,
+    "median_ms": 390.26547595858574,
+    "min_option_mass": 0.9390189089684142,
+    "n": 16
+   },
+   "model": "g9v3-3b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 1511.1585052218288,
+    "min_option_mass": 0.15345623299932185,
+    "n": 16
+   },
+   "model": "lfm2.5-2.6b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.375,
+    "by_position": {
+     "first": 0,
+     "last": 2,
+     "middle": 2,
+     "quarter": 2
+    },
+    "correct": 6,
+    "median_ms": 326.8885409925133,
+    "min_option_mass": 0.5200460205827325,
+    "n": 16
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.4375,
+    "by_position": {
+     "first": 4,
+     "last": 2,
+     "middle": 0,
+     "quarter": 1
+    },
+    "correct": 7,
+    "median_ms": 535.2484290488064,
+    "min_option_mass": 0.9931805990340544,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:21:34.394137+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": 4,
+     "last": 4,
+     "middle": 4,
+     "quarter": 4
+    },
+    "correct": 16,
+    "median_ms": 1024.5512491092086,
+    "min_option_mass": 0.9814394393075125,
+    "n": 16
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/smoke-models.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "tournament",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:26:56.176100+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.4375,
+    "by_position": {
+     "first": "4/4",
+     "last": "2/4",
+     "middle": "0/4",
+     "quarter": "1/4"
+    },
+    "correct": 7,
+    "median_ms": null,
+    "min_option_mass": 0.9931805990340544,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-0.8b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:26:56.176100+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.5625,
+    "by_position": {
+     "first": "4/4",
+     "last": "4/4",
+     "middle": "0/4",
+     "quarter": "1/4"
+    },
+    "correct": 9,
+    "median_ms": null,
+    "min_option_mass": 0.9920245599968865,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-0.8b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:26:56.176100+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.0625,
+    "by_position": {
+     "first": "0/4",
+     "last": "0/4",
+     "middle": "0/4",
+     "quarter": "1/4"
+    },
+    "correct": 1,
+    "median_ms": null,
+    "min_option_mass": 0.9931805990340544,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-0.8b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:26:56.176100+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.0625,
+    "by_position": {
+     "first": "0/4",
+     "last": "0/4",
+     "middle": "1/4",
+     "quarter": "0/4"
+    },
+    "correct": 1,
+    "median_ms": null,
+    "min_option_mass": 0.9920245599968865,
+    "n": 16
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-0.8b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": true
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:23:02.261534+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": "4/4",
+     "last": "4/4",
+     "middle": "4/4",
+     "quarter": "4/4"
+    },
+    "correct": 16,
+    "median_ms": null,
+    "min_option_mass": 0.999629532371998,
+    "n": 16
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-9b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:23:02.261534+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 1.0,
+    "by_position": {
+     "first": "4/4",
+     "last": "4/4",
+     "middle": "4/4",
+     "quarter": "4/4"
+    },
+    "correct": 16,
+    "median_ms": null,
+    "min_option_mass": 0.999334288957905,
+    "n": 16
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-9b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": false
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:23:02.261534+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.1875,
+    "by_position": {
+     "first": "1/4",
+     "last": "1/4",
+     "middle": "0/4",
+     "quarter": "1/4"
+    },
+    "correct": 3,
+    "median_ms": null,
+    "min_option_mass": 0.999629532371998,
+    "n": 16
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-9b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": true
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-19T19:23:02.261534+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "accuracy": 0.125,
+    "by_position": {
+     "first": "0/4",
+     "last": "1/4",
+     "middle": "1/4",
+     "quarter": "0/4"
+    },
+    "correct": 2,
+    "median_ms": null,
+    "min_option_mass": 0.999334288957905,
+    "n": 16
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/interventions-qwen3.5-9b_Q8_0.json",
+   "suite": "smoke",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 2,
+    "prior_correction": true
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T04:45:20.840382+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-browser-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T04:45:20.840382+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/sweep-browser-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T04:45:20.840382+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-browser-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T04:45:20.840382+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/sweep-browser-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T04:45:20.840382+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 3,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "done": 3
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-browser-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 2,
+     "blocked": 1
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "g9v3-3b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "lfm2.5-2.6b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:28:46.515157+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/sweep-browser/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 1,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "g9v3-3b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "lfm2.5-2.6b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 3
+    }
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T02:57:49.626919+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/sweep-browser2/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser2"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:22:28.477831+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 2,
+    "runs": 3,
+    "statuses": {
+     "done": 1,
+     "out-of-steps": 2
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-mimic-clean/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-clean"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:22:28.477831+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "done": 1,
+     "out-of-steps": 2
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-mimic-clean/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-clean"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:22:28.477831+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "done": 3
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-mimic-clean/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-clean"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:22:28.477831+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/sweep-mimic-clean/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-clean"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T15:22:28.477831+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/sweep-mimic-clean/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-clean"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T18:11:16.844253+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "done": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-mimic-done-gate/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-done-gate"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T18:11:16.844253+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-mimic-done-gate/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-done-gate"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T18:11:16.844253+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-mimic-done-gate/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-done-gate"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T05:06:33.406674+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 1,
+    "runs": 3,
+    "statuses": {
+     "done": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-mimic-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T05:06:33.406674+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "done": 3
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-mimic-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T05:06:33.406674+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 1,
+     "done": 1,
+     "out-of-steps": 1
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-mimic-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T05:06:33.406674+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "qwen3.5-2b:Q8_0",
+   "path": "eval/results/sweep-mimic-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T05:06:33.406674+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/sweep-mimic-frontier/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic-frontier"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 2,
+    "runs": 3,
+    "statuses": {
+     "done": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 1,
+     "done": 2
+    }
+   },
+   "model": "granite-4.2-3b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "action-failed": 1,
+     "blocked": 1,
+     "done": 1
+    }
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "done": 3
+    }
+   },
+   "model": "g9v3-3b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "lfm2.5-2.6b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "minicpm5-1b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "qwen3.5-0.8b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T03:17:18.849068+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 0,
+    "runs": 3,
+    "statuses": {
+     "blocked": 3
+    }
+   },
+   "model": "gpt-oss-20b:Q8_0",
+   "path": "eval/results/sweep-mimic/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-mimic"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-20T01:55:37.252170+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 1,
+    "reached_one": 0,
+    "runs": 1,
+    "statuses": {
+     "blocked": 1
+    }
+   },
+   "model": "qwen3.5-4b:Q8_0",
+   "path": "eval/results/sweep-smoke/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-smoke"
+   },
+   "weights": null,
+   "weights_source": null
+  }
+ ],
+ "schema": "verdict-export/1",
+ "source": "verdict",
+ "suites": {
+  "agent": "whole agent runs against a live site or device; complete means the task finished. confounded by the site and harness, see docs/EVALS.md.",
+  "jevbench-public": "jevbench's 231 public items (easy 48, original 72, hard 111) through verdict's /v1/systemone with jevbench's own typesafe adapter. public items only: the board's sealed items are not run.",
+  "option-mass": "option mass on an unambiguous verification question at several option counts; below the floor a formatter is refused.",
+  "smoke": "element selection with ground truth: 16 cases, 4 option counts x 4 positions of the correct answer, fixed distractors."
+ },
+ "verdict_dirty": true,
+ "verdict_rev": "abbef71cd53c499249596caf8e6b3f52de7456a4"
+}

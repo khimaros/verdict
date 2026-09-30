@@ -1,0 +1,27 @@
+{
+  "id": "boolean-default-criteria",
+  "description": "boolean with no criteria uses the spec defaults",
+  "spec_version": "0.1.0",
+  "formatter": "layout:decider-plain",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?"
+    }
+  },
+  "expected": {
+    "prefix": "Context:\nIf this is not fixed today I am cancelling our subscription.\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "Question: Does the sender threaten to cancel?\nOptions:\n(A) no\n(B) yes\nAnswer: (",
+        "labels": {
+          "false": "A",
+          "true": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

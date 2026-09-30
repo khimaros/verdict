@@ -1,0 +1,30 @@
+{
+  "spec_version": "0.1.0",
+  "layout": "standardone-native",
+  "source": "StandardThinking/StandardOne-8B @ 36d7999: server/jev_adapter/protocol.py _build_native_prompt(), the wording its card recommends and serves",
+  "note": "StandardOne's native wording inside its own chat template, whose affixes are derived, with no system turn: the template renders a user turn with nothing before it, including any default system text it injects itself. the adapter interpolates object instructions and descriptions with python str(); they are rendered as json here.",
+  "constants": {
+    "system_turn": false,
+    "system_instructions": "",
+    "state_open": "Read the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\n",
+    "state_delimiter": "\n\n",
+    "question_open": "Question:\n",
+    "options_open": "\n\nOptions:\n",
+    "option_line": "{label}. {description}",
+    "answer_instruction": "",
+    "named_kinds": ["choice", "boolean", "score"],
+    "boolean_order": ["true", "false"],
+    "boolean_names": {"true": "yes", "false": "no"},
+    "boolean_default_criteria": {"true": "", "false": ""},
+    "standardone_state": {"sort_keys": true, "indent": 2, "ensure_ascii": false,
+                          "item_separator": ",", "key_separator": ": "},
+    "standardone_text": {"sort_keys": false, "indent": null, "ensure_ascii": false,
+                         "item_separator": ", ", "key_separator": ": "},
+    "state_json": "standardone_state",
+    "instructions_json": "standardone_text",
+    "description_json": "standardone_text",
+    "labels": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "max_options_single_pass": 26,
+    "max_options_plain_alphabet": 26
+  }
+}

@@ -9,6 +9,7 @@
     "system_close": "<</SYS>>\n",
     "user_open": "<<USR>>\n",
     "user_close": "<</USR>>\n",
-    "assistant_open": "<<ASST>>\n"
+    "assistant_open": "<<ASST>>\n",
+    "bare_user_open": "<<BOS>>\n<<USR>>\n"
   }
 }

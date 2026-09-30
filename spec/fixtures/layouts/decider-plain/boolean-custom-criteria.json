@@ -1,0 +1,31 @@
+{
+  "id": "boolean-custom-criteria",
+  "description": "boolean with caller supplied labels",
+  "spec_version": "0.1.0",
+  "formatter": "layout:decider-plain",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?",
+      "criteria": {
+        "true": "Yes, they threaten to leave.",
+        "false": "No, they do not."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "Context:\nIf this is not fixed today I am cancelling our subscription.\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "Question: Does the sender threaten to cancel?\nOptions:\n(A) no: No, they do not.\n(B) yes: Yes, they threaten to leave.\nAnswer: (",
+        "labels": {
+          "false": "A",
+          "true": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

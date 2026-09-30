@@ -25,6 +25,10 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
+sys.path.insert(0, os.path.join(ROOT, "python"))
+
+from llama_verdict import config
+
 # openings for formats whose generation prompt ends before content begins. see
 # docs/DECISIONS.md -- these are not model deficiencies, they are templates
 # that stop early, and the list is short on purpose.
@@ -68,7 +72,7 @@ def main():
     ap.add_argument("--demo", default="browser_agent.py")
     ap.add_argument("--models", nargs="+", required=True)
     ap.add_argument("--runs", type=int, default=3)
-    ap.add_argument("--base-url", default="http://10.1.200.250:7860")
+    config.backend_url_argument(ap)
     ap.add_argument("--port", type=int, default=8495)
     ap.add_argument("--out-dir", default="eval/results/sweep")
     ap.add_argument("--startup-timeout", type=int, default=300)

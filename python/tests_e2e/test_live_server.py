@@ -1,9 +1,9 @@
 """end to end against a live llama-server.
 
-gated on LLAMA_VERDICT_URL so the suite stays runnable without one:
+gated on LLAMA_VERDICT_URL so the suite stays runnable without one; the
+environment and the .env at the repo root both fill it:
 
-  make test-e2e LLAMA_VERDICT_URL=http://host:port \\
-      LLAMA_VERDICT_MODEL=qwen3.5-9b:Q8_0
+  make test-e2e   # with the backend in .env, or exported in the shell
 """
 
 import glob
@@ -11,12 +11,13 @@ import os
 
 import pytest
 
+from llama_verdict import config
 from llama_verdict.backend import HttpBackend
 from llama_verdict.decide import Decider
 from llama_verdict.types import Formatter
 
-URL = os.environ.get("LLAMA_VERDICT_URL")
-MODEL = os.environ.get("LLAMA_VERDICT_MODEL")
+URL = config.get("LLAMA_VERDICT_URL")
+MODEL = config.get("LLAMA_VERDICT_MODEL")
 SPEC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "spec")
 
 pytestmark = pytest.mark.skipif(not URL, reason="set LLAMA_VERDICT_URL")

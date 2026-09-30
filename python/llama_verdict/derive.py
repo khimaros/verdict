@@ -113,12 +113,18 @@ def render(tpl, messages, gen_prompt, bos="", eos=""):
                       bos_token=bos, eos_token=eos)
 
 
-def affixes_from_template(template_text, bos="", eos=""):
+def affixes_from_template(template_text, bos="", eos="", allow_empty_opening=False):
     """recover each affix by diffing renders that differ by one thing.
 
     with-system vs without-system isolates where the system turn ends and the
     user turn begins; with-generation-prompt vs without isolates the assistant
-    opening.
+    opening. the no-system render's opening is kept as `bare_user_open`, for a
+    layout whose model is prompted with no system turn.
+
+    an empty assistant opening means the label would follow the user turn
+    directly. that is refused for the chat layout, where it has meant a
+    derivation that went wrong, and allowed for a layout that says its model
+    answers there.
     """
     tpl = environment().from_string(template_text)
     sys_msg = {"role": "system", "content": SYS_SENTINEL}
@@ -155,12 +161,12 @@ def affixes_from_template(template_text, bos="", eos=""):
         raise ValueError("generation prompt did not extend the ungenerated render")
     assistant_open = after[len(user_close):]
 
-    if not assistant_open:
+    if not assistant_open and not allow_empty_opening:
         raise ValueError("template produced an empty assistant opening")
 
     return {"system_open": system_open, "system_close": system_close,
             "user_open": user_open, "user_close": user_close,
-            "assistant_open": assistant_open}
+            "assistant_open": assistant_open, "bare_user_open": lead}
 
 
 def close_open_blocks(opening):
@@ -255,16 +261,23 @@ def label_candidates(vocab):
     return pinned + rest + wide
 
 
-def label_ids(backend, affixes, count=52):
+def scored_opening(affixes, layout=spec.CHAT):
+    """the text the label follows: the assistant opening and any prefill, or
+    the end of the user turn where a template opens the answer with nothing."""
+    return ((affixes["assistant_open"] + spec.layout(layout)["assistant_prefill"])
+            or affixes["user_close"])
+
+
+def label_ids(backend, affixes, layout=spec.CHAT):
     """every label a single token, and still its own token after the opening.
 
     pinned into the artifact because they are a per-model constant: resolving
     them at runtime cost 26 of the 29 tokenize calls in a profiled decision.
     """
-    opening = affixes["assistant_open"]
+    opening = scored_opening(affixes, layout)
     open_tok = backend.tokenize(opening)
     ids = {}
-    for label in spec.constants()["labels"][:count]:
+    for label in spec.layout(layout)["labels"]:
         token = backend.tokenize(label)
         if len(token) != 1 or backend.tokenize(opening + label) != open_tok + token:
             return None, label
@@ -334,7 +347,8 @@ def verify_wide(backend, formatter, ids, counts=WIDE_VERIFY_COUNTS):
     masses, correct = [], 0
     for count in usable:
         alphabet = wide[:count]
-        question = types.parse_question("colour", verify_question(count)["colour"])
+        question = types.parse_question("colour", verify_question(count)["colour"],
+                                        formatter.layout)
         labels = prompt.label_map(question, alphabet)
         label_ids = [ids[ell] for ell in labels.values()]
         scored = backend.score(
@@ -408,9 +422,13 @@ def verify(backend, formatter, ids, counts=VERIFY_COUNTS):
 
     masses, correct = [], 0
     usable = [n for n in counts if n <= len(ids)]
+    # a layout with fewer labels is still checked at its own ceiling
+    if len(ids) < max(counts) and len(ids) not in usable:
+        usable.append(len(ids))
     for count in usable:
-        question = types.parse_question("colour", verify_question(count)["colour"])
-        labels = prompt.label_map(question)
+        question = types.parse_question("colour", verify_question(count)["colour"],
+                                        formatter.layout)
+        labels = prompt.label_map(question, layout=formatter.layout)
         label_ids = [ids[label] for label in labels.values()]
         scored = backend.score(
             prompt.render_prefix(formatter, VERIFY_STATE)
@@ -428,28 +446,63 @@ def verify(backend, formatter, ids, counts=VERIFY_COUNTS):
             "labels_single_token": True}
 
 
-def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None):
+def layout_for(readout):
+    """the layout a registry readout names: `chat`, `layout:<name>` or `head`.
+
+    the registry is the authority on how a model must be read, because that is
+    a fact about how the model was trained, which its gguf does not record: a
+    fine-tuned base model still carries its base's chat template.
+    """
+    if readout in (None, "", spec.CHAT):
+        return spec.CHAT
+    kind, _, name = readout.partition(":")
+    if kind == "layout" and name:
+        return name
+    if kind == "head":
+        raise ValueError(
+            "the model registry says this model answers through a head of its "
+            "own, not through next-token logits. serve it with its own server; "
+            "reading llama-server logits would return made-up probabilities.")
+    raise ValueError(f"unknown readout {readout!r} in the model registry")
+
+
+def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
+          layout=None):
     """the formatter for this model, derived on first use and cached by the
     template's sha256 so it is once per model rather than once per process.
 
     a template whose sha256 is already cached skips straight to the cached
     table, which is what makes this cheap enough to do at startup.
+
+    `layout` names one of spec/layouts for a model trained on a layout of its
+    own; left unset, it comes from the registry readout the backend reports.
     """
     constants = spec.constants()
-    floor = constants["option_mass_floor_formatter"] if floor is None else floor
+    layout = layout or layout_for(backend.readout())
+    floor = spec.layout(layout)["option_mass_floor_formatter"] if floor is None else floor
 
     props = backend.props()
     template = props["chat_template"]
-    # an override changes the prompt, so it must change the cache key too
-    digest = hashlib.sha256((template + (assistant_open or "")).encode()).hexdigest()
+    # an override or a layout changes the prompt, so it must change the key too
+    key = template + (assistant_open or "") + ("" if layout == spec.CHAT else layout)
+    digest = hashlib.sha256(key.encode()).hexdigest()
 
     cached = os.path.join(cache_dir, f"{digest}.json")
     if os.path.exists(cached):
         with open(cached) as f:
             return Formatter.from_dict(json.load(f)), True
 
-    affixes = affixes_from_template(template, props.get("bos_token", ""),
-                                    props.get("eos_token", ""))
+    declared = layout != spec.CHAT and spec.load_layout(layout).get("affixes")
+    if declared:
+        affixes = dict(declared)
+    else:
+        # a layout that declares no affixes keeps the model's own chat template
+        # and changes only what goes inside its turns
+        affixes = affixes_from_template(template, props.get("bos_token", ""),
+                                        props.get("eos_token", ""),
+                                        allow_empty_opening=layout != spec.CHAT)
+        if spec.layout(layout)["system_turn"]:
+            del affixes["bare_user_open"]
     if assistant_open:
         # a template's generation prompt ends where the template ends, which is
         # not always where content begins. gpt-oss derives '<|start|>assistant'
@@ -458,21 +511,22 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None):
         # derivation is right and the template is right, so the escape hatch is
         # an override rather than a fix.
         affixes = dict(affixes, assistant_open=assistant_open)
-    else:
+    elif not declared:
         affixes = dict(affixes,
                        assistant_open=close_open_blocks(affixes["assistant_open"]))
-    ids, bad = label_ids(backend, affixes)
+    ids, bad = label_ids(backend, affixes, layout)
     if not ids:
         raise ValueError(
             f"{model}: label {bad!r} is not a single token after the assistant "
-            f"opening {affixes['assistant_open']!r}, so it cannot be scored by "
+            f"opening {scored_opening(affixes, layout)!r}, so it cannot be scored by "
             f"id. the model may still support fewer labels, or different ones: "
             f"derive.wide_label_ids() asks it which tokens it can use.")
 
     record = {"spec_version": constants["spec_version"], "model": model,
               "model_alias": props.get("model_alias"),
-              "template_sha256": digest,
-              "derived_from": "llama-server /props chat_template",
+              "template_sha256": digest, "layout": layout,
+              "derived_from": ("llama-server /props chat_template" if layout == spec.CHAT
+                               else f"spec/layouts/{layout}.json"),
               "affixes": affixes, "label_ids": ids}
     formatter = Formatter.from_dict(dict(record, verification={}))
 

@@ -26,6 +26,7 @@ from llama_verdict import prompt, spec, types
 
 SPEC = os.path.join(HERE, "..", "spec")
 OUT = os.path.join(SPEC, "fixtures")
+LAYOUTS = os.path.join(SPEC, "layouts")
 
 TICKET = "My invoice charged me twice for the same month and I want a refund."
 
@@ -211,21 +212,30 @@ CASES = [
 ]
 
 
-def build(case, formatter):
-    questions = types.parse_questions(case["questions"])
+# every layout renders the same questions differently, so each named layout
+# pins the cases that exercise what it changes: option naming, boolean order
+# and defaults, score levels, object values and the state boundary
+LAYOUT_CASES = ("choice-three", "choice-null-description", "boolean-default-criteria",
+                "boolean-custom-criteria", "score-three-levels", "multi-question",
+                "state-object", "state-trailing-newline", "options-twentyseven",
+                "instructions-object", "description-object")
+
+
+def build(case, formatter, formatter_name="reference"):
+    questions = types.parse_questions(case["questions"], formatter.layout)
     prefix = prompt.render_prefix(formatter, case["state"])
     expected = {"prefix": prefix, "questions": {}}
     for q in questions:
         expected["questions"][q.name] = {
             "kind": q.kind,
             "suffix": prompt.render_suffix(formatter, q),
-            "labels": prompt.label_map(q),
+            "labels": prompt.label_map(q, layout=formatter.layout),
             "flags": prompt.alphabet_flags(q),
         }
         if q.legend:
             expected["questions"][q.name]["legend"] = q.legend
     return {"id": case["id"], "description": case["description"],
-            "spec_version": spec.constants()["spec_version"], "formatter": "reference",
+            "spec_version": spec.constants()["spec_version"], "formatter": formatter_name,
             "state": case["state"], "questions": case["questions"], "expected": expected}
 
 
@@ -235,20 +245,29 @@ def main():
                     help="fail if regenerating would change a fixture")
     args = ap.parse_args()
 
-    formatter = types.Formatter.load(os.path.join(SPEC, "formatters", "reference.json"))
-    os.makedirs(OUT, exist_ok=True)
+    reference = types.Formatter.load(os.path.join(SPEC, "formatters", "reference.json"))
+    jobs = [(OUT, case, reference, "reference") for case in CASES]
+    for name in sorted(p.removesuffix(".json") for p in os.listdir(LAYOUTS)):
+        # a list longer than the layout's alphabet is refused, not rendered
+        fits = [case for case in CASES if case["id"] in LAYOUT_CASES
+                and max(len(q.get("criteria") or "xx") for q in case["questions"].values())
+                <= len(spec.layout(name)["labels"])]
+        jobs += [(os.path.join(OUT, "layouts", name), case,
+                  types.Formatter.for_layout(name, reference),
+                  f"layout:{name}") for case in fits]
 
     changed = []
-    for case in CASES:
-        body = json.dumps(build(case, formatter), indent=2) + "\n"
-        path = os.path.join(OUT, case["id"] + ".json")
+    for out, case, formatter, formatter_name in jobs:
+        body = json.dumps(build(case, formatter, formatter_name), indent=2) + "\n"
+        os.makedirs(out, exist_ok=True)
+        path = os.path.join(out, case["id"] + ".json")
         if args.check:
             existing = None
             if os.path.exists(path):
                 with open(path) as f:
                     existing = f.read()
             if existing != body:
-                changed.append(case["id"])
+                changed.append(os.path.relpath(path, OUT))
             continue
         with open(path, "w") as f:
             f.write(body)
@@ -256,9 +275,9 @@ def main():
     if args.check:
         if changed:
             sys.exit(f"fixtures would change: {', '.join(changed)}")
-        print(f"{len(CASES)} fixtures match")
+        print(f"{len(jobs)} fixtures match")
     else:
-        print(f"wrote {len(CASES)} fixtures to {OUT}")
+        print(f"wrote {len(jobs)} fixtures to {OUT}")
 
 
 if __name__ == "__main__":

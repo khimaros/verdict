@@ -1,0 +1,8 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     granite-4.2-3b:Q8_0
+  formatter granite-4.2-3b:Q8_0 (mean option mass 1.0000, cached)
+  layout    chat
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 12:37:34)
+  point a jev client at this with TYPESAFE_BASE_URL

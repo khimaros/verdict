@@ -17,7 +17,7 @@ the device, and back/home/recents as first-class operations. neither of the two
 walls the browser demo hit applies here -- see docs/DEMOS.md.
 
 usage:
-  ./demos/mimic_agent.py --mimic 10.1.200.230:8473 \
+  ./demos/mimic_agent.py --mimic <device-host>:8473 \
       --verdict http://127.0.0.1:8477 --goal "Open Settings and find the Android version"
 """
 

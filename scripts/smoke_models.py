@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "python"))
 sys.path.insert(0, HERE)
 
 from eval_interventions import COUNTS, POSITIONS, STATE, case
-from llama_verdict import derive
+from llama_verdict import config, derive
 from llama_verdict.backend import HttpBackend
 from llama_verdict.decide import Decider
 
@@ -40,7 +40,7 @@ OVERRIDES = {"gpt-oss-20b:Q8_0": "<|start|>assistant<|channel|>final<|message|>"
              "gpt-oss-120b:Q8_0": "<|start|>assistant<|channel|>final<|message|>"}
 
 
-def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False):
+def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False, layout=None):
     """`order_averaging` scores each option list forward and reversed and
     averages. a bias tied to WHERE an option sits cancels, because the correct
     answer sits at index p in one order and n-1-p in the other. it costs one
@@ -54,7 +54,7 @@ def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False):
     backend = HttpBackend(base_url, model)
     started = time.monotonic()
     formatter, _ = derive.build(backend, model,
-                                assistant_open=OVERRIDES.get(model))
+                                assistant_open=OVERRIDES.get(model), layout=layout)
     decider = Decider(backend, formatter, tournament=True,
                       order_averaging=order_averaging,
                       wide_alphabet=wide_alphabet)
@@ -90,7 +90,7 @@ def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--base-url", default="http://10.1.200.250:7860")
+    config.backend_url_argument(ap)
     ap.add_argument("--models", nargs="+", required=True)
     ap.add_argument("--counts", type=int, nargs="+", default=COUNTS)
     ap.add_argument("--order-averaging", type=int, default=1,
@@ -100,6 +100,9 @@ def main():
     ap.add_argument("--wide-alphabet", action="store_true",
                     help="label lists past 52 from the model's own vocabulary "
                          "and read them in one exact pass")
+    ap.add_argument("--layout", default=None,
+                    help="one of spec/layouts, for every model, instead of "
+                         "the readout the registry advertises")
     ap.add_argument("--out", default="eval/results/smoke-models.json")
     args = ap.parse_args()
 
@@ -107,7 +110,7 @@ def main():
     for model in args.models:
         try:
             row = smoke(args.base_url, model, args.counts,
-                        args.order_averaging, args.wide_alphabet)
+                        args.order_averaging, args.wide_alphabet, args.layout)
             per_n = " ".join(f"{n}:{c}" for n, c in row["by_count"].items())
             per_p = " ".join(f"{p[:3]}:{c}" for p, c in row["by_position"].items())
             print(f"{model:<30} {row['correct']:>6}  mass>={row['min_option_mass']:.4f}  "

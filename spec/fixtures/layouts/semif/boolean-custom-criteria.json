@@ -1,0 +1,31 @@
+{
+  "id": "boolean-custom-criteria",
+  "description": "boolean with caller supplied labels",
+  "spec_version": "0.1.0",
+  "formatter": "layout:semif",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?",
+      "criteria": {
+        "true": "Yes, they threaten to leave.",
+        "false": "No, they do not."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nApply the supplied criterion to the supplied evidence. Choose exactly one listed option. Respond with only its uppercase letter, with no explanation or reasoning.<</SYS>>\n<<USR>>\n{\"evidence\": \"If this is not fixed today I am cancelling our subscription.\"",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": ", \"criterion\": \"Does the sender threaten to cancel?\", \"options\": [{\"letter\": \"A\", \"description\": \"true: Yes, they threaten to leave.\"}, {\"letter\": \"B\", \"description\": \"false: No, they do not.\"}]}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

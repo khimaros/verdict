@@ -1,0 +1,12 @@
+[
+  {
+    "model": "jevk5-4b:Q8_0",
+    "option_mass": 0.9992938832875516,
+    "correct": "2/2",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "b45d13185b09b30d",
+    "cached": false,
+    "usable": true,
+    "wall_s": 29.9
+  }
+]

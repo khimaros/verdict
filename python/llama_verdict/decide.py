@@ -18,6 +18,7 @@ class Decider:
         formatter.check_usable()
         self.backend = backend
         self.formatter = formatter
+        self._layout = spec.layout(formatter.layout)
         # send prompts as text by default: it is the same token sequence
         # wherever the spec's boundary assertion holds, and it costs no
         # /tokenize round trip
@@ -62,7 +63,7 @@ class Decider:
         sub = dataclasses.replace(question, options=tuple(options))
         alphabet = self._alphabet(len(options))
         suffix = prompt.render_suffix(self.formatter, sub, alphabet)
-        labels = prompt.label_map(sub, alphabet)
+        labels = prompt.label_map(sub, alphabet, self.formatter.layout)
         ids = self.label_ids(list(labels.values()))
 
         if self.pretokenize:
@@ -104,7 +105,10 @@ class Decider:
         a caller who did not opt in also gets None, so the refusal comes from
         `spec.labels` with its documented message rather than from here.
         """
-        if count <= len(spec.constants()["labels"]) or not self.wide_alphabet:
+        # the wide alphabet extends the chat layout's letters; a named layout's
+        # model was trained on its own letters and gets no others
+        if (count <= len(self._layout["labels"]) or not self.wide_alphabet
+                or self.formatter.layout != spec.CHAT):
             return None
         alphabet, checked = self._resolve_wide(count)
         floor = spec.constants()["option_mass_floor_request"]
@@ -138,9 +142,9 @@ class Decider:
         asks, and a caller who enabled the tournament wants the approximation
         rather than the refusal.
         """
-        if count <= len(spec.constants()["labels"]):
+        if count <= len(self._layout["labels"]):
             return True
-        if not self.wide_alphabet:
+        if not self.wide_alphabet or self.formatter.layout != spec.CHAT:
             return False
         alphabet, checked = self._resolve_wide(count)
         floor = spec.constants()["option_mass_floor_request"]
@@ -253,7 +257,7 @@ class Decider:
 
     def decide(self, state, questions):
         """answer every question against one shared, prefilled state."""
-        parsed = types.parse_questions(questions)
+        parsed = types.parse_questions(questions, self.formatter.layout)
         floor = spec.constants()["option_mass_floor_request"]
 
         t0 = time.monotonic()
@@ -261,8 +265,8 @@ class Decider:
         prefill_ms = (time.monotonic() - t0) * 1000.0
 
         answers, usage = {}, {"input_tokens": 0, "output_tokens": 0}
-        ceiling = spec.constants()["max_options_single_pass"]
-        group_size = spec.constants()["max_options_plain_alphabet"]
+        ceiling = self._layout["max_options_single_pass"]
+        group_size = self._layout["max_options_plain_alphabet"]
 
         for question in parsed:
             t1 = time.monotonic()

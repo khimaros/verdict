@@ -115,6 +115,21 @@ as a diff instead of as a silent change in behaviour.
 deriving is cheap and deterministic; the measurement below is what confirms it
 landed.
 
+**the template describes how a model was packaged, which is not always how it
+was trained.** a base model fine-tuned on a plain decision layout keeps its
+base's chat template in the gguf, and derivation then builds a prompt the model
+never saw. those models are read with a named layout, `spec/layouts/<name>.json`,
+which declares its affixes and overrides the prompt constants as data, so the
+chat layout stays the top level of `spec/constants.json` byte for byte.
+
+which model needs which layout is not verdict's to record. it is a fact about
+the model, and the model registry (aimbot) is canonical for model facts: it
+reads the author's own config, such as decider's `decider_config.json`, and the
+llama-swap config generated from it advertises `meta.llamaswap.readout` on
+`/v1/models`. verdict reads that at derivation, so a new model in the registry
+needs nothing in verdict. the split is deliberate: the registry says WHICH
+readout, the spec says WHAT BYTES.
+
 ## option mass is load-bearing
 
 option mass is the raw probability on the label tokens before renormalising. it

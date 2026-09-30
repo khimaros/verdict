@@ -1,0 +1,18 @@
+[
+  {
+    "model": "decider-4b:Q8_0",
+    "usable": false,
+    "error": "ValueError: decider-4b:Q8_0: option mass 0.8651 at [2, 26, 52] options is below the floor of 0.9. the derived assistant opening is '<|im_start|>assistant\\n<think>\\n\\n</think>\\n\\n'; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "wall_s": 46.7
+  },
+  {
+    "model": "decider-2b:Q8_0",
+    "option_mass": 0.9451529976203504,
+    "correct": "3/3",
+    "assistant_open": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "template_sha256": "273d8e0e683b8850",
+    "cached": false,
+    "usable": true,
+    "wall_s": 88.4
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "id": "choice-null-description",
+  "description": "a null description falls back to the option id",
+  "spec_version": "0.1.0",
+  "formatter": "layout:decider-plain",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "billing": null,
+        "technical": "Bugs and outages."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "Context:\nMy invoice charged me twice for the same month and I want a refund.\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Question: Which queue should handle this?\nOptions:\n(A) billing\n(B) technical: Bugs and outages.\nAnswer: (",
+        "labels": {
+          "billing": "A",
+          "technical": "B"
+        },
+        "flags": []
+      }
+    }
+  }
+}

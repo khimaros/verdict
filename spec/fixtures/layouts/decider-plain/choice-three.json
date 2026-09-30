@@ -1,0 +1,33 @@
+{
+  "id": "choice-three",
+  "description": "three options, string state",
+  "spec_version": "0.1.0",
+  "formatter": "layout:decider-plain",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "Context:\nMy invoice charged me twice for the same month and I want a refund.\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "Question: Which queue should handle this?\nOptions:\n(A) access: Account access: logins, passwords, permissions.\n(B) billing: Billing: invoices, payments, refunds.\n(C) technical: Technical: bugs, outages, integrations.\nAnswer: (",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      }
+    }
+  }
+}

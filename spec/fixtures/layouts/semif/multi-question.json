@@ -1,0 +1,70 @@
+{
+  "id": "multi-question",
+  "description": "several questions over one shared state",
+  "spec_version": "0.1.0",
+  "formatter": "layout:semif",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    },
+    "churn": {
+      "type": "boolean",
+      "instructions": "Do they threaten to cancel?"
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this?",
+      "criteria": [
+        "Not urgent.",
+        "Should be handled soon.",
+        "Blocking, handle now."
+      ]
+    }
+  },
+  "expected": {
+    "prefix": "<<SYS>>\nApply the supplied criterion to the supplied evidence. Choose exactly one listed option. Respond with only its uppercase letter, with no explanation or reasoning.<</SYS>>\n<<USR>>\n{\"evidence\": \"My invoice charged me twice for the same month and I want a refund.\"",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": ", \"criterion\": \"Which queue should handle this?\", \"options\": [{\"letter\": \"A\", \"description\": \"access: Account access: logins, passwords, permissions.\"}, {\"letter\": \"B\", \"description\": \"billing: Billing: invoices, payments, refunds.\"}, {\"letter\": \"C\", \"description\": \"technical: Technical: bugs, outages, integrations.\"}]}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "access": "A",
+          "billing": "B",
+          "technical": "C"
+        },
+        "flags": []
+      },
+      "churn": {
+        "kind": "boolean",
+        "suffix": ", \"criterion\": \"Do they threaten to cancel?\", \"options\": [{\"letter\": \"A\", \"description\": \"true\"}, {\"letter\": \"B\", \"description\": \"false\"}]}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "true": "A",
+          "false": "B"
+        },
+        "flags": []
+      },
+      "urgency": {
+        "kind": "score",
+        "suffix": ", \"criterion\": \"How urgent is this?\", \"options\": [{\"letter\": \"A\", \"description\": \"0: Not urgent.\"}, {\"letter\": \"B\", \"description\": \"1: Should be handled soon.\"}, {\"letter\": \"C\", \"description\": \"2: Blocking, handle now.\"}]}<</USR>>\n<<ASST>>\n",
+        "labels": {
+          "0": "A",
+          "1": "B",
+          "2": "C"
+        },
+        "flags": [],
+        "legend": {
+          "0": "Not urgent.",
+          "1": "Should be handled soon.",
+          "2": "Blocking, handle now."
+        }
+      }
+    }
+  }
+}

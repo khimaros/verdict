@@ -21,7 +21,10 @@ MIMIC="${MIMIC_HOST:-127.0.0.1:18473}"
 HOST_PORT="${MIMIC##*:}"
 DEVICE_PORT="${MIMIC_DEVICE_PORT:-8473}"
 VERDICT="${VERDICT_URL:-http://127.0.0.1:8477}"
-PLANNER="${PLANNER_URL:-http://10.1.200.250:7860/v1}"
+# the planner defaults to the backend the .env already names for verdict
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+PLANNER="${PLANNER_URL:-${LLAMA_VERDICT_URL:-$(sed -n 's/^LLAMA_VERDICT_URL=//p' "$ROOT/.env" 2>/dev/null)}}"
+[ -n "$PLANNER" ] || { echo "set PLANNER_URL or LLAMA_VERDICT_URL, or add it to .env" >&2; exit 2; }
 MODEL="${PLANNER_MODEL:-qwen3.5-9b:Q8_0}"
 # a single-step goal cannot measure the planner: `step_done` only becomes true
 # when the whole goal is satisfied, so the planner is never invoked and both

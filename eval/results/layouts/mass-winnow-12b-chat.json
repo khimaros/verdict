@@ -1,0 +1,12 @@
+[
+  {
+    "model": "winnow-12b:Q8_0",
+    "option_mass": 0.9999989464039327,
+    "correct": "3/3",
+    "assistant_open": "<|turn>model\n<|channel>thought\n<channel|>",
+    "template_sha256": "6a1015c47ccfcfa6",
+    "cached": false,
+    "usable": true,
+    "wall_s": 38.7
+  }
+]

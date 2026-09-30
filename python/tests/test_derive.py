@@ -72,6 +72,9 @@ class FakeBackend:
         return {"chat_template": self.template, "bos_token": "", "eos_token": "",
                 "build_info": "fake", "model_alias": "fake"}
 
+    def readout(self):
+        return None
+
     def tokenize(self, text, add_special=False):
         # one token per character, so that tokenize(a + b) really does equal
         # tokenize(a) + tokenize(b) -- the merge invariant under test

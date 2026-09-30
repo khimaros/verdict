@@ -8,6 +8,10 @@ __pycache__/
 .venv/
 *.egg-info/
 
+# local config: which backend, which model, which key. .env.example is the
+# template. the key is the reason this stays untracked.
+.env
+
 # NOT IGNORED, DELIBERATELY:
 #
 #   eval/results/   NFR3 requires raw evaluation output to be committed

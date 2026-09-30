@@ -1,0 +1,38 @@
+{
+  "id": "score-three-levels",
+  "description": "an ordered rubric",
+  "spec_version": "0.1.0",
+  "formatter": "layout:decider-plain",
+  "state": "This is the third outage this week and we are losing sales.",
+  "questions": {
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this?",
+      "criteria": [
+        "Not urgent.",
+        "Should be handled soon.",
+        "Blocking, handle now."
+      ]
+    }
+  },
+  "expected": {
+    "prefix": "Context:\nThis is the third outage this week and we are losing sales.\n\n",
+    "questions": {
+      "urgency": {
+        "kind": "score",
+        "suffix": "Question: How urgent is this?\nOptions:\n(A) 0: Not urgent.\n(B) 1: Should be handled soon.\n(C) 2: Blocking, handle now.\nAnswer: (",
+        "labels": {
+          "0": "A",
+          "1": "B",
+          "2": "C"
+        },
+        "flags": [],
+        "legend": {
+          "0": "Not urgent.",
+          "1": "Should be handled soon.",
+          "2": "Blocking, handle now."
+        }
+      }
+    }
+  }
+}

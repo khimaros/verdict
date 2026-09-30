@@ -1,0 +1,14 @@
+[
+  {
+    "model": "decider-4b:Q8_0",
+    "usable": false,
+    "error": "ValueError: decider-4b:Q8_0: option mass 0.8858 at [2, 26] options is below the floor of 0.9. the derived assistant opening is '\\nAnswer: ('; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "wall_s": 23.5
+  },
+  {
+    "model": "decider-2b:Q8_0",
+    "usable": false,
+    "error": "ValueError: decider-2b:Q8_0: option mass 0.8697 at [2, 26] options is below the floor of 0.9. the derived assistant opening is '\\nAnswer: ('; if the model's format expects more before content begins, pass a formatter that spells it out.",
+    "wall_s": 20.9
+  }
+]

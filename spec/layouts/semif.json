@@ -1,0 +1,31 @@
+{
+  "spec_version": "0.1.0",
+  "layout": "semif",
+  "source": "TheoLeeCJ/SemIf-OpenJev @ 23cf1f3: src/semif_phase1/core.py direct_messages() and DIRECT_SYSTEM; the option naming follows alibiserikbay/JevK5-GGUF's reference client",
+  "note": "SemIf's json user turn inside the model's own chat template, whose affixes are derived. the whole turn is json.dumps({evidence, criterion, options}) in insertion order with raw unicode, assembled here from json literals so the state stays in the cached prefix. JevK5 and models fine-tuned from it are trained on this. the prefix ends inside the json, where the closing quote and comma merge into one token on some tokenizers, so it is sent as one text prompt and prefix reuse can stop one token short.",
+  "constants": {
+    "system_instructions": "Apply the supplied criterion to the supplied evidence. Choose exactly one listed option. Respond with only its uppercase letter, with no explanation or reasoning.",
+    "state_open": "{\"evidence\": ",
+    "state_delimiter": "",
+    "question_open": ", \"criterion\": ",
+    "options_open": ", \"options\": [",
+    "option_line": "{{\"letter\": \"{label}\", \"description\": {description}}}",
+    "option_separator": ", ",
+    "answer_instruction": "]}",
+    "named_kinds": ["choice", "boolean", "score"],
+    "boolean_order": ["true", "false"],
+    "boolean_names": {"true": "true", "false": "false"},
+    "boolean_default_criteria": {"true": "", "false": ""},
+    "semif_value": {"sort_keys": false, "indent": null, "ensure_ascii": false,
+                    "item_separator": ", ", "key_separator": ": ", "quote_strings": true},
+    "semif_text": {"sort_keys": false, "indent": null, "ensure_ascii": false,
+                   "item_separator": ", ", "key_separator": ": "},
+    "state_json": "semif_value",
+    "instructions_json": "semif_value",
+    "description_json": "semif_text",
+    "option_json": "semif_value",
+    "labels": "ABCDEFGHIJKLMNOP",
+    "max_options_single_pass": 16,
+    "max_options_plain_alphabet": 16
+  }
+}

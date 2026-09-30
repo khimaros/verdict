@@ -2,16 +2,27 @@
 name = "llama-verdict"
 version = "0.1.0"
 description = "typed answers read out of a gguf model, with no text generated"
-readme = "../README.md"
+# no readme key: the README sits at the repo root, and a build backend may
+# not read files from above its own project directory. the root README is
+# the real one.
 requires-python = ">=3.10"
-license = { text = "Apache-2.0" }
+license = { text = "GPL-3.0-or-later" }
 dependencies = []
 
 [project.optional-dependencies]
 # only the formatter derivation needs a jinja engine, and only in this
 # implementation: the rust core uses the one llama.cpp already carries.
 derive = ["jinja2>=3.1"]
-dev = ["pytest>=8", "ruff>=0.6", "jinja2>=3.1"]
+dev = ["pytest>=8", "ruff>=0.6", "jinja2>=3.1", "websocket-client>=1.7"]
+
+[dependency-groups]
+# uv run installs the dev group by default, and that is deliberate here: the
+# derivation engine is the normal server startup path, and `uv run pytest`
+# should work with nothing further to install. websocket-client is the cdp
+# driver the demo agent -- and the unit tests that gate it -- talk through.
+# the package itself stays stdlib-only, which is what the extras above
+# describe.
+dev = ["pytest>=8", "ruff>=0.6", "jinja2>=3.1", "websocket-client>=1.7"]
 
 [build-system]
 requires = ["setuptools>=68"]
