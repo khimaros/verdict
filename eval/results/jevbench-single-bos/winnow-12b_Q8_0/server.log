@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     winnow-12b:Q8_0
+  formatter winnow-12b:Q8_0 (mean option mass 0.9971, derived from the model's chat template)
+  layout    winnow
+  weights   {"repo": "EldanRing/Winnow-12B", "revision": "b6ac22b0d51b69b18200acacb3fbdd98073fffe8", "file": "gguf/Winnow-12B-Q8_0.gguf"}
+  build     b11311-f7b384c1e
+  debiasing order averaging 1, prior correction off
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 16:29:44)
+  point a jev client at this with TYPESAFE_BASE_URL

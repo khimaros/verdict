@@ -1,0 +1,238 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 2,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 4,
+      "decision_ms": [
+        15413,
+        17232,
+        16000,
+        13136,
+        13256
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "43 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913192",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913192",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "31 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49890732",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t811 points by bradleyg223 3 hours ago | hide | 538\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49913192": [
+          "jabl 2 hours ago | prev | next [\u2013] What's not mentioned in the announcement (at least based on a quick skim) is that EDG the company is winding down, which is likely the reason why they're open sourcing the front end.",
+          "whobre 1 hour ago | parent | next [\u2013] Sad. Those folks are some brilliant computer scientists.",
+          "splicebot 42 minutes ago | root | parent | next [\u2013] Not really sad. They are getting older, worked for themselves doing presumably what they wanted their entire career, now they are done. They could have built the company up, instead it has been common knowledge for close to 10 years they were going to retire 'any day now.'",
+          "cryptolobster 2 minutes ago | prev | next [\u2013] I like this emulation feature. A frontend capable of mimicking MSVC or GCC behavior seems very useful for porting code or developing tools that need to exactly replicate the operation of another compiler.",
+          "vintagedave 3 hours ago | prev | next [\u2013] Wow. This is big news for C++."
+        ],
+        "https://news.ycombinator.com/item?id=49890732": [
+          "falaki 40 minutes ago | next [\u2013] Long before the so-called \u201ciron age\u201d started, humans knew of iron. There are iron artifacts from the 4th millennium BCE. Humans were fascinated by these small pieces of iron, which were found in meteorites and cherished and valued them. However, usable iron was rare and extremely sought after to the extent that we know it was more valuable than gold or silver. How did humans invent the first technique to produce metallic Iron from ore?",
+          "falaki 37 minutes ago | parent | next [\u2013] Some high-level observations about the story of Iron are helpful. First, Iron smelting was discovered independently in different parts of the world, but everywhere it was an evolution of the bronze smelting process. Second, the process took several centuries to evolve. The first iron pieces were considered bad bronze and discarded. When tin became rare the producers gradually increased the quality of the bad bronze. In all likelihood for centuries they did not recognize iron as a new metal but rather an improved \u201cbad bronze\u201d . The final notable observation of the story is who these inventors were. They were not the learned people of the ancient world. Rather they were artisans and laborers working in difficult conditions.",
+          "doginasuit 27 minutes ago | parent | prev | next [\u2013] Where do I like and subscribe",
+          "cjiwndowndkwd 7 minutes ago | root | parent | next [\u2013] No need since it came from an AI.",
+          "ericmay 1 hour ago | prev | next [\u2013] Fun article. I think that there is a lot of interesting information here that would help explain what we saw with the Bronze Age Collapse, though I would submit that this is just another of the multiple factors that led to the collapse. Maybe a drought occurs, folks turn to iron weapons, and then take over another town or village for their resources, and so on."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 76.1
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 4,
+      "decision_ms": [
+        16092,
+        18279,
+        17929,
+        5260,
+        4031
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "43 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913192",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913192",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "31 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49890732",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t813 points by bradleyg223 3 hours ago | hide | 540\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49913192": [
+          "jabl 2 hours ago | prev | next [\u2013] What's not mentioned in the announcement (at least based on a quick skim) is that EDG the company is winding down, which is likely the reason why they're open sourcing the front end.",
+          "whobre 1 hour ago | parent | next [\u2013] Sad. Those folks are some brilliant computer scientists.",
+          "splicebot 44 minutes ago | root | parent | next [\u2013] Not really sad. They are getting older, worked for themselves doing presumably what they wanted their entire career, now they are done. They could have built the company up, instead it has been common knowledge for close to 10 years they were going to retire 'any day now.'",
+          "cryptolobster 4 minutes ago | prev | next [\u2013] I like this emulation feature. A frontend capable of mimicking MSVC or GCC behavior seems very useful for porting code or developing tools that need to exactly replicate the operation of another compiler.",
+          "vintagedave 3 hours ago | prev | next [\u2013] Wow. This is big news for C++."
+        ],
+        "https://news.ycombinator.com/item?id=49890732": [
+          "falaki 40 minutes ago | next [\u2013] Long before the so-called \u201ciron age\u201d started, humans knew of iron. There are iron artifacts from the 4th millennium BCE. Humans were fascinated by these small pieces of iron, which were found in meteorites and cherished and valued them. However, usable iron was rare and extremely sought after to the extent that we know it was more valuable than gold or silver. How did humans invent the first technique to produce metallic Iron from ore?",
+          "falaki 37 minutes ago | parent | next [\u2013] Some high-level observations about the story of Iron are helpful. First, Iron smelting was discovered independently in different parts of the world, but everywhere it was an evolution of the bronze smelting process. Second, the process took several centuries to evolve. The first iron pieces were considered bad bronze and discarded. When tin became rare the producers gradually increased the quality of the bad bronze. In all likelihood for centuries they did not recognize iron as a new metal but rather an improved \u201cbad bronze\u201d . The final notable observation of the story is who these inventors were. They were not the learned people of the ancient world. Rather they were artisans and laborers working in difficult conditions.",
+          "doginasuit 27 minutes ago | parent | prev | next [\u2013] Where do I like and subscribe",
+          "cjiwndowndkwd 7 minutes ago | root | parent | next [\u2013] No need since it came from an AI.",
+          "ericmay 1 hour ago | prev | next [\u2013] Fun article. I think that there is a lot of interesting information here that would help explain what we saw with the Bronze Age Collapse, though I would submit that this is just another of the multiple factors that led to the collapse. Maybe a drought occurs, folks turn to iron weapons, and then take over another town or village for their resources, and so on."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 63.0
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 4,
+      "decision_ms": [
+        4286,
+        4213,
+        4219,
+        13047,
+        14683
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "43 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913192",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913192",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "31 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49890732",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t813 points by bradleyg223 3 hours ago | hide | 540\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49913192": [
+          "jabl 2 hours ago | prev | next [\u2013] What's not mentioned in the announcement (at least based on a quick skim) is that EDG the company is winding down, which is likely the reason why they're open sourcing the front end.",
+          "whobre 1 hour ago | parent | next [\u2013] Sad. Those folks are some brilliant computer scientists.",
+          "splicebot 44 minutes ago | root | parent | next [\u2013] Not really sad. They are getting older, worked for themselves doing presumably what they wanted their entire career, now they are done. They could have built the company up, instead it has been common knowledge for close to 10 years they were going to retire 'any day now.'",
+          "cryptolobster 4 minutes ago | prev | next [\u2013] I like this emulation feature. A frontend capable of mimicking MSVC or GCC behavior seems very useful for porting code or developing tools that need to exactly replicate the operation of another compiler.",
+          "vintagedave 3 hours ago | prev | next [\u2013] Wow. This is big news for C++."
+        ],
+        "https://news.ycombinator.com/item?id=49890732": [
+          "falaki 42 minutes ago | next [\u2013] Long before the so-called \u201ciron age\u201d started, humans knew of iron. There are iron artifacts from the 4th millennium BCE. Humans were fascinated by these small pieces of iron, which were found in meteorites and cherished and valued them. However, usable iron was rare and extremely sought after to the extent that we know it was more valuable than gold or silver. How did humans invent the first technique to produce metallic Iron from ore?",
+          "falaki 39 minutes ago | parent | next [\u2013] Some high-level observations about the story of Iron are helpful. First, Iron smelting was discovered independently in different parts of the world, but everywhere it was an evolution of the bronze smelting process. Second, the process took several centuries to evolve. The first iron pieces were considered bad bronze and discarded. When tin became rare the producers gradually increased the quality of the bad bronze. In all likelihood for centuries they did not recognize iron as a new metal but rather an improved \u201cbad bronze\u201d . The final notable observation of the story is who these inventors were. They were not the learned people of the ancient world. Rather they were artisans and laborers working in difficult conditions.",
+          "doginasuit 29 minutes ago | parent | prev | next [\u2013] Where do I like and subscribe",
+          "cjiwndowndkwd 9 minutes ago | root | parent | next [\u2013] No need since it came from an AI.",
+          "ericmay 1 hour ago | prev | next [\u2013] Fun article. I think that there is a lot of interesting information here that would help explain what we saw with the Bronze Age Collapse, though I would submit that this is just another of the multiple factors that led to the collapse. Maybe a drought occurs, folks turn to iron weapons, and then take over another town or village for their resources, and so on."
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 41.5
+    }
+  ]
+}

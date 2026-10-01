@@ -56,7 +56,8 @@ METRICS_UNITS = {
     "statuses": "count per final status"}
 # directories holding jevbench runs, one subdirectory per model (or per layout
 # and then model). everything about the variant is read back from the run.
-JEVBENCH_DIRS = ("jevbench", "jevbench-oa2", "jevbench-prior", "jevbench-layouts/*")
+JEVBENCH_DIRS = ("jevbench", "jevbench-oa2", "jevbench-prior", "jevbench-layouts/*",
+                 "jevbench-single-bos")
 
 SUITES = {
     "jevbench-public": "jevbench's 231 public items (easy 48, original 72, hard 111) "

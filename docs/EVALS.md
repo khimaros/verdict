@@ -664,6 +664,40 @@ one line -- 3/3 at 9.7b and 22 s a step, or 2/3 at 2.5b and 3.8 s a step.
 every model was internally consistent across its three runs, which is worth as
 much as the ordering: no run-to-run randomness is hiding in these numbers.
 
+### winnow-12b, with a control that did not reproduce
+
+the frontier task and flags, three runs each, winnow-12b read with its own
+layout and qwen3.5-9b as the control. scored on distinct `item?id=` pages.
+
+| model | real stories | actions | status | median ms |
+|---|---|---|---|---|
+| winnow-12b | 4, 4, 6 | 14 x3 | out-of-steps x3 | 14832 |
+| qwen3.5-9b (control) | 2, 2, 2 | 4 x3 | done x3 | 13256 |
+
+**the control failed where it had completed 3/3**, declaring DONE after four
+actions with two stories every time. hacker news and the harness both moved
+since the frontier sweep, so this is not a clean model comparison. on the day:
+winnow collected at least three real stories in every run and never stopped,
+reading well past the goal until it ran out of steps; qwen3.5-9b stopped early
+and was wrong about being done. winnow's runs also sent every prompt with the
+doubled bos section 8 describes.
+
+the same three runs again on current code -- pooled connections, a single
+bos, checkpoint anchors, section 8:
+
+| winnow-12b | median decision | mean | real stories | status |
+|---|---|---|---|---|
+| before | 14832 ms | 13950 ms | 4, 4, 6 | out-of-steps x3 |
+| current | **9985 ms** | **9115 ms** | 0, 4, 3 | blocked, out-of-steps, blocked |
+
+**a decision is a third faster.** the behaviour moved too, and is not
+attributed: one run answered BLOCKED before acting, one oscillated between a
+commenter's profile and the front page after four stories, one stopped
+BLOCKED rather than DONE once it had three. the page had changed between the
+two sets, three runs is a small sample, and of the three code changes only the
+bos fix alters what the model reads -- section 7 measured winnow at 198
+against 200 on jevbench with it, the same within noise.
+
 ### the score counts stories, not comment-shaped text
 
 `qwen3.5-2b` first appeared to reach 1 story per run. it had clicked the
@@ -833,12 +867,66 @@ pool shared across threads reuses anything.
 - **what remains for a small model is the network.** minicpm spends 13 ms
   computing and ~157 ms travelling. verdict beside its llama-server would
   answer in tens of milliseconds.
-- **prefix reuse does not happen on qwen3.5 or gemma-4 as the eval server serves them.**
-  both report 0 reused tokens, so the state is prefilled again for every
-  question, which is the cost the prefix and suffix split exists to avoid.
-  qwen3.5's recurrent layers and gemma-4's sliding window both need llama.cpp
-  flags to keep a reusable cache (`--ctx-checkpoints`, `--swa-full`), and the
-  eval server's config sets neither. untested.
+- **prefix reuse did not happen on sliding-window or recurrent models**
+  (gemma-4, winnow, qwen3.5 and the models built on it), so the state was
+  prefilled again for every question, which is the cost the prefix and suffix
+  split exists to avoid. llama.cpp cannot roll such a cache back to an
+  arbitrary position; it resumes from a checkpoint, and places one at the
+  start of every user span it finds by matching `message_delimiters` against
+  the prompt's tokens. verdict now sends one at the end of the shared state,
+  chosen per model at derivation from the tokens that really end the rendered
+  state (`---\n\n` on qwen, whose tokenizer folds whitespace into a following
+  newline, `\n---\n\n` on gemma, `Question:` on decider, ` "criterion":` on
+  semif). a follow-up question over a ~4.5k token page, after one with a
+  ~1.5k token option list -- the browser agent's operation after its targets:
+
+  | model | without the anchor | with it |
+  |---|---|---|
+  | winnow-12b | 4,025 new tokens, 4.98 s | 45, 1.04 s |
+  | gemma-4-12b-it | 4,001, 5.10 s | 35, 0.72 s |
+  | qwen3.5-4b | 3,997, 2.92 s | 33, 1.02 s |
+  | decider-4b | 3,960, 2.82 s | 23, 1.03 s |
+  | jevk5-4b | 4,017, 2.80 s | 48, 1.10 s |
+  | standardone-8b | 16, 1.28 s | 16, 0.53 s |
+
+  no server flag and no extra memory. standardone reused without it, its
+  architecture being neither. after a short option list both cases reuse,
+  because llama.cpp also checkpoints ~4 and ~516 tokens before every prompt's
+  end; the anchor is what covers a list longer than that.
+- **on a sliding-window model, reuse depends on what came before.** the
+  eval server's own request log for winnow shows it exactly: after a question
+  whose option list was ~1,560 tokens long, the next question over the same
+  page re-prefilled all ~5,000 tokens; after one with ~100 tokens of options,
+  the next reused 4,969 and prefilled 313. llama.cpp keeps only the last window
+  of a cached prompt, so the shared state is reusable only while the previous
+  prompt's tail after it fits the window. verdict now scores a request's
+  questions shortest first, which makes every question after the first reuse
+  the state when a client asks them together. it cannot help the browser
+  agent, which sends targets and then the operation as two requests, so its
+  long list is never the last prompt on a page; `--swa-full` on the server
+  removes the condition for everyone.
+- **gemma-family prompts reached the model with two bos tokens.** gemma's
+  template renders `<bos>` into the system opening, and llama-server adds the
+  model's bos to every text prompt, which its log flags as "the final prompt
+  starts with 2 BOS tokens". derivation now records the bos the server adds
+  and the decider drops it from the front of a text prompt. the six models it
+  touched were run again on jevbench with a single bos
+  (`eval/results/jevbench-single-bos/`):
+
+  | model | doubled bos | single bos |
+  |---|---|---|
+  | standardone-8b | 173, hard 0.523, ece 0.196 | **179, hard 0.559, ece 0.151** |
+  | gemma-4-12b-it | 200, hard 0.757 | 201, hard 0.766 |
+  | winnow-12b | 200, hard 0.739 | 198, hard 0.721 |
+  | gemma-4-e2b-it | 153, hard 0.396 | 156, hard 0.396 |
+  | gemma-4-e4b-it | 180, hard 0.586 | 180, hard 0.586 |
+  | minicpm5-2b | 144, hard 0.505 | 144, hard 0.505 |
+
+  only standardone moved past the noise floor: its mistral-format prompt
+  opens with `<s>`, and the doubled one cost it six items and some
+  calibration. the gemma models and minicpm read the same either way. these
+  reruns also came after the connection pool, so their latencies are lower
+  for that reason and are not comparable with the rows above them.
 - **qwen3.5-4b carries ~250 ms that neither compute nor the network explains.**
   its gguf is an MTP build served with a draft setting, and its vocabulary is
   248k pieces sorted for the top 64. not yet isolated.

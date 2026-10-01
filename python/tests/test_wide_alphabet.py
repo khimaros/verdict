@@ -78,7 +78,7 @@ class VocabBackend:
             return [ord(c) for c in text[:-2]] + [-ord(text[-1])]
         return [ord(c) for c in text]
 
-    def score(self, prompt_text, label_ids):
+    def score(self, prompt_text, label_ids, delimiters=None):
         self.scored.append((prompt_text, list(label_ids)))
         # ids are ord() of the label, so anything past ascii is a wide label
         wide = all(i > 127 for i in label_ids)

@@ -1279,6 +1279,204 @@
    "weights_source": "server log"
   },
   {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T23:38:35.352030+00:00",
+   "metrics": {
+    "accuracy": 0.8701,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7658,
+    "accuracy_original": 0.9444,
+    "correct": 201,
+    "failures": 0,
+    "hard_ece": 0.1937,
+    "hard_mean_confidence": 0.9522,
+    "latency_p50_s": 0.598,
+    "latency_p95_s": 3.774,
+    "n": 231
+   },
+   "model": "gemma-4-12b-it:Q8_0",
+   "path": "eval/results/jevbench-single-bos/gemma-4-12b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-12b-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-12B-it-GGUF",
+    "revision": "fc034cfff751157913579611efad8462ac1be606"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T23:44:29.922550+00:00",
+   "metrics": {
+    "accuracy": 0.6753,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.3964,
+    "accuracy_original": 0.8889,
+    "correct": 156,
+    "failures": 0,
+    "hard_ece": 0.5364,
+    "hard_mean_confidence": 0.9328,
+    "latency_p50_s": 0.291,
+    "latency_p95_s": 1.546,
+    "n": 231
+   },
+   "model": "gemma-4-e2b-it:Q8_0",
+   "path": "eval/results/jevbench-single-bos/gemma-4-e2b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-E2B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E2B-it-GGUF",
+    "revision": "0314792d7f1f7e229411f620751375812bb9faf2"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T23:42:07.406928+00:00",
+   "metrics": {
+    "accuracy": 0.7792,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5856,
+    "accuracy_original": 0.9306,
+    "correct": 180,
+    "failures": 0,
+    "hard_ece": 0.3272,
+    "hard_mean_confidence": 0.8948,
+    "latency_p50_s": 0.442,
+    "latency_p95_s": 2.197,
+    "n": 231
+   },
+   "model": "gemma-4-e4b-it:Q8_0",
+   "path": "eval/results/jevbench-single-bos/gemma-4-e4b-it_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gemma-4-E4B-it-Q8_0.gguf",
+    "repo": "unsloth/gemma-4-E4B-it-GGUF",
+    "revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T23:46:34.053920+00:00",
+   "metrics": {
+    "accuracy": 0.6234,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5045,
+    "accuracy_original": 0.5556,
+    "correct": 144,
+    "failures": 0,
+    "hard_ece": 0.3346,
+    "hard_mean_confidence": 0.8391,
+    "latency_p50_s": 0.208,
+    "latency_p95_s": 1.263,
+    "n": 231
+   },
+   "model": "minicpm5-2b:Q8_0",
+   "path": "eval/results/jevbench-single-bos/minicpm5-2b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "chat",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "MiniCPM5-2B-Q8_0.gguf",
+    "repo": "openbmb/MiniCPM5-2B-GGUF",
+    "revision": "2079a22f3beaa4e306449978533478fe0522f4b3"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T23:49:54.773642+00:00",
+   "metrics": {
+    "accuracy": 0.7749,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.5586,
+    "accuracy_original": 0.9583,
+    "correct": 179,
+    "failures": 0,
+    "hard_ece": 0.1508,
+    "hard_mean_confidence": 0.7019,
+    "latency_p50_s": 0.272,
+    "latency_p95_s": 2.924,
+    "n": 231
+   },
+   "model": "standardone-8b:Q8_0",
+   "path": "eval/results/jevbench-single-bos/standardone-8b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "standardone-native",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "StandardOne-8B-Q8_0.gguf",
+    "repo": "StandardThinking/StandardOne-8B-GGUF",
+    "revision": "4eb253d55ad6368c7ac483d8e66158c4aa289407"
+   },
+   "weights_source": "server log"
+  },
+  {
+   "dataset_sha256": "dc3995d8ae1e2fc8e81ce38431add509eb8bb39b85aadfd0c7c32079382dde51",
+   "llama_cpp_build": "b11311-f7b384c1e",
+   "measured_utc": "2026-09-30T23:33:56.497670+00:00",
+   "metrics": {
+    "accuracy": 0.8571,
+    "accuracy_easy": 1,
+    "accuracy_hard": 0.7207,
+    "accuracy_original": 0.9722,
+    "correct": 198,
+    "failures": 0,
+    "hard_ece": 0.1177,
+    "hard_mean_confidence": 0.8384,
+    "latency_p50_s": 0.514,
+    "latency_p95_s": 3.53,
+    "n": 231
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/jevbench-single-bos/winnow-12b_Q8_0",
+   "suite": "jevbench-public",
+   "variant": {
+    "layout": "winnow",
+    "long_lists": "refuse",
+    "order_averaging": 1,
+    "prior_correction": false
+   },
+   "weights": {
+    "file": "gguf/Winnow-12B-Q8_0.gguf",
+    "repo": "EldanRing/Winnow-12B",
+    "revision": "b6ac22b0d51b69b18200acacb3fbdd98073fffe8"
+   },
+   "weights_source": "server log"
+  },
+  {
    "llama_cpp_build": "b11310-f872b5911",
    "measured_utc": "2026-09-30T20:05:21.107612+00:00",
    "measured_utc_source": "file mtime",
@@ -2823,6 +3021,77 @@
   },
   {
    "llama_cpp_build": null,
+   "measured_utc": "2026-10-01T00:51:26.014927+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 2,
+    "n": 3,
+    "reached_one": 2,
+    "runs": 3,
+    "statuses": {
+     "blocked": 2,
+     "out-of-steps": 1
+    }
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/sweep-browser-winnow-anchor/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-winnow-anchor"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": null,
+   "measured_utc": "2026-09-30T23:28:16.083588+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 3,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "out-of-steps": 3
+    }
+   },
+   "model": "winnow-12b:Q8_0",
+   "path": "eval/results/sweep-browser-winnow/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-winnow"
+   },
+   "weights": null,
+   "weights_source": null
+  },
+  {
+   "llama_cpp_build": "b11310-f872b5911",
+   "measured_utc": "2026-09-30T23:28:16.083588+00:00",
+   "measured_utc_source": "file mtime",
+   "metrics": {
+    "complete": 0,
+    "n": 3,
+    "reached_one": 3,
+    "runs": 3,
+    "statuses": {
+     "done": 3
+    }
+   },
+   "model": "qwen3.5-9b:Q8_0",
+   "path": "eval/results/sweep-browser-winnow/summary.json",
+   "suite": "agent",
+   "variant": {
+    "sweep": "sweep-browser-winnow"
+   },
+   "weights": {
+    "file": "Qwen3.5-9B-Q8_0.gguf",
+    "repo": "unsloth/Qwen3.5-9B-MTP-GGUF",
+    "revision": "9716a636ee4bddc3fed678220b7a33dd2a4160ae"
+   },
+   "weights_source": "snapshot, config unchanged since 2026-09-30T19:00:00+00:00"
+  },
+  {
+   "llama_cpp_build": null,
    "measured_utc": "2026-09-20T02:28:46.515157+00:00",
    "measured_utc_source": "file mtime",
    "metrics": {
@@ -3879,5 +4148,5 @@
   "smoke": "element selection with ground truth: 16 cases, 4 option counts x 4 positions of the correct answer, fixed distractors."
  },
  "verdict_dirty": true,
- "verdict_rev": "abbef71cd53c499249596caf8e6b3f52de7456a4"
+ "verdict_rev": "1792ad69ace5dec9f13b5a95f436a192e5b87890"
 }

@@ -27,6 +27,11 @@ USER_SENTINEL = "QQUSERQQ"
 # would be nonsense
 TAG = re.compile(r"<([a-z][a-z0-9_]*)>")
 
+# part of the cache key. bumped when derivation starts recording something an
+# older cached formatter lacks, so every model is derived again once rather than
+# served from a record that is missing it. 2: server_bos. 3: checkpoint_anchor.
+# 4: anchors a layout declares, checked against where questions diverge.
+DERIVATION_VERSION = "4"
 CACHE_HOME = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
 CACHE_DIR = os.path.join(CACHE_HOME, "verdict", "formatters")
 
@@ -407,6 +412,50 @@ def ensure_wide_labels(backend, formatter, count, cache_dir=CACHE_DIR):
     return ids
 
 
+def checkpoint_anchor(backend, formatter):
+    """text marking where the shared state ends, or "" when nothing reliably does.
+
+    llama-server checkpoints at the start of each match of a user delimiter,
+    and always at the last one, so an anchor works when its last match in the
+    prompt starts no later than the first token where two questions over the
+    same state differ. the match is by tokens, so the anchor must tokenize the
+    same inside the prompt as on its own: qwen's tokenizer folds whitespace
+    into a following newline, so a delimiter opening on a newline never matches
+    after a state ending on a space, while the same text stripped does, and a
+    layout whose state ends in a bare blank line can anchor on its question
+    opening instead. checked on the whole prompt, as the server tokenizes it,
+    after two states that end differently.
+    """
+    from . import prompt, types
+
+    c = spec.layout(formatter.layout)
+    delimiter = c["state_delimiter"]
+    candidates = [delimiter, delimiter.lstrip(), *c.get("checkpoint_anchors", [])]
+    questions = [types.parse_question(name, body, formatter.layout)
+                 for name, body in verify_question(2).items()]
+    questions.append(types.parse_question(
+        "other", {"type": "choice", "instructions": "Is this about weather?",
+                  "criteria": {"yes": "it is", "no": "it is not"}}, formatter.layout))
+    for candidate in dict.fromkeys(x for x in candidates if x):
+        if all(anchors_before_divergence(backend, formatter, prompt, state, questions,
+                                         backend.tokenize(candidate))
+               for state in (VERIFY_STATE, VERIFY_STATE + " ")):
+            return candidate
+    return ""
+
+
+def anchors_before_divergence(backend, formatter, prompt, state, questions, anchor):
+    """does the anchor's last match start before two questions' prompts differ?"""
+    prefix = prompt.render_prefix(formatter, state)
+    first, second = (backend.tokenize(prefix + prompt.render_suffix(formatter, q))
+                     for q in questions)
+    diverge = next((i for i, (a, b) in enumerate(zip(first, second, strict=False)) if a != b),
+                   min(len(first), len(second)))
+    starts = [i for i in range(len(first) - len(anchor) + 1)
+              if first[i:i + len(anchor)] == anchor]
+    return bool(anchor) and bool(starts) and starts[-1] <= diverge
+
+
 def verify(backend, formatter, ids, counts=VERIFY_COUNTS):
     """score the same unambiguous question at several option counts.
 
@@ -483,8 +532,10 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
 
     props = backend.props()
     template = props["chat_template"]
-    # an override or a layout changes the prompt, so it must change the key too
-    key = template + (assistant_open or "") + ("" if layout == spec.CHAT else layout)
+    # an override or a layout changes the prompt, so it must change the key too,
+    # and so does a derivation that records more than an older one did
+    key = (DERIVATION_VERSION + template + (assistant_open or "")
+           + ("" if layout == spec.CHAT else layout))
     digest = hashlib.sha256(key.encode()).hexdigest()
 
     cached = os.path.join(cache_dir, f"{digest}.json")
@@ -522,13 +573,17 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
             f"id. the model may still support fewer labels, or different ones: "
             f"derive.wide_label_ids() asks it which tokens it can use.")
 
+    # llama-server prepends the model's bos to a text prompt exactly when
+    # tokenizing with special tokens on yields something for nothing
+    server_bos = (props.get("bos_token") or "") if backend.tokenize("", add_special=True) else ""
     record = {"spec_version": constants["spec_version"], "model": model,
               "model_alias": props.get("model_alias"),
-              "template_sha256": digest, "layout": layout,
+              "template_sha256": digest, "layout": layout, "server_bos": server_bos,
               "derived_from": ("llama-server /props chat_template" if layout == spec.CHAT
                                else f"spec/layouts/{layout}.json"),
               "affixes": affixes, "label_ids": ids}
     formatter = Formatter.from_dict(dict(record, verification={}))
+    record["checkpoint_anchor"] = checkpoint_anchor(backend, formatter)
 
     checked = verify(backend, formatter, ids)
     # the floor applies to the WORST case, not the average. lfm2.5-2.6b

@@ -66,13 +66,22 @@ class Decider:
         labels = prompt.label_map(sub, alphabet, self.formatter.layout)
         ids = self.label_ids(list(labels.values()))
 
+        # where the shared state ends, so the server checkpoints it and the next
+        # question over the same state resumes instead of refilling it
+        anchor = self.formatter.checkpoint_anchor
+        delimiters = [{"role": "user", "delimiter": anchor}] if anchor else None
         if self.pretokenize:
             prefix_tokens = self._prefix_tokens(prefix)
             suffix_tokens = self.backend.tokenize(suffix)
-            scored = self.backend.score(prefix_tokens + suffix_tokens, ids)
+            scored = self.backend.score(prefix_tokens + suffix_tokens, ids, delimiters)
             scored["suffix_n"] = len(suffix_tokens)
         else:
-            scored = self.backend.score(prefix + suffix, ids)
+            text = prefix + suffix
+            bos = self.formatter.server_bos
+            if bos and text.startswith(bos):
+                # the server adds this one itself; sending it would make two
+                text = text[len(bos):]
+            scored = self.backend.score(text, ids, delimiters)
             scored["suffix_n"] = 0
 
         raw = {oid: scored["raw"][i] for oid, i in zip(labels, ids, strict=True)}
@@ -268,7 +277,7 @@ class Decider:
         ceiling = self._layout["max_options_single_pass"]
         group_size = self._layout["max_options_plain_alphabet"]
 
-        for question in parsed:
+        for question in sorted(parsed, key=suffix_size):
             t1 = time.monotonic()
             # the exact readout wins when both are enabled: the tournament
             # exists because the alphabet ran out, and it no longer has. it
@@ -341,7 +350,21 @@ class Decider:
             # own suffix, so charging them the prefill again would misreport it
             prefill_ms = 0.0
 
-        return {"answers": answers, "usage": usage}
+        # scored shortest first, returned in the order the caller asked
+        return {"answers": {q.name: answers[q.name] for q in parsed}, "usage": usage}
+
+
+def suffix_size(question):
+    """roughly how long a question's suffix renders, to score short ones first.
+
+    a sliding-window model keeps only the last window of a cached prompt, so it
+    can reuse the shared state only when the previous prompt's text after that
+    state fits the window. a long option list scored between two questions over
+    one state makes the second prefill the state again; scored last, it costs
+    nothing more. the answers do not depend on the order, since no question
+    sees another's answer.
+    """
+    return len(question.instructions) + sum(len(o.description) + 4 for o in question.options)
 
 
 def gate(answer, threshold, assume_uncalibrated=False):

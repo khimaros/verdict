@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     gemma-4-12b-it:Q8_0
+  formatter gemma-4-12b-it:Q8_0 (mean option mass 1.0000, cached)
+  layout    chat
+  weights   {"repo": "unsloth/gemma-4-12B-it-GGUF", "revision": "fc034cfff751157913579611efad8462ac1be606", "file": "gemma-4-12b-it-Q8_0.gguf"}
+  build     b11311-f7b384c1e
+  debiasing order averaging 1, prior correction off
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 16:33:57)
+  point a jev client at this with TYPESAFE_BASE_URL

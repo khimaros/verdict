@@ -22,6 +22,7 @@
     "boolean_names": {"true": "yes", "false": "no"},
     "boolean_default_criteria": {"true": "", "false": ""},
     "option_mass_floor_formatter": 0.8,
+    "checkpoint_anchors": ["Question:"],
     "labels": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     "max_options_single_pass": 26,
     "max_options_plain_alphabet": 26

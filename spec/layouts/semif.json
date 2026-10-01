@@ -8,6 +8,7 @@
     "state_open": "{\"evidence\": ",
     "state_delimiter": "",
     "question_open": ", \"criterion\": ",
+    "checkpoint_anchors": [" \"criterion\":"],
     "options_open": ", \"options\": [",
     "option_line": "{{\"letter\": \"{label}\", \"description\": {description}}}",
     "option_separator": ", ",

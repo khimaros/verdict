@@ -48,6 +48,14 @@ class Formatter:
     # puts first; only a layout without a system turn needs it
     bare_user_open: str = ""
     layout: str = spec.CHAT
+    # the bos llama-server prepends to a text prompt. a template that renders
+    # its own bos would otherwise reach the model with two, so it is dropped
+    # from the front of a text prompt when sending; the affixes keep it.
+    server_bos: str = ""
+    # text whose tokens end the rendered state, sent as a message delimiter so
+    # llama-server checkpoints there; a sliding-window or recurrent model can
+    # then resume the shared state for the next question instead of refilling it
+    checkpoint_anchor: str = ""
     template_sha256: str = ""
     synthetic: bool = False
     # label token ids are a per-model constant. pinning them here removes one
@@ -67,6 +75,8 @@ class Formatter:
     def from_dict(cls, d):
         a = d["affixes"]
         return cls(model=d.get("model", ""), layout=d.get("layout", spec.CHAT),
+                   server_bos=d.get("server_bos", ""),
+                   checkpoint_anchor=d.get("checkpoint_anchor", ""),
                    template_sha256=d.get("template_sha256", ""),
                    synthetic=d.get("synthetic", False),
                    label_ids=d.get("label_ids", {}),

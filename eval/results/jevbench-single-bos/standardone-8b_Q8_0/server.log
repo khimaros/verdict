@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     standardone-8b:Q8_0
+  formatter standardone-8b:Q8_0 (mean option mass 0.9712, derived from the model's chat template)
+  layout    standardone-native
+  weights   {"repo": "StandardThinking/StandardOne-8B-GGUF", "revision": "4eb253d55ad6368c7ac483d8e66158c4aa289407", "file": "StandardOne-8B-Q8_0.gguf"}
+  build     b11311-f7b384c1e
+  debiasing order averaging 1, prior correction off
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 16:46:48)
+  point a jev client at this with TYPESAFE_BASE_URL

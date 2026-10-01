@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     minicpm5-2b:Q8_0
+  formatter minicpm5-2b:Q8_0 (mean option mass 1.0000, derived from the model's chat template)
+  layout    chat
+  weights   {"repo": "openbmb/MiniCPM5-2B-GGUF", "revision": "2079a22f3beaa4e306449978533478fe0522f4b3", "file": "MiniCPM5-2B-Q8_0.gguf"}
+  build     b11311-f7b384c1e
+  debiasing order averaging 1, prior correction off
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /completion per scoring pass (loaded 16:45:01)
+  point a jev client at this with TYPESAFE_BASE_URL

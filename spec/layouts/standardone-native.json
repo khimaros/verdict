@@ -9,6 +9,7 @@
     "state_open": "Read the state and question. Choose the single best option using the supplied information. Respond with exactly one option letter and no other text.\n\nState:\n",
     "state_delimiter": "\n\n",
     "question_open": "Question:\n",
+    "checkpoint_anchors": ["Question:"],
     "options_open": "\n\nOptions:\n",
     "option_line": "{label}. {description}",
     "answer_instruction": "",

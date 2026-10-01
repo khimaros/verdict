@@ -246,6 +246,42 @@ def test_a_failing_backend_arrives_as_a_retryable_529(endpoint, code):
     assert str(code) in wire["error"]["message"]
 
 
+def test_the_state_is_marked_where_the_server_can_checkpoint_it(endpoint):
+    base, fake, _log = endpoint
+    fake.clear_probs()
+    # a sliding-window or recurrent model resumes only from a checkpoint, which
+    # llama-server places where a message delimiter matches; marking the end of
+    # the shared state lets the next question over it skip its prefill
+    ask(base)
+    body = [c["body"] for c in fake.captures() if c["path"].endswith("/completion")][-1]
+    assert body["message_delimiters"] == [{"role": "user", "delimiter": "\n---\n\n"}]
+
+
+def test_questions_are_scored_shortest_suffix_first(endpoint):
+    base, fake, _log = endpoint
+    fake.clear_probs()
+    # a sliding-window model reuses the shared state only when the previous
+    # prompt's text after it fits the window, so a long option list must not
+    # sit between two questions over the same state. the answers do not
+    # depend on the order, since no question sees another's answer.
+    before = len(completions(fake))
+    status, wire = ask(base, questions={
+        "long": {"type": "choice", "instructions": "Pick the long one.",
+                 "criteria": {f"o{i}": f"option number {i}" for i in range(12)}},
+        "short": {"type": "boolean", "instructions": "Is it short?"},
+        "medium": {"type": "choice", "instructions": "Pick the medium one.",
+                   "criteria": {f"m{i}": f"middling {i}" for i in range(4)}}})
+    assert status == 200, wire
+    sent = completions(fake)[before:]
+    # a read that misses a label is widened and sent again, so compare the
+    # order in which each question was first asked
+    asked = dict.fromkeys(next(q for q in ("long one", "short", "medium one") if q in p)
+                          for p in sent)
+    assert list(asked) == ["short", "medium one", "long one"]
+    # the caller still gets its own order back
+    assert list(wire["answers"]) == ["long", "short", "medium"]
+
+
 def test_a_prompt_the_backend_cannot_take_is_refused_not_retried(endpoint):
     base, fake, _log = endpoint
     fake.clear_probs()
@@ -307,10 +343,11 @@ def test_a_score_question_reports_expected_level_and_legend(endpoint):
 def test_several_questions_share_one_request_and_answer_separately(endpoint):
     base, fake, _log = endpoint
     fake.clear_probs()
-    # one spec per scoring call, consumed in the order the questions are asked;
+    # one spec per scoring call, consumed in the order the questions are
+    # scored, which is shortest first: the boolean before the three queues.
     # labels restart at A for each question
-    fake.program_probs([{"probs": {"A": 0.85, "B": 0.10, "C": 0.05}},
-                        {"probs": {"A": 0.8, "B": 0.2}}])
+    fake.program_probs([{"probs": {"A": 0.8, "B": 0.2}},
+                        {"probs": {"A": 0.85, "B": 0.10, "C": 0.05}}])
     calls_before = len([c for c in fake.captures() if c["path"].endswith("/completion")])
     status, wire = ask(base, questions={
         "queue": {"type": "choice", "instructions": "Which queue should handle this?",

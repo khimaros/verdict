@@ -159,12 +159,16 @@ class HttpBackend:
                                           "parse_special": True})
         return out["tokens"]
 
-    def score(self, prompt, label_ids):
+    def score(self, prompt, label_ids, delimiters=None):
         """probabilities for the given label token ids at the next position.
 
         `prompt` is a token id list or the prompt text. text costs no
         `/tokenize` round trip and is byte-equivalent whenever the spec's
         boundary assertion holds, which is what makes it safe to prefer.
+
+        `delimiters` are llama-server message delimiters: it checkpoints where
+        a user one matches, which is what lets a sliding-window or recurrent
+        model resume a shared prefix. a server without them ignores the field.
 
         widens the readout until every label is present. a label missing from a
         truncated candidate list is an artifact, not a zero, and renormalising
@@ -173,12 +177,13 @@ class HttpBackend:
         ladder = spec.constants()["n_probs_ladder"]
         wall, retries = 0.0, 0
         by_id, resp, entries, n_probs = {}, None, [], ladder[0]
+        extra = {"message_delimiters": delimiters} if delimiters else {}
 
         for n_probs in ladder:
             resp, ms = self._post("/completion", {
                 "prompt": prompt, "n_predict": 1, "n_probs": n_probs,
                 "cache_prompt": self.cache_prompt, "post_sampling_probs": False,
-                "temperature": -1.0})
+                "temperature": -1.0, **extra})
             wall += ms
             entries = resp["completion_probabilities"][0]["top_logprobs"]
             by_id = {e["id"]: math.exp(e["logprob"]) for e in entries}

@@ -1,0 +1,552 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 5.666666666666667,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        13674,
+        13451,
+        15477,
+        13186,
+        15689,
+        15242,
+        14536,
+        20803,
+        15978,
+        9309,
+        18245,
+        4025,
+        14836,
+        4044
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "42 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913192",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913192",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/newcomments",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/newcomments",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "530 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49913571",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913571",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "81 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49909583",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49909583",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "8 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49915082",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49915082",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "bradleyg223",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/user?id=bradleyg223",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=bradleyg223",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "bradleyg223",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/user?id=bradleyg223",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=bradleyg223",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t796 points by bradleyg223 3 hours ago | hide | 529\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49913192": [
+          "jabl 2 hours ago | next [\u2013] What's not mentioned in the announcement (at least based on a quick skim) is that EDG the company is winding down, which is likely the reason why they're open sourcing the front end.",
+          "whobre 1 hour ago | parent | next [\u2013] Sad. Those folks are some brilliant computer scientists.",
+          "splicebot 32 minutes ago | root | parent | next [\u2013] Not really sad. They are getting older, worked for themselves doing presumably what they wanted their entire career, now they are done. They could have built the company up, instead it has been common knowledge for close to 10 years they were going to retire 'any day now.'",
+          "vintagedave 3 hours ago | prev | next [\u2013] Wow. This is big news for C++.",
+          "jcranmer 2 hours ago | parent | next [\u2013] There are essentially four C++ frontends: gcc, clang, MSVC, and EDG. Pretty much every C++ compiler is a reskinned version of one of those compilers. Most of the proprietary compilers have been slinking away from using EDG to using clang (e.g., Intel did this transition a few years ago)."
+        ],
+        "https://news.ycombinator.com/newcomments": [
+          "carljungslabtek 0 minutes ago | parent | context | on: Dear Software Makers Obviously phased rollouts are fine and even necessary like you said. That\u2019s not really \u201cexperimenting on people\u201d, it\u2019s experimenting on the network/system.",
+          "selimthegrim 0 minutes ago | parent | context | on: The last time my family was replaced by technology This may shock you but there are still in fact humans who drag around carts every day",
+          "alcidesfonseca 0 minutes ago | parent | context | on: CS240 AI Cheating Retrospective I agree. Here at U. Lisbon, we are following the recommendation by the recent MIT report: Evaluate students by talking with them, making it a social interaction, which they are lacking.",
+          "wordpad 0 minutes ago | parent | context | on: ChatGPT Pro 500 Latest models have a much better sense of time and token budget, so if you instruct it for a quick answer or to not burn many tokens it will try to respect that",
+          "r1ch 0 minutes ago | parent | context | on: Gemini 4 Argon We're on Enterprise Standard, our renewal was up like 50% because \"Gemini is included now think of all the added value\" yet they won't even give us the latest models. I tried hard to champion Gemini internally once every user had it included, yet we ended up spending extra on Claude because Gemini has stagnated. Even the included usage for the Gemini CLI was taken away and now requires an extra subscription. I wonder if we we'll even see Gemini 4 before 2028. It's ridiculous."
+        ],
+        "https://news.ycombinator.com/item?id=49913571": [
+          "taylorfinley 2 hours ago | next [\u2013] Ten days ago I had an experience with Gemini 3.8 flash that made me wonder if I was being routed to a different model under test. I was trying to use rocm with llama.cpp on my 128gb Strix Halo but could only get it to run Vulkan. I pasted the error message into agy and it proceeded to attach GDB to my GPU driver, reverse-engineer the kernel queue ioctl interface, and author an LD_PRELOAD C shim to get ROCm llama.cpp working on my Strix Halo. My jaw was hanging open the whole time.",
+          "spankalee 2 hours ago | parent | next [\u2013] 3.8 Flash is just quite good, and so is the Antigravity harness.",
+          "mapontosevenths 2 hours ago | root | parent | next [\u2013] Even if agy was the best (it's not, and is missing basic features) you wouldn't rather have a choice?",
+          "spankalee 4 minutes ago | root | parent | next [\u2013] There's an API: you can use Gemini with other harnesses. Isn't the situation exactly like Claude vs Claude Code?",
+          "drusepth 2 hours ago | root | parent | prev | next [\u2013] What basic features are missing from agy? I've been using it and cli-cc + web-cc for months (among a few other random harnesses to test here and there) and they all seem roughly comparable to me."
+        ],
+        "https://news.ycombinator.com/item?id=49909583": [
+          "rbanffy 7 hours ago | next [\u2013] I have the highest regard for these terse, but information-dense displays that enable humans to quickly grasp all information they need to do their jobs, and nothing more. This is also something avionics provide - a modern cockpit displays are a work of art in layering needed information for what is happening at the time, both the dense PFD and the much specific that communicate aircraft status.",
+          "xp84 1 hour ago | parent | next [\u2013] UI designers who were trained in the currently-popular paradigm would be at a complete loss to design such things. \"Swipe left from the home screen, tap the nothingness on the screen to reveal the controls overlay, find the \u2022\u2022\u2022 in one corner of the screen, tap \"More\" in the 3-item menu, and then tap 'Bond Quote' in the modal dialog that takes over the entire screen.\" Keyboard shortcuts? \"Hmm... interesting idea. Never thought of that. We might add those in a V2.\"",
+          "bargainbin 7 minutes ago | root | parent | next [\u2013] My god have you ever had those people try to add keyboard shortcuts? You start to question if they have ever used a keyboard at all.",
+          "ACS_Solver 5 hours ago | parent | prev | next [\u2013] I love displays from space vehicles and nuclear plants for the same reason. Data and controls organized in a dense but presumably highly usable manner. And it covers the more specific view of an expert in a particular subsystem, as well as the higher level view of those responsible for the whole system.",
+          "jll29 3 hours ago | root | parent | next [\u2013] Also on the input side: for instance here is a cheat sheet for a small part of the available keyboard commands: https://www.bbk.ac.uk/documents/bloomberg-cheatsheet.pdf"
+        ],
+        "https://news.ycombinator.com/item?id=49915082": [
+          "Almondsetat 16 minutes ago | next [\u2013] The incredible and futuristic technologies the US managed to deploy decades before the competition reminds me of the story of how the NRO gifted NASA a couple of their old decommissioned satellites in 2012 and they turned out to be basically upgraded Hubble telescopes pointed at earth. The US from the 90s to the 2000s had multiple Hubble-level telescopes just for spying while NASA was fighting for scraps to study the entire cosmos.",
+          "toomuchtodo 5 minutes ago | parent | next [\u2013] One of the NRO optical imaging system gifts is in the recently launched Nancy Grace Roman Space Telescope.",
+          "ironqcold 10 minutes ago | parent | prev | next [\u2013] I didn't know about this, that's interesting",
+          "corvad 7 minutes ago | parent | prev | next [\u2013] I mean NASA's budget was/is minuscule in comparison to defense spending so I am not surprised.",
+          "shevy-java 10 minutes ago | parent | prev | next [\u2013] I am not entirely convinced. Was not Hubble damaged and got an upgrade lateron? I mean it could be possible that NASA is starved, but the repair involved other countries too, and I don't think the USA could keep mega-super-duper technology hidden from others in the long run. And NASA often wants more money - just take the whole search for life on planets. This is so pointless - life exists already here. What is the addiction to want to find life outside of the planet? Other than, of course, getting more money, which is understandable, but it doesn't answer the question. (Not that I am against better technology; the rationale just does not convince me at all here.)"
+        ]
+      },
+      "stories_visited": 5,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 193.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        14827,
+        13640,
+        14071,
+        17300,
+        14016,
+        15908,
+        16234,
+        8786,
+        14999,
+        14444,
+        16400,
+        3982,
+        14497,
+        4038
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "42 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913192",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913192",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "533 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49913571",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913571",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "81 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49909583",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49909583",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "9 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49915082",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49915082",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/newcomments",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/newcomments",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "bradleyg223",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/user?id=bradleyg223",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=bradleyg223",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "bradleyg223",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/user?id=bradleyg223",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=bradleyg223",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t799 points by bradleyg223 3 hours ago | hide | 532\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49913192": [
+          "jabl 2 hours ago | next [\u2013] What's not mentioned in the announcement (at least based on a quick skim) is that EDG the company is winding down, which is likely the reason why they're open sourcing the front end.",
+          "whobre 1 hour ago | parent | next [\u2013] Sad. Those folks are some brilliant computer scientists.",
+          "splicebot 36 minutes ago | root | parent | next [\u2013] Not really sad. They are getting older, worked for themselves doing presumably what they wanted their entire career, now they are done. They could have built the company up, instead it has been common knowledge for close to 10 years they were going to retire 'any day now.'",
+          "vintagedave 3 hours ago | prev | next [\u2013] Wow. This is big news for C++.",
+          "jcranmer 2 hours ago | parent | next [\u2013] There are essentially four C++ frontends: gcc, clang, MSVC, and EDG. Pretty much every C++ compiler is a reskinned version of one of those compilers. Most of the proprietary compilers have been slinking away from using EDG to using clang (e.g., Intel did this transition a few years ago)."
+        ],
+        "https://news.ycombinator.com/item?id=49913571": [
+          "taylorfinley 3 hours ago | next [\u2013] Ten days ago I had an experience with Gemini 3.8 flash that made me wonder if I was being routed to a different model under test. I was trying to use rocm with llama.cpp on my 128gb Strix Halo but could only get it to run Vulkan. I pasted the error message into agy and it proceeded to attach GDB to my GPU driver, reverse-engineer the kernel queue ioctl interface, and author an LD_PRELOAD C shim to get ROCm llama.cpp working on my Strix Halo. My jaw was hanging open the whole time.",
+          "spankalee 2 hours ago | parent | next [\u2013] 3.8 Flash is just quite good, and so is the Antigravity harness.",
+          "mapontosevenths 2 hours ago | root | parent | next [\u2013] Even if agy was the best (it's not, and is missing basic features) you wouldn't rather have a choice?",
+          "spankalee 8 minutes ago | root | parent | next [\u2013] There's an API: you can use Gemini with other harnesses. Isn't the situation exactly like Claude vs Claude Code?",
+          "drusepth 2 hours ago | root | parent | prev | next [\u2013] What basic features are missing from agy? I've been using it and cli-cc + web-cc for months (among a few other random harnesses to test here and there) and they all seem roughly comparable to me."
+        ],
+        "https://news.ycombinator.com/item?id=49909583": [
+          "rbanffy 7 hours ago | next [\u2013] I have the highest regard for these terse, but information-dense displays that enable humans to quickly grasp all information they need to do their jobs, and nothing more. This is also something avionics provide - a modern cockpit displays are a work of art in layering needed information for what is happening at the time, both the dense PFD and the much specific that communicate aircraft status.",
+          "xp84 1 hour ago | parent | next [\u2013] UI designers who were trained in the currently-popular paradigm would be at a complete loss to design such things. \"Swipe left from the home screen, tap the nothingness on the screen to reveal the controls overlay, find the \u2022\u2022\u2022 in one corner of the screen, tap \"More\" in the 3-item menu, and then tap 'Bond Quote' in the modal dialog that takes over the entire screen.\" Keyboard shortcuts? \"Hmm... interesting idea. Never thought of that. We might add those in a V2.\"",
+          "bargainbin 9 minutes ago | root | parent | next [\u2013] My god have you ever had those people try to add keyboard shortcuts? You start to question if they have ever used a keyboard at all.",
+          "ACS_Solver 5 hours ago | parent | prev | next [\u2013] I love displays from space vehicles and nuclear plants for the same reason. Data and controls organized in a dense but presumably highly usable manner. And it covers the more specific view of an expert in a particular subsystem, as well as the higher level view of those responsible for the whole system.",
+          "jll29 3 hours ago | root | parent | next [\u2013] Also on the input side: for instance here is a cheat sheet for a small part of the available keyboard commands: https://www.bbk.ac.uk/documents/bloomberg-cheatsheet.pdf"
+        ],
+        "https://news.ycombinator.com/item?id=49915082": [
+          "Almondsetat 18 minutes ago | next [\u2013] The incredible and futuristic technologies the US managed to deploy decades before the competition reminds me of the story of how the NRO gifted NASA a couple of their old decommissioned satellites in 2012 and they turned out to be basically upgraded Hubble telescopes pointed at earth. The US from the 90s to the 2000s had multiple Hubble-level telescopes just for spying while NASA was fighting for scraps to study the entire cosmos.",
+          "ironqcold 12 minutes ago | parent | next [\u2013] I didn't know about this, that's interesting",
+          "toomuchtodo 7 minutes ago | parent | prev | next [\u2013] One of the NRO optical imaging system gifts is in the recently launched Nancy Grace Roman Space Telescope.",
+          "corvad 9 minutes ago | parent | prev | next [\u2013] I mean NASA's budget was/is minuscule in comparison to defense spending so I am not surprised.",
+          "deepsun 1 minute ago | root | parent | next [\u2013] How? NASA budget is around 20-30bn in recent years, same scale as US Space Force department budget (26bn in recent years, 40bn in 2026). Comparable, but not minuscule."
+        ],
+        "https://news.ycombinator.com/newcomments": [
+          "PaulDavisThe1st 0 minutes ago | parent | context | on: Dear Software Makers > Original youtube is there, it's called subscriptions tab. A curated list of high-quality content creators accumulated for over a decade.",
+          "jeffbee 0 minutes ago | parent | context | on: Vermont replacing power plants with home batteries Thank you for perceiving the core issue here.",
+          "MikeTheGreat 0 minutes ago | parent | context | on: Livenerf: Has Opus 5.5 been nerfed yet? Today I learned a new word! Thanks!",
+          "andrethegiant 0 minutes ago | parent | context | on: Launch HN: Magnitude (YC S25) \u2013 Self-optimizing in... Congrats on the launch!",
+          "elcritch 1 minute ago | parent | context | on: SDF vs. MSDF vs. Slug: GPU Text Rendering > One thing I found was that it was tough to get small text to look good with some fonts."
+        ]
+      },
+      "stories_visited": 5,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 187.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        14062,
+        13546,
+        14072,
+        17133,
+        14805,
+        15197,
+        15620,
+        15173,
+        15113,
+        9646,
+        16755,
+        20200,
+        17430,
+        15520
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/newcomments",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/newcomments",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "42 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913192",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913192",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "535 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49913571",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49913571",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "31 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49890732",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49890732",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "9 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49915082",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49915082",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "81 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49909583",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49909583",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "35 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49912955",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49912955",
+          "to": "https://news.ycombinator.com/item?id=49912955",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t806 points by bradleyg223 3 hours ago | hide | 535\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/newcomments": [
+          "PaulDavisThe1st 0 minutes ago | parent | context | on: Dear Software Makers > Original youtube is there, it's called subscriptions tab. A curated list of high-quality content creators accumulated for over a decade.",
+          "jeffbee 0 minutes ago | parent | context | on: Vermont replacing power plants with home batteries Thank you for perceiving the core issue here.",
+          "MikeTheGreat 0 minutes ago | parent | context | on: Livenerf: Has Opus 5.5 been nerfed yet? Today I learned a new word! Thanks!",
+          "andrethegiant 0 minutes ago | parent | context | on: Launch HN: Magnitude (YC S25) \u2013 Self-optimizing in... Congrats on the launch!",
+          "elcritch 1 minute ago | parent | context | on: SDF vs. MSDF vs. Slug: GPU Text Rendering > One thing I found was that it was tough to get small text to look good with some fonts."
+        ],
+        "https://news.ycombinator.com/item?id=49913192": [
+          "jabl 2 hours ago | next [\u2013] What's not mentioned in the announcement (at least based on a quick skim) is that EDG the company is winding down, which is likely the reason why they're open sourcing the front end.",
+          "whobre 1 hour ago | parent | next [\u2013] Sad. Those folks are some brilliant computer scientists.",
+          "splicebot 38 minutes ago | root | parent | next [\u2013] Not really sad. They are getting older, worked for themselves doing presumably what they wanted their entire career, now they are done. They could have built the company up, instead it has been common knowledge for close to 10 years they were going to retire 'any day now.'",
+          "vintagedave 3 hours ago | prev | next [\u2013] Wow. This is big news for C++.",
+          "jcranmer 2 hours ago | parent | next [\u2013] There are essentially four C++ frontends: gcc, clang, MSVC, and EDG. Pretty much every C++ compiler is a reskinned version of one of those compilers. Most of the proprietary compilers have been slinking away from using EDG to using clang (e.g., Intel did this transition a few years ago)."
+        ],
+        "https://news.ycombinator.com/item?id=49913571": [
+          "taylorfinley 3 hours ago | next [\u2013] Ten days ago I had an experience with Gemini 3.8 flash that made me wonder if I was being routed to a different model under test. I was trying to use rocm with llama.cpp on my 128gb Strix Halo but could only get it to run Vulkan. I pasted the error message into agy and it proceeded to attach GDB to my GPU driver, reverse-engineer the kernel queue ioctl interface, and author an LD_PRELOAD C shim to get ROCm llama.cpp working on my Strix Halo. My jaw was hanging open the whole time.",
+          "spankalee 2 hours ago | parent | next [\u2013] 3.8 Flash is just quite good, and so is the Antigravity harness.",
+          "mapontosevenths 2 hours ago | root | parent | next [\u2013] Even if agy was the best (it's not, and is missing basic features) you wouldn't rather have a choice?",
+          "spankalee 10 minutes ago | root | parent | next [\u2013] There's an API: you can use Gemini with other harnesses. Isn't the situation exactly like Claude vs Claude Code?",
+          "drusepth 2 hours ago | root | parent | prev | next [\u2013] What basic features are missing from agy? I've been using it and cli-cc + web-cc for months (among a few other random harnesses to test here and there) and they all seem roughly comparable to me."
+        ],
+        "https://news.ycombinator.com/item?id=49890732": [
+          "falaki 36 minutes ago | next [\u2013] Long before the so-called \u201ciron age\u201d started, humans knew of iron. There are iron artifacts from the 4th millennium BCE. Humans were fascinated by these small pieces of iron, which were found in meteorites and cherished and valued them. However, usable iron was rare and extremely sought after to the extent that we know it was more valuable than gold or silver. How did humans invent the first technique to produce metallic Iron from ore?",
+          "falaki 33 minutes ago | parent | next [\u2013] Some high-level observations about the story of Iron are helpful. First, Iron smelting was discovered independently in different parts of the world, but everywhere it was an evolution of the bronze smelting process. Second, the process took several centuries to evolve. The first iron pieces were considered bad bronze and discarded. When tin became rare the producers gradually increased the quality of the bad bronze. In all likelihood for centuries they did not recognize iron as a new metal but rather an improved \u201cbad bronze\u201d . The final notable observation of the story is who these inventors were. They were not the learned people of the ancient world. Rather they were artisans and laborers working in difficult conditions.",
+          "doginasuit 23 minutes ago | parent | prev | next [\u2013] Where do I like and subscribe",
+          "cjiwndowndkwd 3 minutes ago | root | parent | next [\u2013] No need since it came from an AI.",
+          "ericmay 1 hour ago | prev | next [\u2013] Fun article. I think that there is a lot of interesting information here that would help explain what we saw with the Bronze Age Collapse, though I would submit that this is just another of the multiple factors that led to the collapse. Maybe a drought occurs, folks turn to iron weapons, and then take over another town or village for their resources, and so on."
+        ],
+        "https://news.ycombinator.com/item?id=49915082": [
+          "Almondsetat 22 minutes ago | next [\u2013] The incredible and futuristic technologies the US managed to deploy decades before the competition reminds me of the story of how the NRO gifted NASA a couple of their old decommissioned satellites in 2012 and they turned out to be basically upgraded Hubble telescopes pointed at earth. The US from the 90s to the 2000s had multiple Hubble-level telescopes just for spying while NASA was fighting for scraps to study the entire cosmos.",
+          "ironqcold 16 minutes ago | parent | next [\u2013] I didn't know about this, that's interesting",
+          "toomuchtodo 12 minutes ago | parent | prev | next [\u2013] One of the NRO optical imaging system gifts is in the recently launched Nancy Grace Roman Space Telescope.",
+          "corvad 14 minutes ago | parent | prev | next [\u2013] I mean NASA's budget was/is minuscule in comparison to defense spending so I am not surprised.",
+          "deepsun 5 minutes ago | root | parent | next [\u2013] How? NASA budget is around 20-30bn in recent years, same scale as US Space Force department budget (26bn in recent years, 40bn in 2026). Comparable, but not minuscule."
+        ],
+        "https://news.ycombinator.com/item?id=49909583": [
+          "rbanffy 7 hours ago | next [\u2013] I have the highest regard for these terse, but information-dense displays that enable humans to quickly grasp all information they need to do their jobs, and nothing more. This is also something avionics provide - a modern cockpit displays are a work of art in layering needed information for what is happening at the time, both the dense PFD and the much specific that communicate aircraft status.",
+          "xp84 1 hour ago | parent | next [\u2013] UI designers who were trained in the currently-popular paradigm would be at a complete loss to design such things. \"Swipe left from the home screen, tap the nothingness on the screen to reveal the controls overlay, find the \u2022\u2022\u2022 in one corner of the screen, tap \"More\" in the 3-item menu, and then tap 'Bond Quote' in the modal dialog that takes over the entire screen.\" Keyboard shortcuts? \"Hmm... interesting idea. Never thought of that. We might add those in a V2.\"",
+          "bargainbin 14 minutes ago | root | parent | next [\u2013] My god have you ever had those people try to add keyboard shortcuts? You start to question if they have ever used a keyboard at all.",
+          "ACS_Solver 5 hours ago | parent | prev | next [\u2013] I love displays from space vehicles and nuclear plants for the same reason. Data and controls organized in a dense but presumably highly usable manner. And it covers the more specific view of an expert in a particular subsystem, as well as the higher level view of those responsible for the whole system.",
+          "jll29 3 hours ago | root | parent | next [\u2013] Also on the input side: for instance here is a cheat sheet for a small part of the available keyboard commands: https://www.bbk.ac.uk/documents/bloomberg-cheatsheet.pdf"
+        ],
+        "https://news.ycombinator.com/item?id=49912955": [
+          "paimapi 3 hours ago | next [\u2013] Bit of a sensationalist title - EEG/iEEG measurements have led to worthwhile clinical outcomes but also are an avenue for bunk pseudosccience so it pays to be careful whenever you see the words 'brain waves' paired with some large claim.",
+          "bbor 41 minutes ago | parent | next [\u2013] Idk\u2026 I follow EEG science pretty closely now that the BCI industry is exploding post-DL, and this seems like a very accurate title.",
+          "plastic-enjoyer 1 hour ago | parent | prev | next [\u2013] >also are an avenue for bunk pseudosccience so it pays to be careful whenever you see the words 'brain waves' paired with some large claim.",
+          "Scrapemist 59 minutes ago | root | parent | next [\u2013] His brain waves",
+          "paimapi 52 minutes ago | root | parent | prev | next [\u2013] this was the first web search result for brain wave pseudoscience:"
+        ]
+      },
+      "stories_visited": 7,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 217.5
+    }
+  ]
+}

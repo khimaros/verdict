@@ -80,7 +80,7 @@ class FakeBackend:
         # tokenize(a) + tokenize(b) -- the merge invariant under test
         return [ord(c) for c in text]
 
-    def score(self, prompt, label_ids):
+    def score(self, prompt, label_ids, delimiters=None):
         self.prompts.append(prompt)
         return {"raw": {label_ids[0]: 1.0, **{i: 0.0 for i in label_ids[1:]}},
                 "truncated": False, "n_probs_used": 64, "retries": 0,

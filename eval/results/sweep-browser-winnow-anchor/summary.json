@@ -1,0 +1,12 @@
+{
+  "winnow-12b:Q8_0": {
+    "runs": 3,
+    "complete": 2,
+    "reached_one": 2,
+    "mean_stories": 2.3333333333333335,
+    "statuses": {
+      "blocked": 2,
+      "out-of-steps": 1
+    }
+  }
+}
