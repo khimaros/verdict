@@ -16,8 +16,8 @@ from llama_verdict.backend import HttpBackend
 from llama_verdict.decide import Decider
 from llama_verdict.types import Formatter
 
-URL = config.get("LLAMA_VERDICT_URL")
-MODEL = config.get("LLAMA_VERDICT_MODEL")
+URL = config.backend_url()
+MODEL = config.backend_model()
 SPEC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "spec")
 
 pytestmark = pytest.mark.skipif(not URL, reason="set LLAMA_VERDICT_URL")

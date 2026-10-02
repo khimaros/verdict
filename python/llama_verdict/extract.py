@@ -48,19 +48,25 @@ def expected_level(probs):
     return sum(int(level) * p for level, p in probs.items())
 
 
-def answer(question, raw, option_mass_floor, option_mass=None):
+def answer(question, raw, option_mass_floor, option_mass=None, measured=True):
     """the full result object for one question.
 
     `option_mass` overrides the mass implied by `raw`. debiasing rescales the
     raw values, and the mass has to stay what the readout actually measured or
     it stops being a health check on the prompt.
+
+    `measured` is false for a readout through a decision head, whose
+    distribution covers the options and nothing else: its sum is 1 by
+    construction, so the mass is reported as absent rather than as healthy.
     """
     probs, implied = renormalise(raw)
-    mass = implied if option_mass is None else option_mass
+    mass = (implied if option_mass is None else option_mass) if measured else None
     flags = []
-    if mass < option_mass_floor:
+    if not measured:
+        flags.append("no_option_mass")
+    elif mass < option_mass_floor:
         flags.append("low_option_mass")
-    top = max(probs, key=probs.get) if mass > 0 else None
+    top = max(probs, key=probs.get) if implied > 0 else None
     out = {
         "type": question.kind,
         "probs": probs,
@@ -103,7 +109,9 @@ def agree(a, b, tolerance=None):
     limits = tolerance or spec.constants()["numeric_tolerance"]
     close = limits["probability_abs"]
 
-    if abs(a["option_mass"] - b["option_mass"]) > close:
+    if (a["option_mass"] is None) != (b["option_mass"] is None):
+        return Agreement(False, "one readout measured option mass and the other is a head")
+    if a["option_mass"] is not None and abs(a["option_mass"] - b["option_mass"]) > close:
         return Agreement(False, f"option mass {a['option_mass']:.4g} vs "
                                 f"{b['option_mass']:.4g}")
 

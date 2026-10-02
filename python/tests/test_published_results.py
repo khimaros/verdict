@@ -47,7 +47,7 @@ def test_nothing_names_a_private_address():
 
 
 def test_nothing_names_the_configured_backend_host():
-    url = config.get("LLAMA_VERDICT_URL")
+    url = config.backend_url()
     host = urllib.parse.urlsplit(url).hostname if url else None
     if not host or host in ("localhost", "127.0.0.1"):
         return

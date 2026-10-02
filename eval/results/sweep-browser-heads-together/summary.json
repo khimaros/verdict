@@ -1,0 +1,29 @@
+{
+  "clef-flash:Q8_0": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 3,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "jev-omni:Q8_0": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 6,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "qwen3.5-9b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 2,
+    "statuses": {
+      "done": 3
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qwen3.5-9b:Q8_0": {
+    "runs": 3,
+    "complete": 1,
+    "reached_one": 1,
+    "mean_stories": 0.3333333333333333,
+    "statuses": {
+      "done": 2,
+      "out-of-steps": 1
+    }
+  },
+  "minicpm5-2b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "granite-4.2-3b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "blocked": 3
+    }
+  },
+  "qwen3.5-2b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "qwen3.5-0.8b:Q8_0": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  }
+}

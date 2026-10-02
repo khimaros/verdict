@@ -36,9 +36,6 @@ from llama_verdict import config, derive
 from llama_verdict.backend import HttpBackend
 from llama_verdict.decide import Decider
 
-OVERRIDES = {"gpt-oss-20b:Q8_0": "<|start|>assistant<|channel|>final<|message|>",
-             "gpt-oss-120b:Q8_0": "<|start|>assistant<|channel|>final<|message|>"}
-
 
 def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False, layout=None):
     """`order_averaging` scores each option list forward and reversed and
@@ -53,8 +50,7 @@ def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False, layou
     """
     backend = HttpBackend(base_url, model)
     started = time.monotonic()
-    formatter, _ = derive.build(backend, model,
-                                assistant_open=OVERRIDES.get(model), layout=layout)
+    formatter, _ = derive.build(backend, model, layout=layout)
     decider = Decider(backend, formatter, tournament=True,
                       order_averaging=order_averaging,
                       wide_alphabet=wide_alphabet)
@@ -74,6 +70,7 @@ def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False, layou
     ok = sum(r["ok"] for r in rows)
     return {
         "model": model,
+        "layout": formatter.layout,
         "order_averaging": order_averaging,
         "wide_alphabet": wide_alphabet,
         "correct": f"{ok}/{len(rows)}",
@@ -81,7 +78,9 @@ def smoke(base_url, model, counts, order_averaging=1, wide_alphabet=False, layou
         "by_position": {p: sum(r["ok"] for r in rows if r["position"] == p)
                         for p in POSITIONS},
         "by_count": {n: sum(r["ok"] for r in rows if r["n"] == n) for n in counts},
-        "min_option_mass": min(r["option_mass"] for r in rows),
+        # absent for a model read through a decision head, which has none
+        "min_option_mass": min((r["option_mass"] for r in rows
+                                if r["option_mass"] is not None), default=None),
         "median_ms": statistics.median(r["ms"] for r in rows),
         "wall_s": round(time.monotonic() - started, 1),
         "rows": rows,
@@ -113,7 +112,9 @@ def main():
                         args.order_averaging, args.wide_alphabet, args.layout)
             per_n = " ".join(f"{n}:{c}" for n, c in row["by_count"].items())
             per_p = " ".join(f"{p[:3]}:{c}" for p, c in row["by_position"].items())
-            print(f"{model:<30} {row['correct']:>6}  mass>={row['min_option_mass']:.4f}  "
+            mass = row["min_option_mass"]
+            print(f"{model:<30} {row['correct']:>6}  "
+                  f"mass{'>=' + format(mass, '.4f') if mass is not None else ' n/a (head)'}  "
                   f"{row['median_ms']:>6.0f}ms  [{per_n}]  [{per_p}]", flush=True)
         except Exception as e:
             row = {"model": model, "error": f"{type(e).__name__}: {e}"}

@@ -76,7 +76,8 @@
       "stories_visited": 0,
       "actions": 2,
       "decisions": 3,
-      "wall_s": 6.8
+      "wall_s": 6.8,
+      "required": 1
     },
     {
       "goal": "Open the Settings app and navigate to the screen showing the Android version.",
@@ -101,7 +102,8 @@
       "stories_visited": 0,
       "actions": 0,
       "decisions": 1,
-      "wall_s": 1.7
+      "wall_s": 1.7,
+      "required": 1
     },
     {
       "goal": "Open the Settings app and navigate to the screen showing the Android version.",
@@ -176,7 +178,8 @@
       "stories_visited": 0,
       "actions": 2,
       "decisions": 3,
-      "wall_s": 8.6
+      "wall_s": 8.6,
+      "required": 1
     }
   ]
 }

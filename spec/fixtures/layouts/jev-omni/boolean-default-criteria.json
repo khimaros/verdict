@@ -1,0 +1,27 @@
+{
+  "id": "boolean-default-criteria",
+  "description": "boolean with no criteria uses the spec defaults",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?"
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\nIf this is not fixed today I am cancelling our subscription.\n\n---\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "QUESTION: Does the sender threaten to cancel?\n\nOPTIONS:\n1. Yes\n2. No\n\nReply with only the number of the correct option (1-2).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "true": "1",
+          "false": "2"
+        },
+        "flags": []
+      }
+    }
+  }
+}

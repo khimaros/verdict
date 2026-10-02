@@ -69,7 +69,7 @@ class VocabBackend:
         return {"chat_template": TEMPLATE, "bos_token": "", "eos_token": "",
                 "build_info": "fake", "model_alias": "fake"}
 
-    def readout(self):
+    def registry_key(self):
         return None
 
     def tokenize(self, text, add_special=False):

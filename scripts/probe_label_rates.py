@@ -45,7 +45,6 @@ sys.path.insert(0, HERE)
 from llama_verdict import config, derive, spec
 from llama_verdict.backend import HttpBackend
 from probe_wide_labels import confusable
-from smoke_models import OVERRIDES
 
 GROUP = 52
 
@@ -90,8 +89,7 @@ def main():
     args = ap.parse_args()
 
     backend = HttpBackend(args.base_url, args.model)
-    formatter, _ = derive.build(backend, args.model,
-                                assistant_open=OVERRIDES.get(args.model))
+    formatter, _ = derive.build(backend, args.model)
     wide = derive.ensure_wide_labels(backend, formatter, 600)
     by_text = rates(backend, formatter)
 

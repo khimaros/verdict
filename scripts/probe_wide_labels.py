@@ -59,7 +59,6 @@ sys.path.insert(0, HERE)
 from eval_interventions import POSITIONS, STATE, case
 from llama_verdict import config, derive, extract, prompt, spec, types
 from llama_verdict.backend import HttpBackend
-from smoke_models import OVERRIDES
 
 # enough labels that the wide-only column never has to borrow an ascii one,
 # and enough left over for the confusable-free column after the lookalikes are
@@ -124,8 +123,7 @@ def score_with(backend, formatter, question, alphabet, ids):
 def probe(base_url, model, counts, long_count):
     backend = HttpBackend(base_url, model)
     started = time.monotonic()
-    formatter, _ = derive.build(backend, model,
-                                assistant_open=OVERRIDES.get(model))
+    formatter, _ = derive.build(backend, model)
     wide = derive.ensure_wide_labels(backend, formatter, HEADROOM)
 
     pinned = list(spec.constants()["labels"])

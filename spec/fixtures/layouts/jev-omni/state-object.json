@@ -1,0 +1,38 @@
+{
+  "id": "state-object",
+  "description": "an object state, serialised deterministically",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": {
+    "subject": "Stripe sync broken",
+    "plan": "pro",
+    "previousTickets": 2,
+    "message": "My Stripe connection has failed for three days."
+  },
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\n{\n  \"message\": \"My Stripe connection has failed for three days.\",\n  \"plan\": \"pro\",\n  \"previousTickets\": 2,\n  \"subject\": \"Stripe sync broken\"\n}\n\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "QUESTION: Which queue should handle this?\n\nOPTIONS:\n1. access: Account access: logins, passwords, permissions.\n2. billing: Billing: invoices, payments, refunds.\n3. technical: Technical: bugs, outages, integrations.\n\nReply with only the number of the correct option (1-3).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "access": "1",
+          "billing": "2",
+          "technical": "3"
+        },
+        "flags": []
+      }
+    }
+  }
+}

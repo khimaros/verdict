@@ -48,10 +48,39 @@ OPERATIONS = {
     "BLOCKED": "No available operation can make progress.",
 }
 
+# how a move is worded when it competes with the rows in one question: each
+# has to say when it is the answer, since no second question does
+MOVES = {
+    "SCROLL_DOWN": "Scroll down: what is needed is not among the rows on this "
+                   "screen and the list may continue below.",
+    "SCROLL_UP": "Scroll up: what is needed is above the rows on this screen.",
+    "BACK": "Go back to the previous screen: this one does not lead to the goal.",
+}
+
 # operations that need a target element; the rest act on the whole device
 NEEDS_TARGET = {"TAP"}
 
 MAX_STEPS = 40
+# how many times an operation may leave a screen unchanged before it stops
+# being offered there; one unless named
+PATIENCE = {"BACK": 2}
+# the confidence DONE has to clear. every false DONE recorded on the device
+# sits at 0.757 or below and every true one at 0.850 or above
+DONE_CONFIDENCE = 0.81
+# the answers that stop the agent, which nothing downstream checks
+ENDS_THE_RUN = ("DONE", "BLOCKED")
+# how many times one row may be tapped from one screen before it stops being
+# offered there. two, because a screen entered a second time can differ
+REPEAT_LIMIT = 2
+# the moves that limit applies to as well. BACK and HOME are the way out of
+# anywhere and are never used up
+LIMITED_MOVES = ("SCROLL_DOWN", "SCROLL_UP", "LAUNCH")
+# the share of rows two readings must have in common to be one screen
+SAME_SCREEN = 0.6
+# how a screen that cannot be read is left, in the order tried
+WAYS_OUT = ("BACK", "HOME")
+# what the history calls the target of a move the agent did not choose
+UNREADABLE = "(a screen that could not be read)"
 
 
 class Mimic:
@@ -108,9 +137,11 @@ class Mimic:
         # interactive AND visible: reachable rows only, no negative centres.
         # `label` carries a name borrowed from descendants, `text` the node's
         # own, and mimic omits `label` when `text` already says it.
-        return parse_screen(self.call(
-            "DUMP", filter="interactive,visible", format="flat",
-            fields="class,text,label,id,center,actions"))
+        nodes = self.call("DUMP", filter="interactive,visible", format="flat",
+                          fields="class,text,label,id,center,actions")
+        # whether the last screen read has anything on it that scrolls
+        self.scrolling = scrolls(nodes)
+        return parse_screen(nodes)
 
     def settled_screen(self, tries=6, pause=0.4):
         """the screen once a window actually exists to read.
@@ -195,7 +226,10 @@ def parse_screen(nodes):
     """
     elements = []
     for node in nodes if isinstance(nodes, list) else []:
-        if "click" not in (node.get("actions") or []):
+        actions = node.get("actions") or []
+        # a text field takes a tap and then wants typing, which this agent has
+        # no operation for: offered, it is a dead end the model keeps choosing
+        if "click" not in actions or "edit" in actions:
             continue
         cx, cy = (node.get("center") or [-1, -1])[:2]
         text = (node.get("text") or node.get("label") or "").strip()
@@ -343,6 +377,50 @@ class Exhausted:
         return kept or elements
 
 
+class Repeated:
+    """rows already tapped, and moves already made, REPEAT_LIMIT times from
+    one screen.
+
+    an oscillation whose every action changes the screen is invisible to
+    `DeadEnds`, and `Exhausted` sees it only when the way back was BACK.
+    counting is cruder and needs to know nothing about where a tap led.
+
+    a tap is remembered by the row's NAME on a screen that is mostly the same
+    rows. by index on an identical screen it was forgotten whenever a list
+    came back with one more row in view, which is most of the time.
+    """
+
+    def __init__(self):
+        self._taps = []
+
+    def spent(self, signature, label):
+        """whether a row, or a move, has been used up on this screen."""
+        return sum(1 for seen, name in self._taps
+                   if name == label and same_screen(seen, signature)) >= REPEAT_LIMIT
+
+    def record(self, signature, label):
+        self._taps.append((signature, label))
+
+    def offer(self, signature, elements):
+        """the rows still worth a tap here, which can be none of them."""
+        return [e for e in elements if not self.spent(signature, e["text"] or e["id"])]
+
+
+def same_screen(a, b):
+    """whether two signatures are one screen, a row or two having scrolled."""
+    a, b = set(a), set(b)
+    return a == b or len(a & b) / len(a | b) >= SAME_SCREEN
+
+
+def narrowed(repeated, dead, signature, tappable):
+    """the rows to offer and the operations not to. with every row here tapped
+    out the rows stay, since the target question needs something to choose
+    from, and TAP goes: what is left to decide is which way to move."""
+    dead = dead | {move for move in LIMITED_MOVES if repeated.spent(signature, move)}
+    fresh = repeated.offer(signature, tappable)
+    return (fresh, dead) if fresh else (tappable, dead | {"TAP"})
+
+
 class DeadEnds:
     """which operations have already done nothing, per screen.
 
@@ -354,16 +432,21 @@ class DeadEnds:
 
     keying by signature also means a screen revisited later still remembers
     what was useless on it, which the reset version threw away.
+
+    BACK is retired on its second no-op and not its first: with a keyboard up
+    the first one closes the keyboard, which leaves every row where it was.
     """
 
     def __init__(self):
         self._by_screen = {}
 
     def on(self, sig):
-        return frozenset(self._by_screen.get(sig, ()))
+        return frozenset(op for op, misses in self._by_screen.get(sig, {}).items()
+                         if misses >= PATIENCE.get(op, 1))
 
     def add(self, sig, operation):
-        self._by_screen.setdefault(sig, set()).add(operation)
+        misses = self._by_screen.setdefault(sig, {})
+        misses[operation] = misses.get(operation, 0) + 1
         return self.on(sig)
 
 
@@ -388,7 +471,25 @@ def as_target(subgoal):
     return f"NOT YET DONE. Target: {subgoal.rstrip('.')}."
 
 
-def build_state(goal, subgoal, screen, history, progress):
+def scrolls(nodes):
+    """whether anything on a raw screen dump scrolls."""
+    return any("scroll" in (node.get("actions") or [])
+               for node in nodes if isinstance(nodes, list))
+
+
+def what_is_below(scrolling, dead):
+    """what the state says of the part of a screen that is not in view, or
+    None for a screen that does not scroll. mimic says that a container
+    scrolls and not which way, so the end of a list is known only once a
+    scroll down has done nothing there."""
+    if not scrolling:
+        return None
+    if "SCROLL_DOWN" in dead:
+        return "nothing: this is the end of the list"
+    return "more rows may be below the last one listed here; SCROLL_DOWN shows them"
+
+
+def build_state(goal, subgoal, screen, history, progress, below=None):
     """the shared prefix: prefilled once, reused by every question about it."""
     return {
         "goal": goal,
@@ -396,6 +497,7 @@ def build_state(goal, subgoal, screen, history, progress):
         "progress": progress,
         "screen": [{k: e[k] for k in ("index", "class", "text", "id") if e[k]}
                    for e in screen],
+        **({"below_this_screen": below} if below else {}),
         "recent_actions": history[-8:],
     }
 
@@ -521,12 +623,92 @@ def ask(verdict_url, request, keep):
     return restore_answers(result, dropped)["answers"]
 
 
+def gate_stopping(choice, probabilities, floor):
+    """the answer to act on, its confidence and whether it was overruled: an
+    answer that ends the run has to clear `floor`, and one that does not gives
+    way to the best answer that carries on."""
+    alternatives, gated = dict(probabilities), False
+    confidence = alternatives.get(choice, 0.0)
+    while choice in ENDS_THE_RUN and confidence < floor and len(alternatives) > 1:
+        del alternatives[choice]
+        choice = max(alternatives, key=alternatives.get)
+        confidence, gated = alternatives[choice], True
+    return choice, confidence, gated
+
+
+def together_request(model, state, goal, subgoal, tappable, apps, dead, acted):
+    """one question whose options are every row, every app and every move,
+    and beside it whether to stop: DONE against the operations, which is read
+    for DONE alone. the second is withheld until something has been done."""
+    live = live_operations(dead | {"DONE"}, acted)
+    met = {"stop": {"type": "choice", "criteria": OPERATIONS, "instructions": {
+        "goal": goal, "current_step": as_target(subgoal),
+        "rules": ["Choose the one operation that advances the current step.",
+                  "Only answer DONE when the goal is visible right now."]}}} if acted else {}
+    criteria = {}
+    if "TAP" in live:
+        criteria.update({f"TAP {e['index']}": {"tap_the_row": e["text"] or e["id"],
+                                               "kind": e["class"]} for e in tappable})
+    if "LAUNCH" in live:
+        criteria.update({f"LAUNCH {a['package']}": f"Open the app: {a['label']}"
+                         for a in apps})
+    criteria.update({op: MOVES.get(op, text) for op, text in live.items()
+                     if op not in ("TAP", "LAUNCH")})
+    return {"model": model, "state": state, "questions": {"next": {
+        "type": "choice", "criteria": criteria,
+        "instructions": {"goal": goal, "current_step": as_target(subgoal),
+                         "rules": ["Choose the one action that advances the current "
+                                   "step."]}}, **met}}
+
+
+def decide_together(verdict_url, model, state, goal, subgoal, tappable, apps,
+                    min_confidence=0.0, dead=frozenset(), acted=True,
+                    done_confidence=None, foreground=None):
+    """one call: rows, apps and moves compete in a single question.
+
+    `decide` asks which row is best and then which operation, telling the
+    second what the first chose. a model that cannot weigh "tapping would hit
+    X, confidence 0.4" against scrolling taps whatever the first question
+    named. here "what I need is not on this screen" is an option beside the
+    rows, so it can win against them. it is also half the calls.
+
+    whether to stop is asked beside it and is DONE when DONE clears the floor
+    there. as one option among every row DONE thinned out with the screen and
+    never cleared it; as a bare yes or no it cleared it on a screen that only
+    mentioned the answer.
+    """
+    apps = [a for a in apps if a["package"] != foreground]
+    answers = ask(verdict_url, together_request(
+        model, state, goal, subgoal, tappable, apps, dead, acted), 0)
+    probabilities = dict(answers["next"].get("probabilities") or {})
+    floor = min_confidence if done_confidence is None else done_confidence
+    choice, confidence, gated = gate_stopping(answers["next"]["choice"], probabilities, floor)
+    stop = (answers.get("stop") or {}) if acted else {}
+    if stop:
+        probabilities["DONE"] = (stop.get("probabilities") or {}).get("DONE", 0.0)
+        if stop.get("choice") == "DONE" and probabilities["DONE"] >= floor:
+            choice, confidence = "DONE", probabilities["DONE"]
+    operation, _, chosen = choice.partition(" ")
+    if operation in ("TAP", "LAUNCH") and confidence < min_confidence:
+        operation, gated = "BLOCKED", True
+    package = chosen if operation == "LAUNCH" else None
+    return {"operation": operation, "target": chosen if operation == "TAP" else None,
+            "package": package,
+            "app_label": next((a["label"] for a in apps if a["package"] == package), package),
+            "confidence": confidence, "target_confidence": confidence, "gated": gated,
+            "probabilities": {k: round(v, 4) for k, v in probabilities.items()},
+            "step_done": False}
+
+
 def decide(verdict_url, model, state, goal, subgoal, tappable, apps, keep,
-           min_confidence, dead=frozenset(), acted=True, done_confidence=None):
+           min_confidence, dead=frozenset(), acted=True, done_confidence=None,
+           foreground=None):
     """targets first, then the operation that knows what each would do.
 
     two calls rather than one, but the state is prefilled once and cached, so
-    the second pays only for its own suffix.
+    the second pays only for its own suffix. `foreground` is the package the
+    agent is already inside: launching it again does nothing, on every screen
+    of it, so LAUNCH is not offered while it is the app that would be opened.
     """
     first = ask(verdict_url,
                 target_request(model, state, goal, subgoal, tappable, apps), keep)
@@ -544,6 +726,8 @@ def decide(verdict_url, model, state, goal, subgoal, tappable, apps, keep,
         package = first["launch_target"].get("choice")
         app_confidence = app_probs.get(package, 0.0)
         app_label = next((a["label"] for a in apps if a["package"] == package), package)
+    if foreground and package == foreground:
+        dead = dead | {"LAUNCH"}
 
     second = ask(verdict_url, operation_request(
         model, state, goal, subgoal, described, target_confidence,
@@ -561,14 +745,26 @@ def decide(verdict_url, model, state, goal, subgoal, tappable, apps, keep,
     #
     # `done_confidence` raises that bar for stopping alone; see browser_agent
     # for the measurements and why the default leaves it where it was.
+    #
+    # BLOCKED is held to the same floor. it ends the run just as finally and
+    # is checked just as little: three runs ended on it at 0.41 to 0.49.
     done_floor = min_confidence if done_confidence is None else done_confidence
-    gated = False
-    if operation == "DONE" and confidence < done_floor:
-        alternatives = {k: v for k, v in op_probs.items() if k != "DONE"}
-        if alternatives:
-            operation = max(alternatives, key=alternatives.get)
-            confidence = alternatives[operation]
-            gated = True
+    operation, confidence, gated = gate_stopping(operation, op_probs, done_floor)
+    # the floor was measured with every operation on offer. with some withheld
+    # DONE's share of what is left inflates, so a DONE reached that way is
+    # asked once more with nothing withheld, and that is the one held to it
+    if operation == "DONE" and dead:
+        full = ask(verdict_url, operation_request(
+            model, state, goal, subgoal, described, target_confidence,
+            app_label, app_confidence, frozenset(), acted), 0)["operation"]
+        confirmed = (full.get("probabilities") or {}).get("DONE", 0.0)
+        moves = {k: v for k, v in op_probs.items() if k != "DONE"}
+        op_probs = {**op_probs, "DONE": confirmed}
+        if moves and (full["choice"] != "DONE" or confirmed < done_floor):
+            operation = max(moves, key=moves.get)
+            confidence, gated = moves[operation], True
+        else:
+            confidence = confirmed
 
     # the scorer reports when it cannot tell the candidates apart; acting anyway
     # is what sent the browser agent into an unrelated page
@@ -583,6 +779,78 @@ def decide(verdict_url, model, state, goal, subgoal, tappable, apps, keep,
             # different problems with different fixes
             "probabilities": {k: round(v, 4) for k, v in op_probs.items()},
             "step_done": first["step_done"]["noul"] > 0.5}
+
+
+def back_out(mimic, history, tapped, repeated):
+    """leave a screen nothing can be read from, and stop offering the row that
+    opened it. False when there is nowhere to go back to.
+
+    measured: 'Security & privacy' opens a window mimic reports as `no active
+    window` for as long as it is up, and a run that tapped it ended there.
+    BACK returns to the list it came from. BACK first and HOME if the screen
+    is still unreadable: one still unreadable after both is the device's
+    fault and ends the run as before.
+    """
+    tried = sum(1 for h in history[-len(WAYS_OUT):] if h["target"] == UNREADABLE)
+    if tried >= len(WAYS_OUT):
+        return False
+    if tapped:
+        for _ in range(REPEAT_LIMIT):
+            repeated.record(*tapped)
+    mimic.act(WAYS_OUT[tried], None)
+    print(f"      screen cannot be read; went {WAYS_OUT[tried]}", flush=True)
+    history.append({"operation": WAYS_OUT[tried], "target": UNREADABLE, "screen": (),
+                    "changed": True})
+    return True
+
+
+def parse_args(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__)
+    # host 18473, not 8473: an `adb forward` host port is global to the adb
+    # server, and 8473 is the one mimic's own suite forwards to its phone
+    ap.add_argument("--mimic", default=os.environ.get("MIMIC_HOST", "127.0.0.1:18473"))
+    ap.add_argument("--verdict", default="http://127.0.0.1:8477")
+    ap.add_argument("--model", default="jev-latest")
+    ap.add_argument("--goal", required=True)
+    ap.add_argument("--planner-url", default=None,
+                    help="openai-compatible base url for the planner, e.g. .../v1")
+    ap.add_argument("--planner-model", default=None,
+                    help="omit to run with no planner at all, for comparison")
+    ap.add_argument("--retire-visited", action="store_true",
+                    help="stop offering a target whose destination is a screen "
+                         "already returned from. the android form of the browser "
+                         "agent's --retire-read, which took that demo 0/3 to 3/3. "
+                         "UNMEASURED HERE: no device was available when it was "
+                         "written, so it is opt-in until a run says otherwise")
+    ap.add_argument("--launch", action="store_true",
+                    help="offer LAUNCH, so an app can be opened by name instead "
+                         "of by finding its icon")
+    ap.add_argument("--say-below", action="store_true",
+                    help="say in the state whether the screen continues below what "
+                         "is listed. measured: it took clef-flash and jev-omni to "
+                         "the answer more often and sent qwen3.5-9b scrolling down "
+                         "and up without arriving, so it is off unless asked for")
+    ap.add_argument("--together", action=argparse.BooleanOptionalAction, default=True,
+                    help="ask one question whose options are every row, every app "
+                         "and every move, with whether to stop asked beside it. "
+                         "half the calls, and scrolling can win against a row. "
+                         "--no-together asks which row and then which operation, "
+                         "the form every table before docs/EVALS.md 5c was taken "
+                         "under")
+    ap.add_argument("--shortlist", type=int, default=26)
+    ap.add_argument("--min-confidence", type=float, default=0.0)
+    ap.add_argument("--done-confidence", type=float, default=DONE_CONFIDENCE,
+                    help="a separate, higher floor for DONE. stopping is the one "
+                         "decision nothing downstream checks. measured on the "
+                         "device across six models: true completions run "
+                         "0.850-0.984 and false ones 0.453-0.757. 0 turns it off")
+    ap.add_argument("--max-steps", type=int, default=MAX_STEPS)
+    ap.add_argument("--require", action="append", default=None, metavar="TEXT",
+                    help="regex that must actually match a row on a screen the "
+                         "agent reaches. repeat per requirement. this is the "
+                         "score; the agent's own DONE is only its opinion")
+    ap.add_argument("--summary", default=None)
+    return ap.parse_args(argv)
 
 
 def run(args, mimic):
@@ -608,8 +876,9 @@ def run(args, mimic):
     # icon that did nothing and was then allowed to claim the goal
     # was met, three runs out of three.
     effective = False
-    # targets that lead back to a screen already finished with
-    exhausted = Exhausted()
+    # targets that lead back to a screen already finished with, and rows
+    # already tapped from a screen as often as is worth trying
+    exhausted, repeated = Exhausted(), Repeated()
     # ground truth: what the run actually put on screen, not what it claims
     witness = Witnessed(args.require or [])
     # launchable apps change rarely; fetched once and shortlisted per request
@@ -619,28 +888,44 @@ def run(args, mimic):
     # away, which is why a false completion could not be diagnosed from the
     # summary afterwards: the history said what was chosen and never where.
     outcome = {"goal": goal, "status": "running", "steps": 0, "plans": 0,
-               "decision_ms": [], "gated": 0}
+               "decision_ms": [], "gated": 0, "probabilities": []}
+
+    # the launcher, the app the agent is inside, and the last row it tapped
+    home, foreground, tapped = signature(first_screen), None, None
 
     for step in range(1, args.max_steps + 1):
         screen = mimic.settled_screen()
+        now = signature(screen)
         tappable = tappable_now(screen)
         if not tappable:
-            outcome["status"] = "no-elements"
-            break
+            if not back_out(mimic, history, tapped, repeated):
+                outcome["status"] = "no-elements"
+                break
+            tapped = None
+            continue
 
-        state = build_state(goal, subgoal, screen, history, progress)
+        state = build_state(goal, subgoal, screen, history, progress, what_is_below(
+            args.say_below and getattr(mimic, "scrolling", False), dead.on(now)))
         started = time.monotonic()
         witness.observe(screen, step)
-        now = signature(screen)
         # the state keeps every row as context; only the OFFER is narrowed
+        tappable, dead_here = narrowed(repeated, dead.on(now), now, tappable)
         if args.retire_visited:
             tappable = exhausted.offer(now, tappable)
-        d = decide(args.verdict, args.model, state, goal, subgoal, tappable,
-                   apps, args.shortlist, args.min_confidence, dead.on(now),
-                   acted=effective, done_confidence=args.done_confidence)
+        asked = dict(dead=dead_here, acted=effective, foreground=foreground,
+                     done_confidence=args.done_confidence)
+        if args.together:
+            d = decide_together(args.verdict, args.model, state, goal, subgoal,
+                                tappable[:args.shortlist], apps, args.min_confidence, **asked)
+        else:
+            d = decide(args.verdict, args.model, state, goal, subgoal, tappable,
+                       apps, args.shortlist, args.min_confidence, **asked)
         elapsed = (time.monotonic() - started) * 1000
         outcome["decision_ms"].append(round(elapsed))
         outcome["gated"] += int(d["gated"])
+        # every decision's whole distribution, beside the history and not in
+        # it: the history is fed back to the model and this is for the reader
+        outcome["probabilities"].append(d["probabilities"])
 
         label = d["app_label"] or "" if d["operation"] == "LAUNCH" else ""
         if d["operation"] != "LAUNCH" and d["target"]:
@@ -693,12 +978,18 @@ def run(args, mimic):
         effective = effective or changed
         history[-1]["landed"] = signature(landed)
         history[-1]["changed"] = changed
+        tapped = (now, label) if d["operation"] == "TAP" else None
+        if d["operation"] == "LAUNCH":
+            foreground = d["package"]
+        if d["operation"] == "HOME" or signature(landed) == home:
+            foreground = None
         if d["operation"] == "TAP":
             exhausted.record(now, d["target"], signature(landed))
+        repeated.record(now, label if d["operation"] == "TAP" else d["operation"])
         if not changed:
             retired = dead.add(now, d["operation"])
-            print(f"      screen unchanged; {d['operation']} retired on this "
-                  f"screen (dead here: {sorted(retired)})", flush=True)
+            print(f"      screen unchanged by {d['operation']} (dead here: "
+                  f"{sorted(retired)})", flush=True)
     else:
         outcome["status"] = "out-of-steps"
 
@@ -709,43 +1000,7 @@ def run(args, mimic):
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    # host 18473, not 8473: an `adb forward` host port is global to the adb
-    # server, and 8473 is the one mimic's own suite forwards to its phone
-    ap.add_argument("--mimic", default=os.environ.get("MIMIC_HOST", "127.0.0.1:18473"))
-    ap.add_argument("--verdict", default="http://127.0.0.1:8477")
-    ap.add_argument("--model", default="jev-latest")
-    ap.add_argument("--goal", required=True)
-    ap.add_argument("--planner-url", default=None,
-                    help="openai-compatible base url for the planner, e.g. .../v1")
-    ap.add_argument("--planner-model", default=None,
-                    help="omit to run with no planner at all, for comparison")
-    ap.add_argument("--retire-visited", action="store_true",
-                    help="stop offering a target whose destination is a screen "
-                         "already returned from. the android form of the browser "
-                         "agent's --retire-read, which took that demo 0/3 to 3/3. "
-                         "UNMEASURED HERE: no device was available when it was "
-                         "written, so it is opt-in until a run says otherwise")
-    ap.add_argument("--launch", action="store_true",
-                    help="offer LAUNCH, so an app can be opened by name instead "
-                         "of by finding its icon")
-    ap.add_argument("--shortlist", type=int, default=26)
-    ap.add_argument("--min-confidence", type=float, default=0.0)
-    ap.add_argument("--done-confidence", type=float, default=None,
-                    help="a separate, usually higher floor for DONE. stopping "
-                         "is the one decision nothing downstream checks. "
-                         "measured: true completions run 0.862-0.984 and false "
-                         "ones 0.522-0.757, and probabilities drift by up to "
-                         "0.032, so 0.81 clears both sides. defaults to "
-                         "--min-confidence, which is what every measurement in "
-                         "docs/EVALS.md was taken under")
-    ap.add_argument("--max-steps", type=int, default=MAX_STEPS)
-    ap.add_argument("--require", action="append", default=None, metavar="TEXT",
-                    help="regex that must actually match a row on a screen the "
-                         "agent reaches. repeat per requirement. this is the "
-                         "score; the agent's own DONE is only its opinion")
-    ap.add_argument("--summary", default=None)
-    args = ap.parse_args()
+    args = parse_args()
 
     with open(TOKEN_FILE) as f:
         token = f.read().strip()

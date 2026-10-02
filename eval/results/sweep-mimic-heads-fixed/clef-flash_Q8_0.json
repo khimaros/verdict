@@ -1,0 +1,3110 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 1,
+    "reached_one": 1,
+    "mean_stories": 0.3333333333333333,
+    "statuses": {
+      "out-of-steps": 2,
+      "done": 1
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 40,
+      "plans": 0,
+      "decision_ms": [
+        3451,
+        4607,
+        6118,
+        6737,
+        6361,
+        6364,
+        6459,
+        7488,
+        9075,
+        8447,
+        9791,
+        7727,
+        7251,
+        8794,
+        7721,
+        7697,
+        8633,
+        7845,
+        7276,
+        6661,
+        7563,
+        8061,
+        8284,
+        24453,
+        8545,
+        10077,
+        8845,
+        10325,
+        8950,
+        8395,
+        8405,
+        8236,
+        7347,
+        7733,
+        7325,
+        7519,
+        7723,
+        8368,
+        8374,
+        8886
+      ],
+      "gated": 10,
+      "probabilities": [
+        {
+          "BACK": 0.0285,
+          "BLOCKED": 0.0278,
+          "HOME": 0.039,
+          "LAUNCH": 0.7917,
+          "SCROLL_DOWN": 0.0432,
+          "SCROLL_UP": 0.0407,
+          "TAP": 0.0291
+        },
+        {
+          "BACK": 0.0823,
+          "BLOCKED": 0.0181,
+          "DONE": 0.0068,
+          "HOME": 0.0483,
+          "SCROLL_DOWN": 0.614,
+          "SCROLL_UP": 0.1834,
+          "TAP": 0.0471
+        },
+        {
+          "BACK": 0.0678,
+          "BLOCKED": 0.0223,
+          "DONE": 0.0051,
+          "HOME": 0.0257,
+          "SCROLL_DOWN": 0.6552,
+          "SCROLL_UP": 0.1605,
+          "TAP": 0.0634
+        },
+        {
+          "BACK": 0.046,
+          "BLOCKED": 0.0321,
+          "DONE": 0.4205,
+          "HOME": 0.0269,
+          "SCROLL_DOWN": 0.0493,
+          "SCROLL_UP": 0.0556,
+          "TAP": 0.3696
+        },
+        {
+          "BACK": 0.0725,
+          "BLOCKED": 0.027,
+          "DONE": 0.678,
+          "HOME": 0.0289,
+          "SCROLL_DOWN": 0.0408,
+          "SCROLL_UP": 0.0673,
+          "TAP": 0.0855
+        },
+        {
+          "BACK": 0.5689,
+          "BLOCKED": 0.1146,
+          "DONE": 0.0472,
+          "HOME": 0.0574,
+          "SCROLL_DOWN": 0.0145,
+          "SCROLL_UP": 0.0917,
+          "TAP": 0.1057
+        },
+        {
+          "BACK": 0.6479,
+          "BLOCKED": 0.1103,
+          "DONE": 0.0284,
+          "HOME": 0.0647,
+          "SCROLL_DOWN": 0.0089,
+          "SCROLL_UP": 0.0711,
+          "TAP": 0.0687
+        },
+        {
+          "BACK": 0.497,
+          "BLOCKED": 0.0524,
+          "DONE": 0.2419,
+          "HOME": 0.0447,
+          "SCROLL_DOWN": 0.0179,
+          "SCROLL_UP": 0.0861,
+          "TAP": 0.06
+        },
+        {
+          "BACK": 0.0329,
+          "BLOCKED": 0.0232,
+          "DONE": 0.3754,
+          "HOME": 0.0163,
+          "SCROLL_DOWN": 0.0216,
+          "SCROLL_UP": 0.0271,
+          "TAP": 0.5035
+        },
+        {
+          "BACK": 0.1545,
+          "BLOCKED": 0.0469,
+          "DONE": 0.5876,
+          "HOME": 0.0378,
+          "SCROLL_DOWN": 0.0299,
+          "SCROLL_UP": 0.0766,
+          "TAP": 0.0667
+        },
+        {
+          "BACK": 0.0439,
+          "BLOCKED": 0.0288,
+          "DONE": 0.6242,
+          "HOME": 0.0246,
+          "SCROLL_DOWN": 0.0297,
+          "SCROLL_UP": 0.032,
+          "TAP": 0.2168
+        },
+        {
+          "BACK": 0.0628,
+          "BLOCKED": 0.0331,
+          "DONE": 0.7645,
+          "HOME": 0.0289,
+          "SCROLL_DOWN": 0.0297,
+          "SCROLL_UP": 0.0334,
+          "TAP": 0.0476
+        },
+        {
+          "BACK": 0.3277,
+          "BLOCKED": 0.0898,
+          "DONE": 0.2586,
+          "HOME": 0.0711,
+          "SCROLL_DOWN": 0.0426,
+          "SCROLL_UP": 0.0899,
+          "TAP": 0.1203
+        },
+        {
+          "BACK": 0.1047,
+          "BLOCKED": 0.0262,
+          "DONE": 0.6674,
+          "HOME": 0.0272,
+          "SCROLL_DOWN": 0.0281,
+          "SCROLL_UP": 0.026,
+          "TAP": 0.1204
+        },
+        {
+          "BACK": 0.2917,
+          "BLOCKED": 0.0603,
+          "DONE": 0.3139,
+          "HOME": 0.0427,
+          "SCROLL_DOWN": 0.0525,
+          "SCROLL_UP": 0.0969,
+          "TAP": 0.142
+        },
+        {
+          "BACK": 0.5763,
+          "BLOCKED": 0.0629,
+          "DONE": 0.062,
+          "HOME": 0.0363,
+          "SCROLL_DOWN": 0.0151,
+          "SCROLL_UP": 0.0454,
+          "TAP": 0.202
+        },
+        {
+          "BACK": 0.0908,
+          "BLOCKED": 0.0329,
+          "DONE": 0.6986,
+          "HOME": 0.0251,
+          "SCROLL_DOWN": 0.0296,
+          "SCROLL_UP": 0.0395,
+          "TAP": 0.0835
+        },
+        {
+          "BACK": 0.4448,
+          "BLOCKED": 0.0422,
+          "DONE": 0.0124,
+          "HOME": 0.0708,
+          "LAUNCH": 0.3007,
+          "SCROLL_DOWN": 0.0429,
+          "SCROLL_UP": 0.0617,
+          "TAP": 0.0245
+        },
+        {
+          "BACK": 0.4332,
+          "BLOCKED": 0.0371,
+          "DONE": 0.0136,
+          "HOME": 0.056,
+          "LAUNCH": 0.321,
+          "SCROLL_DOWN": 0.0374,
+          "SCROLL_UP": 0.0693,
+          "TAP": 0.0324
+        },
+        {
+          "BLOCKED": 0.0519,
+          "DONE": 0.0228,
+          "HOME": 0.067,
+          "LAUNCH": 0.7112,
+          "SCROLL_DOWN": 0.041,
+          "SCROLL_UP": 0.0657,
+          "TAP": 0.0404
+        },
+        {
+          "BACK": 0.1284,
+          "BLOCKED": 0.0165,
+          "DONE": 0.0066,
+          "HOME": 0.0155,
+          "SCROLL_DOWN": 0.6332,
+          "SCROLL_UP": 0.1794,
+          "TAP": 0.0204
+        },
+        {
+          "BACK": 0.1238,
+          "BLOCKED": 0.022,
+          "DONE": 0.0119,
+          "HOME": 0.0153,
+          "SCROLL_DOWN": 0.602,
+          "SCROLL_UP": 0.1856,
+          "TAP": 0.0394
+        },
+        {
+          "BACK": 0.1053,
+          "BLOCKED": 0.0305,
+          "DONE": 0.4159,
+          "HOME": 0.0161,
+          "SCROLL_DOWN": 0.0651,
+          "SCROLL_UP": 0.1147,
+          "TAP": 0.2524
+        },
+        {
+          "BACK": 0.4328,
+          "BLOCKED": 0.0148,
+          "DONE": 0.0135,
+          "HOME": 0.0111,
+          "SCROLL_DOWN": 0.0511,
+          "SCROLL_UP": 0.4575,
+          "TAP": 0.0192
+        },
+        {
+          "BACK": 0.7596,
+          "BLOCKED": 0.0337,
+          "DONE": 0.034,
+          "HOME": 0.0281,
+          "SCROLL_DOWN": 0.0739,
+          "TAP": 0.0707
+        },
+        {
+          "BACK": 0.1913,
+          "BLOCKED": 0.0261,
+          "DONE": 0.5021,
+          "HOME": 0.0207,
+          "SCROLL_DOWN": 0.0517,
+          "SCROLL_UP": 0.0871,
+          "TAP": 0.121
+        },
+        {
+          "BLOCKED": 0.1195,
+          "DONE": 0.0163,
+          "HOME": 0.2432,
+          "SCROLL_DOWN": 0.1776,
+          "SCROLL_UP": 0.252,
+          "TAP": 0.1914
+        },
+        {
+          "BACK": 0.2583,
+          "BLOCKED": 0.1152,
+          "DONE": 0.0102,
+          "HOME": 0.2269,
+          "SCROLL_DOWN": 0.0993,
+          "SCROLL_UP": 0.245,
+          "TAP": 0.0451
+        },
+        {
+          "BLOCKED": 0.1704,
+          "DONE": 0.0438,
+          "HOME": 0.2671,
+          "SCROLL_DOWN": 0.1427,
+          "SCROLL_UP": 0.228,
+          "TAP": 0.148
+        },
+        {
+          "BLOCKED": 0.1909,
+          "DONE": 0.0248,
+          "SCROLL_DOWN": 0.193,
+          "SCROLL_UP": 0.3334,
+          "TAP": 0.2579
+        },
+        {
+          "BACK": 0.0331,
+          "BLOCKED": 0.0313,
+          "DONE": 0.0192,
+          "HOME": 0.0466,
+          "LAUNCH": 0.7887,
+          "SCROLL_DOWN": 0.0265,
+          "SCROLL_UP": 0.0294,
+          "TAP": 0.0252
+        },
+        {
+          "BACK": 0.1757,
+          "BLOCKED": 0.1427,
+          "DONE": 0.0405,
+          "HOME": 0.1938,
+          "SCROLL_DOWN": 0.1621,
+          "SCROLL_UP": 0.1839,
+          "TAP": 0.1013
+        },
+        {
+          "BLOCKED": 0.3005,
+          "DONE": 0.115,
+          "SCROLL_DOWN": 0.3518,
+          "TAP": 0.2327
+        },
+        {
+          "BACK": 0.0169,
+          "BLOCKED": 0.0165,
+          "DONE": 0.0134,
+          "HOME": 0.018,
+          "LAUNCH": 0.6931,
+          "SCROLL_DOWN": 0.0216,
+          "SCROLL_UP": 0.0207,
+          "TAP": 0.1998
+        },
+        {
+          "BACK": 0.0872,
+          "BLOCKED": 0.0185,
+          "DONE": 0.0079,
+          "HOME": 0.0197,
+          "SCROLL_UP": 0.8471,
+          "TAP": 0.0196
+        },
+        {
+          "BACK": 0.2167,
+          "BLOCKED": 0.0192,
+          "DONE": 0.0065,
+          "HOME": 0.0213,
+          "SCROLL_UP": 0.7208,
+          "TAP": 0.0155
+        },
+        {
+          "BACK": 0.8786,
+          "BLOCKED": 0.0398,
+          "DONE": 0.0059,
+          "HOME": 0.0527,
+          "TAP": 0.023
+        },
+        {
+          "BACK": 0.0825,
+          "BLOCKED": 0.0542,
+          "DONE": 0.0288,
+          "HOME": 0.0575,
+          "SCROLL_DOWN": 0.1115,
+          "SCROLL_UP": 0.0921,
+          "TAP": 0.5734
+        },
+        {
+          "BACK": 0.7765,
+          "BLOCKED": 0.0546,
+          "DONE": 0.0044,
+          "HOME": 0.0569,
+          "TAP": 0.1076
+        },
+        {
+          "BACK": 0.0429,
+          "BLOCKED": 0.0419,
+          "DONE": 0.0201,
+          "HOME": 0.0448,
+          "SCROLL_DOWN": 0.083,
+          "SCROLL_UP": 0.0569,
+          "TAP": 0.7104
+        }
+      ],
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.7917,
+          "target_confidence": 0.6064,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.614,
+          "target_confidence": 0.83,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6552,
+          "target_confidence": 0.8281,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.3696,
+          "target_confidence": 0.9394,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Device name / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.0855,
+          "target_confidence": 0.4267,
+          "landed": [
+            "CANCEL",
+            "OK"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "OK",
+          "screen": [
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.5689,
+          "target_confidence": 0.6277,
+          "landed": [
+            "CANCEL",
+            "OK"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "OK",
+          "screen": [
+            "CANCEL",
+            "OK"
+          ],
+          "confidence": 0.6479,
+          "target_confidence": 0.636,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.497,
+          "target_confidence": 0.8307,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.5035,
+          "target_confidence": 0.964,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.1545,
+          "target_confidence": 0.791,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.2168,
+          "target_confidence": 0.4357,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "System / Languages, gestures, time, backup"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.0628,
+          "target_confidence": 0.7818,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.3277,
+          "target_confidence": 0.8721,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.1204,
+          "target_confidence": 0.5898,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.2917,
+          "target_confidence": 1.0,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.5763,
+          "target_confidence": 0.9602,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "System / Languages, gestures, time, backup",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.0908,
+          "target_confidence": 0.6252,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.4448,
+          "target_confidence": 0.5883,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.4332,
+          "target_confidence": 0.6919,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.7112,
+          "target_confidence": 0.8772,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.6332,
+          "target_confidence": 0.7489,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.602,
+          "target_confidence": 0.7869,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "System / Languages, gestures, time, backup",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.2524,
+          "target_confidence": 0.8019,
+          "landed": [
+            "Backup",
+            "Date & time / GMT-07:00 Pacific Daylight Time",
+            "Gestures",
+            "Keyboard / On-screen keyboard, physical keyboard, tools",
+            "Languages / System languages, app languages, regional preferences, speech",
+            "Navigate up",
+            "Reset options",
+            "Users / Signed in as Owner"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Navigate up",
+          "screen": [
+            "Backup",
+            "Date & time / GMT-07:00 Pacific Daylight Time",
+            "Gestures",
+            "Keyboard / On-screen keyboard, physical keyboard, tools",
+            "Languages / System languages, app languages, regional preferences, speech",
+            "Navigate up",
+            "Reset options",
+            "Users / Signed in as Owner"
+          ],
+          "confidence": 0.4575,
+          "target_confidence": 0.8084,
+          "landed": [
+            "Backup",
+            "Date & time / GMT-07:00 Pacific Daylight Time",
+            "Gestures",
+            "Keyboard / On-screen keyboard, physical keyboard, tools",
+            "Languages / System languages, app languages, regional preferences, speech",
+            "Navigate up",
+            "Reset options",
+            "Users / Signed in as Owner"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Backup",
+            "Date & time / GMT-07:00 Pacific Daylight Time",
+            "Gestures",
+            "Keyboard / On-screen keyboard, physical keyboard, tools",
+            "Languages / System languages, app languages, regional preferences, speech",
+            "Navigate up",
+            "Reset options",
+            "Users / Signed in as Owner"
+          ],
+          "confidence": 0.7596,
+          "target_confidence": 0.917,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "System / Languages, gestures, time, backup",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.1913,
+          "target_confidence": 0.7417,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.252,
+          "target_confidence": 0.6523,
+          "landed": [
+            "9:14",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Manage",
+          "screen": [
+            "9:14",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.2583,
+          "target_confidence": 0.2442,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "HOME",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.2671,
+          "target_confidence": 0.7224,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.3334,
+          "target_confidence": 0.7673,
+          "landed": [
+            "Bluetooth, On",
+            "Do Not Disturb, Off",
+            "Flashlight, Off",
+            "Internet, AndroidWifi"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "9:14",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.7887,
+          "target_confidence": 0.9374,
+          "landed": [
+            "9:15",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "HOME",
+          "target": "Manage",
+          "screen": [
+            "9:15",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.1938,
+          "target_confidence": 0.3929,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.3518,
+          "target_confidence": 0.6598,
+          "landed": [
+            "Calendar",
+            "Camera",
+            "Clock",
+            "Contacts",
+            "Files",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "Search",
+            "Settings",
+            "TMoble",
+            "WebView Browser Tester",
+            "mimic"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Calendar",
+            "Camera",
+            "Clock",
+            "Contacts",
+            "Files",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "Search",
+            "Settings",
+            "TMoble",
+            "WebView Browser Tester",
+            "mimic"
+          ],
+          "confidence": 0.6931,
+          "target_confidence": 0.9284,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.8471,
+          "target_confidence": 0.5242,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.7208,
+          "target_confidence": 0.6077,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.8786,
+          "target_confidence": 0.5549,
+          "landed": [
+            "Calendar",
+            "Camera",
+            "Clock",
+            "Contacts",
+            "Files",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "Search",
+            "Settings",
+            "TMoble",
+            "WebView Browser Tester",
+            "mimic"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Settings",
+          "screen": [
+            "Calendar",
+            "Camera",
+            "Clock",
+            "Contacts",
+            "Files",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "Search",
+            "Settings",
+            "TMoble",
+            "WebView Browser Tester",
+            "mimic"
+          ],
+          "confidence": 0.5734,
+          "target_confidence": 0.8893,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.7765,
+          "target_confidence": 0.5909,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Settings",
+          "screen": [
+            "Calendar",
+            "Camera",
+            "Clock",
+            "Contacts",
+            "Files",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "Search",
+            "Settings",
+            "TMoble",
+            "WebView Browser Tester",
+            "mimic"
+          ],
+          "confidence": 0.7104,
+          "target_confidence": 0.8776,
+          "landed": [
+            "Calendar",
+            "Camera",
+            "Clock"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "required": 1,
+      "actions": 40,
+      "decisions": 40,
+      "wall_s": 379.5
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 40,
+      "plans": 0,
+      "decision_ms": [
+        3265,
+        4345,
+        5537,
+        6574,
+        6501,
+        8010,
+        7563,
+        9497,
+        8882,
+        8631,
+        9542,
+        8164,
+        7324,
+        8713,
+        8182,
+        8451,
+        7517,
+        7685,
+        8131,
+        8740,
+        9304,
+        8678,
+        8337,
+        9035,
+        8578,
+        8924,
+        8951,
+        9111,
+        7955,
+        8439,
+        9304,
+        7940,
+        8957,
+        8639,
+        7535,
+        7004,
+        6644,
+        6337,
+        7345,
+        7014
+      ],
+      "gated": 6,
+      "probabilities": [
+        {
+          "BACK": 0.0285,
+          "BLOCKED": 0.0278,
+          "HOME": 0.039,
+          "LAUNCH": 0.7917,
+          "SCROLL_DOWN": 0.0432,
+          "SCROLL_UP": 0.0407,
+          "TAP": 0.0291
+        },
+        {
+          "BACK": 0.0781,
+          "BLOCKED": 0.0176,
+          "DONE": 0.006,
+          "HOME": 0.0454,
+          "SCROLL_DOWN": 0.6271,
+          "SCROLL_UP": 0.1745,
+          "TAP": 0.0513
+        },
+        {
+          "BACK": 0.0691,
+          "BLOCKED": 0.0216,
+          "DONE": 0.0042,
+          "HOME": 0.0266,
+          "SCROLL_DOWN": 0.6523,
+          "SCROLL_UP": 0.1667,
+          "TAP": 0.0595
+        },
+        {
+          "BACK": 0.0446,
+          "BLOCKED": 0.0313,
+          "DONE": 0.4208,
+          "HOME": 0.0252,
+          "SCROLL_DOWN": 0.0476,
+          "SCROLL_UP": 0.0529,
+          "TAP": 0.3776
+        },
+        {
+          "BACK": 0.0995,
+          "BLOCKED": 0.0321,
+          "DONE": 0.6171,
+          "HOME": 0.034,
+          "SCROLL_DOWN": 0.0511,
+          "SCROLL_UP": 0.0915,
+          "TAP": 0.0747
+        },
+        {
+          "BACK": 0.0341,
+          "BLOCKED": 0.0264,
+          "DONE": 0.1712,
+          "HOME": 0.0201,
+          "SCROLL_DOWN": 0.0258,
+          "SCROLL_UP": 0.0307,
+          "TAP": 0.6917
+        },
+        {
+          "BACK": 0.4448,
+          "BLOCKED": 0.0528,
+          "DONE": 0.224,
+          "HOME": 0.0365,
+          "SCROLL_DOWN": 0.0428,
+          "SCROLL_UP": 0.1374,
+          "TAP": 0.0617
+        },
+        {
+          "BACK": 0.0573,
+          "BLOCKED": 0.0341,
+          "DONE": 0.5742,
+          "HOME": 0.029,
+          "SCROLL_DOWN": 0.0313,
+          "SCROLL_UP": 0.0398,
+          "TAP": 0.2343
+        },
+        {
+          "BACK": 0.3736,
+          "BLOCKED": 0.07,
+          "DONE": 0.2043,
+          "HOME": 0.0611,
+          "SCROLL_DOWN": 0.0449,
+          "SCROLL_UP": 0.1074,
+          "TAP": 0.1387
+        },
+        {
+          "BACK": 0.3004,
+          "BLOCKED": 0.1302,
+          "DONE": 0.0698,
+          "HOME": 0.0832,
+          "SCROLL_DOWN": 0.038,
+          "SCROLL_UP": 0.1699,
+          "TAP": 0.2085
+        },
+        {
+          "BACK": 0.1308,
+          "BLOCKED": 0.0508,
+          "DONE": 0.2994,
+          "HOME": 0.0411,
+          "SCROLL_DOWN": 0.0472,
+          "SCROLL_UP": 0.0516,
+          "TAP": 0.3791
+        },
+        {
+          "BACK": 0.1334,
+          "BLOCKED": 0.0734,
+          "DONE": 0.5641,
+          "HOME": 0.0536,
+          "SCROLL_DOWN": 0.0288,
+          "SCROLL_UP": 0.0483,
+          "TAP": 0.0984
+        },
+        {
+          "BACK": 0.2914,
+          "BLOCKED": 0.1403,
+          "DONE": 0.1876,
+          "HOME": 0.1109,
+          "SCROLL_DOWN": 0.0652,
+          "SCROLL_UP": 0.1039,
+          "TAP": 0.1007
+        },
+        {
+          "BACK": 0.1285,
+          "BLOCKED": 0.0603,
+          "DONE": 0.4553,
+          "HOME": 0.0455,
+          "SCROLL_DOWN": 0.0453,
+          "SCROLL_UP": 0.0596,
+          "TAP": 0.2055
+        },
+        {
+          "BACK": 0.6238,
+          "BLOCKED": 0.0319,
+          "DONE": 0.0132,
+          "HOME": 0.0295,
+          "SCROLL_DOWN": 0.0728,
+          "SCROLL_UP": 0.199,
+          "TAP": 0.0298
+        },
+        {
+          "BACK": 0.1932,
+          "BLOCKED": 0.0562,
+          "DONE": 0.2306,
+          "HOME": 0.068,
+          "SCROLL_DOWN": 0.1117,
+          "SCROLL_UP": 0.1499,
+          "TAP": 0.1904
+        },
+        {
+          "BACK": 0.3894,
+          "BLOCKED": 0.115,
+          "DONE": 0.035,
+          "HOME": 0.1517,
+          "SCROLL_DOWN": 0.1031,
+          "SCROLL_UP": 0.136,
+          "TAP": 0.0698
+        },
+        {
+          "BACK": 0.1063,
+          "BLOCKED": 0.0539,
+          "DONE": 0.0197,
+          "HOME": 0.0705,
+          "LAUNCH": 0.5952,
+          "SCROLL_DOWN": 0.0436,
+          "SCROLL_UP": 0.066,
+          "TAP": 0.0448
+        },
+        {
+          "BACK": 0.1869,
+          "BLOCKED": 0.0244,
+          "DONE": 0.0088,
+          "HOME": 0.0285,
+          "SCROLL_DOWN": 0.4678,
+          "SCROLL_UP": 0.2415,
+          "TAP": 0.0421
+        },
+        {
+          "BACK": 0.2819,
+          "BLOCKED": 0.018,
+          "DONE": 0.0078,
+          "HOME": 0.0143,
+          "SCROLL_DOWN": 0.4756,
+          "SCROLL_UP": 0.1746,
+          "TAP": 0.0278
+        },
+        {
+          "BACK": 0.3325,
+          "BLOCKED": 0.0283,
+          "DONE": 0.1602,
+          "HOME": 0.0185,
+          "SCROLL_DOWN": 0.0838,
+          "SCROLL_UP": 0.2409,
+          "TAP": 0.1358
+        },
+        {
+          "BACK": 0.633,
+          "BLOCKED": 0.0764,
+          "DONE": 0.0231,
+          "HOME": 0.0807,
+          "SCROLL_DOWN": 0.048,
+          "SCROLL_UP": 0.0832,
+          "TAP": 0.0556
+        },
+        {
+          "BLOCKED": 0.2353,
+          "DONE": 0.0312,
+          "HOME": 0.2263,
+          "SCROLL_DOWN": 0.1406,
+          "SCROLL_UP": 0.2409,
+          "TAP": 0.1257
+        },
+        {
+          "BACK": 0.2457,
+          "BLOCKED": 0.0462,
+          "DONE": 0.0164,
+          "HOME": 0.0528,
+          "LAUNCH": 0.5102,
+          "SCROLL_DOWN": 0.0381,
+          "SCROLL_UP": 0.0513,
+          "TAP": 0.0393
+        },
+        {
+          "BACK": 0.2626,
+          "BLOCKED": 0.1506,
+          "DONE": 0.0338,
+          "HOME": 0.1533,
+          "SCROLL_DOWN": 0.1378,
+          "SCROLL_UP": 0.1599,
+          "TAP": 0.102
+        },
+        {
+          "BACK": 0.2152,
+          "BLOCKED": 0.0216,
+          "DONE": 0.0048,
+          "HOME": 0.0312,
+          "SCROLL_UP": 0.6681,
+          "TAP": 0.0591
+        },
+        {
+          "BACK": 0.2493,
+          "BLOCKED": 0.0276,
+          "DONE": 0.0066,
+          "HOME": 0.0196,
+          "SCROLL_UP": 0.6153,
+          "TAP": 0.0816
+        },
+        {
+          "BACK": 0.7704,
+          "BLOCKED": 0.0538,
+          "DONE": 0.0076,
+          "HOME": 0.037,
+          "TAP": 0.1312
+        },
+        {
+          "BLOCKED": 0.1631,
+          "DONE": 0.0104,
+          "HOME": 0.1679,
+          "SCROLL_DOWN": 0.2432,
+          "SCROLL_UP": 0.2916,
+          "TAP": 0.1238
+        },
+        {
+          "BACK": 0.1066,
+          "BLOCKED": 0.039,
+          "DONE": 0.0146,
+          "HOME": 0.0503,
+          "LAUNCH": 0.5268,
+          "SCROLL_DOWN": 0.1195,
+          "SCROLL_UP": 0.1019,
+          "TAP": 0.0413
+        },
+        {
+          "BACK": 0.1687,
+          "BLOCKED": 0.1069,
+          "DONE": 0.0427,
+          "HOME": 0.1209,
+          "SCROLL_DOWN": 0.2629,
+          "SCROLL_UP": 0.1882,
+          "TAP": 0.1097
+        },
+        {
+          "BACK": 0.1426,
+          "BLOCKED": 0.0739,
+          "DONE": 0.0096,
+          "HOME": 0.0817,
+          "SCROLL_DOWN": 0.3627,
+          "SCROLL_UP": 0.2757,
+          "TAP": 0.0538
+        },
+        {
+          "BACK": 0.0724,
+          "BLOCKED": 0.0326,
+          "DONE": 0.01,
+          "HOME": 0.0334,
+          "SCROLL_UP": 0.7862,
+          "TAP": 0.0654
+        },
+        {
+          "BACK": 0.3222,
+          "BLOCKED": 0.109,
+          "DONE": 0.015,
+          "HOME": 0.0869,
+          "TAP": 0.4669
+        },
+        {
+          "BACK": 0.1729,
+          "BLOCKED": 0.0535,
+          "DONE": 0.0224,
+          "HOME": 0.0288,
+          "SCROLL_DOWN": 0.2974,
+          "SCROLL_UP": 0.2839,
+          "TAP": 0.1411
+        },
+        {
+          "BACK": 0.3073,
+          "BLOCKED": 0.0863,
+          "DONE": 0.0076,
+          "HOME": 0.0596,
+          "SCROLL_UP": 0.318,
+          "TAP": 0.2212
+        },
+        {
+          "BACK": 0.4471,
+          "BLOCKED": 0.1479,
+          "DONE": 0.013,
+          "HOME": 0.0897,
+          "TAP": 0.3023
+        },
+        {
+          "BLOCKED": 0.2954,
+          "DONE": 0.0184,
+          "HOME": 0.2299,
+          "TAP": 0.4563
+        },
+        {
+          "BACK": 0.6508,
+          "BLOCKED": 0.057,
+          "DONE": 0.0056,
+          "HOME": 0.1073,
+          "TAP": 0.1793
+        },
+        {
+          "BLOCKED": 0.2237,
+          "DONE": 0.0231,
+          "HOME": 0.2957,
+          "SCROLL_DOWN": 0.2186,
+          "TAP": 0.2389
+        }
+      ],
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.7917,
+          "target_confidence": 0.6063,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.6271,
+          "target_confidence": 0.8275,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6523,
+          "target_confidence": 0.8058,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.3776,
+          "target_confidence": 0.9396,
+          "landed": [
+            "Device name / Android SDK built for x86_64",
+            "IMEI / 867400022047199",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Device name / Android SDK built for x86_64",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.0995,
+          "target_confidence": 0.4104,
+          "landed": [
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6917,
+          "target_confidence": 0.959,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Device name / Android SDK built for x86_64",
+            "Legal information",
+            "Model / Android SDK built for x86_64",
+            "Navigate up",
+            "SIM status / T-Mobile"
+          ],
+          "confidence": 0.4448,
+          "target_confidence": 0.6284,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.2343,
+          "target_confidence": 0.546,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Navigate up"
+          ],
+          "confidence": 0.3736,
+          "target_confidence": 1.0,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.3004,
+          "target_confidence": 0.9228,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.3791,
+          "target_confidence": 0.6673,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.1334,
+          "target_confidence": 0.7558,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.2914,
+          "target_confidence": 0.7999,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "System / Languages, gestures, time, backup",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.2055,
+          "target_confidence": 0.6564,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "Backup",
+            "Date & time / GMT-07:00 Pacific Daylight Time",
+            "Gestures",
+            "Keyboard / On-screen keyboard, physical keyboard, tools",
+            "Languages / System languages, app languages, regional preferences, speech",
+            "Navigate up",
+            "Reset options",
+            "Users / Signed in as Owner"
+          ],
+          "confidence": 0.6238,
+          "target_confidence": 0.8743,
+          "landed": [
+            "Languages / System languages, app languages, regional preferences, speech",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "System / Languages, gestures, time, backup",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.1932,
+          "target_confidence": 0.7618,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "search_widget_text",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.3894,
+          "target_confidence": 0.4337,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.5952,
+          "target_confidence": 0.8391,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4678,
+          "target_confidence": 0.7911,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.4756,
+          "target_confidence": 0.7528,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "System / Languages, gestures, time, backup",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.3325,
+          "target_confidence": 0.744,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.633,
+          "target_confidence": 0.5798,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.2409,
+          "target_confidence": 0.5809,
+          "landed": [
+            "9:19",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "9:19",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.5102,
+          "target_confidence": 0.9238,
+          "landed": [
+            "9:20",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Manage",
+          "screen": [
+            "9:20",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.2626,
+          "target_confidence": 0.3448,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.6681,
+          "target_confidence": 0.8761,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.6153,
+          "target_confidence": 0.8872,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.7704,
+          "target_confidence": 0.8719,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "search_icon",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.2916,
+          "target_confidence": 0.6152,
+          "landed": [
+            "9:20",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "9:20",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.5268,
+          "target_confidence": 0.9467,
+          "landed": [
+            "9:21",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Manage",
+          "screen": [
+            "9:21",
+            "Bluetooth, On",
+            "Collapse",
+            "Do Not Disturb, Off",
+            "Expand",
+            "Flashlight, Off",
+            "Internet, AndroidWifi",
+            "Manage",
+            "Silent",
+            "mimic / mimic / serving http+mcp on 127.0.0.1:8473"
+          ],
+          "confidence": 0.2629,
+          "target_confidence": 0.4851,
+          "landed": [
+            "Bluetooth, On",
+            "Do Not Disturb, Off",
+            "Flashlight, Off",
+            "Internet, AndroidWifi"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Internet, AndroidWifi",
+          "screen": [
+            "Bluetooth, On",
+            "Do Not Disturb, Off",
+            "Flashlight, Off",
+            "Internet, AndroidWifi"
+          ],
+          "confidence": 0.3627,
+          "target_confidence": 0.424,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.7862,
+          "target_confidence": 0.6993,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.4669,
+          "target_confidence": 0.8518,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.2974,
+          "target_confidence": 0.641,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_UP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.318,
+          "target_confidence": 0.6417,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "BACK",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.4471,
+          "target_confidence": 0.77,
+          "landed": [
+            "More options",
+            "Navigate up"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "TAP",
+          "target": "Navigate up",
+          "screen": [
+            "More options",
+            "Navigate up"
+          ],
+          "confidence": 0.4563,
+          "target_confidence": 0.8285,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.6508,
+          "target_confidence": 0.7471,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "HOME",
+          "target": "search_widget_text",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.2957,
+          "target_confidence": 0.5458,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "required": 1,
+      "actions": 40,
+      "decisions": 40,
+      "wall_s": 377.4
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "done",
+      "steps": 4,
+      "plans": 0,
+      "decision_ms": [
+        3277,
+        4356,
+        5559,
+        6516,
+        9617
+      ],
+      "gated": 1,
+      "probabilities": [
+        {
+          "BACK": 0.029,
+          "BLOCKED": 0.0285,
+          "HOME": 0.0396,
+          "LAUNCH": 0.7863,
+          "SCROLL_DOWN": 0.0447,
+          "SCROLL_UP": 0.0421,
+          "TAP": 0.0298
+        },
+        {
+          "BACK": 0.0802,
+          "BLOCKED": 0.018,
+          "DONE": 0.0067,
+          "HOME": 0.0464,
+          "SCROLL_DOWN": 0.6208,
+          "SCROLL_UP": 0.1781,
+          "TAP": 0.0498
+        },
+        {
+          "BACK": 0.0737,
+          "BLOCKED": 0.0221,
+          "DONE": 0.0041,
+          "HOME": 0.0261,
+          "SCROLL_DOWN": 0.6523,
+          "SCROLL_UP": 0.1639,
+          "TAP": 0.0578
+        },
+        {
+          "BACK": 0.0439,
+          "BLOCKED": 0.0304,
+          "DONE": 0.4328,
+          "HOME": 0.0254,
+          "SCROLL_DOWN": 0.0465,
+          "SCROLL_UP": 0.0516,
+          "TAP": 0.3694
+        },
+        {
+          "BACK": 0.0095,
+          "BLOCKED": 0.0103,
+          "DONE": 0.9034,
+          "HOME": 0.0075,
+          "SCROLL_DOWN": 0.0095,
+          "SCROLL_UP": 0.0091,
+          "TAP": 0.0225
+        }
+      ],
+      "final_confidence": 0.9034,
+      "final_probabilities": {
+        "BACK": 0.0095,
+        "BLOCKED": 0.0103,
+        "DONE": 0.9034,
+        "HOME": 0.0075,
+        "SCROLL_DOWN": 0.0095,
+        "SCROLL_UP": 0.0091,
+        "TAP": 0.0225
+      },
+      "history": [
+        {
+          "operation": "LAUNCH",
+          "target": "Settings",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.7863,
+          "target_confidence": 0.6066,
+          "landed": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Connected devices / Bluetooth, pairing",
+            "Display / Dark theme, font size, brightness",
+            "Network & internet / Mobile, Wi\u2011Fi, hotspot",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free"
+          ],
+          "confidence": 0.6208,
+          "target_confidence": 0.8243,
+          "landed": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Search settings",
+          "screen": [
+            "Accessibility / Display, interaction, audio",
+            "Apps / Recent apps, default apps",
+            "Battery / 100%",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Notifications / Notification history, conversations",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "Sound & vibration / Volume, vibration, Do Not Disturb",
+            "Storage / 38% used - 9.96 GB free",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.6523,
+          "target_confidence": 0.8051,
+          "landed": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "About emulated device / Android SDK built for x86_64",
+          "screen": [
+            "About emulated device / Android SDK built for x86_64",
+            "Accessibility / Display, interaction, audio",
+            "Display / Dark theme, font size, brightness",
+            "Location / On / 1 app has access to location",
+            "Passwords, passkeys & accounts / Suggestions for sign-in & autofill",
+            "Safety & emergency / Emergency SOS, medical info, alerts",
+            "Search settings",
+            "Security & privacy / App security, device lock, permissions",
+            "System / Languages, gestures, time, backup",
+            "Wallpaper / Home, lock screen"
+          ],
+          "confidence": 0.3694,
+          "target_confidence": 0.9405,
+          "landed": [
+            "Search settings"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "Android version": "Android version / 15"
+        },
+        "at_step": {
+          "Android version": 5
+        },
+        "missing": []
+      },
+      "stories_visited": 1,
+      "required": 1,
+      "actions": 4,
+      "decisions": 5,
+      "wall_s": 31.8
+    }
+  ]
+}

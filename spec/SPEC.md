@@ -333,9 +333,15 @@ overrides any of these constants, whose top level values in
 | `boolean_order` | `["true", "false"]` | option order of a boolean |
 | `boolean_names` | `true`, `false` | the name a boolean option falls back to, and shows when named |
 | `boolean_default_criteria` | `Yes.`, `No.` | descriptions of a boolean without criteria |
-| `state_json`, `instructions_json`, `description_json` | `block_json`, `block_json`, `inline_json` | the serialisation profile for each value |
+| `state_json`, `instructions_json`, `description_json` | `block_json`, `block_json`, `inline_json` | the serialisation profile for each value, by name |
 | `option_json` | `null` | a profile applied to each finished option text |
+| `profiles` | `{}` | the layout's own serialisation profiles, by the names the four knobs above use |
+| `checkpoint_anchors` | `[]` | text to try as the checkpoint anchor after the state delimiter (section 5.1) |
+| `option_mass_floor_formatter` | section 8.1 | the floor this layout's verification is held to |
 | `labels`, `max_options_single_pass`, `max_options_plain_alphabet` | section 5.2 | the letters the layout's model was trained on |
+| `numbered_labels` | `0` | when N, the labels are `1` to N in place of `labels`. only for a layout read through a head (section 5.4), where no label is scored |
+
+`{count}` in `answer_instruction` stands for the number of options listed.
 
 a serialisation profile is section 3's json options plus two: `quote_strings`
 renders a string as a json literal rather than verbatim, and `escape_lt`
@@ -360,20 +366,66 @@ which is section 5 byte for byte under the chat values. the label must stay a
 single token after `assistant_open + assistant_prefill`, or after `user_close`
 where the template opens the answer with nothing.
 
-**which model needs which layout is not recorded here.** it is a fact about
-how the model was trained, and the model registry is the authority on it. a
-llama-swap config generated from the registry advertises it on `/v1/models` as
-`meta.llamaswap.readout`:
+**the vocabulary is closed.** the table above is every knob, listed as
+`layout_knobs` in `spec/constants.json`. a layout that sets anything else is
+refused, at import and again at load: an unknown knob is bytes this
+implementation does not know how to write, and ignoring it would send a prompt
+the model was not trained on while every answer still looked plausible. a
+model that needs a new knob needs a new spec version.
+
+**which model needs which layout, and that layout's bytes, belong to the model
+registry.** both are facts about how the model was trained. the registry keeps
+the blocks in a table keyed by layout name,
+
+```json
+{"version": 1,
+ "layouts": {"decider-plain": {"source": "...", "note": "...",
+                               "affixes": {...}, "constants": {...},
+                               "head": {...}}}}
+```
+
+with `affixes` absent for a layout that keeps the model's own template and
+`head` present only for a layout read through one (section 5.4).
+`spec/layouts/<name>.json` is this repository's committed copy of that table,
+one block per file, refreshed by `scripts/import_layouts.py`. an
+implementation renders from the copy, so rendering depends on no server, and
+the conformance fixtures are generated from it. where the two differ the
+registry is right and the copy is stale.
+
+the same table says which model needs which readout, and `spec/models.json`
+is the copy of that:
+
+```json
+{"version": 1,
+ "models": {"akhilaaa3/Jev-Omni": {"short": "jev-omni",
+                                   "repos": ["ngquocvinh/Jev-Omni-GGUF"],
+                                   "readout": "head:jev-omni"}}}
+```
+
+a model is recognised, in this order:
+
+1. by the registry's own key, which is the key of its entry here. a llama-swap
+   config generated from the registry names it on `/v1/models` as
+   `meta.llamaswap.registry`. it is the model's identity, and the only thing
+   read from that listing: HOW the model is read comes from this table
+2. by the repository its weights were loaded from, which a llama-server
+   reports in `/props`. this is what an unlisted id and a bare llama-server
+   have, since neither names a key
+3. by `short`, against the served id before its colon with spaces read as
+   dashes, for weights loaded from a plain file. a served id is whatever a
+   config chose to call the model, so this is the last resort
 
 | readout | meaning |
 |---|---|
-| absent, `chat` | derive from the chat template, section 4 |
+| no entry | derive from the chat template, section 4 |
 | `layout:<name>` | render with `spec/layouts/<name>.json` |
-| `head` | the model answers through a head of its own and has no next-token distribution to read. refused: it must be served by its own server |
+| `head:<name>` | the model answers through a head of its own: read with `spec/layouts/<name>.json`, which must declare that head (section 5.4) |
+| `head` | a head nothing here can apply. refused: its label logits are its backbone's |
 
 an explicit layout given by the caller overrides the readout. a layout is still
-verified exactly as a derived formatter is (section 8.1) and the layout name is
-part of the formatter cache key. every layout has conformance fixtures under
+verified exactly as a derived formatter is (section 8.1) and the layout's
+bytes are part of the formatter cache key, since an import can change them
+under a name that stays the same. every layout has conformance fixtures under
 `spec/fixtures/layouts/<name>/`.
 
 each layout is taken byte for byte from its author's source, named in the
@@ -385,6 +437,120 @@ file:
 | `winnow` | Winnow-12B | derived | nothing known |
 | `standardone-native` | StandardOne | derived, no system turn | object instructions and descriptions rendered as json where the adapter uses python `str()` |
 | `semif` | SemIf, JevK5 and its descendants | derived | nothing known; the prefix ends inside the json, so its boundary is not split-clean on every tokenizer and the prompt is sent as one text |
+| `jev-omni` | Jev-Omni, read through its head (section 5.4) | declared, no system turn | the author's interface takes option strings, so `name: description` for a described option is ours; an object state is json where the author uses python `str()` |
+
+### 5.4 layouts read through a decision head
+
+some decision models do not answer through their vocabulary at all. they are
+trained with a head of their own over the final hidden state, and reading
+their label logits measures the backbone rather than the model.
+
+where that head reads the **one position section 1 already reads**, it is the
+same operation with different rows: label logits are the vocabulary's rows
+applied to the final hidden state at the scored position, and such a head is
+rows trained for the purpose applied to the same vector. a layout declares it:
+
+```json
+"head": {
+  "kind": "linear",
+  "repo": "ngquocvinh/Jev-Omni-GGUF",
+  "revision": "f07b38e109cbc9b338029f88faeb3e6b6f894c73",
+  "file": "decision-head-f32.npz",
+  "sha256": "47b346e1..."
+}
+```
+
+| kind | reads | computes |
+|---|---|---|
+| `linear` | the unnormalised final hidden state `h` of the last prompt token | `softmax(W[:n] @ ((h - mu) / sd) + b[:n])` over the first `n` rows for `n` options, in listed order. tensors `linear.weight`, `linear.bias`, `mu`, `sd`, float32 |
+
+- the prompt is sections 5 and 5.3 unchanged, ending at the assistant opening;
+  the options are usually numbered (`numbered_labels`), since no label is
+  scored and none has to be a single token
+- the hidden state comes from a llama-server in embedding mode, asked with
+  `embd_normalize: -1`. under pooling `last`, `POST /v1/embeddings` returns
+  that one vector and the prompt's token count. a server pooling `none`
+  refuses that route, and `POST /embedding` returns every position, of which
+  the last row is the same vector. a vector of unit length is refused: it is
+  a normalised one, which a head still answers on and was never trained on
+- the head file is fetched from the pinned revision, never vendored, and
+  refused unless its sha256 matches
+- **there is no option mass.** the head's distribution covers the options and
+  nothing else, so its sum is 1 by construction and says nothing about the
+  prompt. `option_mass` is `null` and the result carries `no_option_mass`
+  (sections 7 and 8)
+- with no mass to hold to a floor, verification is the answer: the
+  unambiguous question of section 8.1 has to be answered correctly at every
+  option count, which is what catches the wrong weights behind the head or a
+  normalised hidden state
+
+a head that reads more than one position is a different operation, section
+5.5.
+
+### 5.5 joint layouts
+
+a **joint** layout (`"kind": "joint"`) asks every question of a request in one
+prompt and is read by a head that decides them together, from the hidden state
+of every position. it is the one departure from section 1: there is no single
+scored position, no label, and no prefix shared between questions, because
+there is one prompt and one read.
+
+its knobs are a list of their own, `joint_knobs` in `spec/constants.json`,
+closed as section 5.3's is:
+
+| knob | meaning |
+|---|---|
+| `prompt_open` | everything before the state, chat markers and system text included |
+| `schema_open` | text between the state and the first field |
+| `field_open` | opens one question; `{number}` from 1, `{id}`, `{type}` |
+| `options_open` | text between the instructions and the options |
+| `option_open`, `option_close` | around one option; `{number}` from 1 |
+| `field_close` | closes one question |
+| `prompt_close` | everything after the last field, the assistant opening included |
+| `type_names` | the name each question type is written as |
+| `type_ids` | the index the head knows each question type by |
+| `boolean_order`, `boolean_default_criteria` | the options of a boolean and their descriptions when the caller gives none |
+| `value_json` | the serialisation profile for the state, instructions and options |
+| `max_length` | the window in tokens; a state too long for it is cut at its end |
+
+```
+prompt = prompt_open + <state> + schema_open
+       + for each question:
+           field_open + <instructions> + options_open
+           + for each option: option_open + <option> + option_close
+           + field_close
+       + prompt_close
+```
+
+- an option is rendered as `{"option_id": id, "description": text}`, without
+  `description` when the caller gives none. a choice lists its options in
+  sorted id order, a score its levels in order as ids `0` upward, and a
+  question without instructions is asked by its name
+- **every piece is tokenized separately and the ids concatenated**, and the
+  prompt is sent as token ids. the head reads each question and each option at
+  the span of tokens it occupies, so a span has to be exact; splitting a
+  jointly tokenized prompt would have to guess at merges across a boundary
+- the head (`"kind": "joint-schema"`) reads the unnormalised final hidden
+  state of every position, from a llama-server in embedding mode pooling
+  `none`, one row per token sent. a reply of any other length is refused, since
+  a span would then name the wrong tokens
+- it also reads, for each option, the rows of the backbone's output embedding
+  for the option's tokens. no endpoint serves that matrix and the gguf's copy
+  is quantised, so the head block pins the author's weights (`rows`: repo,
+  revision, file, tensor) and the rows are read from them by byte range
+- one softmax per question over its options. as in section 5.4 there is no
+  option mass, results carry `no_option_mass`, and the layout is admitted on
+  answering the verification question at every option count
+- order averaging and prior correction do not apply: nothing is labelled, so
+  there is no label position to average over
+
+the arithmetic is the author's and is held to the author's: the reference
+client's port returns the logits of the author's own class on recorded inputs,
+and its prompt builder the tokens and spans of the author's own encoder.
+
+| layout | models | head | not reproduced |
+|---|---|---|---|
+| `clef-flash` | Clef-Flash | `joint-schema`, 2 routing and 4 decoder layers | images and video |
 
 ## 6. probability extraction
 
@@ -425,7 +591,7 @@ per question:
 | `confidence` | the top probability |
 | `margin` | top probability minus second |
 | `concentration` | `1 - H(p)/ln(n)`, 0 when uniform, 1 when all on one option |
-| `option_mass` | raw probability on the label tokens before renormalising |
+| `option_mass` | raw probability on the label tokens before renormalising. `null` for a readout through a head, which has no label tokens |
 | `score`, `legend` | score questions only |
 | `calibrated` | false unless a calibration was applied |
 | `calibration_id` | set when `calibrated` is true |
@@ -452,6 +618,9 @@ option mass is the correctness check for the mechanism, not a diagnostic.
   and the formatter is not written
 - at **load**, a formatter whose recorded mass is below `0.9` is refused
 - at **request**, `option_mass < 0.5` sets the `low_option_mass` flag
+- a readout through a **head** (section 5.4) has no option mass. every result
+  carries `no_option_mass`, and derivation and load require the verification
+  question answered correctly at every option count instead
 
 the floor can be set this aggressively because healthy and broken are six
 orders of magnitude apart, about 1.0 against about 1e-7, with nothing observed

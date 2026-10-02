@@ -1,0 +1,203 @@
+[
+  {
+    "model": "jev-omni:Q8_0",
+    "layout": "jev-omni",
+    "order_averaging": 1,
+    "wide_alphabet": false,
+    "correct": "15/16",
+    "accuracy": 0.9375,
+    "by_position": {
+      "first": 4,
+      "quarter": 4,
+      "middle": 4,
+      "last": 3
+    },
+    "by_count": {
+      "8": 4,
+      "16": 4,
+      "26": 4,
+      "52": 3
+    },
+    "min_option_mass": null,
+    "median_ms": 742.3851570347324,
+    "wall_s": 18.1,
+    "rows": [
+      {
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.99513025242125,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 700.0666740350425
+      },
+      {
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.9899998151240501,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 521.4748220751062
+      },
+      {
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.9975698055150365,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 524.0394819993526
+      },
+      {
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "correct_prob": 0.9837106131733674,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 523.2308250851929
+      },
+      {
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.9855042818984551,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 663.2311000721529
+      },
+      {
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.9947140570151655,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 618.4680110309273
+      },
+      {
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.9791149920714798,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 616.0037339432165
+      },
+      {
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "correct_prob": 0.9939769374603334,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 638.2827369961888
+      },
+      {
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.9636563182744553,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 852.877915953286
+      },
+      {
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.9840195742492194,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 785.4748429963365
+      },
+      {
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.9981213535591865,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 851.1161929927766
+      },
+      {
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "correct_prob": 0.8355752335829503,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 784.7036400344223
+      },
+      {
+        "n": 52,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.8843322217818601,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 1228.4486399730667
+      },
+      {
+        "n": 52,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.9924371935269698,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 1123.884947039187
+      },
+      {
+        "n": 52,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.9066170808472119,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 1293.224512017332
+      },
+      {
+        "n": 52,
+        "position": "last",
+        "ok": false,
+        "correct_prob": 0.00043110722930627993,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 1328.7246450781822
+      }
+    ]
+  }
+]

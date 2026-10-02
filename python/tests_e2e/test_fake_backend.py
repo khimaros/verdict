@@ -15,6 +15,7 @@ skips cleanly when the mock is not built. `make` in ../fake-openai builds it.
 import contextlib
 import json
 import os
+import shutil
 import socket
 import subprocess
 import sys
@@ -24,6 +25,8 @@ import urllib.request
 from pathlib import Path
 
 import pytest
+
+from llama_verdict.backend import HttpBackend
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT.parent / "fake-openai" / "clients" / "python"))
@@ -39,6 +42,13 @@ pytestmark = pytest.mark.skipif(
 
 API_KEY = "local"
 MODEL = "fake-model"
+# a model spec/models.json recognises by name and reads with a layout of its own
+DECIDER = "decider-4b:Q8_0"
+# one the registry says answers through a head verdict has no way to apply. no
+# model in the committed copy is in that state, so a test's copy adds it
+UNREADABLE = "headed:Q8_0"
+HEADED = {"someone/Headed": {"readout": "head", "repos": ["someone/Headed-GGUF"],
+                             "short": "headed"}}
 
 # chatml, because it is the shape verdict's derivation is written against: one
 # turn per message and a generation prompt that names the assistant.
@@ -90,13 +100,26 @@ def ask(base, key=API_KEY, questions=None):
         "questions": questions or CHOICE}, key=key)
 
 
+def spec_with(tmp_path_factory, models):
+    """a copy of the spec whose models table also carries `models`."""
+    copy = tmp_path_factory.mktemp("spec")
+    shutil.copy(ROOT / "spec" / "constants.json", copy)
+    shutil.copytree(ROOT / "spec" / "layouts", copy / "layouts")
+    table = json.loads((ROOT / "spec" / "models.json").read_text())
+    table["models"].update(models)
+    (copy / "models.json").write_text(json.dumps(table))
+    return str(copy)
+
+
 @contextlib.contextmanager
-def serving(tmp_path_factory, *args, meta=None):
+def serving(tmp_path_factory, *args, model=MODEL, mock=(), prepare=None, spec=None):
     """the mock and verdict's server, both on free ports, both always torn down.
 
-    `meta` is the llama-swap metadata the mock advertises for the model on
-    /v1/models, which is where a registry-generated config tells verdict how
-    the model must be read.
+    `model` is the backend model verdict is bound to; the mock answers for any
+    name, so naming one verdict recognises is how a test has it read that way.
+    `mock` is more flags for the mock, and `prepare` is called with it before
+    verdict starts, for whatever verdict's own startup has to find already
+    programmed. `spec` is a spec directory to serve from in place of the repo's.
 
     XDG_CACHE_HOME is redirected so this derivation cannot collide with a real
     model's cached formatter -- the cache is keyed on the template's sha256, and a
@@ -105,23 +128,25 @@ def serving(tmp_path_factory, *args, meta=None):
     with no config of its own either, so a developer's .env cannot leak a pinned
     formatter or assistant opening into the fake model's derivation.
     """
-    fake = fakeopenai.FakeOpenAI("--llamacpp", "--llamaswap", "--chat-template", TEMPLATE)
+    fake = fakeopenai.FakeOpenAI("--llamacpp", "--llamaswap", "--chat-template", TEMPLATE,
+                                 *mock)
     fake.start()
     server = None
     try:
-        if meta:
-            fake.set_models([{"id": MODEL, "meta": {"llamaswap": meta}}])
+        if prepare:
+            prepare(fake)
         port = free_port()
         base = f"http://127.0.0.1:{port}"
         env = {k: v for k, v in os.environ.items()
                if not k.startswith(("LLAMA_VERDICT_", "VERDICT_"))}
         env.update(PYTHONPATH=str(ROOT / "python"),
-                   XDG_CACHE_HOME=str(tmp_path_factory.mktemp("cache")))
+                   XDG_CACHE_HOME=str(tmp_path_factory.mktemp("cache")),
+                   **({"LLAMA_VERDICT_SPEC": spec} if spec else {}))
         rundir = tmp_path_factory.mktemp("log")
         log = open(rundir / "server.log", "w")
         server = subprocess.Popen(
             [sys.executable, "-m", "llama_verdict.server",
-             "--base-url", f"{fake.root_url}/v1", "--model", MODEL,
+             "--base-url", f"{fake.root_url}/v1", *(("--model", model) if model else ()),
              "--host", "127.0.0.1", "--port", str(port), "--api-key", API_KEY, *args],
             env=env, stdout=log, stderr=log, cwd=str(rundir))
         for _ in range(120):
@@ -438,15 +463,125 @@ def test_a_named_layout_asks_booleans_no_first_and_answers_p_true(decider_endpoi
     assert wire["answers"]["refund"]["noul"] == pytest.approx(0.8, abs=1e-4)
 
 
-def test_the_layout_is_read_from_the_registry_metadata(tmp_path_factory):
-    # no flag: the llama-swap config generated from the model registry says how
-    # the model must be read, so a new model needs no verdict config of its own
-    meta = {"readout": "layout:decider-plain"}
-    with serving(tmp_path_factory, meta=meta) as (base, fake, _log, _server):
+def test_a_recognised_model_is_read_its_own_way_with_no_flag(tmp_path_factory):
+    # verdict's copy of the model registry says how the model must be read, so
+    # neither the command line nor the server has to
+    with serving(tmp_path_factory, model=DECIDER) as (base, fake, _log, _server):
         fake.program_probs({"probs": {"A": 0.85, "B": 0.10, "C": 0.05}})
         status, wire = ask(base)
         assert status == 200, wire
         assert last_prompt(fake) == DECIDER_CHOICE_PROMPT
+
+
+def test_a_model_served_under_any_name_is_known_by_its_registry_key(tmp_path_factory):
+    # a served id is whatever a config chose. the listing names the registry
+    # entry behind it, and that is the model's identity
+    listing = [{"id": MODEL, "meta": {"llamaswap": {"registry": "Mapika/decider-4b"}}}]
+    with serving(tmp_path_factory, prepare=lambda fake: fake.set_models(listing)) as (
+            base, fake, _log, _server):
+        fake.program_probs({"probs": {"A": 0.85, "B": 0.10, "C": 0.05}})
+        status, wire = ask(base)
+        assert status == 200, wire
+        assert last_prompt(fake) == DECIDER_CHOICE_PROMPT
+
+
+def test_the_backend_key_is_presented_as_a_bearer():
+    with fakeopenai.FakeOpenAI("--llamacpp") as fake:
+        HttpBackend(fake.base_url, api_key="sekret").tokenize("A")
+        headers = {k.lower(): v for k, v in fake.captures()[-1]["headers"].items()}
+        assert headers.get("authorization") == "Bearer sekret"
+        HttpBackend(fake.base_url).tokenize("A")
+        headers = {k.lower(): v for k, v in fake.captures()[-1]["headers"].items()}
+        assert "authorization" not in headers
+
+
+
+
+def decide(base, model):
+    return call(base, "/v1/systemone", {"model": model, "state": TICKET, "questions": CHOICE})
+
+
+@pytest.fixture(scope="module")
+def routed(tmp_path_factory):
+    """one endpoint in front of a backend that serves several models."""
+    with serving(tmp_path_factory, spec=spec_with(tmp_path_factory, HEADED)) as (
+            base, fake, log, _server):
+        yield base, fake, log
+
+
+def test_a_request_is_answered_by_the_backend_model_it_names(routed):
+    """one static endpoint serves every model the backend has, so a sweep over
+    models needs no restart between them."""
+    base, fake, _log = routed
+    status, wire = decide(base, DECIDER)
+    assert status == 200, wire
+    assert wire["model"] == DECIDER
+    # read the way the committed copy says that model is read, with nothing
+    # on the command line and nothing advertised by the server
+    assert last_prompt(fake) == DECIDER_CHOICE_PROMPT
+    assert fake.captures()[-1]["path"] == f"/upstream/{DECIDER}/completion"
+
+
+def test_a_model_nobody_recognises_is_derived_from_its_own_template(routed):
+    base, fake, _log = routed
+    status, wire = decide(base, "new-model:Q8_0")
+    assert status == 200, wire
+    assert wire["model"] == "new-model:Q8_0"
+    assert last_prompt(fake).rstrip().endswith("assistant")
+
+
+def test_an_alias_or_no_model_at_all_is_the_bound_model(routed):
+    base, fake, _log = routed
+    for body in ({"model": "jev-latest"}, {}):
+        status, wire = call(base, "/v1/systemone",
+                            {**body, "state": TICKET, "questions": CHOICE})
+        assert (status, wire["model"]) == (200, MODEL)
+        assert fake.captures()[-1]["path"] == f"/upstream/{MODEL}/completion"
+
+
+def test_a_model_that_cannot_be_read_is_refused_and_the_endpoint_carries_on(routed):
+    base, _fake, _log = routed
+    status, wire = decide(base, UNREADABLE)
+    assert status == 422, wire
+    assert UNREADABLE in wire["error"]["message"]
+    assert decide(base, MODEL)[0] == 200
+
+
+def test_the_endpoint_says_how_each_model_it_served_was_read(routed):
+    """a result is only evidence beside the layout, weights and build it was
+    measured with, and a static endpoint has no per-model startup log to keep."""
+    base, _fake, _log = routed
+    decide(base, DECIDER)
+    status, described = call(base, f"/v1/banner?model={DECIDER}")
+    assert status == 200, described
+    assert f"  model     {DECIDER}" in described["banner"]
+    assert "  layout    decider-plain" in described["banner"]
+    ids = [m["id"] for m in call(base, "/v1/models")[1]["data"]]
+    assert DECIDER in ids and MODEL in ids
+
+
+def test_an_endpoint_bound_to_no_model_answers_for_whichever_one_a_request_names(
+        tmp_path_factory):
+    """routing makes the bound model optional: it is only what the aliases
+    and a request naming nothing mean, and an endpoint can do without one."""
+    with serving(tmp_path_factory, model=None) as (base, fake, log, server):
+        assert server.poll() is None, log.read_text()
+        status, wire = decide(base, DECIDER)
+        assert (status, wire["model"]) == (200, DECIDER)
+        assert last_prompt(fake) == DECIDER_CHOICE_PROMPT
+        # nothing for an alias to mean, and the answer says what to do about it
+        status, wire = decide(base, "jev-latest")
+        assert status == 422, wire
+        assert "--model" in wire["error"]["message"]
+        ids = [m["id"] for m in call(base, "/v1/models")[1]["data"]]
+        assert ids == [DECIDER]
+
+
+def test_routing_can_be_turned_off(tmp_path_factory):
+    with serving(tmp_path_factory, "--no-routing") as (base, fake, _log, _server):
+        status, wire = decide(base, DECIDER)
+        assert (status, wire["model"]) == (200, MODEL)
+        assert fake.captures()[-1]["path"] == f"/upstream/{MODEL}/completion"
 
 
 # the other decision models' own prompts, each around the fake template's turns
@@ -544,8 +679,9 @@ def test_prior_correction_divides_out_the_answer_to_an_empty_state(tmp_path_fact
 
 
 def test_a_model_with_its_own_head_is_refused_at_startup(tmp_path_factory):
-    # a pointer head or a non-causal encoder has no next-token distribution to
-    # read, so any answer through llama-server logits would be made up
-    with serving(tmp_path_factory, meta={"readout": "head"}) as (_b, _f, log, server):
+    # a head verdict cannot apply leaves nothing to read: its label logits are
+    # its backbone's, and the copy of the registry names it so that it is refused
+    with serving(tmp_path_factory, model=UNREADABLE,
+                 spec=spec_with(tmp_path_factory, HEADED)) as (_b, _f, log, server):
         assert server.wait(timeout=30) != 0
         assert "its own server" in log.read_text()

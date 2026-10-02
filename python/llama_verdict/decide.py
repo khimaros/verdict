@@ -1,12 +1,18 @@
 """the decision api: one prefill per state, one short suffix per question."""
 
 import dataclasses
+import functools
 import hashlib
+import json
 import random
 import time
 
 from . import backend as backend_mod
-from . import derive, extract, prompt, spec, types
+from . import derive, extract, joint_prompt, prompt, spec, types
+from . import head as heads
+
+# how many tokenized prompt pieces a decider remembers
+TOKEN_CACHE = 4096
 
 
 class Decider:
@@ -14,10 +20,16 @@ class Decider:
 
     def __init__(self, backend, formatter, tournament=False, pretokenize=False,
                  order_averaging=1, prior_correction=False, wide_alphabet=False,
-                 cache_dir=derive.CACHE_DIR):
+                 cache_dir=derive.CACHE_DIR, head=None):
         formatter.check_usable()
         self.backend = backend
         self.formatter = formatter
+        # a layout that names a decision head is read through it: the hidden
+        # state at the scored position, and the head's rows instead of labels
+        self.head = head or heads.for_layout(formatter.layout)
+        # a joint prompt is tokenized piece by piece and most pieces repeat
+        self._tokens_of = functools.lru_cache(maxsize=TOKEN_CACHE)(
+            lambda text: tuple(backend.tokenize(text)))
         self._layout = spec.layout(formatter.layout)
         # send prompts as text by default: it is the same token sequence
         # wherever the spec's boundary assertion holds, and it costs no
@@ -63,6 +75,10 @@ class Decider:
         sub = dataclasses.replace(question, options=tuple(options))
         alphabet = self._alphabet(len(options))
         suffix = prompt.render_suffix(self.formatter, sub, alphabet)
+        if self.head:
+            scored = self.backend.hidden(prefix + suffix)
+            probs = self.head.probs(scored.pop("hidden"), len(options))
+            return ({o.id: p for o, p in zip(options, probs, strict=True)}, scored, suffix)
         labels = prompt.label_map(sub, alphabet, self.formatter.layout)
         ids = self.label_ids(list(labels.values()))
 
@@ -264,8 +280,42 @@ class Decider:
             self._label_ids[ell] = tok[0]
         return [self._label_ids[ell] for ell in labels]
 
+    def _decide_jointly(self, state, questions):
+        """every question in one prompt, read once and decided together by a
+        joint head (SPEC 5.5). order averaging and prior correction do not
+        apply: the options are not labelled and have no position to bias."""
+        tokens, fields = joint_prompt.encode(self._tokens_of, self.formatter.layout,
+                                             state, questions)
+        read = self.backend.hidden_states(tokens)
+        t0 = time.monotonic()
+        rows = self.head.probabilities(
+            self.head.logits(read["hidden"], tokens, [f.spans for f in fields]))
+        head_ms = (time.monotonic() - t0) * 1000.0
+        floor, answers = spec.constants()["option_mass_floor_request"], {}
+        for field, row in zip(fields, rows, strict=True):
+            question = types.Question(
+                field.name, field.kind, "", tuple(types.Option(o, "") for o in field.option_ids),
+                legend=(types.legend_of(questions[field.name]["criteria"])
+                        if field.kind == types.SCORE else None))
+            a = extract.answer(question, dict(zip(field.option_ids, row, strict=True)), floor,
+                               measured=False)
+            a.update(truncated=False,
+                     timing={"prefill_ms": round(read["score_ms"], 2),
+                             "score_ms": round(head_ms, 2)},
+                     provenance={
+                         "model": self.backend.model, "formatter": self.formatter.model,
+                         "template_sha256": self.formatter.template_sha256,
+                         "prompt_sha256": hashlib.sha256(json.dumps(tokens).encode()).hexdigest(),
+                         "spec_version": spec.constants()["spec_version"],
+                         "backend": "http", "readout": "joint-head"})
+            answers[field.name] = a
+        return {"answers": {name: answers[name] for name in questions},
+                "usage": {"input_tokens": len(tokens), "output_tokens": 0}}
+
     def decide(self, state, questions):
         """answer every question against one shared, prefilled state."""
+        if self.head and self.head.joint:
+            return self._decide_jointly(state, questions)
         parsed = types.parse_questions(questions, self.formatter.layout)
         floor = spec.constants()["option_mass_floor_request"]
 
@@ -318,8 +368,9 @@ class Decider:
                     raw = {oid: (p / prior[oid] if prior.get(oid) else p)
                            for oid, p in raw.items()}
 
-                a = extract.answer(question, raw, floor, option_mass=mass)
-                a["flags"] += prompt.alphabet_flags(question)
+                a = extract.answer(question, raw, floor, option_mass=mass,
+                                   measured=not self.head)
+                a["flags"] += prompt.alphabet_flags(question, self.formatter.layout)
                 if len(orders) > 1:
                     a["flags"].append("order_averaged")
                 if self.prior_correction:
@@ -340,6 +391,7 @@ class Decider:
                 "prompt_sha256": prompt.prompt_sha256(prefix, suffix),
                 "spec_version": spec.constants()["spec_version"],
                 "backend": "http",
+                "readout": "head" if self.head else "logits",
                 "order_averaging": self.order_averaging,
                 "prior_correction": self.prior_correction,
             }

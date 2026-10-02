@@ -1,0 +1,478 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 3,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 6,
+      "decision_ms": [
+        10659,
+        12041,
+        10691,
+        12001,
+        12074,
+        10764,
+        9046
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "CLICK": 0.9944,
+          "SCROLL_DOWN": 0.0034,
+          "SCROLL_UP": 0.0004,
+          "HOME": 0.0008,
+          "BLOCKED": 0.001
+        },
+        {
+          "CLICK": 0.1154,
+          "SCROLL_DOWN": 0.026,
+          "SCROLL_UP": 0.0037,
+          "BACK": 0.7108,
+          "HOME": 0.1207,
+          "BLOCKED": 0.0234
+        },
+        {
+          "CLICK": 0.847,
+          "SCROLL_DOWN": 0.1097,
+          "SCROLL_UP": 0.0131,
+          "HOME": 0.021,
+          "BLOCKED": 0.0092
+        },
+        {
+          "CLICK": 0.1748,
+          "SCROLL_DOWN": 0.5974,
+          "SCROLL_UP": 0.0357,
+          "BACK": 0.108,
+          "HOME": 0.0105,
+          "BLOCKED": 0.0736
+        },
+        {
+          "CLICK": 0.2806,
+          "SCROLL_DOWN": 0.1003,
+          "SCROLL_UP": 0.036,
+          "BACK": 0.3879,
+          "HOME": 0.0945,
+          "BLOCKED": 0.1007
+        },
+        {
+          "CLICK": 0.5621,
+          "SCROLL_DOWN": 0.2791,
+          "SCROLL_UP": 0.0387,
+          "HOME": 0.061,
+          "BLOCKED": 0.0591
+        },
+        {
+          "CLICK": 0.0672,
+          "SCROLL_DOWN": 0.0088,
+          "SCROLL_UP": 0.0012,
+          "BACK": 0.0471,
+          "HOME": 0.0134,
+          "DONE": 0.8272,
+          "BLOCKED": 0.0351
+        }
+      ],
+      "final_confidence": 0.8272,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "54 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49929489",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "336 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "26 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49927212",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t147 points by Kuyawa 3 hours ago | hide | 54\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49929489": [
+          "throwa356262 0 minutes ago | next [\u2013] Still in preview, but I think this is their response to an unknown third party packaging it with some modifications and SEO the hell out of it.",
+          "Kuyawa 1 hour ago | prev | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "nezhar 25 minutes ago | parent | next [\u2013] Thanks, was wondering why this is in the feed.",
+          "Kuyawa 3 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run",
+          "sroerick 37 minutes ago | parent | next [\u2013] Deepseek harness seems good but this thread feels astroturfy"
+        ],
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 10 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 10 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 5 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "vergessenmir 18 minutes ago | root | parent | next [\u2013] They're both harnesses, pi + cron/event trigger is 90% openclaw",
+          "gchamonlive 5 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49927212": [
+          "shikwasa 2 hours ago | next [\u2013] I understand the \"starting point\" part but I find the emphasis on \"classless\" interesting: you basically have to introduce a non-element selector as soon as you want make even the smallest layout change.",
+          "sphars 8 hours ago | prev | next [\u2013] Reminds me of this website for checking classless stylesheets.",
+          "thih9 3 hours ago | prev | next [\u2013] I\u2019m surprised how few of them support dark mode.",
+          "etatester 2 hours ago | parent | next [\u2013] I think they're just really old and not supported by anyone.",
+          "small_scombrus 2 hours ago | parent | prev | next [\u2013] It's honestly horrifying how many website just don't bother."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 6,
+      "decisions": 7,
+      "wall_s": 79.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 6,
+      "decision_ms": [
+        10523,
+        11886,
+        10803,
+        11981,
+        12040,
+        10802,
+        12313
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "CLICK": 0.996,
+          "SCROLL_DOWN": 0.0023,
+          "SCROLL_UP": 0.0004,
+          "HOME": 0.0006,
+          "BLOCKED": 0.0007
+        },
+        {
+          "CLICK": 0.0599,
+          "SCROLL_DOWN": 0.018,
+          "SCROLL_UP": 0.0039,
+          "BACK": 0.8011,
+          "HOME": 0.1012,
+          "BLOCKED": 0.0159
+        },
+        {
+          "CLICK": 0.9132,
+          "SCROLL_DOWN": 0.0617,
+          "SCROLL_UP": 0.0083,
+          "HOME": 0.0118,
+          "BLOCKED": 0.005
+        },
+        {
+          "CLICK": 0.2094,
+          "SCROLL_DOWN": 0.5213,
+          "SCROLL_UP": 0.0313,
+          "BACK": 0.1422,
+          "HOME": 0.016,
+          "BLOCKED": 0.0798
+        },
+        {
+          "CLICK": 0.2781,
+          "SCROLL_DOWN": 0.1418,
+          "SCROLL_UP": 0.0357,
+          "BACK": 0.3504,
+          "HOME": 0.0804,
+          "BLOCKED": 0.1136
+        },
+        {
+          "CLICK": 0.7246,
+          "SCROLL_DOWN": 0.168,
+          "SCROLL_UP": 0.0273,
+          "HOME": 0.0399,
+          "BLOCKED": 0.0402
+        },
+        {
+          "CLICK": 0.1867,
+          "SCROLL_DOWN": 0.0237,
+          "SCROLL_UP": 0.0027,
+          "BACK": 0.0933,
+          "HOME": 0.0565,
+          "DONE": 0.5973,
+          "BLOCKED": 0.0398
+        }
+      ],
+      "final_confidence": 0.5973,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "57 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49929489",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "337 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "126 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49924618",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t149 points by Kuyawa 3 hours ago | hide | 57\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49929489": [
+          "throwa356262 2 minutes ago | next [\u2013] Still in preview, but I think this is their response to DSH being har to get working before which resulted in an unknown third party packaging it with some modifications and SEO the hell out of it to always come on top of Internet search (even above DS):",
+          "Kuyawa 1 hour ago | prev | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "nezhar 27 minutes ago | parent | next [\u2013] Thanks, was wondering why this is in the feed.",
+          "blain 1 minute ago | prev | next [\u2013] How can website be this slow, i can barelly scroll down on mobile.",
+          "Kuyawa 3 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run"
+        ],
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 10 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 10 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 5 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "vergessenmir 20 minutes ago | root | parent | next [\u2013] They're both harnesses, pi + cron/event trigger is 90% openclaw",
+          "gchamonlive 5 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49924618": [
+          "hatthew 5 hours ago | next [\u2013] My comment about humanity's last exam being a misnomer is included, and I proposed better ideas about what a last exam could look like. One of the things I said was \"solve an open math problem\" which has conclusively been done with Navier-Stokes (regardless of the controversy surrounding that). However, in the spirit of clarifying the goalposts, AI has only passed 1/6 of the tests I proposed. 17% is not a passing grade, so I'd say no, my challenge has not been met.",
+          "hexapus 3 hours ago | parent | next [\u2013] You should add an additional item: Be able to relay the contents of this exam accurately.",
+          "andrepd 45 minutes ago | parent | prev | next [\u2013] > \"solve an open math problem\" which has conclusively been done with Navier-Stokes (regardless of the controversy surrounding that).",
+          "joegibbs 7 hours ago | prev | next [\u2013] There's one of mine in there where I predicted in 2023 that it would be 20 years until AI would be reliably able to entirely build and deploy arbitrary applications from a prompt. I was off by about 18 years on that one!",
+          "ASalazarMX 6 hours ago | parent | next [\u2013] One challenge of mine is a self-hosted AI doing my full tax return, without errors that would get me in trouble. Bonus points if it exploits legal loopholes."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 6,
+      "decisions": 7,
+      "wall_s": 82.6
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 6,
+      "decision_ms": [
+        10564,
+        11925,
+        10678,
+        11906,
+        12019,
+        10804,
+        12303
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "CLICK": 0.996,
+          "SCROLL_DOWN": 0.0023,
+          "SCROLL_UP": 0.0004,
+          "HOME": 0.0006,
+          "BLOCKED": 0.0007
+        },
+        {
+          "CLICK": 0.0599,
+          "SCROLL_DOWN": 0.018,
+          "SCROLL_UP": 0.0039,
+          "BACK": 0.8011,
+          "HOME": 0.1012,
+          "BLOCKED": 0.0159
+        },
+        {
+          "CLICK": 0.9132,
+          "SCROLL_DOWN": 0.0617,
+          "SCROLL_UP": 0.0083,
+          "HOME": 0.0118,
+          "BLOCKED": 0.005
+        },
+        {
+          "CLICK": 0.1796,
+          "SCROLL_DOWN": 0.5972,
+          "SCROLL_UP": 0.0301,
+          "BACK": 0.1227,
+          "HOME": 0.01,
+          "BLOCKED": 0.0604
+        },
+        {
+          "CLICK": 0.2876,
+          "SCROLL_DOWN": 0.2115,
+          "SCROLL_UP": 0.0399,
+          "BACK": 0.2977,
+          "HOME": 0.0546,
+          "BLOCKED": 0.1087
+        },
+        {
+          "CLICK": 0.6847,
+          "SCROLL_DOWN": 0.1962,
+          "SCROLL_UP": 0.0297,
+          "HOME": 0.0457,
+          "BLOCKED": 0.0437
+        },
+        {
+          "CLICK": 0.1848,
+          "SCROLL_DOWN": 0.0221,
+          "SCROLL_UP": 0.0024,
+          "BACK": 0.0961,
+          "HOME": 0.051,
+          "DONE": 0.607,
+          "BLOCKED": 0.0366
+        }
+      ],
+      "final_confidence": 0.607,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "57 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49929489",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "337 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "126 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49924618",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t149 points by Kuyawa 3 hours ago | hide | 57\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49929489": [
+          "throwa356262 2 minutes ago | next [\u2013] Still in preview, but I think this is their response to DSH being har to get working before which resulted in an unknown third party packaging it with some modifications and SEO the hell out of it to always come on top of Internet search (even above DS):",
+          "Kuyawa 1 hour ago | prev | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "nezhar 27 minutes ago | parent | next [\u2013] Thanks, was wondering why this is in the feed.",
+          "blain 1 minute ago | prev | next [\u2013] How can website be this slow, i can barelly scroll down on mobile.",
+          "Kuyawa 3 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run"
+        ],
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 10 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 10 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 5 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "vergessenmir 22 minutes ago | root | parent | next [\u2013] They're both harnesses, pi + cron/event trigger is 90% openclaw",
+          "gchamonlive 5 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49924618": [
+          "hatthew 5 hours ago | next [\u2013] My comment about humanity's last exam being a misnomer is included, and I proposed better ideas about what a last exam could look like. One of the things I said was \"solve an open math problem\" which has conclusively been done with Navier-Stokes (regardless of the controversy surrounding that). However, in the spirit of clarifying the goalposts, AI has only passed 1/6 of the tests I proposed. 17% is not a passing grade, so I'd say no, my challenge has not been met.",
+          "hexapus 4 hours ago | parent | next [\u2013] You should add an additional item: Be able to relay the contents of this exam accurately.",
+          "andrepd 47 minutes ago | parent | prev | next [\u2013] > \"solve an open math problem\" which has conclusively been done with Navier-Stokes (regardless of the controversy surrounding that).",
+          "joegibbs 7 hours ago | prev | next [\u2013] There's one of mine in there where I predicted in 2023 that it would be 20 years until AI would be reliably able to entirely build and deploy arbitrary applications from a prompt. I was off by about 18 years on that one!",
+          "ASalazarMX 6 hours ago | parent | next [\u2013] One challenge of mine is a self-hosted AI doing my full tax return, without errors that would get me in trouble. Bonus points if it exploits legal loopholes."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 6,
+      "decisions": 7,
+      "wall_s": 82.2
+    }
+  ]
+}

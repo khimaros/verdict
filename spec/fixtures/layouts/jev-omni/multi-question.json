@@ -1,0 +1,70 @@
+{
+  "id": "multi-question",
+  "description": "several questions over one shared state",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    },
+    "churn": {
+      "type": "boolean",
+      "instructions": "Do they threaten to cancel?"
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this?",
+      "criteria": [
+        "Not urgent.",
+        "Should be handled soon.",
+        "Blocking, handle now."
+      ]
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\nMy invoice charged me twice for the same month and I want a refund.\n\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "QUESTION: Which queue should handle this?\n\nOPTIONS:\n1. access: Account access: logins, passwords, permissions.\n2. billing: Billing: invoices, payments, refunds.\n3. technical: Technical: bugs, outages, integrations.\n\nReply with only the number of the correct option (1-3).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "access": "1",
+          "billing": "2",
+          "technical": "3"
+        },
+        "flags": []
+      },
+      "churn": {
+        "kind": "boolean",
+        "suffix": "QUESTION: Do they threaten to cancel?\n\nOPTIONS:\n1. Yes\n2. No\n\nReply with only the number of the correct option (1-2).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "true": "1",
+          "false": "2"
+        },
+        "flags": []
+      },
+      "urgency": {
+        "kind": "score",
+        "suffix": "QUESTION: How urgent is this?\n\nOPTIONS:\n1. Not urgent.\n2. Should be handled soon.\n3. Blocking, handle now.\n\nReply with only the number of the correct option (1-3).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "0": "1",
+          "1": "2",
+          "2": "3"
+        },
+        "flags": [],
+        "legend": {
+          "0": "Not urgent.",
+          "1": "Should be handled soon.",
+          "2": "Blocking, handle now."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+verdict jev endpoint on http://127.0.0.1:8495
+  model     jev-omni:Q8_0
+  formatter jev-omni:Q8_0 (head answered 3/3 of its verification, cached)
+  layout    jev-omni
+  weights   {"repo": "ngquocvinh/Jev-Omni-GGUF", "revision": "f07b38e109cbc9b338029f88faeb3e6b6f894c73", "file": "Jev-Omni-Q8_0.gguf"}
+  build     b11345-a868c3e3c
+  debiasing order averaging 1, prior correction off
+  aliases   jev-latest, jev-preview
+  auth      OPEN, no key
+  prompts   text, one /embedding per scoring pass (loaded 14:35:51)
+  point a jev client at this with TYPESAFE_BASE_URL

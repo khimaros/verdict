@@ -17,6 +17,7 @@ import os
 import re
 
 from . import spec
+from .backend import weights_from_props
 from .types import Formatter
 
 # sentinels must survive `| trim` and must not collide with template markup
@@ -496,7 +497,8 @@ def verify(backend, formatter, ids, counts=VERIFY_COUNTS):
 
 
 def layout_for(readout):
-    """the layout a registry readout names: `chat`, `layout:<name>` or `head`.
+    """the layout a registry readout names: `chat`, `layout:<name>`,
+    `head:<name>`, or a bare `head` for one nothing here can apply.
 
     the registry is the authority on how a model must be read, because that is
     a fact about how the model was trained, which its gguf does not record: a
@@ -507,16 +509,89 @@ def layout_for(readout):
     kind, _, name = readout.partition(":")
     if kind == "layout" and name:
         return name
+    if kind == "head" and name:
+        if not spec.load_layout(name).get("head"):
+            raise ValueError(
+                f"the model registry says this model answers through the head "
+                f"{name!r}, and spec/layouts/{name}.json is read by label logits, "
+                f"which would measure the backbone.")
+        return name
     if kind == "head":
         raise ValueError(
             "the model registry says this model answers through a head of its "
-            "own, not through next-token logits. serve it with its own server; "
-            "reading llama-server logits would return made-up probabilities.")
+            "own, not through next-token logits, and verdict has no layout that "
+            "applies it. name one that carries the head with --layout (SPEC 5.4), "
+            "or serve it with its own server; reading llama-server logits would "
+            "measure its backbone.")
     raise ValueError(f"unknown readout {readout!r} in the model registry")
 
 
+def readout_for(model, props, registry_key=None):
+    """how this model must be read, or None for by its own chat template.
+
+    verdict's copy of the model registry answers for a model it recognises.
+    `registry_key` is the registry's own key for the model, where a server
+    names one, and is its identity. behind it, for an unlisted id or a bare
+    llama-server, come the weights the server loaded and then the served name.
+    """
+    weights = weights_from_props(props) or {}
+    return spec.known_readout(weights.get("repo"), model, registry_key)
+
+
+def verify_head(backend, formatter, head, counts=VERIFY_COUNTS):
+    """the verification question, answered through a decision head.
+
+    a head has no option mass, so what is checked is the answer itself: the
+    wrong weights behind the head, or a normalised hidden state, still yield a
+    distribution, and only being wrong on an unambiguous question shows it.
+    """
+    from . import prompt, types
+
+    correct = 0
+    for count in counts:
+        question = types.parse_question("colour", verify_question(count)["colour"],
+                                        formatter.layout)
+        scored = backend.hidden(prompt.render_prefix(formatter, VERIFY_STATE)
+                                + prompt.render_suffix(formatter, question))
+        probs = head.probs(scored["hidden"], count)
+        # `blue` is listed first
+        correct += probs.index(max(probs)) == 0
+    return {"cases": len(counts), "option_counts": list(counts),
+            "smoke_correct": f"{correct}/{len(counts)}", "correct_ratio": correct / len(counts)}
+
+
+def verify_joint(backend, layout, head, counts=VERIFY_COUNTS):
+    """the verification question, asked and read as a joint layout is: one
+    prompt, every position's hidden state, the joint head. held to the answer,
+    for the reason `verify_head` gives."""
+    from . import joint_prompt
+
+    correct = 0
+    for count in counts:
+        tokens, fields = joint_prompt.encode(backend.tokenize, layout, VERIFY_STATE,
+                                             verify_question(count))
+        read = backend.hidden_states(tokens)
+        row = head.probabilities(head.logits(read["hidden"], tokens,
+                                             [f.spans for f in fields]))[0]
+        correct += fields[0].option_ids[row.index(max(row))] == "blue"
+    return {"cases": len(counts), "option_counts": list(counts),
+            "smoke_correct": f"{correct}/{len(counts)}", "correct_ratio": correct / len(counts)}
+
+
+def cache_key(template, assistant_open, layout, head_path, rows_path=None):
+    """what a cached formatter is valid for. an override, a layout or a head
+    changes the prompt, so each changes the key, and so does a derivation that
+    records more than an older one did. a layout counts by its bytes, since an
+    import from the model registry can change them under a name that stays
+    the same."""
+    bytes_of = ("" if layout == spec.CHAT
+                else layout + json.dumps(spec.load_layout(layout), sort_keys=True))
+    return (DERIVATION_VERSION + template + (assistant_open or "") + bytes_of
+            + (head_path or "") + (rows_path or ""))
+
+
 def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
-          layout=None):
+          layout=None, head_path=None, rows_path=None):
     """the formatter for this model, derived on first use and cached by the
     template's sha256 so it is once per model rather than once per process.
 
@@ -525,23 +600,37 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
 
     `layout` names one of spec/layouts for a model trained on a layout of its
     own; left unset, it comes from the registry readout the backend reports.
+    `head_path` is a decision head on disk, for a layout read through one, and
+    `rows_path` the embedding rows a joint head reads.
     """
+    from . import head as heads
+
     constants = spec.constants()
-    layout = layout or layout_for(backend.readout())
+    props = backend.props()
+    layout = layout or layout_for(readout_for(model, props, backend.registry_key()))
+    assistant_open = assistant_open or spec.assistant_opening(model)
     floor = spec.layout(layout)["option_mass_floor_formatter"] if floor is None else floor
 
-    props = backend.props()
     template = props["chat_template"]
-    # an override or a layout changes the prompt, so it must change the key too,
-    # and so does a derivation that records more than an older one did
-    key = (DERIVATION_VERSION + template + (assistant_open or "")
-           + ("" if layout == spec.CHAT else layout))
+    key = cache_key(template, assistant_open, layout, head_path, rows_path)
     digest = hashlib.sha256(key.encode()).hexdigest()
 
     cached = os.path.join(cache_dir, f"{digest}.json")
     if os.path.exists(cached):
         with open(cached) as f:
             return Formatter.from_dict(json.load(f)), True
+
+    if layout != spec.CHAT and spec.load_layout(layout).get("kind") == spec.JOINT:
+        # a joint layout writes its whole prompt and is read by span, so there
+        # are no affixes to recover, no labels to resolve and no state to anchor
+        checked = verify_joint(backend, layout, heads.for_layout(layout, head_path, rows_path))
+        record = {"spec_version": constants["spec_version"], "model": model,
+                  "model_alias": props.get("model_alias"), "template_sha256": digest,
+                  "layout": layout, "derived_from": f"spec/layouts/{layout}.json",
+                  "affixes": dict.fromkeys(spec.AFFIXES, ""),
+                  "verification": dict(checked, build_info=props.get("build_info"))}
+        Formatter.from_dict(record).check_usable()
+        return remember(record, cached), False
 
     declared = layout != spec.CHAT and spec.load_layout(layout).get("affixes")
     if declared:
@@ -565,8 +654,10 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
     elif not declared:
         affixes = dict(affixes,
                        assistant_open=close_open_blocks(affixes["assistant_open"]))
-    ids, bad = label_ids(backend, affixes, layout)
-    if not ids:
+    # a head scores the hidden state, so its labels are never tokens to resolve
+    head = heads.for_layout(layout, head_path)
+    ids, bad = ({}, None) if head else label_ids(backend, affixes, layout)
+    if not ids and not head:
         raise ValueError(
             f"{model}: label {bad!r} is not a single token after the assistant "
             f"opening {scored_opening(affixes, layout)!r}, so it cannot be scored by "
@@ -583,13 +674,17 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
                                else f"spec/layouts/{layout}.json"),
               "affixes": affixes, "label_ids": ids}
     formatter = Formatter.from_dict(dict(record, verification={}))
-    record["checkpoint_anchor"] = checkpoint_anchor(backend, formatter)
+    record["checkpoint_anchor"] = "" if head else checkpoint_anchor(backend, formatter)
 
-    checked = verify(backend, formatter, ids)
-    # the floor applies to the WORST case, not the average. lfm2.5-2.6b
-    # averages well across counts and reads 0.1535 at 52, and a mean would
-    # have admitted it.
-    if checked["min_option_mass"] < floor:
+    checked = verify_head(backend, formatter, head) if head else verify(backend, formatter, ids)
+    record["verification"] = dict(checked, build_info=props.get("build_info"))
+    if head:
+        Formatter.from_dict(record).check_usable()
+    elif checked["min_option_mass"] < floor:
+        # the floor applies to the WORST case, not the average. lfm2.5-2.6b
+        # averages well across counts and reads 0.1535 at 52, and a mean would
+        # have admitted it.
+        #
         # name the opening. a mass near zero usually means the opening stops
         # short of where content begins rather than that the model cannot be
         # scored: gpt-oss-20b derives '<|start|>assistant' and reads 0.0000,
@@ -601,9 +696,12 @@ def build(backend, model, floor=None, cache_dir=CACHE_DIR, assistant_open=None,
             f"{floor}. the derived assistant opening is "
             f"{affixes['assistant_open']!r}; if the model's format expects more "
             f"before content begins, pass a formatter that spells it out.")
-    record["verification"] = dict(checked, build_info=props.get("build_info"))
+    return remember(record, cached), False
 
-    os.makedirs(cache_dir, exist_ok=True)
-    with open(cached, "w") as f:
+
+def remember(record, path):
+    """write a derived formatter to the cache and hand it back."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w") as f:
         json.dump(record, f, indent=2)
-    return Formatter.from_dict(record), False
+    return Formatter.from_dict(record)

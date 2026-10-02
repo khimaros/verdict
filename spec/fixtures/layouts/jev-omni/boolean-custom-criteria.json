@@ -1,0 +1,31 @@
+{
+  "id": "boolean-custom-criteria",
+  "description": "boolean with caller supplied labels",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": "If this is not fixed today I am cancelling our subscription.",
+  "questions": {
+    "churn": {
+      "type": "boolean",
+      "instructions": "Does the sender threaten to cancel?",
+      "criteria": {
+        "true": "Yes, they threaten to leave.",
+        "false": "No, they do not."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\nIf this is not fixed today I am cancelling our subscription.\n\n---\n\n",
+    "questions": {
+      "churn": {
+        "kind": "boolean",
+        "suffix": "QUESTION: Does the sender threaten to cancel?\n\nOPTIONS:\n1. Yes: Yes, they threaten to leave.\n2. No: No, they do not.\n\nReply with only the number of the correct option (1-2).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "true": "1",
+          "false": "2"
+        },
+        "flags": []
+      }
+    }
+  }
+}

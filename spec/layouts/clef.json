@@ -1,0 +1,61 @@
+{
+  "spec_version": "0.1.0",
+  "layout": "clef",
+  "kind": "joint",
+  "source": "Cloudflare/clef @ 2f3de3d: joint_schema_model.py encode_record(), question_options(), render() and JointSchemaHead",
+  "note": "clef-flash's prompt on the 27b backbone: the author ships one script for both, so only the head and the output embedding rows differ. images and video are not reproduced.",
+  "head": {
+    "file": "joint_head.safetensors",
+    "heads": 16,
+    "kind": "joint-schema",
+    "name": "clef",
+    "reads": {
+      "states": "all"
+    },
+    "repo": "Cloudflare/clef",
+    "revision": "2f3de3dd85f379784083b0814d997ab627200f0c",
+    "rows": {
+      "file": "model-00001-of-00012.safetensors",
+      "repo": "Cloudflare/clef",
+      "revision": "2f3de3dd85f379784083b0814d997ab627200f0c",
+      "tensor": "lm_head.weight"
+    },
+    "sha256": "a010ac04f078e699988e4049cbea5e62c962393f59fec366640b64e8d69a4953"
+  },
+  "constants": {
+    "boolean_default_criteria": {
+      "false": "The proposition is false or the answer is no.",
+      "true": "The proposition is true or the answer is yes."
+    },
+    "boolean_order": [
+      "true",
+      "false"
+    ],
+    "field_close": "END FIELD\n",
+    "field_open": "\nFIELD {number}\nID: {id}\nTYPE: {type}\nINSTRUCTION: ",
+    "max_length": 16384,
+    "option_close": "\n",
+    "option_open": "OPTION {number}: ",
+    "options_open": "\nALLOWED OPTIONS:\n",
+    "prompt_close": "\n<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\nJOINT SCHEMA DECISIONS:",
+    "prompt_open": "<|im_start|>system\nRead the complete state and schema. Decide every field jointly. Each answer must be exactly one of that field's allowed options.<|im_end|>\n<|im_start|>user\nSTATE:\n",
+    "schema_open": "\n\nSCHEMA FIELDS:\n",
+    "type_ids": {
+      "boolean": 0,
+      "choice": 1,
+      "score": 2
+    },
+    "type_names": {
+      "boolean": "noul",
+      "choice": "choice",
+      "score": "score"
+    },
+    "value_json": {
+      "ensure_ascii": false,
+      "indent": null,
+      "item_separator": ",",
+      "key_separator": ":",
+      "sort_keys": true
+    }
+  }
+}

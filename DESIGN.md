@@ -122,13 +122,92 @@ never saw. those models are read with a named layout, `spec/layouts/<name>.json`
 which declares its affixes and overrides the prompt constants as data, so the
 chat layout stays the top level of `spec/constants.json` byte for byte.
 
-which model needs which layout is not verdict's to record. it is a fact about
-the model, and the model registry (aimbot) is canonical for model facts: it
-reads the author's own config, such as decider's `decider_config.json`, and the
-llama-swap config generated from it advertises `meta.llamaswap.readout` on
-`/v1/models`. verdict reads that at derivation, so a new model in the registry
-needs nothing in verdict. the split is deliberate: the registry says WHICH
-readout, the spec says WHAT BYTES.
+which model needs which layout is not verdict's to record, and neither are the
+layout's bytes. both are facts about the model, and the model registry (aimbot)
+is canonical for model facts: it reads the author's own config, such as
+decider's `decider_config.json`, and keeps each layout's knobs, and which
+model needs which layout, in tables of its own.
+
+the split used to be "the registry says WHICH readout, the spec says WHAT
+BYTES", which made every new decision model a hand-written file here. it is
+now: **the spec defines the knobs, the registry sets them, and verdict keeps a
+committed copy.** `spec/layouts/` and `spec/models.json` are that copy, in
+verdict's own form, and `scripts/import_layouts.py` (`make layouts`) refreshes
+both from the registry's table. the copy rather than a live read because
+rendering must not depend on a server being up or on what it happens to
+publish, and because a committed block is what the conformance fixtures are
+generated from and reviewed against. the vocabulary is closed and lives in
+`spec/constants.json`, so an import that sets a knob this verdict does not
+know is refused whole rather than half applied.
+
+the server is asked WHICH model it is serving and never how to read it. where
+a llama-swap listing names the registry's key for a model, that key is its
+identity and is looked up in the copy; an unlisted id and a bare llama-server
+name none, and there the hub repository of the weights, which `/props`
+reports, identifies the model, with the served name as the last resort. so a
+llama-swap config no longer advertises how its models are read, and every
+kind of server reads a model the same way. a model the copy does not know is derived from its own chat template,
+and one the registry marks as answering through a head nothing here can apply
+is carried in the copy precisely so that it is refused rather than read as
+chat, which would measure its backbone and pass every health check doing it.
+
+## one endpoint, every model
+
+the jev server builds a decider per backend model, the first time a request
+names it, and keeps it. llama-swap already serves one model at a time behind
+one address; a verdict endpoint that could only answer for the model it was
+started with made every sweep a loop of restarts, and made a colocated
+endpoint useless for more than one model. the flags that pin a formatter, a
+layout or a head describe the bound model alone; a routed model is read as
+the copy of the registry says. because a static endpoint has no per-model
+startup log, it answers `GET /v1/banner?model=` with the lines a startup
+would have printed, which is what a published result is kept beside.
+
+## a decision head is the same readout with other rows
+
+some decision models are trained with a head of their own and do not answer
+through their vocabulary. the registry calls that readout `head`, and reading
+such a model's label logits measures its backbone.
+
+reading label logits is the vocabulary's rows applied to the final hidden
+state at one position. a head that reads that same position and applies rows
+of its own, as jev-omni's does, is the same operation with different rows, so
+it lives in the same place: a layout names the head, the backend hands over
+the hidden state instead of the logits (a llama-server in embedding mode), and
+`llama_verdict/head.py` applies it. FR2 holds, one position per question.
+
+what it gives up is option mass. a head's softmax covers the options and
+nothing else, so it cannot say whether the prompt steered the model; the
+result reports the mass as absent and the model is admitted on answering an
+unambiguous question instead. see `spec/SPEC.md` 5.4.
+
+**a head that reads every position is a different operation, and the one
+exception to "one position per question".** clef's is a six-layer network
+over the whole sequence plus the backbone's output embedding rows, and it
+decides every question of a request together (`spec/SPEC.md` 5.5). it gets
+its own layout kind and its own path through the decider: one prompt, sent as
+token ids because the head reads each option at the span of tokens it
+occupies; every position's hidden state back from a server pooling `none`;
+the option tokens' embedding rows read by byte range from the author's
+weights; then the head, in `llama_verdict/joint_head.py`.
+
+that module is the only place numpy is imported. the package stays
+stdlib-only for everything else, and a model read through a joint head pays
+for the dependency the way derivation pays for jinja2.
+
+the author publishes torch and nothing else, and a port that is slightly
+wrong still returns a confident distribution per question. so the port is
+held to the author's own code rather than to a reading of it:
+`scripts/make_joint_head_fixture.py` fetches the author's script at a pinned
+revision, runs its head class at toy size and its prompt encoder over a set of
+records, and records what they returned. torch is needed to regenerate those
+fixtures and by nothing else.
+
+the cost is the transfer. every position's state is thousands of floats per
+token as json: 156 mb for a 2048 token prompt, 27 s over the eval server's
+vpn, of which the server takes 3 s and decoding 2 s. it is an evaluation path
+over a link and a serving path only beside the server, and it is the strongest
+argument yet for the rust core, where the states never leave memory.
 
 ## option mass is load-bearing
 

@@ -17,10 +17,12 @@
     "boolean_order": ["true", "false"],
     "boolean_names": {"true": "yes", "false": "no"},
     "boolean_default_criteria": {"true": "", "false": ""},
-    "standardone_state": {"sort_keys": true, "indent": 2, "ensure_ascii": false,
-                          "item_separator": ",", "key_separator": ": "},
-    "standardone_text": {"sort_keys": false, "indent": null, "ensure_ascii": false,
-                         "item_separator": ", ", "key_separator": ": "},
+    "profiles": {
+      "standardone_state": {"sort_keys": true, "indent": 2, "ensure_ascii": false,
+                            "item_separator": ",", "key_separator": ": "},
+      "standardone_text": {"sort_keys": false, "indent": null, "ensure_ascii": false,
+                           "item_separator": ", ", "key_separator": ": "}
+    },
     "state_json": "standardone_state",
     "instructions_json": "standardone_text",
     "description_json": "standardone_text",

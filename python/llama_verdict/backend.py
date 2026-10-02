@@ -14,7 +14,7 @@ import time
 import urllib.error
 import urllib.parse
 
-from . import spec
+from . import config, spec
 
 HTTP_TIMEOUT = 900
 # llama-swap answers 502 and llama-server 503 while a model is still loading.
@@ -22,6 +22,16 @@ HTTP_TIMEOUT = 900
 # (jevbench) would otherwise lose the first decision against every cold model.
 LOADING_STATUSES = (502, 503)
 LOADING_BACKOFF_S = (0.5, 1, 2, 4, 8)
+# llama-server's answer to a request it will not take as sent, such as a
+# prompt longer than its context
+BACKEND_REFUSED = 400
+# what a server pooling `none` says when asked on the openai embeddings route
+POOLING_REFUSAL = b"pooling"
+# asks for the hidden state as it is; a pooled vector is normalised by default
+RAW_HIDDEN = {"embd_normalize": -1}
+# a raw final hidden state is nowhere near unit length, and a normalised one
+# is exactly that, so a norm this close to 1 is the server having normalised
+UNIT_NORM_TOLERANCE = 1e-3
 # the huggingface cache layout: .../models--<org>--<name>/snapshots/<rev>/<file>
 HUB_CACHE_PATH = re.compile(r"/models--([^/]+?)--([^/]+)/snapshots/([0-9a-f]+)/(.+)$")
 
@@ -50,9 +60,12 @@ class HttpBackend:
     """
 
     def __init__(self, base_url, model=None, upstream=None, timeout=HTTP_TIMEOUT,
-                 cache_prompt=True):
+                 cache_prompt=True, api_key=None):
         base = base_url.rstrip("/").removesuffix("/v1")
         self.root = base
+        # presented as a bearer on every request; the configured one for this
+        # backend unless the caller names another
+        self.api_key = api_key or config.backend_key(base_url)
         # default to llama-swap routing when a model is named, since that is
         # the deployment where the root endpoints 404
         self.upstream = bool(model) if upstream is None else upstream
@@ -64,6 +77,9 @@ class HttpBackend:
         # a partly reused prompt prefills in different batch shapes from a cold
         # one. off is the control, not a supported serving mode.
         self.cache_prompt = cache_prompt
+        # whether the server answers one pooled vector on the openai embeddings
+        # route; assumed until it refuses, see hidden()
+        self._one_vector = True
         url = urllib.parse.urlsplit(base)
         self._connection_class = (http.client.HTTPSConnection if url.scheme == "https"
                                   else http.client.HTTPConnection)
@@ -97,6 +113,8 @@ class HttpBackend:
         path = urllib.parse.urlsplit(url)
         target = path.path + (f"?{path.query}" if path.query else "")
         headers = {"content-type": "application/json"} if body is not None else {}
+        if self.api_key:
+            headers["authorization"] = f"Bearer {self.api_key}"
         for attempt in (1, 2):
             conn = self._take()
             try:
@@ -137,12 +155,12 @@ class HttpBackend:
     def props(self):
         return self._open(self.base + "/props")
 
-    def readout(self):
-        """how the model registry says this model must be read, or None.
+    def registry_key(self):
+        """the model registry's key for this model, or None.
 
-        a llama-swap config generated from the registry advertises it on
-        /v1/models as `meta.llamaswap.readout`. a bare llama-server, or a
-        model the registry says nothing about, answers None.
+        a llama-swap config generated from the registry names it on /v1/models
+        as `meta.llamaswap.registry`. a bare llama-server, or an id the
+        listing does not carry, answers None.
         """
         try:
             listing = self._open(self.root + "/v1/models")
@@ -150,7 +168,7 @@ class HttpBackend:
             return None
         for entry in listing.get("data", []):
             if entry.get("id") == self.model:
-                return ((entry.get("meta") or {}).get("llamaswap") or {}).get("readout")
+                return ((entry.get("meta") or {}).get("llamaswap") or {}).get("registry")
         return None
 
     def tokenize(self, text, add_special=False):
@@ -158,6 +176,60 @@ class HttpBackend:
         out, _ = self._post("/tokenize", {"content": text, "add_special": add_special,
                                           "parse_special": True})
         return out["tokens"]
+
+    def hidden(self, prompt):
+        """the unnormalised final hidden state at the last position of `prompt`,
+        which is what a decision head reads. needs a llama-server in embedding
+        mode.
+
+        a server pooling `none` returns every position and one pooling `last`
+        returns that one alone; the last row is the same vector either way.
+        normalisation is declined in the request because a pooled vector is
+        normalised by default and a head is trained on the raw one.
+
+        the openai route is asked first: under pooling `last` it answers that
+        one vector and the prompt's token count together. it refuses a server
+        pooling `none`, which is then read through the native route for as long
+        as this backend lives, the count being the rows that came back.
+        """
+        wall = 0.0
+        if self._one_vector:
+            try:
+                out, wall = self._post("/v1/embeddings", {"input": prompt, **RAW_HIDDEN})
+                vector, total = out["data"][0]["embedding"], out["usage"]["prompt_tokens"]
+            except urllib.error.HTTPError as e:
+                detail = e.read()
+                if e.code != BACKEND_REFUSED or POOLING_REFUSAL not in detail.lower():
+                    raise urllib.error.HTTPError(e.url, e.code, e.reason, e.headers,
+                                                 io.BytesIO(detail)) from e
+                self._one_vector = False
+        if not self._one_vector:
+            out, ms = self._post("/embedding", {"content": prompt, **RAW_HIDDEN})
+            vector, total, wall = out[0]["embedding"][-1], len(out[0]["embedding"]), wall + ms
+        if abs(math.sqrt(sum(x * x for x in vector)) - 1.0) < UNIT_NORM_TOLERANCE:
+            raise ValueError(
+                f"{self.model}: the backend returned a normalised hidden state. a head "
+                f"reads the raw one: start llama-server with --embd-normalize -1.")
+        return {"hidden": vector, "score_ms": wall, "truncated": False, "retries": 0,
+                "prompt_n": None, "tokens_cached": None, "prompt_total": total}
+
+    def hidden_states(self, tokens):
+        """the unnormalised final hidden state of EVERY position of a prompt
+        given as token ids, which is what a joint head reads. needs a
+        llama-server in embedding mode pooling `none`.
+
+        the rows have to be the tokens sent, one for one: a head that scores an
+        option by where it sits is wrong by a whole option if the server
+        prepended a token or pooled the prompt away.
+        """
+        out, ms = self._post("/embedding", {"content": tokens, **RAW_HIDDEN})
+        rows = out[0]["embedding"]
+        if len(rows) != len(tokens):
+            raise ValueError(
+                f"{self.model}: sent {len(tokens)} tokens and got {len(rows)} hidden states "
+                f"back. a joint head reads every position as sent: start llama-server with "
+                f"--pooling none, on a model whose tokenizer adds no token of its own.")
+        return {"hidden": rows, "score_ms": ms}
 
     def score(self, prompt, label_ids, delimiters=None):
         """probabilities for the given label token ids at the next position.

@@ -1,0 +1,322 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 3,
+    "mean_stories": 2,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 3,
+      "decision_ms": [
+        10625,
+        11960,
+        10688,
+        8630
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "CLICK": 0.9964,
+          "SCROLL_DOWN": 0.0023,
+          "SCROLL_UP": 0.0002,
+          "HOME": 0.0005,
+          "BLOCKED": 0.0006
+        },
+        {
+          "CLICK": 0.1154,
+          "SCROLL_DOWN": 0.0537,
+          "SCROLL_UP": 0.0036,
+          "BACK": 0.4411,
+          "HOME": 0.0368,
+          "DONE": 0.3014,
+          "BLOCKED": 0.048
+        },
+        {
+          "CLICK": 0.5421,
+          "SCROLL_DOWN": 0.3692,
+          "SCROLL_UP": 0.0127,
+          "HOME": 0.0145,
+          "DONE": 0.0394,
+          "BLOCKED": 0.0221
+        },
+        {
+          "CLICK": 0.1074,
+          "SCROLL_DOWN": 0.1549,
+          "SCROLL_UP": 0.01,
+          "BACK": 0.1943,
+          "HOME": 0.0164,
+          "DONE": 0.4335,
+          "BLOCKED": 0.0835
+        }
+      ],
+      "final_confidence": 0.4335,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "317 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "26 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t992 points by sergiotapia 10 hours ago | hide | 317\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 9 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 9 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 4 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "syrusakbary 48 minutes ago | parent | prev | next [\u2013] Same! Pi is incredibly exciting.",
+          "gchamonlive 4 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49929489": [
+          "Kuyawa 55 minutes ago | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "Kuyawa 2 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run",
+          "ycui7 1 hour ago | parent | next [\u2013] you do can change font size in settings, but not with keyboard shortcut. for some reason, they decided to limit font size to 17 max.",
+          "Kuyawa 1 hour ago | root | parent | next [\u2013] Do the same as I did, ask it to develop a plugin to increase/decrease font and you will see results in one single task, dsh-zoom as a plugin, restart and done",
+          "johng 1 hour ago | parent | prev | next [\u2013] Can you elaborate? What's better about it vs. other harnesses? What can it do that others can't?"
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 3,
+      "decisions": 4,
+      "wall_s": 43.3
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 3,
+      "decision_ms": [
+        10554,
+        11936,
+        10656,
+        8650
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "CLICK": 0.9964,
+          "SCROLL_DOWN": 0.0023,
+          "SCROLL_UP": 0.0002,
+          "HOME": 0.0005,
+          "BLOCKED": 0.0006
+        },
+        {
+          "CLICK": 0.1118,
+          "SCROLL_DOWN": 0.071,
+          "SCROLL_UP": 0.0044,
+          "BACK": 0.424,
+          "HOME": 0.0349,
+          "DONE": 0.3046,
+          "BLOCKED": 0.0493
+        },
+        {
+          "CLICK": 0.5421,
+          "SCROLL_DOWN": 0.3692,
+          "SCROLL_UP": 0.0127,
+          "HOME": 0.0145,
+          "DONE": 0.0394,
+          "BLOCKED": 0.0221
+        },
+        {
+          "CLICK": 0.1346,
+          "SCROLL_DOWN": 0.1115,
+          "SCROLL_UP": 0.0098,
+          "BACK": 0.1997,
+          "HOME": 0.0217,
+          "DONE": 0.4356,
+          "BLOCKED": 0.0871
+        }
+      ],
+      "final_confidence": 0.4356,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "317 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "26 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t992 points by sergiotapia 10 hours ago | hide | 317\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 9 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 9 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 4 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "syrusakbary 48 minutes ago | parent | prev | next [\u2013] Same! Pi is incredibly exciting.",
+          "gchamonlive 4 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49929489": [
+          "Kuyawa 57 minutes ago | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "Kuyawa 2 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run",
+          "ycui7 1 hour ago | parent | next [\u2013] you do can change font size in settings, but not with keyboard shortcut. for some reason, they decided to limit font size to 17 max.",
+          "Kuyawa 1 hour ago | root | parent | next [\u2013] Do the same as I did, ask it to develop a plugin to increase/decrease font and you will see results in one single task, dsh-zoom as a plugin, restart and done",
+          "johng 2 hours ago | parent | prev | next [\u2013] Can you elaborate? What's better about it vs. other harnesses? What can it do that others can't?"
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 3,
+      "decisions": 4,
+      "wall_s": 43.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 3,
+      "decision_ms": [
+        10626,
+        11921,
+        10819,
+        8773
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "CLICK": 0.9964,
+          "SCROLL_DOWN": 0.0023,
+          "SCROLL_UP": 0.0002,
+          "HOME": 0.0005,
+          "BLOCKED": 0.0006
+        },
+        {
+          "CLICK": 0.1085,
+          "SCROLL_DOWN": 0.0695,
+          "SCROLL_UP": 0.0039,
+          "BACK": 0.4305,
+          "HOME": 0.0327,
+          "DONE": 0.3064,
+          "BLOCKED": 0.0485
+        },
+        {
+          "CLICK": 0.5558,
+          "SCROLL_DOWN": 0.3454,
+          "SCROLL_UP": 0.0145,
+          "HOME": 0.0156,
+          "DONE": 0.0454,
+          "BLOCKED": 0.0233
+        },
+        {
+          "CLICK": 0.1346,
+          "SCROLL_DOWN": 0.1115,
+          "SCROLL_UP": 0.0098,
+          "BACK": 0.1997,
+          "HOME": 0.0217,
+          "DONE": 0.4356,
+          "BLOCKED": 0.0871
+        }
+      ],
+      "final_confidence": 0.4356,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "317 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "26 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t992 points by sergiotapia 10 hours ago | hide | 317\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 9 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 9 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 4 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "syrusakbary 50 minutes ago | parent | prev | next [\u2013] Same! Pi is incredibly exciting.",
+          "gchamonlive 4 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49929489": [
+          "Kuyawa 57 minutes ago | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "Kuyawa 2 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run",
+          "ycui7 1 hour ago | parent | next [\u2013] you do can change font size in settings, but not with keyboard shortcut. for some reason, they decided to limit font size to 17 max.",
+          "Kuyawa 1 hour ago | root | parent | next [\u2013] Do the same as I did, ask it to develop a plugin to increase/decrease font and you will see results in one single task, dsh-zoom as a plugin, restart and done",
+          "johng 2 hours ago | parent | prev | next [\u2013] Can you elaborate? What's better about it vs. other harnesses? What can it do that others can't?"
+        ]
+      },
+      "stories_visited": 2,
+      "actions": 3,
+      "decisions": 4,
+      "wall_s": 43.6
+    }
+  ]
+}

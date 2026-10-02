@@ -17,10 +17,12 @@
     "boolean_order": ["true", "false"],
     "boolean_names": {"true": "true", "false": "false"},
     "boolean_default_criteria": {"true": "", "false": ""},
-    "semif_value": {"sort_keys": false, "indent": null, "ensure_ascii": false,
-                    "item_separator": ", ", "key_separator": ": ", "quote_strings": true},
-    "semif_text": {"sort_keys": false, "indent": null, "ensure_ascii": false,
-                   "item_separator": ", ", "key_separator": ": "},
+    "profiles": {
+      "semif_value": {"sort_keys": false, "indent": null, "ensure_ascii": false,
+                      "item_separator": ", ", "key_separator": ": ", "quote_strings": true},
+      "semif_text": {"sort_keys": false, "indent": null, "ensure_ascii": false,
+                     "item_separator": ", ", "key_separator": ": "}
+    },
     "state_json": "semif_value",
     "instructions_json": "semif_value",
     "description_json": "semif_text",

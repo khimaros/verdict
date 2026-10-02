@@ -26,7 +26,7 @@ class Server:
     def props(self):
         return {"chat_template": TEMPLATE, "bos_token": "", "eos_token": ""}
 
-    def readout(self):
+    def registry_key(self):
         return None
 
     def tokenize(self, text, add_special=False):

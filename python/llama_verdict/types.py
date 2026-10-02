@@ -94,12 +94,22 @@ class Formatter:
         """a named layout's formatter for conformance fixtures: its declared
         affixes, or `reference`'s for a layout that keeps the model's chat
         template, whose affixes are derived per model."""
-        affixes = spec.load_layout(name).get("affixes") or {
+        block = spec.load_layout(name)
+        if block.get("kind") == spec.JOINT:
+            # a joint layout writes its whole prompt itself and has no turns
+            return cls(model=name, layout=name, **dict.fromkeys(spec.AFFIXES, ""))
+        affixes = block.get("affixes") or {
             "system_open": reference.system_open, "system_close": reference.system_close,
             "user_open": reference.user_open, "user_close": reference.user_close,
             "assistant_open": reference.assistant_open,
             "bare_user_open": reference.bare_user_open}
         return cls(model=name, layout=name, **affixes)
+
+    @property
+    def reads_a_head(self):
+        """whether the layout answers through a decision head (SPEC 5.4)
+        rather than through label logits."""
+        return self.layout != spec.CHAT and bool(spec.load_layout(self.layout).get("head"))
 
     def check_usable(self):
         """a formatter that cannot steer the model is refused, not warned about.
@@ -114,6 +124,16 @@ class Formatter:
                 f"formatter {self.model!r} is synthetic. it exists to make "
                 f"conformance fixtures model-independent and is not a real chat "
                 f"format; scoring a model with it is meaningless.")
+        if self.reads_a_head:
+            # a head has no option mass to hold to a floor, so what it is held
+            # to is answering the unambiguous verification question
+            if self.verification.get("correct_ratio") != 1.0:
+                raise ValueError(
+                    f"formatter for {self.model!r} answered the verification question "
+                    f"{self.verification.get('smoke_correct', 'not at all')} through its "
+                    f"head. the backend is not serving the model the head was trained on, "
+                    f"or not its unnormalised final hidden state.")
+            return
         floor = spec.layout(self.layout)["option_mass_floor_formatter"]
         mass = self.verification.get("mean_option_mass")
         if mass is None:
@@ -123,6 +143,11 @@ class Formatter:
                 f"formatter for {self.model!r} has mean option mass {mass:.4g}, "
                 f"below the floor of {floor}. its assistant opening does not "
                 f"steer this model to the labels.")
+
+
+def legend_of(levels):
+    """a score question's rubric by level, echoed in its answer."""
+    return {str(i): spec.serialise_inline(d) if d else str(i) for i, d in enumerate(levels)}
 
 
 def parse_question(name, body, layout=spec.CHAT):
@@ -164,8 +189,7 @@ def parse_question(name, body, layout=spec.CHAT):
             raise ValueError(f"score question {name!r} declares no levels")
         options = tuple(Option(str(i), describe(d, str(i)))
                         for i, d in enumerate(criteria))
-        legend = {str(i): spec.serialise_inline(d) if d else str(i)
-                  for i, d in enumerate(criteria)}
+        legend = legend_of(criteria)
     else:
         raise ValueError(f"question {name!r} has unknown type {body['type']!r}")
 

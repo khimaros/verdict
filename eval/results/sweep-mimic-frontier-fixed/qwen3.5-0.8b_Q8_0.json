@@ -1,0 +1,4906 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 0,
+    "reached_one": 0,
+    "mean_stories": 0,
+    "statuses": {
+      "out-of-steps": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 40,
+      "plans": 0,
+      "decision_ms": [
+        1585,
+        1565,
+        1665,
+        1738,
+        1674,
+        1589,
+        1614,
+        1586,
+        1598,
+        1829,
+        1772,
+        1834,
+        1840,
+        1862,
+        1846,
+        1849,
+        1904,
+        1857,
+        1804,
+        1883,
+        1863,
+        1821,
+        1793,
+        1837,
+        1802,
+        1816,
+        1821,
+        1846,
+        1845,
+        1823,
+        1784,
+        1787,
+        4430,
+        1831,
+        1850,
+        1855,
+        1848,
+        1876,
+        1862,
+        1871
+      ],
+      "gated": 2,
+      "probabilities": [
+        {
+          "TAP": 0.6283,
+          "LAUNCH": 0.2218,
+          "SCROLL_DOWN": 0.085,
+          "SCROLL_UP": 0.0304,
+          "BACK": 0.016,
+          "HOME": 0.0032,
+          "BLOCKED": 0.0153
+        },
+        {
+          "TAP": 0.6641,
+          "LAUNCH": 0.1281,
+          "SCROLL_DOWN": 0.0648,
+          "SCROLL_UP": 0.0381,
+          "BACK": 0.022,
+          "HOME": 0.0044,
+          "DONE": 0.0447,
+          "BLOCKED": 0.0338
+        },
+        {
+          "TAP": 0.5914,
+          "LAUNCH": 0.1433,
+          "SCROLL_DOWN": 0.0611,
+          "SCROLL_UP": 0.0493,
+          "BACK": 0.0264,
+          "HOME": 0.0029,
+          "DONE": 0.0843,
+          "BLOCKED": 0.0413
+        },
+        {
+          "TAP": 0.5969,
+          "LAUNCH": 0.1649,
+          "SCROLL_DOWN": 0.0574,
+          "SCROLL_UP": 0.051,
+          "BACK": 0.0224,
+          "HOME": 0.0043,
+          "DONE": 0.0771,
+          "BLOCKED": 0.026
+        },
+        {
+          "TAP": 0.6348,
+          "LAUNCH": 0.1119,
+          "SCROLL_DOWN": 0.0488,
+          "SCROLL_UP": 0.0474,
+          "BACK": 0.0198,
+          "HOME": 0.003,
+          "DONE": 0.0915,
+          "BLOCKED": 0.0428
+        },
+        {
+          "TAP": 0.592,
+          "LAUNCH": 0.1469,
+          "SCROLL_DOWN": 0.0586,
+          "SCROLL_UP": 0.0563,
+          "BACK": 0.0252,
+          "HOME": 0.0038,
+          "DONE": 0.0762,
+          "BLOCKED": 0.041
+        },
+        {
+          "TAP": 0.6485,
+          "LAUNCH": 0.1301,
+          "SCROLL_DOWN": 0.0405,
+          "SCROLL_UP": 0.05,
+          "BACK": 0.0285,
+          "HOME": 0.007,
+          "DONE": 0.056,
+          "BLOCKED": 0.0394
+        },
+        {
+          "TAP": 0.6706,
+          "LAUNCH": 0.1065,
+          "SCROLL_DOWN": 0.0301,
+          "SCROLL_UP": 0.0374,
+          "BACK": 0.0232,
+          "HOME": 0.0057,
+          "DONE": 0.0649,
+          "BLOCKED": 0.0616
+        },
+        {
+          "LAUNCH": 0.2687,
+          "SCROLL_DOWN": 0.089,
+          "SCROLL_UP": 0.0228,
+          "BACK": 0.0396,
+          "HOME": 0.0474,
+          "DONE": 0.1558,
+          "BLOCKED": 0.3767
+        },
+        {
+          "TAP": 0.3832,
+          "SCROLL_DOWN": 0.0629,
+          "SCROLL_UP": 0.0202,
+          "BACK": 0.0367,
+          "HOME": 0.0334,
+          "DONE": 0.2572,
+          "BLOCKED": 0.2064
+        },
+        {
+          "TAP": 0.4374,
+          "SCROLL_DOWN": 0.0781,
+          "SCROLL_UP": 0.0207,
+          "BACK": 0.0392,
+          "HOME": 0.0496,
+          "DONE": 0.1455,
+          "BLOCKED": 0.2295
+        },
+        {
+          "TAP": 0.4932,
+          "SCROLL_DOWN": 0.0711,
+          "SCROLL_UP": 0.0165,
+          "BACK": 0.0351,
+          "HOME": 0.0306,
+          "DONE": 0.1682,
+          "BLOCKED": 0.1853
+        },
+        {
+          "TAP": 0.5345,
+          "SCROLL_DOWN": 0.0833,
+          "SCROLL_UP": 0.018,
+          "BACK": 0.0375,
+          "HOME": 0.0349,
+          "DONE": 0.1232,
+          "BLOCKED": 0.1686
+        },
+        {
+          "TAP": 0.5679,
+          "SCROLL_DOWN": 0.0928,
+          "SCROLL_UP": 0.0275,
+          "BACK": 0.0393,
+          "HOME": 0.0437,
+          "DONE": 0.0647,
+          "BLOCKED": 0.1641
+        },
+        {
+          "TAP": 0.5886,
+          "SCROLL_DOWN": 0.1001,
+          "SCROLL_UP": 0.0231,
+          "BACK": 0.0337,
+          "HOME": 0.0315,
+          "DONE": 0.0875,
+          "BLOCKED": 0.1355
+        },
+        {
+          "TAP": 0.6131,
+          "SCROLL_DOWN": 0.0775,
+          "SCROLL_UP": 0.017,
+          "BACK": 0.0387,
+          "HOME": 0.0319,
+          "DONE": 0.1083,
+          "BLOCKED": 0.1135
+        },
+        {
+          "TAP": 0.6698,
+          "SCROLL_DOWN": 0.1059,
+          "SCROLL_UP": 0.0192,
+          "BACK": 0.0321,
+          "HOME": 0.0233,
+          "DONE": 0.0414,
+          "BLOCKED": 0.1083
+        },
+        {
+          "TAP": 0.6095,
+          "SCROLL_DOWN": 0.0813,
+          "SCROLL_UP": 0.0167,
+          "BACK": 0.0235,
+          "HOME": 0.0409,
+          "DONE": 0.0997,
+          "BLOCKED": 0.1284
+        },
+        {
+          "TAP": 0.5953,
+          "SCROLL_DOWN": 0.0931,
+          "SCROLL_UP": 0.0273,
+          "BACK": 0.0328,
+          "HOME": 0.0379,
+          "DONE": 0.07,
+          "BLOCKED": 0.1436
+        },
+        {
+          "TAP": 0.6807,
+          "SCROLL_DOWN": 0.0887,
+          "SCROLL_UP": 0.0204,
+          "BACK": 0.0308,
+          "HOME": 0.0293,
+          "DONE": 0.0599,
+          "BLOCKED": 0.0902
+        },
+        {
+          "TAP": 0.6637,
+          "SCROLL_DOWN": 0.0913,
+          "SCROLL_UP": 0.026,
+          "BACK": 0.0327,
+          "HOME": 0.0277,
+          "DONE": 0.0569,
+          "BLOCKED": 0.1017
+        },
+        {
+          "TAP": 0.6178,
+          "SCROLL_DOWN": 0.0819,
+          "SCROLL_UP": 0.0188,
+          "BACK": 0.032,
+          "HOME": 0.0305,
+          "DONE": 0.1088,
+          "BLOCKED": 0.1102
+        },
+        {
+          "TAP": 0.6576,
+          "SCROLL_DOWN": 0.0877,
+          "SCROLL_UP": 0.019,
+          "BACK": 0.0252,
+          "HOME": 0.0273,
+          "DONE": 0.0746,
+          "BLOCKED": 0.1086
+        },
+        {
+          "TAP": 0.6389,
+          "SCROLL_DOWN": 0.1052,
+          "SCROLL_UP": 0.0257,
+          "BACK": 0.0291,
+          "HOME": 0.0328,
+          "DONE": 0.0591,
+          "BLOCKED": 0.1092
+        },
+        {
+          "TAP": 0.6216,
+          "SCROLL_DOWN": 0.0822,
+          "SCROLL_UP": 0.0171,
+          "BACK": 0.0322,
+          "HOME": 0.0312,
+          "DONE": 0.0705,
+          "BLOCKED": 0.1452
+        },
+        {
+          "TAP": 0.639,
+          "SCROLL_DOWN": 0.0931,
+          "SCROLL_UP": 0.0253,
+          "BACK": 0.0327,
+          "HOME": 0.0351,
+          "DONE": 0.0429,
+          "BLOCKED": 0.1319
+        },
+        {
+          "TAP": 0.687,
+          "SCROLL_DOWN": 0.0816,
+          "SCROLL_UP": 0.0182,
+          "BACK": 0.0326,
+          "HOME": 0.0287,
+          "DONE": 0.0401,
+          "BLOCKED": 0.1118
+        },
+        {
+          "TAP": 0.6468,
+          "SCROLL_DOWN": 0.0842,
+          "SCROLL_UP": 0.0207,
+          "BACK": 0.0339,
+          "HOME": 0.0323,
+          "DONE": 0.0524,
+          "BLOCKED": 0.1297
+        },
+        {
+          "TAP": 0.6326,
+          "SCROLL_DOWN": 0.0853,
+          "SCROLL_UP": 0.0227,
+          "BACK": 0.0328,
+          "HOME": 0.0346,
+          "DONE": 0.0596,
+          "BLOCKED": 0.1324
+        },
+        {
+          "TAP": 0.6274,
+          "SCROLL_DOWN": 0.1047,
+          "SCROLL_UP": 0.022,
+          "BACK": 0.03,
+          "HOME": 0.029,
+          "DONE": 0.0607,
+          "BLOCKED": 0.1262
+        },
+        {
+          "TAP": 0.6555,
+          "SCROLL_DOWN": 0.0813,
+          "SCROLL_UP": 0.0163,
+          "BACK": 0.0246,
+          "HOME": 0.0341,
+          "DONE": 0.0603,
+          "BLOCKED": 0.1279
+        },
+        {
+          "TAP": 0.6041,
+          "SCROLL_DOWN": 0.0865,
+          "SCROLL_UP": 0.0216,
+          "BACK": 0.0304,
+          "HOME": 0.0424,
+          "DONE": 0.0759,
+          "BLOCKED": 0.1391
+        },
+        {
+          "TAP": 0.686,
+          "SCROLL_DOWN": 0.0734,
+          "SCROLL_UP": 0.0162,
+          "BACK": 0.029,
+          "HOME": 0.0289,
+          "DONE": 0.0403,
+          "BLOCKED": 0.1262
+        },
+        {
+          "TAP": 0.7286,
+          "SCROLL_DOWN": 0.0643,
+          "SCROLL_UP": 0.0133,
+          "BACK": 0.0224,
+          "HOME": 0.0241,
+          "DONE": 0.0631,
+          "BLOCKED": 0.0842
+        },
+        {
+          "TAP": 0.6414,
+          "SCROLL_DOWN": 0.0977,
+          "SCROLL_UP": 0.0239,
+          "BACK": 0.0346,
+          "HOME": 0.0317,
+          "DONE": 0.0549,
+          "BLOCKED": 0.1158
+        },
+        {
+          "TAP": 0.6787,
+          "SCROLL_DOWN": 0.0771,
+          "SCROLL_UP": 0.0158,
+          "BACK": 0.0261,
+          "HOME": 0.029,
+          "DONE": 0.0708,
+          "BLOCKED": 0.1025
+        },
+        {
+          "TAP": 0.6121,
+          "SCROLL_DOWN": 0.1195,
+          "SCROLL_UP": 0.0306,
+          "BACK": 0.0398,
+          "HOME": 0.0291,
+          "DONE": 0.0473,
+          "BLOCKED": 0.1216
+        },
+        {
+          "TAP": 0.6124,
+          "SCROLL_DOWN": 0.102,
+          "SCROLL_UP": 0.0272,
+          "BACK": 0.0395,
+          "HOME": 0.0345,
+          "DONE": 0.0581,
+          "BLOCKED": 0.1263
+        },
+        {
+          "TAP": 0.673,
+          "SCROLL_DOWN": 0.0875,
+          "SCROLL_UP": 0.0166,
+          "BACK": 0.0252,
+          "HOME": 0.029,
+          "DONE": 0.0672,
+          "BLOCKED": 0.1015
+        },
+        {
+          "SCROLL_DOWN": 0.1661,
+          "SCROLL_UP": 0.0973,
+          "BACK": 0.032,
+          "HOME": 0.0627,
+          "DONE": 0.39,
+          "BLOCKED": 0.2519
+        }
+      ],
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Gallery",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6283,
+          "target_confidence": 0.3176,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Switch to Camera",
+          "screen": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "confidence": 0.6641,
+          "target_confidence": 0.5829,
+          "landed": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "NEXT",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.5914,
+          "target_confidence": 0.8089,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Gallery",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.5969,
+          "target_confidence": 0.4861,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Switch to Camera",
+          "screen": [
+            "Albums",
+            "Camera",
+            "More options",
+            "Switch to Camera"
+          ],
+          "confidence": 0.6348,
+          "target_confidence": 0.7124,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "NEXT",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.592,
+          "target_confidence": 0.795,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "search_widget_text",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6485,
+          "target_confidence": 0.3154,
+          "landed": [
+            "search_voice_btn"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "search_voice_btn",
+          "screen": [
+            "search_voice_btn"
+          ],
+          "confidence": 0.6706,
+          "target_confidence": 1.0,
+          "landed": [
+            "search_voice_btn"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Clock",
+          "screen": [
+            "search_voice_btn"
+          ],
+          "confidence": 0.2687,
+          "target_confidence": 0.6541,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Stopwatch"
+          ],
+          "confidence": 0.3832,
+          "target_confidence": 0.7034,
+          "landed": [
+            "Alarm",
+            "CHANGE",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.4374,
+          "target_confidence": 0.6081,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.4932,
+          "target_confidence": 0.5247,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Delete",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Delete",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.5345,
+          "target_confidence": 0.7485,
+          "landed": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5679,
+          "target_confidence": 0.4949,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.5886,
+          "target_confidence": 0.5131,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6131,
+          "target_confidence": 0.7986,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6698,
+          "target_confidence": 0.4322,
+          "landed": [
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "8:30\u200aAM",
+            "9:00\u200aAM",
+            "Add alarm",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "Timer",
+            "onoff",
+            "onoff"
+          ],
+          "confidence": 0.6095,
+          "target_confidence": 0.8251,
+          "landed": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5953,
+          "target_confidence": 0.3814,
+          "landed": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6807,
+          "target_confidence": 0.3823,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6637,
+          "target_confidence": 0.3949,
+          "landed": [
+            "1",
+            "4",
+            "7",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "1",
+            "4",
+            "7",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6178,
+          "target_confidence": 0.7835,
+          "landed": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6576,
+          "target_confidence": 0.5535,
+          "landed": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "2",
+          "screen": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6389,
+          "target_confidence": 0.5255,
+          "landed": [
+            "Alarm",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Alarm",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6216,
+          "target_confidence": 0.7388,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "confidence": 0.639,
+          "target_confidence": 0.5123,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.687,
+          "target_confidence": 0.69,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6468,
+          "target_confidence": 0.3213,
+          "landed": [
+            "0",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6326,
+          "target_confidence": 0.478,
+          "landed": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "2",
+          "screen": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6274,
+          "target_confidence": 0.4923,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "confidence": 0.6555,
+          "target_confidence": 0.5392,
+          "landed": [
+            "Alarm",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "Alarm",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6041,
+          "target_confidence": 0.3916,
+          "landed": [
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Stopwatch"
+          ],
+          "confidence": 0.686,
+          "target_confidence": 0.7985,
+          "landed": [
+            "0 / 00",
+            "3",
+            "6",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0 / 00",
+            "3",
+            "6",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.7286,
+          "target_confidence": 0.8753,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "1",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6414,
+          "target_confidence": 0.3146,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 1",
+            "More options",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "1",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 1",
+            "More options",
+            "Stopwatch"
+          ],
+          "confidence": 0.6787,
+          "target_confidence": 0.7668,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 1",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "2",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 1",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6121,
+          "target_confidence": 0.4564,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 2",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "3",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 2",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6124,
+          "target_confidence": 0.6762,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "3",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.673,
+          "target_confidence": 0.8414,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "4",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.1661,
+          "target_confidence": 0.6025,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "required": 1,
+      "actions": 40,
+      "decisions": 40,
+      "wall_s": 97.4
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 40,
+      "plans": 0,
+      "decision_ms": [
+        1663,
+        1666,
+        1679,
+        1712,
+        1691,
+        1597,
+        1591,
+        1584,
+        1601,
+        1839,
+        1764,
+        1783,
+        1813,
+        1847,
+        1813,
+        1840,
+        1819,
+        1867,
+        1845,
+        1872,
+        1860,
+        1894,
+        1853,
+        1836,
+        1816,
+        1877,
+        1800,
+        1836,
+        1857,
+        1869,
+        1884,
+        1866,
+        1938,
+        1877,
+        1953,
+        1914,
+        1940,
+        1899,
+        1859,
+        1881
+      ],
+      "gated": 2,
+      "probabilities": [
+        {
+          "TAP": 0.6512,
+          "LAUNCH": 0.2103,
+          "SCROLL_DOWN": 0.0787,
+          "SCROLL_UP": 0.0287,
+          "BACK": 0.0132,
+          "HOME": 0.0025,
+          "BLOCKED": 0.0154
+        },
+        {
+          "TAP": 0.7129,
+          "LAUNCH": 0.1073,
+          "SCROLL_DOWN": 0.0525,
+          "SCROLL_UP": 0.0331,
+          "BACK": 0.0192,
+          "HOME": 0.003,
+          "DONE": 0.0443,
+          "BLOCKED": 0.0277
+        },
+        {
+          "TAP": 0.6075,
+          "LAUNCH": 0.1431,
+          "SCROLL_DOWN": 0.0572,
+          "SCROLL_UP": 0.0463,
+          "BACK": 0.0279,
+          "HOME": 0.0051,
+          "DONE": 0.0825,
+          "BLOCKED": 0.0304
+        },
+        {
+          "TAP": 0.643,
+          "LAUNCH": 0.1355,
+          "SCROLL_DOWN": 0.0422,
+          "SCROLL_UP": 0.0423,
+          "BACK": 0.0233,
+          "HOME": 0.0036,
+          "DONE": 0.0786,
+          "BLOCKED": 0.0315
+        },
+        {
+          "TAP": 0.6258,
+          "LAUNCH": 0.1195,
+          "SCROLL_DOWN": 0.0543,
+          "SCROLL_UP": 0.0491,
+          "BACK": 0.0226,
+          "HOME": 0.0042,
+          "DONE": 0.082,
+          "BLOCKED": 0.0425
+        },
+        {
+          "TAP": 0.5774,
+          "LAUNCH": 0.1247,
+          "SCROLL_DOWN": 0.0626,
+          "SCROLL_UP": 0.0592,
+          "BACK": 0.0277,
+          "HOME": 0.0056,
+          "DONE": 0.091,
+          "BLOCKED": 0.0518
+        },
+        {
+          "TAP": 0.6067,
+          "LAUNCH": 0.1469,
+          "SCROLL_DOWN": 0.0584,
+          "SCROLL_UP": 0.0469,
+          "BACK": 0.0212,
+          "HOME": 0.0032,
+          "DONE": 0.0751,
+          "BLOCKED": 0.0416
+        },
+        {
+          "TAP": 0.6429,
+          "LAUNCH": 0.1584,
+          "SCROLL_DOWN": 0.0398,
+          "SCROLL_UP": 0.0417,
+          "BACK": 0.0221,
+          "HOME": 0.0048,
+          "DONE": 0.0611,
+          "BLOCKED": 0.0292
+        },
+        {
+          "LAUNCH": 0.2537,
+          "SCROLL_DOWN": 0.127,
+          "SCROLL_UP": 0.0363,
+          "BACK": 0.0476,
+          "HOME": 0.0752,
+          "DONE": 0.1353,
+          "BLOCKED": 0.3249
+        },
+        {
+          "TAP": 0.4916,
+          "SCROLL_DOWN": 0.0807,
+          "SCROLL_UP": 0.0243,
+          "BACK": 0.0385,
+          "HOME": 0.0368,
+          "DONE": 0.1297,
+          "BLOCKED": 0.1984
+        },
+        {
+          "TAP": 0.4978,
+          "SCROLL_DOWN": 0.0817,
+          "SCROLL_UP": 0.0196,
+          "BACK": 0.0475,
+          "HOME": 0.0473,
+          "DONE": 0.1,
+          "BLOCKED": 0.2061
+        },
+        {
+          "TAP": 0.5551,
+          "SCROLL_DOWN": 0.0948,
+          "SCROLL_UP": 0.0353,
+          "BACK": 0.0447,
+          "HOME": 0.0374,
+          "DONE": 0.0682,
+          "BLOCKED": 0.1645
+        },
+        {
+          "TAP": 0.5781,
+          "SCROLL_DOWN": 0.0812,
+          "SCROLL_UP": 0.0198,
+          "BACK": 0.0384,
+          "HOME": 0.0353,
+          "DONE": 0.0892,
+          "BLOCKED": 0.158
+        },
+        {
+          "TAP": 0.5539,
+          "SCROLL_DOWN": 0.0785,
+          "SCROLL_UP": 0.0245,
+          "BACK": 0.0341,
+          "HOME": 0.0345,
+          "DONE": 0.0954,
+          "BLOCKED": 0.1791
+        },
+        {
+          "TAP": 0.5237,
+          "SCROLL_DOWN": 0.0884,
+          "SCROLL_UP": 0.0205,
+          "BACK": 0.0391,
+          "HOME": 0.0431,
+          "DONE": 0.0978,
+          "BLOCKED": 0.1874
+        },
+        {
+          "TAP": 0.643,
+          "SCROLL_DOWN": 0.0696,
+          "SCROLL_UP": 0.0134,
+          "BACK": 0.0289,
+          "HOME": 0.0333,
+          "DONE": 0.0823,
+          "BLOCKED": 0.1295
+        },
+        {
+          "TAP": 0.6916,
+          "SCROLL_DOWN": 0.0817,
+          "SCROLL_UP": 0.0127,
+          "BACK": 0.0307,
+          "HOME": 0.029,
+          "DONE": 0.0623,
+          "BLOCKED": 0.092
+        },
+        {
+          "TAP": 0.6659,
+          "SCROLL_DOWN": 0.094,
+          "SCROLL_UP": 0.0163,
+          "BACK": 0.026,
+          "HOME": 0.0246,
+          "DONE": 0.0508,
+          "BLOCKED": 0.1224
+        },
+        {
+          "TAP": 0.6344,
+          "SCROLL_DOWN": 0.0869,
+          "SCROLL_UP": 0.0208,
+          "BACK": 0.0304,
+          "HOME": 0.0304,
+          "DONE": 0.0611,
+          "BLOCKED": 0.136
+        },
+        {
+          "TAP": 0.6323,
+          "SCROLL_DOWN": 0.0742,
+          "SCROLL_UP": 0.0117,
+          "BACK": 0.0193,
+          "HOME": 0.0292,
+          "DONE": 0.1215,
+          "BLOCKED": 0.1118
+        },
+        {
+          "TAP": 0.601,
+          "SCROLL_DOWN": 0.0948,
+          "SCROLL_UP": 0.0233,
+          "BACK": 0.0304,
+          "HOME": 0.0397,
+          "DONE": 0.086,
+          "BLOCKED": 0.1248
+        },
+        {
+          "TAP": 0.6476,
+          "SCROLL_DOWN": 0.0881,
+          "SCROLL_UP": 0.0192,
+          "BACK": 0.0305,
+          "HOME": 0.0238,
+          "DONE": 0.0662,
+          "BLOCKED": 0.1246
+        },
+        {
+          "TAP": 0.6293,
+          "SCROLL_DOWN": 0.0835,
+          "SCROLL_UP": 0.0185,
+          "BACK": 0.0281,
+          "HOME": 0.031,
+          "DONE": 0.0933,
+          "BLOCKED": 0.1163
+        },
+        {
+          "TAP": 0.5829,
+          "SCROLL_DOWN": 0.0789,
+          "SCROLL_UP": 0.019,
+          "BACK": 0.0253,
+          "HOME": 0.0376,
+          "DONE": 0.1203,
+          "BLOCKED": 0.136
+        },
+        {
+          "TAP": 0.6911,
+          "SCROLL_DOWN": 0.0749,
+          "SCROLL_UP": 0.0149,
+          "BACK": 0.0266,
+          "HOME": 0.0334,
+          "DONE": 0.0658,
+          "BLOCKED": 0.0933
+        },
+        {
+          "TAP": 0.6264,
+          "SCROLL_DOWN": 0.0862,
+          "SCROLL_UP": 0.0181,
+          "BACK": 0.0275,
+          "HOME": 0.0285,
+          "DONE": 0.0947,
+          "BLOCKED": 0.1186
+        },
+        {
+          "TAP": 0.5742,
+          "SCROLL_DOWN": 0.1132,
+          "SCROLL_UP": 0.0182,
+          "BACK": 0.0263,
+          "HOME": 0.0389,
+          "DONE": 0.1028,
+          "BLOCKED": 0.1264
+        },
+        {
+          "TAP": 0.5516,
+          "SCROLL_DOWN": 0.1014,
+          "SCROLL_UP": 0.0335,
+          "BACK": 0.0472,
+          "HOME": 0.034,
+          "DONE": 0.0869,
+          "BLOCKED": 0.1454
+        },
+        {
+          "SCROLL_DOWN": 0.1491,
+          "SCROLL_UP": 0.1107,
+          "BACK": 0.0295,
+          "HOME": 0.0731,
+          "DONE": 0.3772,
+          "BLOCKED": 0.2604
+        },
+        {
+          "TAP": 0.5434,
+          "SCROLL_DOWN": 0.1316,
+          "SCROLL_UP": 0.0398,
+          "BACK": 0.0481,
+          "HOME": 0.0337,
+          "DONE": 0.0643,
+          "BLOCKED": 0.1391
+        },
+        {
+          "TAP": 0.53,
+          "SCROLL_DOWN": 0.1123,
+          "SCROLL_UP": 0.0335,
+          "BACK": 0.0453,
+          "HOME": 0.0316,
+          "DONE": 0.0741,
+          "BLOCKED": 0.1732
+        },
+        {
+          "TAP": 0.5799,
+          "SCROLL_DOWN": 0.1001,
+          "SCROLL_UP": 0.0319,
+          "BACK": 0.0426,
+          "HOME": 0.0367,
+          "DONE": 0.0809,
+          "BLOCKED": 0.1279
+        },
+        {
+          "TAP": 0.5822,
+          "SCROLL_DOWN": 0.1051,
+          "SCROLL_UP": 0.0305,
+          "BACK": 0.0474,
+          "HOME": 0.0282,
+          "DONE": 0.0493,
+          "BLOCKED": 0.1573
+        },
+        {
+          "TAP": 0.6385,
+          "SCROLL_DOWN": 0.1363,
+          "SCROLL_UP": 0.0263,
+          "BACK": 0.0416,
+          "HOME": 0.0264,
+          "DONE": 0.0229,
+          "BLOCKED": 0.108
+        },
+        {
+          "TAP": 0.719,
+          "SCROLL_DOWN": 0.0912,
+          "SCROLL_UP": 0.0193,
+          "BACK": 0.0264,
+          "HOME": 0.026,
+          "DONE": 0.0325,
+          "BLOCKED": 0.0856
+        },
+        {
+          "TAP": 0.6459,
+          "SCROLL_DOWN": 0.1379,
+          "SCROLL_UP": 0.0264,
+          "BACK": 0.0426,
+          "HOME": 0.0297,
+          "DONE": 0.0272,
+          "BLOCKED": 0.0903
+        },
+        {
+          "TAP": 0.6582,
+          "SCROLL_DOWN": 0.1251,
+          "SCROLL_UP": 0.0312,
+          "BACK": 0.0392,
+          "HOME": 0.035,
+          "DONE": 0.0304,
+          "BLOCKED": 0.0809
+        },
+        {
+          "TAP": 0.671,
+          "SCROLL_DOWN": 0.0818,
+          "SCROLL_UP": 0.0271,
+          "BACK": 0.0345,
+          "HOME": 0.0299,
+          "DONE": 0.0318,
+          "BLOCKED": 0.1239
+        },
+        {
+          "TAP": 0.6334,
+          "SCROLL_DOWN": 0.0841,
+          "SCROLL_UP": 0.0263,
+          "BACK": 0.0372,
+          "HOME": 0.0433,
+          "DONE": 0.0331,
+          "BLOCKED": 0.1426
+        },
+        {
+          "TAP": 0.6602,
+          "SCROLL_DOWN": 0.0843,
+          "SCROLL_UP": 0.0252,
+          "BACK": 0.0332,
+          "HOME": 0.0295,
+          "DONE": 0.0324,
+          "BLOCKED": 0.1352
+        }
+      ],
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Gallery",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6512,
+          "target_confidence": 0.2942,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Switch to Camera",
+          "screen": [
+            "Albums",
+            "Camera",
+            "More options",
+            "Switch to Camera"
+          ],
+          "confidence": 0.7129,
+          "target_confidence": 0.6275,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "NEXT",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.6075,
+          "target_confidence": 0.809,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Gallery",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.643,
+          "target_confidence": 0.5035,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Switch to Camera",
+          "screen": [
+            "Albums",
+            "Camera",
+            "More options",
+            "Switch to Camera"
+          ],
+          "confidence": 0.6258,
+          "target_confidence": 0.7071,
+          "landed": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "NEXT",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.5774,
+          "target_confidence": 0.7308,
+          "landed": [
+            "Camera",
+            "Gallery"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Camera",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Screenshot"
+          ],
+          "confidence": 0.6067,
+          "target_confidence": 0.5078,
+          "landed": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Tag your photos and videos with the locations where they're taken.",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.6429,
+          "target_confidence": 1.0,
+          "landed": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Clock",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.2537,
+          "target_confidence": 0.5741,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.4916,
+          "target_confidence": 0.6851,
+          "landed": [
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.4978,
+          "target_confidence": 0.6313,
+          "landed": [
+            "0 / 00",
+            "2",
+            "3",
+            "6",
+            "Alarm",
+            "CHANGE",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "CHANGE",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "confidence": 0.5551,
+          "target_confidence": 0.491,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.5781,
+          "target_confidence": 0.8645,
+          "landed": [
+            "0",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5539,
+          "target_confidence": 0.5343,
+          "landed": [
+            "4",
+            "7",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.5237,
+          "target_confidence": 0.8824,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "3",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.643,
+          "target_confidence": 0.5909,
+          "landed": [
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6916,
+          "target_confidence": 0.8493,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6659,
+          "target_confidence": 0.4529,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6344,
+          "target_confidence": 0.3796,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "onoff",
+            "onoff"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "onoff",
+            "onoff"
+          ],
+          "confidence": 0.6323,
+          "target_confidence": 0.8324,
+          "landed": [
+            "1",
+            "2",
+            "4",
+            "7",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "1",
+            "2",
+            "4",
+            "7",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.601,
+          "target_confidence": 0.3914,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Stopwatch"
+          ],
+          "confidence": 0.6476,
+          "target_confidence": 0.4051,
+          "landed": [
+            "1",
+            "4",
+            "7",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "1",
+            "4",
+            "7",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6293,
+          "target_confidence": 0.8102,
+          "landed": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5829,
+          "target_confidence": 0.5391,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6911,
+          "target_confidence": 0.902,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "More options",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6264,
+          "target_confidence": 0.3047,
+          "landed": [
+            "Alarm",
+            "Clock",
+            "More options"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Settings",
+          "screen": [
+            "Screen saver",
+            "Settings"
+          ],
+          "confidence": 0.5742,
+          "target_confidence": 0.9459,
+          "landed": [
+            "Automatic home clock / While traveling in an area where the time is different, add a clock for home",
+            "Change date & time",
+            "Display time with seconds",
+            "Gradually increase volume / Off",
+            "Home time zone / (GMT-7:00) Pacific Time",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Style / Digital"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Automatic home clock / While traveling in an area where the time is different, add a clock for home",
+          "screen": [
+            "Automatic home clock / While traveling in an area where the time is different, add a clock for home",
+            "Change date & time",
+            "Display time with seconds",
+            "Gradually increase volume / Off",
+            "Home time zone / (GMT-7:00) Pacific Time",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Style / Digital"
+          ],
+          "confidence": 0.5516,
+          "target_confidence": 0.3883,
+          "landed": [
+            "Automatic home clock / While traveling in an area where the time is different, add a clock for home",
+            "Change date & time",
+            "Display time with seconds",
+            "Gradually increase volume / Off",
+            "Home time zone / (GMT-7:00) Pacific Time",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Style / Digital"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "Automatic home clock / While traveling in an area where the time is different, add a clock for home",
+          "screen": [
+            "Automatic home clock / While traveling in an area where the time is different, add a clock for home",
+            "Change date & time",
+            "Display time with seconds",
+            "Gradually increase volume / Off",
+            "Home time zone / (GMT-7:00) Pacific Time",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Style / Digital"
+          ],
+          "confidence": 0.1491,
+          "target_confidence": 0.643,
+          "landed": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Gradually increase volume / Off",
+          "screen": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "confidence": 0.5434,
+          "target_confidence": 0.3493,
+          "landed": [
+            "10 seconds",
+            "15 seconds",
+            "20 seconds",
+            "25 seconds",
+            "30 seconds",
+            "35 seconds",
+            "40 seconds",
+            "45 seconds",
+            "5 seconds",
+            "50 seconds",
+            "55 seconds",
+            "60 seconds",
+            "CANCEL",
+            "Off"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Off",
+          "screen": [
+            "10 seconds",
+            "15 seconds",
+            "20 seconds",
+            "25 seconds",
+            "30 seconds",
+            "35 seconds",
+            "40 seconds",
+            "45 seconds",
+            "5 seconds",
+            "50 seconds",
+            "55 seconds",
+            "60 seconds",
+            "CANCEL",
+            "Off"
+          ],
+          "confidence": 0.53,
+          "target_confidence": 0.3852,
+          "landed": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Gradually increase volume / Off",
+          "screen": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "confidence": 0.5799,
+          "target_confidence": 0.6327,
+          "landed": [
+            "10 seconds",
+            "15 seconds",
+            "20 seconds",
+            "25 seconds",
+            "30 seconds",
+            "35 seconds",
+            "40 seconds",
+            "45 seconds",
+            "5 seconds",
+            "50 seconds",
+            "55 seconds",
+            "60 seconds",
+            "CANCEL",
+            "Off"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Off",
+          "screen": [
+            "10 seconds",
+            "15 seconds",
+            "20 seconds",
+            "25 seconds",
+            "30 seconds",
+            "35 seconds",
+            "40 seconds",
+            "45 seconds",
+            "5 seconds",
+            "50 seconds",
+            "55 seconds",
+            "60 seconds",
+            "CANCEL",
+            "Off"
+          ],
+          "confidence": 0.5822,
+          "target_confidence": 0.4997,
+          "landed": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Snooze length / 10 minutes",
+          "screen": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "confidence": 0.6385,
+          "target_confidence": 0.4318,
+          "landed": [
+            "10 minutes",
+            "11 minutes",
+            "12 minutes",
+            "13 minutes",
+            "14 minutes",
+            "15 minutes",
+            "16 minutes",
+            "17 minutes",
+            "18 minutes",
+            "19 minutes",
+            "20 minutes",
+            "21 minutes",
+            "22 minutes",
+            "23 minutes",
+            "CANCEL"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "10 minutes",
+          "screen": [
+            "10 minutes",
+            "11 minutes",
+            "12 minutes",
+            "13 minutes",
+            "14 minutes",
+            "15 minutes",
+            "16 minutes",
+            "17 minutes",
+            "18 minutes",
+            "19 minutes",
+            "20 minutes",
+            "21 minutes",
+            "22 minutes",
+            "23 minutes",
+            "CANCEL"
+          ],
+          "confidence": 0.719,
+          "target_confidence": 0.5916,
+          "landed": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Snooze length / 10 minutes",
+          "screen": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "confidence": 0.6459,
+          "target_confidence": 0.5195,
+          "landed": [
+            "10 minutes",
+            "11 minutes",
+            "12 minutes",
+            "13 minutes",
+            "14 minutes",
+            "15 minutes",
+            "16 minutes",
+            "17 minutes",
+            "18 minutes",
+            "19 minutes",
+            "20 minutes",
+            "21 minutes",
+            "22 minutes",
+            "23 minutes",
+            "CANCEL"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "10 minutes",
+          "screen": [
+            "10 minutes",
+            "11 minutes",
+            "12 minutes",
+            "13 minutes",
+            "14 minutes",
+            "15 minutes",
+            "16 minutes",
+            "17 minutes",
+            "18 minutes",
+            "19 minutes",
+            "20 minutes",
+            "21 minutes",
+            "22 minutes",
+            "23 minutes",
+            "CANCEL"
+          ],
+          "confidence": 0.6582,
+          "target_confidence": 0.5026,
+          "landed": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Volume buttons / Control volume",
+          "screen": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Control volume"
+          ],
+          "confidence": 0.671,
+          "target_confidence": 0.3952,
+          "landed": [
+            "Control volume",
+            "Dismiss",
+            "Snooze"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Snooze",
+          "screen": [
+            "Control volume",
+            "Dismiss",
+            "Snooze"
+          ],
+          "confidence": 0.6334,
+          "target_confidence": 0.4039,
+          "landed": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Snooze"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Volume buttons / Snooze",
+          "screen": [
+            "Gradually increase volume / Off",
+            "Gradually increase volume / Off",
+            "Navigate up",
+            "Silence after / 10 minutes",
+            "Snooze length / 10 minutes",
+            "Start week on / Sunday",
+            "Timer sound / Timer Expired",
+            "Timer vibrate",
+            "Volume buttons / Snooze"
+          ],
+          "confidence": 0.6602,
+          "target_confidence": 0.3619,
+          "landed": [
+            "Control volume",
+            "Dismiss",
+            "Snooze"
+          ],
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "required": 1,
+      "actions": 40,
+      "decisions": 40,
+      "wall_s": 94.9
+    },
+    {
+      "goal": "Open the Settings app and navigate to the screen showing the Android version.",
+      "status": "out-of-steps",
+      "steps": 40,
+      "plans": 0,
+      "decision_ms": [
+        1678,
+        1676,
+        1683,
+        1739,
+        1710,
+        1593,
+        1604,
+        1567,
+        1587,
+        1801,
+        1786,
+        1855,
+        1813,
+        1862,
+        1852,
+        1856,
+        1865,
+        1892,
+        1820,
+        1837,
+        1858,
+        1843,
+        1841,
+        1873,
+        1905,
+        1872,
+        1885,
+        1899,
+        1905,
+        1979,
+        1933,
+        1888,
+        1869,
+        1899,
+        1874,
+        1949,
+        1867,
+        1873,
+        1901,
+        1934
+      ],
+      "gated": 2,
+      "probabilities": [
+        {
+          "TAP": 0.637,
+          "LAUNCH": 0.2186,
+          "SCROLL_DOWN": 0.0818,
+          "SCROLL_UP": 0.0314,
+          "BACK": 0.0139,
+          "HOME": 0.0024,
+          "BLOCKED": 0.0149
+        },
+        {
+          "TAP": 0.702,
+          "LAUNCH": 0.1096,
+          "SCROLL_DOWN": 0.0522,
+          "SCROLL_UP": 0.0356,
+          "BACK": 0.0199,
+          "HOME": 0.0046,
+          "DONE": 0.0413,
+          "BLOCKED": 0.0348
+        },
+        {
+          "TAP": 0.5989,
+          "LAUNCH": 0.1435,
+          "SCROLL_DOWN": 0.0611,
+          "SCROLL_UP": 0.0489,
+          "BACK": 0.0311,
+          "HOME": 0.0048,
+          "DONE": 0.0723,
+          "BLOCKED": 0.0394
+        },
+        {
+          "TAP": 0.6043,
+          "LAUNCH": 0.1753,
+          "SCROLL_DOWN": 0.0603,
+          "SCROLL_UP": 0.0426,
+          "BACK": 0.0231,
+          "HOME": 0.0045,
+          "DONE": 0.0654,
+          "BLOCKED": 0.0245
+        },
+        {
+          "TAP": 0.652,
+          "LAUNCH": 0.1163,
+          "SCROLL_DOWN": 0.0488,
+          "SCROLL_UP": 0.0402,
+          "BACK": 0.0215,
+          "HOME": 0.0034,
+          "DONE": 0.0779,
+          "BLOCKED": 0.0399
+        },
+        {
+          "TAP": 0.5846,
+          "LAUNCH": 0.1438,
+          "SCROLL_DOWN": 0.0606,
+          "SCROLL_UP": 0.0586,
+          "BACK": 0.026,
+          "HOME": 0.0037,
+          "DONE": 0.0787,
+          "BLOCKED": 0.044
+        },
+        {
+          "TAP": 0.6504,
+          "LAUNCH": 0.144,
+          "SCROLL_DOWN": 0.0454,
+          "SCROLL_UP": 0.0513,
+          "BACK": 0.0278,
+          "HOME": 0.0057,
+          "DONE": 0.0439,
+          "BLOCKED": 0.0315
+        },
+        {
+          "TAP": 0.6815,
+          "LAUNCH": 0.0917,
+          "SCROLL_DOWN": 0.033,
+          "SCROLL_UP": 0.0434,
+          "BACK": 0.0244,
+          "HOME": 0.0084,
+          "DONE": 0.0552,
+          "BLOCKED": 0.0624
+        },
+        {
+          "LAUNCH": 0.265,
+          "SCROLL_DOWN": 0.0763,
+          "SCROLL_UP": 0.0225,
+          "BACK": 0.0335,
+          "HOME": 0.0572,
+          "DONE": 0.1582,
+          "BLOCKED": 0.3873
+        },
+        {
+          "TAP": 0.3648,
+          "SCROLL_DOWN": 0.0673,
+          "SCROLL_UP": 0.0256,
+          "BACK": 0.0376,
+          "HOME": 0.0402,
+          "DONE": 0.1982,
+          "BLOCKED": 0.2663
+        },
+        {
+          "TAP": 0.4217,
+          "SCROLL_DOWN": 0.0756,
+          "SCROLL_UP": 0.0235,
+          "BACK": 0.0436,
+          "HOME": 0.0445,
+          "DONE": 0.1219,
+          "BLOCKED": 0.2692
+        },
+        {
+          "TAP": 0.4879,
+          "SCROLL_DOWN": 0.0641,
+          "SCROLL_UP": 0.0237,
+          "BACK": 0.0399,
+          "HOME": 0.038,
+          "DONE": 0.1534,
+          "BLOCKED": 0.193
+        },
+        {
+          "TAP": 0.5321,
+          "SCROLL_DOWN": 0.0735,
+          "SCROLL_UP": 0.0264,
+          "BACK": 0.0349,
+          "HOME": 0.0383,
+          "DONE": 0.1084,
+          "BLOCKED": 0.1864
+        },
+        {
+          "TAP": 0.5447,
+          "SCROLL_DOWN": 0.094,
+          "SCROLL_UP": 0.0252,
+          "BACK": 0.0358,
+          "HOME": 0.0365,
+          "DONE": 0.1157,
+          "BLOCKED": 0.1481
+        },
+        {
+          "TAP": 0.5339,
+          "SCROLL_DOWN": 0.0929,
+          "SCROLL_UP": 0.02,
+          "BACK": 0.0414,
+          "HOME": 0.0376,
+          "DONE": 0.1197,
+          "BLOCKED": 0.1545
+        },
+        {
+          "TAP": 0.6221,
+          "SCROLL_DOWN": 0.0844,
+          "SCROLL_UP": 0.0197,
+          "BACK": 0.0351,
+          "HOME": 0.0287,
+          "DONE": 0.0788,
+          "BLOCKED": 0.1312
+        },
+        {
+          "TAP": 0.678,
+          "SCROLL_DOWN": 0.0705,
+          "SCROLL_UP": 0.0151,
+          "BACK": 0.027,
+          "HOME": 0.0305,
+          "DONE": 0.0662,
+          "BLOCKED": 0.1127
+        },
+        {
+          "TAP": 0.6461,
+          "SCROLL_DOWN": 0.0849,
+          "SCROLL_UP": 0.0209,
+          "BACK": 0.0289,
+          "HOME": 0.0311,
+          "DONE": 0.0658,
+          "BLOCKED": 0.1223
+        },
+        {
+          "TAP": 0.6766,
+          "SCROLL_DOWN": 0.0728,
+          "SCROLL_UP": 0.0156,
+          "BACK": 0.0264,
+          "HOME": 0.0317,
+          "DONE": 0.0741,
+          "BLOCKED": 0.1028
+        },
+        {
+          "TAP": 0.5756,
+          "SCROLL_DOWN": 0.077,
+          "SCROLL_UP": 0.0181,
+          "BACK": 0.0272,
+          "HOME": 0.0341,
+          "DONE": 0.1171,
+          "BLOCKED": 0.1509
+        },
+        {
+          "TAP": 0.6453,
+          "SCROLL_DOWN": 0.0858,
+          "SCROLL_UP": 0.0195,
+          "BACK": 0.0336,
+          "HOME": 0.0257,
+          "DONE": 0.0788,
+          "BLOCKED": 0.1113
+        },
+        {
+          "TAP": 0.6213,
+          "SCROLL_DOWN": 0.0716,
+          "SCROLL_UP": 0.0148,
+          "BACK": 0.0267,
+          "HOME": 0.0361,
+          "DONE": 0.1196,
+          "BLOCKED": 0.1099
+        },
+        {
+          "TAP": 0.5708,
+          "SCROLL_DOWN": 0.071,
+          "SCROLL_UP": 0.0178,
+          "BACK": 0.0266,
+          "HOME": 0.0357,
+          "DONE": 0.1399,
+          "BLOCKED": 0.1382
+        },
+        {
+          "TAP": 0.6499,
+          "SCROLL_DOWN": 0.0806,
+          "SCROLL_UP": 0.0184,
+          "BACK": 0.0301,
+          "HOME": 0.0335,
+          "DONE": 0.0584,
+          "BLOCKED": 0.1291
+        },
+        {
+          "TAP": 0.6371,
+          "SCROLL_DOWN": 0.0924,
+          "SCROLL_UP": 0.0206,
+          "BACK": 0.0284,
+          "HOME": 0.0316,
+          "DONE": 0.0659,
+          "BLOCKED": 0.124
+        },
+        {
+          "TAP": 0.6799,
+          "SCROLL_DOWN": 0.0808,
+          "SCROLL_UP": 0.0182,
+          "BACK": 0.0312,
+          "HOME": 0.0276,
+          "DONE": 0.0533,
+          "BLOCKED": 0.109
+        },
+        {
+          "TAP": 0.6125,
+          "SCROLL_DOWN": 0.0906,
+          "SCROLL_UP": 0.0177,
+          "BACK": 0.0263,
+          "HOME": 0.0321,
+          "DONE": 0.079,
+          "BLOCKED": 0.1418
+        },
+        {
+          "TAP": 0.685,
+          "SCROLL_DOWN": 0.0718,
+          "SCROLL_UP": 0.0162,
+          "BACK": 0.0253,
+          "HOME": 0.0271,
+          "DONE": 0.0805,
+          "BLOCKED": 0.0941
+        },
+        {
+          "TAP": 0.6342,
+          "SCROLL_DOWN": 0.0876,
+          "SCROLL_UP": 0.015,
+          "BACK": 0.0283,
+          "HOME": 0.0244,
+          "DONE": 0.0921,
+          "BLOCKED": 0.1184
+        },
+        {
+          "TAP": 0.6662,
+          "SCROLL_DOWN": 0.0685,
+          "SCROLL_UP": 0.0148,
+          "BACK": 0.0301,
+          "HOME": 0.033,
+          "DONE": 0.073,
+          "BLOCKED": 0.1144
+        },
+        {
+          "TAP": 0.6321,
+          "SCROLL_DOWN": 0.0785,
+          "SCROLL_UP": 0.019,
+          "BACK": 0.0266,
+          "HOME": 0.0319,
+          "DONE": 0.0895,
+          "BLOCKED": 0.1224
+        },
+        {
+          "TAP": 0.6469,
+          "SCROLL_DOWN": 0.0913,
+          "SCROLL_UP": 0.0215,
+          "BACK": 0.0318,
+          "HOME": 0.0306,
+          "DONE": 0.0685,
+          "BLOCKED": 0.1094
+        },
+        {
+          "TAP": 0.6351,
+          "SCROLL_DOWN": 0.0758,
+          "SCROLL_UP": 0.0163,
+          "BACK": 0.032,
+          "HOME": 0.0291,
+          "DONE": 0.0987,
+          "BLOCKED": 0.113
+        },
+        {
+          "TAP": 0.6289,
+          "SCROLL_DOWN": 0.0953,
+          "SCROLL_UP": 0.0204,
+          "BACK": 0.0304,
+          "HOME": 0.0249,
+          "DONE": 0.0829,
+          "BLOCKED": 0.1172
+        },
+        {
+          "TAP": 0.6497,
+          "SCROLL_DOWN": 0.0763,
+          "SCROLL_UP": 0.0183,
+          "BACK": 0.0251,
+          "HOME": 0.0269,
+          "DONE": 0.1004,
+          "BLOCKED": 0.1033
+        },
+        {
+          "TAP": 0.6417,
+          "SCROLL_DOWN": 0.0885,
+          "SCROLL_UP": 0.0178,
+          "BACK": 0.0251,
+          "HOME": 0.0311,
+          "DONE": 0.0893,
+          "BLOCKED": 0.1065
+        },
+        {
+          "TAP": 0.61,
+          "SCROLL_DOWN": 0.1018,
+          "SCROLL_UP": 0.0249,
+          "BACK": 0.0329,
+          "HOME": 0.0351,
+          "DONE": 0.0721,
+          "BLOCKED": 0.1232
+        },
+        {
+          "TAP": 0.6395,
+          "SCROLL_DOWN": 0.0896,
+          "SCROLL_UP": 0.0135,
+          "BACK": 0.0207,
+          "HOME": 0.0276,
+          "DONE": 0.1043,
+          "BLOCKED": 0.1048
+        },
+        {
+          "TAP": 0.6128,
+          "SCROLL_DOWN": 0.0957,
+          "SCROLL_UP": 0.0186,
+          "BACK": 0.0291,
+          "HOME": 0.0324,
+          "DONE": 0.0976,
+          "BLOCKED": 0.1138
+        },
+        {
+          "SCROLL_DOWN": 0.1812,
+          "SCROLL_UP": 0.1351,
+          "BACK": 0.0396,
+          "HOME": 0.0718,
+          "DONE": 0.34,
+          "BLOCKED": 0.2323
+        }
+      ],
+      "history": [
+        {
+          "operation": "TAP",
+          "target": "Gallery",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.637,
+          "target_confidence": 0.2953,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Switch to Camera",
+          "screen": [
+            "Albums",
+            "Camera",
+            "More options",
+            "Switch to Camera"
+          ],
+          "confidence": 0.702,
+          "target_confidence": 0.613,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "NEXT",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.5989,
+          "target_confidence": 0.8123,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Gallery",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6043,
+          "target_confidence": 0.4922,
+          "landed": [
+            "Albums",
+            "More options",
+            "Switch to Camera"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Switch to Camera",
+          "screen": [
+            "Albums",
+            "Camera",
+            "More options",
+            "Switch to Camera"
+          ],
+          "confidence": 0.652,
+          "target_confidence": 0.7293,
+          "landed": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "NEXT",
+          "screen": [
+            "NEXT",
+            "Tag your photos and videos with the locations where they're taken."
+          ],
+          "confidence": 0.5846,
+          "target_confidence": 0.7392,
+          "landed": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "search_widget_text",
+          "screen": [
+            "Camera",
+            "Gallery",
+            "Messaging",
+            "Phone",
+            "WebView Browser Tester",
+            "search_icon",
+            "search_widget_text"
+          ],
+          "confidence": 0.6504,
+          "target_confidence": 0.3172,
+          "landed": [
+            "search_voice_btn"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "search_voice_btn",
+          "screen": [
+            "search_voice_btn"
+          ],
+          "confidence": 0.6815,
+          "target_confidence": 1.0,
+          "landed": [
+            "search_voice_btn"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "LAUNCH",
+          "target": "Clock",
+          "screen": [
+            "search_voice_btn"
+          ],
+          "confidence": 0.265,
+          "target_confidence": 0.6677,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "confidence": 0.3648,
+          "target_confidence": 0.4822,
+          "landed": [
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "More options",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.4217,
+          "target_confidence": 0.5123,
+          "landed": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "CHANGE",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.4879,
+          "target_confidence": 0.4607,
+          "landed": [
+            "0 / 00",
+            "Alarm",
+            "CHANGE",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0 / 00",
+            "Alarm",
+            "CHANGE",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.5321,
+          "target_confidence": 0.7098,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5447,
+          "target_confidence": 0.6292,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.5339,
+          "target_confidence": 0.6982,
+          "landed": [
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6221,
+          "target_confidence": 0.3427,
+          "landed": [
+            "0",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.678,
+          "target_confidence": 0.4384,
+          "landed": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6461,
+          "target_confidence": 0.3697,
+          "landed": [
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6766,
+          "target_confidence": 0.9376,
+          "landed": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5756,
+          "target_confidence": 0.716,
+          "landed": [
+            "0",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6453,
+          "target_confidence": 0.4119,
+          "landed": [
+            "Cities",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "Timer",
+            "onoff",
+            "onoff"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Cities",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "Timer",
+            "onoff",
+            "onoff"
+          ],
+          "confidence": 0.6213,
+          "target_confidence": 0.8711,
+          "landed": [
+            "0",
+            "7",
+            "8",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "7",
+            "8",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.5708,
+          "target_confidence": 0.5356,
+          "landed": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6499,
+          "target_confidence": 0.5299,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "confidence": 0.6371,
+          "target_confidence": 0.3688,
+          "landed": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6799,
+          "target_confidence": 0.3479,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Timer"
+          ],
+          "confidence": 0.6125,
+          "target_confidence": 0.3193,
+          "landed": [
+            "0 / 00",
+            "3",
+            "6",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.685,
+          "target_confidence": 0.9137,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6342,
+          "target_confidence": 0.4071,
+          "landed": [
+            "Cities",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "Timer",
+            "onoff",
+            "onoff"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "Cities",
+            "Clock",
+            "Expand alarm",
+            "Expand alarm",
+            "More options",
+            "Stopwatch",
+            "Timer",
+            "onoff",
+            "onoff"
+          ],
+          "confidence": 0.6662,
+          "target_confidence": 0.8904,
+          "landed": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6321,
+          "target_confidence": 0.7349,
+          "landed": [
+            "0",
+            "0 / 00",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Clock",
+          "screen": [
+            "0",
+            "0 / 00",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6469,
+          "target_confidence": 0.551,
+          "landed": [
+            "1",
+            "4",
+            "7",
+            "Alarm",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "1",
+            "4",
+            "7",
+            "Alarm",
+            "Delete 3",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6351,
+          "target_confidence": 0.5808,
+          "landed": [
+            "0",
+            "0 / 00",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Alarm",
+          "screen": [
+            "0",
+            "0 / 00",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "Alarm",
+            "Cities",
+            "Clock",
+            "Delete 3",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.6289,
+          "target_confidence": 0.4568,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "1",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "5",
+            "7",
+            "8",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch",
+            "Timer"
+          ],
+          "confidence": 0.6497,
+          "target_confidence": 0.4033,
+          "landed": [
+            "8:30\u200aAM",
+            "9:00\u200aAM",
+            "Add alarm",
+            "Clock",
+            "Collapse alarm",
+            "Default (Cesium)",
+            "Delete",
+            "Expand alarm",
+            "F",
+            "Label",
+            "M",
+            "More options",
+            "Repeat",
+            "S",
+            "S",
+            "Stopwatch",
+            "T",
+            "T",
+            "Timer",
+            "Vibrate",
+            "W",
+            "onoff",
+            "onoff"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Stopwatch",
+          "screen": [
+            "8:30\u200aAM",
+            "9:00\u200aAM",
+            "Add alarm",
+            "Clock",
+            "Collapse alarm",
+            "Default (Cesium)",
+            "Delete",
+            "Expand alarm",
+            "F",
+            "Label",
+            "M",
+            "More options",
+            "Repeat",
+            "S",
+            "S",
+            "Stopwatch",
+            "T",
+            "T",
+            "Timer",
+            "Vibrate",
+            "W",
+            "onoff",
+            "onoff"
+          ],
+          "confidence": 0.6417,
+          "target_confidence": 0.7151,
+          "landed": [
+            "0",
+            "7",
+            "8",
+            "9",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "Timer",
+          "screen": [
+            "0",
+            "7",
+            "8",
+            "9",
+            "Add alarm",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Timer"
+          ],
+          "confidence": 0.61,
+          "target_confidence": 0.5704,
+          "landed": [
+            "0",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "6",
+          "screen": [
+            "0",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6395,
+          "target_confidence": 0.8269,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 5",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": true
+        },
+        {
+          "operation": "TAP",
+          "target": "1",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 5",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.6128,
+          "target_confidence": 0.6716,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 5",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": false
+        },
+        {
+          "operation": "SCROLL_DOWN",
+          "target": "2",
+          "screen": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 5",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "confidence": 0.1812,
+          "target_confidence": 0.6126,
+          "landed": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Alarm",
+            "Clock",
+            "Delete 5",
+            "More options",
+            "Start",
+            "Stopwatch"
+          ],
+          "changed": false
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 0,
+        "complete": false,
+        "answers": {},
+        "at_step": {},
+        "missing": [
+          "Android version"
+        ]
+      },
+      "stories_visited": 0,
+      "required": 1,
+      "actions": 40,
+      "decisions": 40,
+      "wall_s": 93.3
+    }
+  ]
+}

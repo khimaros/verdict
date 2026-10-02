@@ -31,6 +31,12 @@ whether to act on the answer or escalate.
 no free-text output, explanations, tool execution or chat. exactly one token
 position is scored per question.
 
+the one exception is a model trained with a joint decision head, which reads
+the hidden state of every prompt position and decides all the questions of a
+request together. it still generates nothing and scores nothing but the
+declared options; what it gives up is the single position, and with it prefix
+reuse across questions (FR4) and option mass (FR5).
+
 ### FR3 identical prompts across implementations
 
 the python and dart implementations MUST produce byte-identical prompts and
@@ -50,6 +56,10 @@ every result reports the total raw probability that landed on the option label
 tokens before renormalisation. this is the primary health signal. a low value
 means the prompt is not steering the model to the labels and the distribution
 should not be trusted.
+
+a model read through a trained decision head has no label tokens and so no
+option mass: the head's distribution covers the options and nothing else. such
+a result reports option mass as absent and says so with a flag, never as 1.0.
 
 ### FR6 result contents
 

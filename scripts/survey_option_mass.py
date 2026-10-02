@@ -35,7 +35,8 @@ def survey(base_url, models, wide=0, layout=None):
         backend = HttpBackend(base_url, model)
         try:
             formatter, cached = derive.build(backend, model, layout=layout)
-            row.update(option_mass=formatter.verification["mean_option_mass"],
+            # absent for a model read through a decision head, which has none
+            row.update(option_mass=formatter.verification.get("mean_option_mass"),
                        correct=formatter.verification["smoke_correct"],
                        assistant_open=formatter.assistant_open,
                        template_sha256=formatter.template_sha256[:16],
@@ -56,8 +57,9 @@ def survey(base_url, models, wide=0, layout=None):
             w = row["wide"]
             note = (f"   wide {w['min_option_mass']:.4f} at "
                     f"{w['option_counts']} labels, {w['smoke_correct']}")
+        mass = row.get("option_mass")
         print(f"{model:<32} "
-              + (f"mass {row['option_mass']:.4f}  {row['correct']}"
+              + (f"mass {'n/a (head)' if mass is None else format(mass, '.4f')}  {row['correct']}"
                  if row.get("usable") else f"REFUSED  {row['error'][:70]}")
               + note + f"   ({row['wall_s']}s)", flush=True)
         yield row

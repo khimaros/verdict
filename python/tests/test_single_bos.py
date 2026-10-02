@@ -29,7 +29,7 @@ class Server:
     def props(self):
         return {"chat_template": TEMPLATE, "bos_token": "<bos>", "eos_token": ""}
 
-    def readout(self):
+    def registry_key(self):
         return None
 
     def tokenize(self, text, add_special=False):

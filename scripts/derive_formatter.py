@@ -125,11 +125,10 @@ def run(base_url, model, floor):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--base-url", default=config.get("LLAMA_VERDICT_URL"),
+    ap.add_argument("--base-url", default=config.backend_url(),
                     help="[LLAMA_VERDICT_URL]")
     ap.add_argument("--models", nargs="+",
-                    default=config.get("LLAMA_VERDICT_MODEL") and
-                    [config.get("LLAMA_VERDICT_MODEL")],
+                    default=config.backend_model() and [config.backend_model()],
                     help="[LLAMA_VERDICT_MODEL]")
     ap.add_argument("--floor", type=float, default=None)
     args = ap.parse_args()

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "models": {
+    "Cloudflare/clef": {
+      "readout": "head:clef",
+      "repos": [
+        "abenzerps/Clef-GGUF",
+        "prithivMLmods/clef-GGUF"
+      ],
+      "short": "clef"
+    },
+    "Cloudflare/clef-flash": {
+      "readout": "head:clef-flash",
+      "repos": [
+        "bartowski/Cloudflare_clef-flash-GGUF",
+        "prithivMLmods/clef-flash-GGUF"
+      ],
+      "short": "clef-flash"
+    },
+    "EldanRing/Winnow-12B": {
+      "readout": "layout:winnow",
+      "repos": [
+        "EldanRing/Winnow-12B"
+      ],
+      "short": "winnow-12b"
+    },
+    "Mapika/decider-2b": {
+      "readout": "layout:decider-plain",
+      "repos": [
+        "Mapika/decider-2b-GGUF"
+      ],
+      "short": "decider-2b"
+    },
+    "Mapika/decider-35b-a3b": {
+      "readout": "layout:decider-plain",
+      "repos": [
+        "mradermacher/decider-35b-a3b-GGUF"
+      ],
+      "short": "decider-35b-a3b"
+    },
+    "Mapika/decider-4b": {
+      "readout": "layout:decider-plain",
+      "repos": [
+        "Mapika/decider-4b-GGUF"
+      ],
+      "short": "decider-4b"
+    },
+    "StandardThinking/StandardOne-8B": {
+      "readout": "layout:standardone-native",
+      "repos": [
+        "StandardThinking/StandardOne-8B-GGUF"
+      ],
+      "short": "standardone-8b"
+    },
+    "akhilaaa3/Jev-Omni": {
+      "readout": "head:jev-omni",
+      "repos": [
+        "ngquocvinh/Jev-Omni-GGUF"
+      ],
+      "short": "jev-omni"
+    },
+    "alibiserikbay/JevK5": {
+      "readout": "layout:semif",
+      "repos": [
+        "alibiserikbay/JevK5-GGUF"
+      ],
+      "short": "jevk5 4b"
+    }
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 3.3333333333333335,
+    "statuses": {
+      "done": 2,
+      "out-of-steps": 1
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 8,
+      "decision_ms": [
+        74016,
+        80980,
+        71172,
+        86553,
+        75583,
+        6281,
+        78412,
+        53704,
+        80481
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "221 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "156 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49923692",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49923692",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "sampsn",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/user?id=sampsn",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=sampsn",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "27 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926536",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926536",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t668 points by sergiotapia 4 hours ago | hide | 221\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49926069": [
+          "rylando 16 minutes ago | next [\u2013] I wonder how Tolkien would\u2019ve thought about the use of LotR names being used by all these AI and tech companies.. especially since they all seem to use the names of things that were corrupted by darkness.",
+          "jrmeyer2 8 minutes ago | parent | next [\u2013] \u201cThe Shadow that bred them can only mock, it cannot make: not real things of its own. I don't think it gave life ..., it only ruined them and twisted them.\u201d",
+          "FacelessJim 3 hours ago | prev | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 3 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "rsync 3 hours ago | parent | prev | next [\u2013] \"Been running it almost barebones vanilla for a couple of months. Just a bunch of basic extensions and some skills.\""
+        ],
+        "https://news.ycombinator.com/item?id=49923692": [
+          "manlymuppet 7 hours ago | next [\u2013] Am I hearing this right, that they made a decision model based on Typesafe's new paradigm, and actually made a model better than Jev based on Typesafe's own ranking?",
+          "segmondy 2 hours ago | parent | next [\u2013] A lot of people claim to have made better than jev, there's a jev benchmark, I have tried many of those models and they eventually end up failing, a non trivial task which doesn't seem like much but reminds me of the svg pelican bench is games, have one of these decision/classifier models play a game, hook it up to the input, most of the ones that are supposedly on jev level end up playing a terrible game, showing that they are very narrow. Cloudflare doesn't compare to the top open bench alternatives, I just finished downloading it and will compare it to jev for non trivial tasks tonight.",
+          "SebastianSosa 1 hour ago | root | parent | next [\u2013] Public benchmarks are easy to cheat, if I am typesafe I would also release a public benchmark to distract otherwise competent people in overfitting to a benchmark instead of making something actually useful. Diogo very much is against public benchmarks ;)",
+          "verdverm 1 hour ago | root | parent | prev | next [\u2013] watching Jev play Pokemon demonstrated this too, more hype than meat",
+          "slopnt 6 hours ago | parent | prev | next [\u2013] They have to have decision models already in production. Part of their business is detecting bots, DDoSers and spammers."
+        ],
+        "https://news.ycombinator.com/item?id=49926536": [
+          "jamies 1 hour ago | next [\u2013] Such a great project. I converted my React-enjoying cofounders to Svelte/SvelteKit worried they wouldn't like it, but they absolutely love it!",
+          "OzzyB 3 minutes ago | parent | next [\u2013] +1 for Wails mention: just discovered it recently which brought me to Svelte--couldn't be more impressed. Golang \"backend\" w/ a Svelte \"frontend\" to build desktop apps the fraction of the size of Electron is a killer imo.",
+          "killingtime74 1 hour ago | prev | next [\u2013] The thing I like about Svelte the most is that it's closer to raw HTML. Rather than having to keep up with all the React developments if you're not using it all the time.",
+          "blakeashleyjr 2 hours ago | prev | next [\u2013] Sveltekit has been a breath of fresh air for me over the last few years.",
+          "383toast 1 hour ago | parent | next [\u2013] what's the point of svelte in a world where the llm is much better at react due to massively more available training data?"
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 610.1
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "out-of-steps",
+      "steps": 14,
+      "decision_ms": [
+        76561,
+        87079,
+        73379,
+        85927,
+        76403,
+        75362,
+        18456,
+        72862,
+        30268,
+        79318,
+        93481,
+        9765,
+        50121,
+        9577
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "224 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "157 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49923692",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49923692",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "5 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49928121",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49928121",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "9 comments",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/item?id=49927212",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49927212",
+          "to": "https://news.ycombinator.com/news",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "new",
+          "from": "https://news.ycombinator.com/news",
+          "to": "https://news.ycombinator.com/newest",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "discuss",
+          "from": "https://news.ycombinator.com/newest",
+          "to": "https://news.ycombinator.com/item?id=49928605",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "Dozens hurt and hundreds arrested in wave of French school protests",
+          "from": "https://news.ycombinator.com/item?id=49928605",
+          "to": "https://www.bbc.co.uk/news/articles/c862epne7glyo",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "News",
+          "from": "https://www.bbc.co.uk/news/articles/c862epne7glyo",
+          "to": "https://news.ycombinator.com/item?id=49928605",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "comments",
+          "from": "https://news.ycombinator.com/item?id=49928605",
+          "to": "https://news.ycombinator.com/newcomments",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t678 points by sergiotapia 4 hours ago | hide | 224\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49926069": [
+          "rylando 26 minutes ago | next [\u2013] I wonder how Tolkien would\u2019ve thought about the use of LotR names being used by all these AI and tech companies.. especially since they all seem to use the names of things that were corrupted by darkness.",
+          "jrmeyer2 18 minutes ago | parent | next [\u2013] \u201cThe Shadow that bred them can only mock, it cannot make: not real things of its own. I don't think it gave life ..., it only ruined them and twisted them.\u201d",
+          "FacelessJim 4 hours ago | prev | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 3 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "rsync 3 hours ago | parent | prev | next [\u2013] \"Been running it almost barebones vanilla for a couple of months. Just a bunch of basic extensions and some skills.\""
+        ],
+        "https://news.ycombinator.com/item?id=49923692": [
+          "manlymuppet 7 hours ago | next [\u2013] Am I hearing this right, that they made a decision model based on Typesafe's new paradigm, and actually made a model better than Jev based on Typesafe's own ranking?",
+          "segmondy 2 hours ago | parent | next [\u2013] A lot of people claim to have made better than jev, there's a jev benchmark, I have tried many of those models and they eventually end up failing, a non trivial task which doesn't seem like much but reminds me of the svg pelican bench is games, have one of these decision/classifier models play a game, hook it up to the input, most of the ones that are supposedly on jev level end up playing a terrible game, showing that they are very narrow. Cloudflare doesn't compare to the top open bench alternatives, I just finished downloading it and will compare it to jev for non trivial tasks tonight.",
+          "SebastianSosa 1 hour ago | root | parent | next [\u2013] Public benchmarks are easy to cheat, if I am typesafe I would also release a public benchmark to distract otherwise competent people in overfitting to a benchmark instead of making something actually useful. Diogo very much is against public benchmarks ;)",
+          "verdverm 1 hour ago | root | parent | prev | next [\u2013] watching Jev play Pokemon demonstrated this too, more hype than meat",
+          "slopnt 6 hours ago | parent | prev | next [\u2013] They have to have decision models already in production. Part of their business is detecting bots, DDoSers and spammers."
+        ],
+        "https://news.ycombinator.com/item?id=49928121": [
+          "BobbyTables2 3 minutes ago | next [\u2013] Are these primarily AI-assisted findings ?",
+          "DominoTree 14 minutes ago | prev | next [\u2013] I was looking earlier and the majority of these do not have a CVSS score assigned to them yet, but a lot of them that did were >7.0 (although I suppose by nature that the more impactful CVEs are going to be scored more quickly)",
+          "modeless 1 hour ago | prev | next [\u2013] 1,313 vulnerabilities, to be precise.",
+          "thallium205 18 minutes ago | prev | next [\u2013] Pretty much any kernel bug gets a CVE by default now, right?",
+          "wjholden 13 minutes ago | parent | next [\u2013] Is that all there is here? The quantifier \"several\" did not prepare me for the wall of CVE numbers in this list."
+        ],
+        "https://news.ycombinator.com/item?id=49927212": [
+          "sphars 2 hours ago | next [\u2013] Reminds me of this website for checking classless stylesheets.",
+          "ivanjermakov 1 hour ago | prev | next [\u2013] Correct terminology: https://en.wikipedia.org/wiki/Reset_style_sheet",
+          "szmarczak 1 hour ago | parent | next [\u2013] What does resetting inconsistent browser behavior have to do with classless styling? Those two aren't the same.",
+          "jrapdx3 45 minutes ago | prev | next [\u2013] Interesting. Having made websites I think \"of course that makes sense!\". As a practical matter, getting wanted page appearance can require adding a few classes. I've been guilty of class proliferation caused by perfectionistic tweaking of things to the last nanogram. Anymore I strive not to go there.",
+          "matthova 36 minutes ago | prev | next [\u2013] Love the idea. It's really painful to cycle through every theme. Would be great to have a way to scroll through them directly, though... that would result in a bigger bundle, and I respect the hustle"
+        ]
+      },
+      "stories_visited": 4,
+      "actions": 14,
+      "decisions": 14,
+      "wall_s": 844.2
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 8,
+      "decision_ms": [
+        73696,
+        85542,
+        76754,
+        89695,
+        76767,
+        5910,
+        77319,
+        36464,
+        80101
+      ],
+      "gated": 0,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "232 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "157 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49923692",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49923692",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "luispa",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/user?id=luispa",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=luispa",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "7 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49928121",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49928121",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t690 points by sergiotapia 5 hours ago | hide | 232\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49926069": [
+          "rylando 40 minutes ago | next [\u2013] I wonder how Tolkien would\u2019ve thought about the use of LotR names being used by all these AI and tech companies.. especially since they all seem to use the names of things that were corrupted by darkness.",
+          "markerz 4 minutes ago | parent | next [\u2013] Well there\u2019s https://disconnect.blog/peter-thiels-influence-over-a-networ... and https://www.reddit.com/r/lotr/comments/1lrc27y/how_do_tolkie...",
+          "gjm11 8 minutes ago | parent | prev | next [\u2013] I wonder much the same thing, but this seems like a slightly odd place to say it since so far as I can see the only LotR name in the linked article is the company name Earendil, and AFAIK Earendil-in-Tolkien was very much not corrupted by darkness.",
+          "jrmeyer2 32 minutes ago | parent | prev | next [\u2013] \u201cThe Shadow that bred them can only mock, it cannot make: not real things of its own. I don't think it gave life ..., it only ruined them and twisted them.\u201d",
+          "FacelessJim 4 hours ago | prev | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop."
+        ],
+        "https://news.ycombinator.com/item?id=49923692": [
+          "manlymuppet 7 hours ago | next [\u2013] Am I hearing this right, that they made a decision model based on Typesafe's new paradigm, and actually made a model better than Jev based on Typesafe's own ranking?",
+          "segmondy 3 hours ago | parent | next [\u2013] A lot of people claim to have made better than jev, there's a jev benchmark, I have tried many of those models and they eventually end up failing, a non trivial task which doesn't seem like much but reminds me of the svg pelican bench is games, have one of these decision/classifier models play a game, hook it up to the input, most of the ones that are supposedly on jev level end up playing a terrible game, showing that they are very narrow. Cloudflare doesn't compare to the top open bench alternatives, I just finished downloading it and will compare it to jev for non trivial tasks tonight.",
+          "SebastianSosa 1 hour ago | root | parent | next [\u2013] Public benchmarks are easy to cheat, if I am typesafe I would also release a public benchmark to distract otherwise competent people in overfitting to a benchmark instead of making something actually useful. Diogo very much is against public benchmarks ;)",
+          "verdverm 1 hour ago | root | parent | prev | next [\u2013] watching Jev play Pokemon demonstrated this too, more hype than meat",
+          "slopnt 7 hours ago | parent | prev | next [\u2013] They have to have decision models already in production. Part of their business is detecting bots, DDoSers and spammers."
+        ],
+        "https://news.ycombinator.com/item?id=49928121": [
+          "sva_ 7 minutes ago | next [\u2013] Seems like the CVE sequence has, for the first time, reached >100000 this year (Which does not imply 100k vulns though)",
+          "imoverclocked 6 minutes ago | prev | next [\u2013] Is there a way to know if a particular vanilla kernel has a particular CVE addressed? Unhelpfully, the ChangeLog-* only seems to contain sporadic references to CVEs.",
+          "crtasm 2 minutes ago | parent | next [\u2013] Clicking them here lists specific kernels, is that enough to tell you?",
+          "BobbyTables2 17 minutes ago | prev | next [\u2013] Are these primarily AI-assisted findings ?",
+          "tetrisgm 13 minutes ago | prev | next [\u2013] That\u2019s probably a great thing. The initial friction of AI overwhelming projects certainly sucks, but once there are better processes to deal with them it\u2019s going to strengthen the quality of so many projects!"
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 605.4
+    }
+  ]
+}

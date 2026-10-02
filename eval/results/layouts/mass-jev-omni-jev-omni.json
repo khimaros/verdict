@@ -1,0 +1,12 @@
+[
+  {
+    "model": "jev-omni:Q8_0",
+    "option_mass": null,
+    "correct": "3/3",
+    "assistant_open": "<|turn>model\n<|channel>thought\n<channel|>",
+    "template_sha256": "e768b3e9b2224d6d",
+    "cached": true,
+    "usable": true,
+    "wall_s": 4.9
+  }
+]

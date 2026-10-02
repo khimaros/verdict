@@ -19,6 +19,15 @@ SPEC_DIR = config.get("LLAMA_VERDICT_SPEC") or os.path.join(
 
 
 CHAT = "chat"
+# what a layout that declares its affixes has to declare
+AFFIXES = ("system_open", "system_close", "user_open", "user_close", "assistant_open")
+# the values a layout renders through a serialisation profile
+SERIALISED = ("state", "instructions", "description", "option")
+# a layout's kind, and the list in constants.json naming the knobs it may set.
+# `single` asks one question per prompt and is read at one position; `joint`
+# asks every question in one prompt and is read by token span (SPEC 5.5)
+SINGLE, JOINT = "single", "joint"
+KNOBS = {SINGLE: "layout_knobs", JOINT: "joint_knobs"}
 
 
 @functools.lru_cache(maxsize=1)
@@ -27,17 +36,94 @@ def constants():
         return json.load(f)
 
 
+@functools.lru_cache(maxsize=1)
+def models():
+    """the models this copy of the registry recognises, and how each is read.
+    refreshed with the layouts by scripts/import_layouts.py."""
+    with open(os.path.join(SPEC_DIR, "models.json")) as f:
+        return json.load(f)["models"]
+
+
+def stem(model_id):
+    """a served id as the registry's short name spells it: `jevk5 4b` and
+    `jevk5-4b:Q8_0` are one model."""
+    return model_id.split(":")[0].strip().lower().replace(" ", "-")
+
+
+def known_readout(repo=None, model_id=None, key=None):
+    """the readout of a model this copy recognises, or None.
+
+    by the registry's own key where the server names one, which is the model's
+    identity. else by the hub repository its weights were loaded from, because
+    the weights are the model and a served name is whatever a config chose to
+    call it; by name only for weights loaded from a plain file.
+    """
+    if key in models():
+        return models()[key]["readout"]
+    table = list(models().values())
+    for m in table:
+        if repo and repo in m["repos"]:
+            return m["readout"]
+    for m in table:
+        if model_id and m.get("short") and stem(m["short"]) == stem(model_id):
+            return m["readout"]
+    return None
+
+
+def assistant_opening(model_id):
+    """the assistant opening of a model whose template stops before content
+    begins, so that deriving it reads nothing. None for every other model."""
+    return constants()["assistant_openings"].get(stem(model_id))
+
+
+def check_layout(block):
+    """refuse a layout block verdict cannot render exactly.
+
+    the knob vocabulary is closed (`layout_knobs` in constants.json). the
+    blocks are imported from the model registry, and a knob from a registry
+    newer than this verdict means bytes it does not know how to write:
+    ignoring it would send a prompt the model was not trained on while every
+    answer still looked fine.
+    """
+    name, knobs = block.get("layout"), block.get("constants")
+    kind = block.get("kind", SINGLE)
+    if kind not in KNOBS:
+        raise ValueError(f"layout {name!r} is of kind {kind!r}; this verdict renders "
+                         f"{sorted(KNOBS)}")
+    if not isinstance(knobs, dict):
+        raise ValueError(f"layout {name!r} declares no constants")
+    unknown = sorted(set(knobs) - set(constants()[KNOBS[kind]]))
+    if unknown:
+        raise ValueError(f"layout {name!r} sets {unknown}, which this verdict does not "
+                         f"know how to render. the model registry is newer than verdict.")
+    missing = [a for a in AFFIXES if a not in block["affixes"]] if block.get("affixes") else []
+    if missing:
+        raise ValueError(f"layout {name!r} declares affixes without {missing}")
+    if kind == JOINT:
+        return block
+    merged = {**constants(), **knobs}
+    for field in SERIALISED:
+        profile = merged[f"{field}_json"]
+        if profile is not None and profile not in merged["profiles"] and profile not in merged:
+            raise ValueError(f"layout {name!r} renders its {field} with the profile "
+                             f"{profile!r}, which it does not define")
+    return block
+
+
 @functools.cache
 def load_layout(name):
     """a named layout from spec/layouts, for a model trained on a text layout
-    of its own rather than on the chat template its gguf carries."""
+    of its own rather than on the chat template its gguf carries. the files
+    are verdict's copy of the model registry's blocks, refreshed by
+    scripts/import_layouts.py."""
     path = os.path.join(SPEC_DIR, "layouts", f"{name}.json")
     if not os.path.exists(path):
         known = sorted(p.removesuffix(".json")
                        for p in os.listdir(os.path.join(SPEC_DIR, "layouts")))
-        raise ValueError(f"unknown layout {name!r}; spec/layouts has {known}")
+        raise ValueError(f"unknown layout {name!r}; spec/layouts has {known}. if the "
+                         f"model registry carries it, run make layouts.")
     with open(path) as f:
-        return json.load(f)
+        return check_layout(json.load(f))
 
 
 @functools.cache
@@ -46,7 +132,12 @@ def layout(name=CHAT):
     level of constants.json; a named layout overrides some of them."""
     if name == CHAT:
         return constants()
-    return {**constants(), **load_layout(name)["constants"]}
+    c = {**constants(), **load_layout(name)["constants"]}
+    if c["numbered_labels"]:
+        # options numbered from 1, for a model read through a head: nothing
+        # scores the label, so it need not be a single token
+        c["labels"] = [str(i + 1) for i in range(c["numbered_labels"])]
+    return c
 
 
 def labels(n, alphabet=None, layout_name=CHAT):
@@ -91,7 +182,8 @@ def render(value, field, layout_name=CHAT):
     or option. a field with no profile is used as it is."""
     c = layout(layout_name)
     name = c[f"{field}_json"]
-    return value if name is None else dump(value, c[name])
+    # a layout's own profiles first, then the two the chat layout defines
+    return value if name is None else dump(value, c["profiles"].get(name) or c[name])
 
 
 def serialise(value):

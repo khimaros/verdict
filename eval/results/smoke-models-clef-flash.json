@@ -1,0 +1,203 @@
+[
+  {
+    "model": "clef-flash:Q8_0",
+    "layout": "clef-flash",
+    "order_averaging": 1,
+    "wide_alphabet": false,
+    "correct": "12/16",
+    "accuracy": 0.75,
+    "by_position": {
+      "first": 3,
+      "quarter": 3,
+      "middle": 3,
+      "last": 3
+    },
+    "by_count": {
+      "8": 4,
+      "16": 4,
+      "26": 4,
+      "52": 0
+    },
+    "min_option_mass": null,
+    "median_ms": 8231.622463965323,
+    "wall_s": 230.4,
+    "rows": [
+      {
+        "n": 8,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.951090019849344,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 7608.860985958017
+      },
+      {
+        "n": 8,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.951090019849344,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 2778.2556388992816
+      },
+      {
+        "n": 8,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.951090019849344,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 2634.466686984524
+      },
+      {
+        "n": 8,
+        "position": "last",
+        "ok": true,
+        "correct_prob": 0.951090019849344,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 3206.216036924161
+      },
+      {
+        "n": 16,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.817771687188362,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 7421.121197985485
+      },
+      {
+        "n": 16,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.817771687188362,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 5414.755195030011
+      },
+      {
+        "n": 16,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.817771687188362,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 5170.57754797861
+      },
+      {
+        "n": 16,
+        "position": "last",
+        "ok": true,
+        "correct_prob": 0.817771687188362,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 5182.42642597761
+      },
+      {
+        "n": 26,
+        "position": "first",
+        "ok": true,
+        "correct_prob": 0.7778944876637933,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 13295.996277942322
+      },
+      {
+        "n": 26,
+        "position": "quarter",
+        "ok": true,
+        "correct_prob": 0.7778944876637933,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 10209.050708916038
+      },
+      {
+        "n": 26,
+        "position": "middle",
+        "ok": true,
+        "correct_prob": 0.7778944876637933,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 9479.615716962144
+      },
+      {
+        "n": 26,
+        "position": "last",
+        "ok": true,
+        "correct_prob": 0.7778944876637933,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 8854.383941972628
+      },
+      {
+        "n": 52,
+        "position": "first",
+        "ok": false,
+        "correct_prob": 0.29099313539182087,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 80031.00071090739
+      },
+      {
+        "n": 52,
+        "position": "quarter",
+        "ok": false,
+        "correct_prob": 0.29099313539182087,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 13495.183316990733
+      },
+      {
+        "n": 52,
+        "position": "middle",
+        "ok": false,
+        "correct_prob": 0.29099313539182087,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 16292.88263397757
+      },
+      {
+        "n": 52,
+        "position": "last",
+        "ok": false,
+        "correct_prob": 0.29099313539182087,
+        "option_mass": null,
+        "flags": [
+          "no_option_mass"
+        ],
+        "ms": 13671.204883954488
+      }
+    ]
+  }
+]

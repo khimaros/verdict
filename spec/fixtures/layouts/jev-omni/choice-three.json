@@ -1,0 +1,33 @@
+{
+  "id": "choice-three",
+  "description": "three options, string state",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "access": "Account access: logins, passwords, permissions.",
+        "billing": "Billing: invoices, payments, refunds.",
+        "technical": "Technical: bugs, outages, integrations."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\nMy invoice charged me twice for the same month and I want a refund.\n\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "QUESTION: Which queue should handle this?\n\nOPTIONS:\n1. access: Account access: logins, passwords, permissions.\n2. billing: Billing: invoices, payments, refunds.\n3. technical: Technical: bugs, outages, integrations.\n\nReply with only the number of the correct option (1-3).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "access": "1",
+          "billing": "2",
+          "technical": "3"
+        },
+        "flags": []
+      }
+    }
+  }
+}

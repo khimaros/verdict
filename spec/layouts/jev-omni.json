@@ -1,0 +1,53 @@
+{
+  "spec_version": "0.1.0",
+  "layout": "jev-omni",
+  "source": "akhilaaa3/Jev-Omni @ 5addda8: jev_omni.py _prompt() and _Head256; ngquocvinh/Jev-Omni-GGUF @ f07b38e: jev_omni_gguf_decide.py decide()",
+  "note": "Jev-Omni answers through a trained 256-way head over the final hidden state of the last prompt token, not through its vocabulary, so it is served in embedding mode and has no option mass. the affixes are declared because the author's gguf adapter writes the gemma 4 turn by hand, with no system turn and the closed thought channel as the opening; the server adds the bos. the author's interface is a state, a question and a list of option strings, so how a described option reads is not theirs: a boolean without criteria is `Yes` and `No`, an option without a description is its name, and both match the author's examples byte for byte, while a described option reads `name: description` as it does in the other named layouts, and a score level shows its description alone, since its name is a number beside the option's own. an object state is rendered as json, where the author interpolates python str(). the card says quality is established for up to 20 options.",
+  "affixes": {
+    "assistant_open": "<|turn>model\n<|channel>thought\n<channel|>",
+    "bare_user_open": "<|turn>user\n",
+    "system_close": "",
+    "system_open": "",
+    "user_close": "<turn|>\n",
+    "user_open": "<|turn>user\n"
+  },
+  "head": {
+    "file": "decision-head-f32.npz",
+    "kind": "linear",
+    "name": "jev-omni",
+    "reads": {
+      "states": "last"
+    },
+    "repo": "ngquocvinh/Jev-Omni-GGUF",
+    "revision": "f07b38e109cbc9b338029f88faeb3e6b6f894c73",
+    "sha256": "47b346e120dc9110ef7c0b610cf5d1f459ddcdb05ffd3cd126b6938d88a8bb77"
+  },
+  "constants": {
+    "answer_instruction": "\n\nReply with only the number of the correct option (1-{count}).\nOutput a single number and nothing else.",
+    "boolean_default_criteria": {
+      "false": "",
+      "true": ""
+    },
+    "boolean_names": {
+      "false": "No",
+      "true": "Yes"
+    },
+    "boolean_order": [
+      "true",
+      "false"
+    ],
+    "max_options_plain_alphabet": 256,
+    "max_options_single_pass": 256,
+    "named_kinds": [
+      "choice",
+      "boolean"
+    ],
+    "numbered_labels": 256,
+    "option_line": "{label}. {description}",
+    "options_open": "\n\nOPTIONS:\n",
+    "question_open": "QUESTION: ",
+    "state_delimiter": "\n\n---\n\n",
+    "system_instructions": "",
+    "system_turn": false
+  }
+}

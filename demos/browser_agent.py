@@ -39,8 +39,9 @@ import urllib.request
 import websocket
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from mimic_agent import DeadEnds, Witnessed, as_target, ask, post, signature
-from shortlist import restore_answers, shortlist_request, shortlist_state
+from mimic_agent import (DeadEnds, Witnessed, as_target, ask, gate_stopping, post,
+                         signature)
+from shortlist import restore_answers, shortlist, shortlist_request, shortlist_state
 
 # every one of these is a real thing this driver can do, so an operation the
 # model picks can always be carried out. BACK and HOME are the two the
@@ -57,6 +58,15 @@ OPERATIONS = {
 }
 
 NEEDS_TARGET = {"CLICK"}
+
+# how a move is worded when it competes with the links in one question: each
+# has to say when it is the answer, since no second question does
+MOVES = {
+    "SCROLL_DOWN": "Scroll down: what is needed is not among the links offered "
+                   "and the page continues below.",
+    "SCROLL_UP": "Scroll up: what is needed is above this part of the page.",
+    "BACK": "Go back to the previous page: this one has nothing more the goal needs.",
+}
 
 # what CDP says when the page is navigating out from under the call
 NAVIGATING = "Inspected target navigated or closed"
@@ -369,21 +379,79 @@ def decide(verdict_url, model, state, goal, subgoal, elements, keep, min_confide
     # divides them and does NOT clear the drift, which is how it was corrected.
     # the default stays where it was, because a dozen observations set a knob
     # rather than a default.
+    #
+    # BLOCKED is held to the same floor, and a DONE reached with operations
+    # withheld is asked again with none: both measured on the android agent.
     done_floor = min_confidence if done_confidence is None else done_confidence
-    gated = False
-    if operation == "DONE" and op_confidence < done_floor:
-        alternatives = {k: v for k, v in op_probs.items() if k != "DONE"}
-        if alternatives:
-            operation = max(alternatives, key=alternatives.get)
-            op_confidence = alternatives[operation]
-            gated = True
+    operation, op_confidence, gated = gate_stopping(operation, op_probs, done_floor)
+    if operation == "DONE" and (dead or at_start):
+        full = ask(verdict_url, operation_request(
+            model, state, goal, subgoal, described, confidence, frozenset(), acted),
+            0)["operation"]
+        confirmed = (full.get("probabilities") or {}).get("DONE", 0.0)
+        moves = {k: v for k, v in op_probs.items() if k != "DONE"}
+        op_probs = {**op_probs, "DONE": confirmed}
+        if moves and (full["choice"] != "DONE" or confirmed < done_floor):
+            operation = max(moves, key=moves.get)
+            op_confidence, gated = moves[operation], True
+        else:
+            op_confidence = confirmed
 
     if operation in NEEDS_TARGET and confidence < min_confidence:
         operation, gated = "BLOCKED", True
     return {"operation": operation, "target": target, "match": match,
             "confidence": op_confidence, "target_confidence": confidence,
-            "gated": gated,
+            "gated": gated, "probabilities": {k: round(v, 4) for k, v in op_probs.items()},
             "step_done": first["step_done"]["noul"] > 0.5}
+
+
+def together_request(model, state, goal, subgoal, elements, dead, acted, at_start):
+    """one question whose options are every offered link and every move, and
+    beside it whether to stop: DONE against the operations, read for DONE."""
+    live = {k: v for k, v in OPERATIONS.items() if k not in dead and k != "DONE"}
+    if at_start:
+        live.pop("BACK", None)
+    criteria = {}
+    if "CLICK" in live:
+        criteria.update({f"CLICK {e['index']}": {
+            "click_the_link": e["text"], "kind": e["class"],
+            **({"in": e["context"]} if e.get("context") else {})} for e in elements})
+    criteria.update({op: MOVES.get(op, text) for op, text in live.items() if op != "CLICK"})
+    instructions = {"goal": goal, "current_step": as_target(subgoal)}
+    stop = {"stop": {"type": "choice", "criteria": OPERATIONS, "instructions": {
+        **instructions, "rules": ["Choose the one operation that advances the current step.",
+                                  "Only answer DONE when the goal is visible right now."]}}}
+    return {"model": model, "state": state, "questions": {"next": {
+        "type": "choice", "criteria": criteria, "instructions": {
+            **instructions, "rules": ["Choose the one action that advances the current "
+                                      "step."]}}, **(stop if acted else {})}}
+
+
+def decide_together(verdict_url, model, state, goal, subgoal, elements, keep,
+                    min_confidence, dead, acted, at_start=False, done_confidence=None):
+    """one call: links and moves compete in a single question, and whether to
+    stop is asked beside it. see mimic_agent.decide_together for why."""
+    if keep:
+        kept, _ = shortlist({e["index"]: {"link": e["text"]} for e in elements}, goal, keep)
+        elements = [e for e in elements if e["index"] in kept]
+    answers = ask(verdict_url, together_request(
+        model, state, goal, subgoal, elements, dead, acted, at_start), 0)
+    probabilities = dict(answers["next"].get("probabilities") or {})
+    floor = min_confidence if done_confidence is None else done_confidence
+    choice, confidence, gated = gate_stopping(answers["next"]["choice"], probabilities, floor)
+    stop = (answers.get("stop") or {}) if acted else {}
+    if stop:
+        probabilities["DONE"] = (stop.get("probabilities") or {}).get("DONE", 0.0)
+        if stop.get("choice") == "DONE" and probabilities["DONE"] >= floor:
+            choice, confidence = "DONE", probabilities["DONE"]
+    operation, _, target = choice.partition(" ")
+    if operation in NEEDS_TARGET and confidence < min_confidence:
+        operation, gated = "BLOCKED", True
+    return {"operation": operation, "target": target or None,
+            "match": next((e for e in elements if e["index"] == target), None),
+            "confidence": confidence, "target_confidence": confidence, "gated": gated,
+            "probabilities": {k: round(v, 4) for k, v in probabilities.items()},
+            "step_done": False}
 
 
 def untried(elements, page_url, visited):
@@ -413,6 +481,13 @@ def untried(elements, page_url, visited):
             continue
         kept.append(dict(element, index=str(len(kept) + 1)))
     return kept
+
+
+def may_stop(acted, harvested, pages):
+    """whether DONE is an answer the agent may give yet: something has been
+    done with effect, and the task has the pages it said it needs. a claim the
+    harness can already see is false is not offered, as on the first step."""
+    return acted and sum(1 for items in harvested.values() if items) >= pages
 
 
 def collects_here(url, pattern):
@@ -456,7 +531,7 @@ def run(args, chrome):
     # back is finishing with it, whether or not it yielded anything.
     left = set()
     outcome = {"goal": goal, "status": "running", "steps": 0,
-               "decision_ms": [], "gated": 0}
+               "decision_ms": [], "gated": 0, "probabilities": []}
 
     chrome.navigate(args.url)
     for step in range(1, args.max_steps + 1):
@@ -495,13 +570,22 @@ def run(args, chrome):
         state = build_state(goal, subgoal, page, elements, history, progress)
         started = time.monotonic()
         # BACK is only useful when there is somewhere useful behind us
-        d = decide(args.verdict, args.model, state, goal, subgoal, elements,
-                   args.shortlist, args.min_confidence, dead.on(now), acted,
-                   args.trim_state, at_start=url.rstrip('/') == args.url.rstrip('/'),
-                   done_confidence=args.done_confidence)
+        at_start = url.rstrip('/') == args.url.rstrip('/')
+        stoppable = may_stop(acted, harvested, args.collect_pages)
+        if args.together:
+            d = decide_together(args.verdict, args.model, state, goal, subgoal, elements,
+                                args.shortlist, args.min_confidence, dead.on(now), stoppable,
+                                at_start=at_start, done_confidence=args.done_confidence)
+        else:
+            d = decide(args.verdict, args.model, state, goal, subgoal, elements,
+                       args.shortlist, args.min_confidence, dead.on(now), stoppable,
+                       args.trim_state, at_start=at_start,
+                       done_confidence=args.done_confidence)
         elapsed = (time.monotonic() - started) * 1000
         outcome["decision_ms"].append(round(elapsed))
         outcome["gated"] += int(d["gated"])
+        # every decision's whole distribution, for the reader and not the model
+        outcome["probabilities"].append(d["probabilities"])
 
         label = (d["match"] or {}).get("text", "")
         print(f"  {step:>3} {elapsed:>6.0f}ms  {d['operation']:<12} "
@@ -510,6 +594,7 @@ def run(args, chrome):
 
         if d["operation"] in ("DONE", "BLOCKED"):
             outcome["status"] = d["operation"].lower()
+            outcome["final_confidence"] = round(d["confidence"], 4)
             break
         try:
             chrome.act(d["operation"], d["match"])
@@ -548,7 +633,7 @@ def run(args, chrome):
     return outcome
 
 
-def main():
+def parse_args(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--cdp", default=os.environ.get("BU_CDP_URL", "http://127.0.0.1:9222"))
     ap.add_argument("--verdict", default="http://127.0.0.1:8477")
@@ -562,17 +647,28 @@ def main():
                     help="the task output: every match of REGEX in the page "
                          "text. read, never generated")
     ap.add_argument("--collect-count", type=int, default=5)
+    ap.add_argument("--collect-pages", type=int, default=0, metavar="N",
+                    help="how many pages the task needs collected from. DONE is "
+                         "not offered before the ledger holds that many")
     ap.add_argument("--collect-url", default=None, metavar="REGEX",
                     help="only collect on pages whose url matches. without "
                          "it any page carrying the right-shaped text scores")
     ap.add_argument("--trim-state", action="store_true",
-                    help="drop rows from the state that no question can choose. "
+                    help="with --no-together: "
+                         "drop rows from the state that no question can choose. "
                          "cuts the prompt 69%% and the call 68%%, and removes "
                          "page context the model was reading")
-    ap.add_argument("--retire-read", action="store_true",
-                    help="stop offering links to pages already collected from. "
-                         "changes the answer set: a removed link cannot be "
-                         "chosen, which is the point")
+    ap.add_argument("--retire-read", action=argparse.BooleanOptionalAction, default=True,
+                    help="stop offering links to pages already collected from or "
+                         "come back from. changes the answer set: a removed link "
+                         "cannot be chosen, which is the point. --no-retire-read "
+                         "offers every link every time")
+    ap.add_argument("--together", action=argparse.BooleanOptionalAction, default=True,
+                    help="ask one question whose options are every offered link "
+                         "and every move, with whether to stop asked beside it. "
+                         "half the calls. --no-together asks which link and then "
+                         "which operation, the form every table before "
+                         "docs/EVALS.md 5c was taken under")
     ap.add_argument("--shortlist", type=int, default=26)
     ap.add_argument("--min-confidence", type=float, default=0.0)
     ap.add_argument("--done-confidence", type=float, default=None,
@@ -585,8 +681,11 @@ def main():
                          "docs/EVALS.md was taken under")
     ap.add_argument("--max-steps", type=int, default=14)
     ap.add_argument("--summary", default=None)
-    args = ap.parse_args()
+    return ap.parse_args(argv)
 
+
+def main():
+    args = parse_args()
     print(f"goal   {args.goal}", file=sys.stderr)
     print(f"start  {args.url}", file=sys.stderr)
     chrome = Chrome(args.cdp, args.url)

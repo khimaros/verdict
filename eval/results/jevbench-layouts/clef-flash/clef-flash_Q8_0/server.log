@@ -1,0 +1,7 @@
+  model     clef-flash:Q8_0
+  formatter clef-flash:Q8_0 (joint head answered 3/3 of its verification, cached)
+  layout    clef-flash
+  weights   {"repo": "bartowski/Cloudflare_clef-flash-GGUF", "revision": "d7f376ea88c05e7bb1014dd5351a93df9dd8029e", "file": "Cloudflare_clef-flash-Q8_0.gguf"}
+  build     b11345-a868c3e3c
+  debiasing order averaging 1, prior correction off
+  prompts   token ids, one /embedding per request (loaded 23:07:52)

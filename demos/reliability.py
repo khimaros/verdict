@@ -51,8 +51,12 @@ def normalise(outcome):
             # requirements that actually appeared on a screen it reached. a
             # demo with no ledger would otherwise read as zero for every model
             # and the sweep would rank nothing.
-            outcome["stories_visited"] = (outcome.get("witness") or {}).get(
-                "witnessed", 0)
+            witness = outcome.get("witness") or {}
+            outcome["stories_visited"] = witness.get("witnessed", 0)
+            # and it is complete at what ITS witness required, which is not
+            # the browser task's three stories
+            if witness.get("required"):
+                outcome["required"] = witness["required"]
         outcome["actions"] = outcome.get("steps", 0)
     outcome.setdefault("decisions", len(outcome.get("decision_ms", [])))
     for key, default in CRASHED.items():
@@ -60,7 +64,23 @@ def normalise(outcome):
     return outcome
 
 
-def one_run(python, demo, passthrough, env, before_each=None):
+def watched(cmd, env, log):
+    """run a demo and return its last line of output. with a log the demo
+    writes to it as it goes, so a run can be watched instead of waited for."""
+    if not log:
+        proc = subprocess.run(cmd, env=env, capture_output=True, text=True, check=False)
+        return proc.stderr.strip().splitlines()[-1:]
+    with open(log, "a") as f:
+        f.write(f"=== {time.strftime('%H:%M:%S')} {' '.join(cmd[1:2])}\n")
+        f.flush()
+        start = f.tell()
+        subprocess.run(cmd, env=env, stdout=f, stderr=subprocess.STDOUT, check=False)
+    with open(log) as f:
+        f.seek(start)
+        return f.read().strip().splitlines()[-1:]
+
+
+def one_run(python, demo, passthrough, env, before_each=None, log=None):
     if before_each:
         # a run that STARTS on the answer screen has not succeeded, it has been
         # handed the answer. android settings resumes wherever it was left, so
@@ -83,14 +103,13 @@ def one_run(python, demo, passthrough, env, before_each=None):
         summary = f.name
     cmd = [python, demo, "--summary", summary, *passthrough]
     started = time.monotonic()
-    proc = subprocess.run(cmd, env=env, capture_output=True, text=True, check=False)
+    last = watched(cmd, env, log)
     wall = time.monotonic() - started
     try:
         with open(summary) as f:
             outcome = normalise(json.load(f))
     except (OSError, json.JSONDecodeError):
-        outcome = dict(CRASHED,
-                       error=proc.stderr.strip().splitlines()[-1:] or ["no summary"])
+        outcome = dict(CRASHED, error=last or ["no summary"])
     finally:
         os.unlink(summary)
     outcome["wall_s"] = round(wall, 1)
@@ -102,12 +121,13 @@ def report(runs, required):
     print(f"  {'run':>4} {'stories':>9} {'actions':>8} {'decisions':>10} "
           f"{'gated':>6} {'status':>9} {'wall':>7}")
     for i, r in enumerate(runs, 1):
-        print(f"  {i:>4} {r['stories_visited']:>5}/{required:<3} {r['actions']:>8} "
+        print(f"  {i:>4} {r['stories_visited']:>5}/{r.get('required', required):<3} "
+              f"{r['actions']:>8} "
               f"{r['decisions']:>10} {r['gated']:>6} {r['status']:>9} "
               f"{r['wall_s']:>6.0f}s")
 
     visited = [r["stories_visited"] for r in runs]
-    complete = sum(1 for v in visited if v >= required)
+    complete = sum(1 for r in runs if r["stories_visited"] >= r.get("required", required))
     reached_one = sum(1 for v in visited if v >= 1)
     all_ms = [ms for r in runs for ms in r.get("decision_ms", [])]
 
@@ -139,6 +159,9 @@ def main():
                     help="shell command to run before every run. use it to put "
                          "the device back to a state that has not been handed "
                          "the answer")
+    ap.add_argument("--log", default=None, metavar="PATH",
+                    help="append every run's own output here as it happens, so a "
+                         "run can be watched; without it the output is dropped")
     ap.add_argument("--demo", default="run_hn_demo.py",
                     help="which demo to repeat, relative to demos/")
     ap.add_argument("passthrough", nargs="*", help="args for the demo, after --")
@@ -150,9 +173,9 @@ def main():
     for i in range(args.runs):
         print(f"=== run {i + 1}/{args.runs}", flush=True)
         outcome = one_run(args.python, demo, args.passthrough, env,
-                          args.before_each)
+                          args.before_each, args.log)
         runs.append(outcome)
-        print(f"    {outcome['stories_visited']}/{args.required} stories, "
+        print(f"    {outcome['stories_visited']}/{outcome.get('required', args.required)} stories, "
               f"{outcome['actions']} actions, {outcome['status']}", flush=True)
 
     summary = report(runs, args.required)

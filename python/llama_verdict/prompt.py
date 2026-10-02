@@ -9,6 +9,8 @@ import hashlib
 
 from . import spec
 
+# stands for the number of options, in a layout's `answer_instruction`
+COUNT = "{count}"
 
 def render_prefix(formatter, state):
     """system instructions plus the state. identical for every question."""
@@ -31,8 +33,10 @@ def render_suffix(formatter, question, alphabet=None):
     lines = c["option_separator"].join(
         c["option_line"].format(label=label, description=option.description)
         for label, option in zip(labels, question.options, strict=True))
+    # replaced rather than formatted: a layout's closing text may hold braces
+    closing = c["answer_instruction"].replace(COUNT, str(len(labels)))
     return (c["question_open"] + question.instructions + c["options_open"] + lines
-            + c["answer_instruction"] + formatter.user_close + formatter.assistant_open
+            + closing + formatter.user_close + formatter.assistant_open
             + c["assistant_prefill"])
 
 
@@ -48,9 +52,9 @@ def prompt_sha256(prefix, suffix):
     return hashlib.sha256((prefix + suffix).encode()).hexdigest()
 
 
-def alphabet_flags(question):
+def alphabet_flags(question, layout=spec.CHAT):
     """what the caller should know about how this question had to be encoded."""
-    c = spec.constants()
+    c = spec.layout(layout)
     flags = []
     if len(question.options) > c["max_options_plain_alphabet"]:
         # the lowercase labels are verified single-token but not quality tested

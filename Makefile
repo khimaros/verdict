@@ -1,5 +1,8 @@
-PYTHON ?= python3
 PY_DIR := python
+# the project's own environment when `uv sync` has made one, so the optional
+# dependencies it installed are the ones make runs with; the system python else
+VENV_PYTHON := $(CURDIR)/$(PY_DIR)/.venv/bin/python
+PYTHON ?= $(if $(wildcard $(VENV_PYTHON)),$(VENV_PYTHON),python3)
 SPEC_DIR := spec
 
 export PYTHONPATH := $(CURDIR)/$(PY_DIR)
@@ -9,7 +12,7 @@ export PYTHONPATH := $(CURDIR)/$(PY_DIR)
 # the python side reads the environment first and the nearest .env second;
 # see python/llama_verdict/config.py and .env.example.
 
-.PHONY: build test test-e2e serve precommit lint fixtures formatters export clean help
+.PHONY: build test test-e2e serve precommit lint fixtures layouts formatters export clean help
 
 build: ## validate the spec and the generated artifacts
 	@$(PYTHON) -c "import json,glob; [json.load(open(p)) for p in \
@@ -39,6 +42,9 @@ precommit: lint build test ## everything that must pass before a commit
 
 fixtures: ## regenerate the conformance fixtures, then review the diff
 	@$(PYTHON) scripts/build_fixtures.py
+
+layouts: ## refresh spec/layouts from the model registry's table; then make fixtures
+	@$(PYTHON) scripts/import_layouts.py
 
 formatters: ## derive formatters from a live server; needs the backend from .env
 	@$(PYTHON) scripts/derive_formatter.py

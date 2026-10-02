@@ -1,0 +1,524 @@
+{
+  "summary": {
+    "runs": 3,
+    "complete": 3,
+    "reached_one": 3,
+    "mean_stories": 3,
+    "statuses": {
+      "done": 3
+    }
+  },
+  "runs": [
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 8,
+      "decision_ms": [
+        36119,
+        52187,
+        36149,
+        40349,
+        36667,
+        7245,
+        37191,
+        60398,
+        53809
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "BLOCKED": 0.0454,
+          "CLICK": 0.8563,
+          "HOME": 0.0352,
+          "SCROLL_DOWN": 0.0466,
+          "SCROLL_UP": 0.0165
+        },
+        {
+          "BACK": 0.8554,
+          "BLOCKED": 0.0226,
+          "CLICK": 0.019,
+          "HOME": 0.0541,
+          "SCROLL_DOWN": 0.0295,
+          "SCROLL_UP": 0.0194
+        },
+        {
+          "BLOCKED": 0.0384,
+          "CLICK": 0.8852,
+          "HOME": 0.0266,
+          "SCROLL_DOWN": 0.0359,
+          "SCROLL_UP": 0.0139
+        },
+        {
+          "BACK": 0.7885,
+          "BLOCKED": 0.0326,
+          "CLICK": 0.0258,
+          "HOME": 0.0451,
+          "SCROLL_DOWN": 0.0733,
+          "SCROLL_UP": 0.0347
+        },
+        {
+          "BLOCKED": 0.0672,
+          "CLICK": 0.7699,
+          "HOME": 0.0458,
+          "SCROLL_DOWN": 0.0882,
+          "SCROLL_UP": 0.0289
+        },
+        {
+          "BACK": 0.7994,
+          "BLOCKED": 0.0558,
+          "CLICK": 0.0286,
+          "HOME": 0.0676,
+          "SCROLL_DOWN": 0.0237,
+          "SCROLL_UP": 0.0249
+        },
+        {
+          "BLOCKED": 0.0662,
+          "CLICK": 0.775,
+          "HOME": 0.0468,
+          "SCROLL_DOWN": 0.0783,
+          "SCROLL_UP": 0.0337
+        },
+        {
+          "BACK": 0.4637,
+          "BLOCKED": 0.0476,
+          "CLICK": 0.0327,
+          "DONE": 0.3009,
+          "HOME": 0.0762,
+          "SCROLL_DOWN": 0.0523,
+          "SCROLL_UP": 0.0266
+        },
+        {
+          "BLOCKED": 0.1339,
+          "CLICK": 0.2459,
+          "DONE": 0.2989,
+          "HOME": 0.086,
+          "SCROLL_DOWN": 0.0804,
+          "SCROLL_UP": 0.0342
+        }
+      ],
+      "final_confidence": 0.2989,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "57 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49929489",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "337 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "danielfoster",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/user?id=danielfoster",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=danielfoster",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "42 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929113",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "https://news.ycombinator.com/item?id=49906432",
+          "from": "https://news.ycombinator.com/item?id=49929113",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t150 points by Kuyawa 3 hours ago | hide | 57\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49929489": [
+          "Kuyawa 2 hours ago | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "nezhar 29 minutes ago | parent | next [\u2013] Thanks, was wondering why this is in the feed.",
+          "throwa356262 4 minutes ago | prev | next [\u2013] Still in preview, but I think this is their fix for DSH being hard to get working in a container before. Which resulted in an unknown third party packaging it with some modifications and SEO the hell out of it to always come on top in Internet searches (even above DS):",
+          "Kuyawa 3 hours ago | prev | next [\u2013] I just installed DeepSeek Harness for MacOS and it's a beast. The same great harness as before but now is an app you just click on your dock to run",
+          "sroerick 41 minutes ago | parent | next [\u2013] Deepseek harness seems good but this thread feels astroturfy"
+        ],
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 10 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "RickS 10 hours ago | parent | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 5 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "vergessenmir 24 minutes ago | root | parent | next [\u2013] They're both harnesses, pi + cron/event trigger is 90% openclaw",
+          "gchamonlive 5 hours ago | parent | prev | next [\u2013] I use oh-my-pi, not sure how it compares, but I say someone praising antigravity for being a good harness(1), and for the love of good people settle for such low standards of user experience it's almost pitiful."
+        ],
+        "https://news.ycombinator.com/item?id=49929113": [
+          "water-data-dude 3 hours ago | next [\u2013] You know, there's probably fewer perverse incentives with a government run dating service. Obviously I can imagine ways it could suck, but when I compare them to how commercial dating services are run it's hard to see how they could do a _worse_ job.",
+          "pcthrowaway 31 minutes ago | parent | next [\u2013] If people are oriented towards traditional relationships, then pairing people up younger probably leads to higher overall fertility rate in the population, so I could see governments with existentially declining fertility rates (read: almost all of them) taking an interest in actually providing a successful service here (unlike the commercial dating apps).",
+          "4848488484 2 minutes ago | root | parent | next [\u2013] No amount of anything will make a woman with options settle with anything but 6'5\" trust fund finance blue eyes.",
+          "phreeza 20 minutes ago | root | parent | prev | next [\u2013] Nice idea in principle but too long a time horizon for typical corporations to care about, sadly.",
+          "ant6n 8 minutes ago | root | parent | next [\u2013] Dating Apps don\u2019t need to be corporate. You could make an app for a whole country with a company of less than 10 people."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 362.4
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 5,
+      "decision_ms": [
+        35161,
+        38731,
+        36070,
+        40451,
+        36831,
+        36108
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "BLOCKED": 0.0448,
+          "CLICK": 0.852,
+          "HOME": 0.0344,
+          "SCROLL_DOWN": 0.0515,
+          "SCROLL_UP": 0.0173
+        },
+        {
+          "BACK": 0.8681,
+          "BLOCKED": 0.021,
+          "CLICK": 0.0181,
+          "HOME": 0.0476,
+          "SCROLL_DOWN": 0.0271,
+          "SCROLL_UP": 0.0181
+        },
+        {
+          "BLOCKED": 0.0396,
+          "CLICK": 0.879,
+          "HOME": 0.028,
+          "SCROLL_DOWN": 0.038,
+          "SCROLL_UP": 0.0154
+        },
+        {
+          "BACK": 0.8341,
+          "BLOCKED": 0.0294,
+          "CLICK": 0.0233,
+          "HOME": 0.0416,
+          "SCROLL_DOWN": 0.0451,
+          "SCROLL_UP": 0.0265
+        },
+        {
+          "BLOCKED": 0.0884,
+          "CLICK": 0.7177,
+          "HOME": 0.0526,
+          "SCROLL_DOWN": 0.1088,
+          "SCROLL_UP": 0.0325
+        },
+        {
+          "BACK": 0.3704,
+          "BLOCKED": 0.0447,
+          "CLICK": 0.0285,
+          "DONE": 0.4164,
+          "HOME": 0.0693,
+          "SCROLL_DOWN": 0.044,
+          "SCROLL_UP": 0.0267
+        }
+      ],
+      "final_confidence": 0.4164,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "58 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49929489",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "337 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "4 hours ago",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929113",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t159 points by Kuyawa 3 hours ago | hide | 58\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49929489": [
+          "Kuyawa 2 hours ago | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "nezhar 35 minutes ago | parent | next [\u2013] Thanks, was wondering why this is in the feed.",
+          "throwa356262 10 minutes ago | prev | next [\u2013] Still in preview, but I think this update is only meant to simplify the installation process.",
+          "ElProlactin 2 hours ago | prev | next [\u2013] I wish there was a tool I could use to share my documents, activity, etc. directly with the world's major intelligence agencies.",
+          "postsantum 1 hour ago | parent | next [\u2013] Yes! A real marketplace of ideas with automatic matching, like you can see who has the same ideas as you"
+        ],
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 10 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "dmarchand90 0 minutes ago | parent | next [\u2013] You can use full screen mode. (I asked my pi agent about this and it told me about it) That fixed the flicker issue for me",
+          "RickS 10 hours ago | parent | prev | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 6 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "vergessenmir 30 minutes ago | root | parent | next [\u2013] They're both harnesses, pi + cron/event trigger is 90% openclaw"
+        ],
+        "https://news.ycombinator.com/item?id=49929113": [
+          "water-data-dude 3 hours ago | next [\u2013] You know, there's probably fewer perverse incentives with a government run dating service. Obviously I can imagine ways it could suck, but when I compare them to how commercial dating services are run it's hard to see how they could do a _worse_ job.",
+          "pcthrowaway 35 minutes ago | parent | next [\u2013] If people are oriented towards traditional relationships, then pairing people up younger probably leads to higher overall fertility rate in the population, so I could see governments with existentially declining fertility rates (read: almost all of them) taking an interest in actually providing a successful service here (unlike the commercial dating apps).",
+          "phreeza 24 minutes ago | root | parent | next [\u2013] Nice idea in principle but too long a time horizon for typical corporations to care about, sadly.",
+          "ant6n 13 minutes ago | root | parent | next [\u2013] Dating Apps don\u2019t need to be corporate. You could make an app for a whole country with a company of less than 10 people.",
+          "4848488484 6 minutes ago | root | parent | prev | next [\u2013] No amount of anything will make a woman with options settle with anything but 6'5\" trust fund finance blue eyes."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 5,
+      "decisions": 6,
+      "wall_s": 225.7
+    },
+    {
+      "goal": "Read the top 5 comments on each of the top 3 stories on Hacker News. Open a story comments, read them, go back to the front page, then open the next story comments.",
+      "status": "done",
+      "steps": 8,
+      "decision_ms": [
+        35239,
+        39168,
+        36039,
+        40710,
+        36132,
+        5562,
+        36771,
+        37603,
+        53644
+      ],
+      "gated": 0,
+      "probabilities": [
+        {
+          "BLOCKED": 0.0556,
+          "CLICK": 0.8234,
+          "HOME": 0.0429,
+          "SCROLL_DOWN": 0.0591,
+          "SCROLL_UP": 0.019
+        },
+        {
+          "BACK": 0.8739,
+          "BLOCKED": 0.0204,
+          "CLICK": 0.0182,
+          "HOME": 0.0477,
+          "SCROLL_DOWN": 0.0253,
+          "SCROLL_UP": 0.0145
+        },
+        {
+          "BLOCKED": 0.0408,
+          "CLICK": 0.8747,
+          "HOME": 0.0285,
+          "SCROLL_DOWN": 0.0399,
+          "SCROLL_UP": 0.0161
+        },
+        {
+          "BACK": 0.8241,
+          "BLOCKED": 0.0286,
+          "CLICK": 0.0214,
+          "HOME": 0.0417,
+          "SCROLL_DOWN": 0.0552,
+          "SCROLL_UP": 0.029
+        },
+        {
+          "BLOCKED": 0.0717,
+          "CLICK": 0.749,
+          "HOME": 0.0525,
+          "SCROLL_DOWN": 0.0902,
+          "SCROLL_UP": 0.0366
+        },
+        {
+          "BACK": 0.7967,
+          "BLOCKED": 0.055,
+          "CLICK": 0.0285,
+          "HOME": 0.0712,
+          "SCROLL_DOWN": 0.0239,
+          "SCROLL_UP": 0.0247
+        },
+        {
+          "BLOCKED": 0.0759,
+          "CLICK": 0.7424,
+          "HOME": 0.0562,
+          "SCROLL_DOWN": 0.0856,
+          "SCROLL_UP": 0.0399
+        },
+        {
+          "BACK": 0.4564,
+          "BLOCKED": 0.0433,
+          "CLICK": 0.0285,
+          "DONE": 0.3381,
+          "HOME": 0.0647,
+          "SCROLL_DOWN": 0.0443,
+          "SCROLL_UP": 0.0247
+        },
+        {
+          "BLOCKED": 0.1501,
+          "CLICK": 0.253,
+          "DONE": 0.2765,
+          "HOME": 0.0857,
+          "SCROLL_DOWN": 0.0906,
+          "SCROLL_UP": 0.0365
+        }
+      ],
+      "final_confidence": 0.2765,
+      "history": [
+        {
+          "operation": "CLICK",
+          "target": "62 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929489",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49929489",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "338 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49926069",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/item?id=49926069",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "danielfoster",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/user?id=danielfoster",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "Hacker News",
+          "from": "https://news.ycombinator.com/user?id=danielfoster",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        },
+        {
+          "operation": "CLICK",
+          "target": "44 comments",
+          "from": "https://news.ycombinator.com/",
+          "to": "https://news.ycombinator.com/item?id=49929113",
+          "changed": true
+        },
+        {
+          "operation": "BACK",
+          "target": "https://news.ycombinator.com/item?id=49906432",
+          "from": "https://news.ycombinator.com/item?id=49929113",
+          "to": "https://news.ycombinator.com/",
+          "changed": true
+        }
+      ],
+      "witness": {
+        "required": 1,
+        "witnessed": 1,
+        "complete": true,
+        "answers": {
+          "[0-9]+\\s*comments": "\t164 points by Kuyawa 3 hours ago | hide | 62\u00a0comments"
+        },
+        "at_step": {
+          "[0-9]+\\s*comments": 1
+        },
+        "missing": []
+      },
+      "collected": {
+        "https://news.ycombinator.com/item?id=49929489": [
+          "Kuyawa 2 hours ago | next [\u2013] The original title was \"DeepSeek Harness Desktop app for MacOS and Windows\"",
+          "nezhar 39 minutes ago | parent | next [\u2013] Thanks, was wondering why this is in the feed.",
+          "hypfer 2 minutes ago | prev | next [\u2013] The \"everything is a plugin\" concept is also what the Juggler harness does.",
+          "ElProlactin 2 hours ago | prev | next [\u2013] I wish there was a tool I could use to share my documents, activity, etc. directly with the world's major intelligence agencies.",
+          "postsantum 2 hours ago | parent | next [\u2013] Yes! A real marketplace of ideas with automatic matching, like you can see who has the same ideas as you"
+        ],
+        "https://news.ycombinator.com/item?id=49926069": [
+          "FacelessJim 10 hours ago | next [\u2013] Love pi. I tried to run some local models and pi was the only one that actually worked decently because it didn\u2019t have a gargantuan system prompt that would take minutes to prefill on my scrawny ass laptop.",
+          "dmarchand90 4 minutes ago | parent | next [\u2013] You can use full screen mode. (I asked my pi agent about this and it told me about it) That fixed the flicker issue for me",
+          "RickS 10 hours ago | parent | prev | next [\u2013] Couldn't agree more. The vanilla openclaw install was this byzantine mess of MD files talking about souls and identities and such, it really put me off. Stripping back to a bare install of the underlying pi, it was delightfully minimal and easy to reason about. Excellent starting point for building an assistant agent without having to read or fight with a bunch of cruft on top.",
+          "AgentMasterRace 6 hours ago | root | parent | next [\u2013] you're comparing apples to oranges here...",
+          "vergessenmir 34 minutes ago | root | parent | next [\u2013] They're both harnesses, pi + cron/event trigger is 90% openclaw"
+        ],
+        "https://news.ycombinator.com/item?id=49929113": [
+          "water-data-dude 3 hours ago | next [\u2013] You know, there's probably fewer perverse incentives with a government run dating service. Obviously I can imagine ways it could suck, but when I compare them to how commercial dating services are run it's hard to see how they could do a _worse_ job.",
+          "pcthrowaway 39 minutes ago | parent | next [\u2013] If people are oriented towards traditional relationships, then pairing people up younger probably leads to higher overall fertility rate in the population, so I could see governments with existentially declining fertility rates (read: almost all of them) taking an interest in actually providing a successful service here (unlike the commercial dating apps).",
+          "phreeza 28 minutes ago | root | parent | next [\u2013] Nice idea in principle but (in the case of private) too long a time horizon for typical corporations to care about, sadly.",
+          "ant6n 17 minutes ago | root | parent | next [\u2013] Dating Apps don\u2019t need to be corporate. You could make an app for a whole country with a company of less than 10 people.",
+          "4848488484 10 minutes ago | root | parent | prev | next [\u2013] No amount of anything will make a woman with options settle with anything but 6'5\" trust fund finance blue eyes."
+        ]
+      },
+      "stories_visited": 3,
+      "actions": 8,
+      "decisions": 9,
+      "wall_s": 323.2
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+[
+ {
+  "prompt_tokens": 128,
+  "rows": 128,
+  "width": 4096,
+  "floats": 524288,
+  "bytes_per_float": 19.55,
+  "request_bytes": 762,
+  "reply_bytes": 10248125,
+  "until_headers_s": 0.293,
+  "reading_s": 0.956,
+  "json_decode_s": 0.266,
+  "total_s": 1.515
+ },
+ {
+  "prompt_tokens": 512,
+  "rows": 512,
+  "width": 4096,
+  "floats": 2097152,
+  "bytes_per_float": 19.51,
+  "request_bytes": 2937,
+  "reply_bytes": 40920140,
+  "until_headers_s": 0.748,
+  "reading_s": 4.142,
+  "json_decode_s": 1.078,
+  "total_s": 5.968
+ },
+ {
+  "prompt_tokens": 2048,
+  "rows": 2048,
+  "width": 4096,
+  "floats": 8388608,
+  "bytes_per_float": 19.48,
+  "request_bytes": 11642,
+  "reply_bytes": 163445469,
+  "until_headers_s": 2.748,
+  "reading_s": 21.883,
+  "json_decode_s": 2.117,
+  "total_s": 26.748
+ }
+]

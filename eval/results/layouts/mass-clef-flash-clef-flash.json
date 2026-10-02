@@ -1,0 +1,12 @@
+[
+  {
+    "model": "clef-flash:Q8_0",
+    "option_mass": null,
+    "correct": "3/3",
+    "assistant_open": "",
+    "template_sha256": "b818f33bb63d1d58",
+    "cached": true,
+    "usable": true,
+    "wall_s": 3.7
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "id": "options-twentyseven",
+  "description": "27 options, the first count to extend into lowercase labels",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "pick": {
+      "type": "choice",
+      "instructions": "Which applies?",
+      "criteria": {
+        "opt00": "Option number 0 of 27.",
+        "opt01": "Option number 1 of 27.",
+        "opt02": "Option number 2 of 27.",
+        "opt03": "Option number 3 of 27.",
+        "opt04": "Option number 4 of 27.",
+        "opt05": "Option number 5 of 27.",
+        "opt06": "Option number 6 of 27.",
+        "opt07": "Option number 7 of 27.",
+        "opt08": "Option number 8 of 27.",
+        "opt09": "Option number 9 of 27.",
+        "opt10": "Option number 10 of 27.",
+        "opt11": "Option number 11 of 27.",
+        "opt12": "Option number 12 of 27.",
+        "opt13": "Option number 13 of 27.",
+        "opt14": "Option number 14 of 27.",
+        "opt15": "Option number 15 of 27.",
+        "opt16": "Option number 16 of 27.",
+        "opt17": "Option number 17 of 27.",
+        "opt18": "Option number 18 of 27.",
+        "opt19": "Option number 19 of 27.",
+        "opt20": "Option number 20 of 27.",
+        "opt21": "Option number 21 of 27.",
+        "opt22": "Option number 22 of 27.",
+        "opt23": "Option number 23 of 27.",
+        "opt24": "Option number 24 of 27.",
+        "opt25": "Option number 25 of 27.",
+        "opt26": "Option number 26 of 27."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\nMy invoice charged me twice for the same month and I want a refund.\n\n---\n\n",
+    "questions": {
+      "pick": {
+        "kind": "choice",
+        "suffix": "QUESTION: Which applies?\n\nOPTIONS:\n1. opt00: Option number 0 of 27.\n2. opt01: Option number 1 of 27.\n3. opt02: Option number 2 of 27.\n4. opt03: Option number 3 of 27.\n5. opt04: Option number 4 of 27.\n6. opt05: Option number 5 of 27.\n7. opt06: Option number 6 of 27.\n8. opt07: Option number 7 of 27.\n9. opt08: Option number 8 of 27.\n10. opt09: Option number 9 of 27.\n11. opt10: Option number 10 of 27.\n12. opt11: Option number 11 of 27.\n13. opt12: Option number 12 of 27.\n14. opt13: Option number 13 of 27.\n15. opt14: Option number 14 of 27.\n16. opt15: Option number 15 of 27.\n17. opt16: Option number 16 of 27.\n18. opt17: Option number 17 of 27.\n19. opt18: Option number 18 of 27.\n20. opt19: Option number 19 of 27.\n21. opt20: Option number 20 of 27.\n22. opt21: Option number 21 of 27.\n23. opt22: Option number 22 of 27.\n24. opt23: Option number 23 of 27.\n25. opt24: Option number 24 of 27.\n26. opt25: Option number 25 of 27.\n27. opt26: Option number 26 of 27.\n\nReply with only the number of the correct option (1-27).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "opt00": "1",
+          "opt01": "2",
+          "opt02": "3",
+          "opt03": "4",
+          "opt04": "5",
+          "opt05": "6",
+          "opt06": "7",
+          "opt07": "8",
+          "opt08": "9",
+          "opt09": "10",
+          "opt10": "11",
+          "opt11": "12",
+          "opt12": "13",
+          "opt13": "14",
+          "opt14": "15",
+          "opt15": "16",
+          "opt16": "17",
+          "opt17": "18",
+          "opt18": "19",
+          "opt19": "20",
+          "opt20": "21",
+          "opt21": "22",
+          "opt22": "23",
+          "opt23": "24",
+          "opt24": "25",
+          "opt25": "26",
+          "opt26": "27"
+        },
+        "flags": []
+      }
+    }
+  }
+}

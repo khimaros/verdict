@@ -17,7 +17,24 @@
   "instructions_json": "block_json",
   "description_json": "inline_json",
   "option_json": null,
+  "profiles": {},
+  "checkpoint_anchors": [],
+  "layout_knobs": [
+    "system_turn", "system_instructions", "state_open", "state_delimiter",
+    "question_open", "options_open", "option_line", "option_separator",
+    "answer_instruction", "assistant_prefill", "named_kinds", "boolean_order",
+    "boolean_names", "boolean_default_criteria", "state_json", "instructions_json",
+    "description_json", "option_json", "profiles", "labels", "numbered_labels",
+    "max_options_single_pass", "max_options_plain_alphabet", "checkpoint_anchors",
+    "option_mass_floor_formatter"
+  ],
+  "joint_knobs": [
+    "prompt_open", "schema_open", "field_open", "options_open", "option_open",
+    "option_close", "field_close", "prompt_close", "type_names", "type_ids",
+    "boolean_order", "boolean_default_criteria", "value_json", "max_length"
+  ],
   "labels": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+  "numbered_labels": 0,
   "max_options_single_pass": 52,
   "max_options_plain_alphabet": 26,
   "n_probs_ladder": [
@@ -25,6 +42,10 @@
     4096,
     300000
   ],
+  "assistant_openings": {
+    "gpt-oss-20b": "<|start|>assistant<|channel|>final<|message|>",
+    "gpt-oss-120b": "<|start|>assistant<|channel|>final<|message|>"
+  },
   "option_mass_floor_request": 0.5,
   "option_mass_floor_formatter": 0.9,
   "boolean_default_criteria": {

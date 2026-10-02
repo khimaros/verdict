@@ -832,6 +832,36 @@ got.
 the client-side bounds join in `demos/mimic_agent.py` is transitional and comes
 out once it can be run against the fixed build.
 
+### watch the run, not the summary
+
+`scripts/sweep_models.py` writes every step of every run to
+`/tmp/sweep-steps-<model>.log` as it happens, and `demos/reliability.py --log
+PATH` does the same for one model. a run's own output used to be captured and
+dropped, so a sweep said nothing until a run ended and a fault was diagnosed
+afterwards from a summary that did not hold it.
+
+one evening of reading that file while the runs happened produced a dozen
+changes to the two agents, each from something a summary could not show: an
+app relaunched from inside itself, a BACK that only closed a keyboard, a text
+field offered to an agent that cannot type, a window the device could not
+read, a DONE inflated by the options withheld around it. `docs/EVALS.md`
+section 5c has the list and what each bought.
+
+the flags that came out of it, on `demos/mimic_agent.py`:
+
+| flag | default | what it does |
+|---|---|---|
+| `--done-confidence` | 0.81 | the floor DONE and BLOCKED have to clear; 0 turns it off |
+| `--together` | on | one question whose options are every row, app and move, with whether to stop asked beside it. half the calls. `--no-together` asks which row and then which operation |
+| `--say-below` | off | says in the state whether the screen continues below what is listed |
+
+and on `demos/browser_agent.py`: `--together`, the same and also on;
+`--retire-read`, on as well, having been passed by hand to every sweep since
+it took the demo 0/3 to 3/3; and
+`--collect-pages N`, which does not offer DONE until the ledger holds N pages
+collected from. it has no default because the count is the task's: pass it
+whenever the goal names one.
+
 ### navigating is a decision; reading the answer is not
 
 a demo that navigates correctly and returns nothing has not answered the

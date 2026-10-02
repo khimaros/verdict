@@ -49,6 +49,9 @@ def test_fixtures_exist():
 def test_every_layout_has_fixtures():
     for name in os.listdir(os.path.join(SPEC, "layouts")):
         layout = name.removesuffix(".json")
+        # a joint layout is held to its author's encodings in test_joint_prompt
+        if spec.load_layout(layout).get("kind") == spec.JOINT:
+            continue
         assert any(f"/layouts/{layout}/" in p for p in LAYOUT_FIXTURES), layout
 
 
@@ -70,7 +73,7 @@ def test_suffixes_match(path, reference):
         assert q.kind == want["kind"]
         assert prompt.render_suffix(formatter, q) == want["suffix"]
         assert prompt.label_map(q, layout=formatter.layout) == want["labels"]
-        assert prompt.alphabet_flags(q) == want["flags"]
+        assert prompt.alphabet_flags(q, formatter.layout) == want["flags"]
         if "legend" in want:
             assert q.legend == want["legend"]
 

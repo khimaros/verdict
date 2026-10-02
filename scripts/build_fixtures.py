@@ -230,7 +230,7 @@ def build(case, formatter, formatter_name="reference"):
             "kind": q.kind,
             "suffix": prompt.render_suffix(formatter, q),
             "labels": prompt.label_map(q, layout=formatter.layout),
-            "flags": prompt.alphabet_flags(q),
+            "flags": prompt.alphabet_flags(q, formatter.layout),
         }
         if q.legend:
             expected["questions"][q.name]["legend"] = q.legend
@@ -248,6 +248,9 @@ def main():
     reference = types.Formatter.load(os.path.join(SPEC, "formatters", "reference.json"))
     jobs = [(OUT, case, reference, "reference") for case in CASES]
     for name in sorted(p.removesuffix(".json") for p in os.listdir(LAYOUTS)):
+        # a joint layout is pinned by the author's own encodings instead
+        if spec.load_layout(name).get("kind") == spec.JOINT:
+            continue
         # a list longer than the layout's alphabet is refused, not rendered
         fits = [case for case in CASES if case["id"] in LAYOUT_CASES
                 and max(len(q.get("criteria") or "xx") for q in case["questions"].values())

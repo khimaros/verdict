@@ -1,7 +1,7 @@
 {
   "qwen3.5-9b:Q8_0": {
     "runs": 3,
-    "complete": 0,
+    "complete": 2,
     "reached_one": 2,
     "mean_stories": 0.6666666666666666,
     "statuses": {

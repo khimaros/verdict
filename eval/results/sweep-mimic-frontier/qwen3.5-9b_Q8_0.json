@@ -1,7 +1,7 @@
 {
   "summary": {
     "runs": 3,
-    "complete": 0,
+    "complete": 1,
     "reached_one": 1,
     "mean_stories": 0.3333333333333333,
     "statuses": {
@@ -171,7 +171,8 @@
       "stories_visited": 1,
       "actions": 5,
       "decisions": 6,
-      "wall_s": 50.4
+      "wall_s": 50.4,
+      "required": 1
     },
     {
       "goal": "Open the Settings app and navigate to the screen showing the Android version.",
@@ -474,7 +475,8 @@
       "stories_visited": 0,
       "actions": 14,
       "decisions": 14,
-      "wall_s": 96.0
+      "wall_s": 96.0,
+      "required": 1
     },
     {
       "goal": "Open the Settings app and navigate to the screen showing the Android version.",
@@ -613,7 +615,8 @@
       "stories_visited": 0,
       "actions": 4,
       "decisions": 5,
-      "wall_s": 35.8
+      "wall_s": 35.8,
+      "required": 1
     }
   ]
 }

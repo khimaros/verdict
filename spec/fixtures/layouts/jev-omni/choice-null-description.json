@@ -1,0 +1,31 @@
+{
+  "id": "choice-null-description",
+  "description": "a null description falls back to the option id",
+  "spec_version": "0.1.0",
+  "formatter": "layout:jev-omni",
+  "state": "My invoice charged me twice for the same month and I want a refund.",
+  "questions": {
+    "queue": {
+      "type": "choice",
+      "instructions": "Which queue should handle this?",
+      "criteria": {
+        "billing": null,
+        "technical": "Bugs and outages."
+      }
+    }
+  },
+  "expected": {
+    "prefix": "<|turn>user\nMy invoice charged me twice for the same month and I want a refund.\n\n---\n\n",
+    "questions": {
+      "queue": {
+        "kind": "choice",
+        "suffix": "QUESTION: Which queue should handle this?\n\nOPTIONS:\n1. billing\n2. technical: Bugs and outages.\n\nReply with only the number of the correct option (1-2).\nOutput a single number and nothing else.<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+        "labels": {
+          "billing": "1",
+          "technical": "2"
+        },
+        "flags": []
+      }
+    }
+  }
+}
